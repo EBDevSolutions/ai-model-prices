@@ -2,7 +2,7 @@
   "schema_version": 1,
   "currency": "USD",
   "unit": "1M tokens",
-  "last_checked_at": "2026-08-09T07:34:19Z",
+  "last_checked_at": "2026-08-09T07:49:36Z",
   "last_updated_at": "2026-08-09T00:00:00Z",
   "snapshot_note": "Startowy snapshot do pierwszej weryfikacji przez workflow.",
   "providers": [
@@ -11,8 +11,8 @@
       "name": "OpenAI",
       "source_url": "https://developers.openai.com/api/docs/models/compare",
       "status": "ok",
-      "last_checked_at": "2026-08-09T07:34:19Z",
-      "last_success_at": "2026-08-09T07:34:19Z",
+      "last_checked_at": "2026-08-09T07:49:36Z",
+      "last_success_at": "2026-08-09T07:49:36Z",
       "error": null
     },
     {
@@ -20,8 +20,8 @@
       "name": "Anthropic",
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T07:34:19Z",
-      "last_success_at": "2026-08-09T07:34:19Z",
+      "last_checked_at": "2026-08-09T07:49:36Z",
+      "last_success_at": "2026-08-09T07:49:36Z",
       "error": null
     },
     {
@@ -29,8 +29,8 @@
       "name": "Google Gemini",
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T07:34:19Z",
-      "last_success_at": "2026-08-09T07:34:19Z",
+      "last_checked_at": "2026-08-09T07:49:36Z",
+      "last_success_at": "2026-08-09T07:49:36Z",
       "error": null
     },
     {
@@ -38,8 +38,8 @@
       "name": "xAI",
       "source_url": "https://docs.x.ai/developers/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T07:34:19Z",
-      "last_success_at": "2026-08-09T07:34:19Z",
+      "last_checked_at": "2026-08-09T07:49:36Z",
+      "last_success_at": "2026-08-09T07:49:36Z",
       "error": null
     },
     {
@@ -47,8 +47,8 @@
       "name": "DeepSeek",
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T07:34:19Z",
-      "last_success_at": "2026-08-09T07:34:19Z",
+      "last_checked_at": "2026-08-09T07:49:36Z",
+      "last_success_at": "2026-08-09T07:49:36Z",
       "error": null
     },
     {
@@ -56,8 +56,8 @@
       "name": "Alibaba / Qwen",
       "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T07:34:19Z",
-      "last_success_at": "2026-08-09T07:34:19Z",
+      "last_checked_at": "2026-08-09T07:49:36Z",
+      "last_success_at": "2026-08-09T07:49:36Z",
       "error": null
     }
   ],
