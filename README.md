@@ -11,7 +11,8 @@ Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xA
 ├── index.html
 ├── data/
 │   ├── prices.json
-│   └── history.json
+│   ├── history.json
+│   └── benchmarks.json
 ├── scripts/
 │   └── update_prices.py
 ├── requirements.txt
@@ -36,11 +37,15 @@ Modele multimodalne z wieloma osobnymi stawkami audio/obrazu nie są mieszane z 
 
 ## Benchmarki i opłacalność badawcza
 
-`data/benchmarks.json` zawiera wyłącznie wyniki podane w cytowanych źródłach: MMLU-Pro, GPQA Diamond, Humanity's Last Exam bez narzędzi, SWE-Bench Pro, Terminal-Bench i FrontierSWE. Każda komórka z wynikiem prowadzi do publikacji oraz ma podpowiedź z warunkami uruchomienia.
+`data/benchmarks.json` zawiera wyłącznie wyniki podane w cytowanych źródłach: MMLU-Pro, GPQA Diamond, Humanity's Last Exam bez narzędzi, LiveCodeBench, SWE-Bench Pro, Terminal-Bench i FrontierSWE. Każda komórka z wynikiem prowadzi do źródła właściwego dla tej konkretnej liczby oraz ma podpowiedź z warunkami uruchomienia. Identyfikatory cen są łączone z wynikami przez dokładny klucz lub jawny alias — podobna nazwa nie wystarcza.
+
+Przykład kontroli mapowania: oficjalna karta Gemini 2.0 Flash-Lite podaje dla wariantu Public Preview `71,6% MMLU-Pro`, `51,5% GPQA Diamond` i `28,9% LiveCodeBench v5`. Dashboard przypisuje te wyniki wyłącznie do `google:gemini-2.0-flash-lite`. `MMLU-Pro` i `MMMU-Pro` są różnymi benchmarkami i nie trafiają do tej samej kolumny.
 
 Wskaźnik **Wartość badawcza** nie używa nazw modeli ani szacunków. Dla modelu z pełnymi danymi oblicza średnią `GPQA Diamond` i `HLE bez narzędzi`, dzieli ją przez koszt workloadu z kalkulatora, a następnie skaluje wynik 0–100 wyłącznie w grupie modeli mających oba wyniki. Brak wyniku jest pokazywany jako `—` i wyłącza model z rankingu wartości. Testy codingowe pozostają osobnymi kolumnami, ponieważ różne zestawy/harnessy nie są rzetelnie wymienne.
 
-Panel **Najlepsze do programowania** sortuje wyłącznie według opublikowanego wyniku Terminal-Bench. Wyniki SWE-Bench Pro i FrontierSWE są nadal widoczne osobno w tabeli, lecz nie są łączone w sztuczną średnią.
+Panel **Najlepsze do programowania** pozwala wybrać osobno Terminal-Bench, LiveCodeBench, SWE-Bench Pro albo FrontierSWE. Ranking zawsze używa jednego testu naraz; wyniki nie są łączone w sztuczną średnią.
+
+Benchmarki nie są automatycznie zgadywane na podstawie wyników wyszukiwarki. Dodanie nowego modelu do cennika nie oznacza automatycznie dostępnego i porównywalnego wyniku badania: najpierw musi istnieć źródło pierwotne, dokładna wersja modelu i opis trybu testu. Brak wyniku pozostaje oznaczony jako `—`.
 
 ## Uruchomienie krok po kroku
 

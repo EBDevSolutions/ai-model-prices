@@ -198,8 +198,8 @@
         <div class="section-head"><h2 class="section-title">Cennik modeli</h2><div id="visibleCount" class="count">—</div></div>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Model</th><th>Input</th><th>Cached input</th><th>Output</th><th>Twój koszt</th><th>MMLU-Pro</th><th>GPQA</th><th>HLE</th><th>SWE-Pro</th><th>Terminal</th><th>FrontierSWE</th><th>Wartość badawcza</th><th>Dostęp</th><th>Źródło ceny</th></tr></thead>
-            <tbody id="modelRows"><tr><td colspan="14" class="empty">Ładowanie oficjalnych cen i benchmarków…</td></tr></tbody>
+            <thead><tr><th>Model</th><th>Input</th><th>Cached input</th><th>Output</th><th>Twój koszt</th><th>MMLU-Pro</th><th>GPQA</th><th>HLE</th><th>LiveCode</th><th>SWE-Pro</th><th>Terminal</th><th>FrontierSWE</th><th>Wartość badawcza</th><th>Dostęp</th><th>Źródło ceny</th></tr></thead>
+            <tbody id="modelRows"><tr><td colspan="15" class="empty">Ładowanie oficjalnych cen i benchmarków…</td></tr></tbody>
           </table>
         </div>
       </section>
@@ -213,7 +213,7 @@
         </div>
         <p class="help">Koszt = input × stawka input + cached × stawka cache + output × stawka output. Wartość badawcza = średnia GPQA Diamond i HLE bez narzędzi / koszt workloadu; wynik jest skalowany 0–100 tylko wśród modeli z oboma wynikami. Każdy wynik w tabeli prowadzi do źródła oraz warunków testu. Nie mieszamy różnych testów codingowych w jedną liczbę. Gwiazdka przy Cursor oznacza katalog zmienny — sprawdź selektor w swojej subskrypcji.</p>
         <div class="ranking"><h3 class="section-title">Najtańsze dla workloadu</h3><div id="ranking"></div></div>
-        <div class="ranking"><h3 class="section-title">Najlepsze do programowania</h3><p class="help" style="margin-top:4px">Terminal-Bench: wyższy wynik jest lepszy. Różne edycje benchmarku są opisane w źródle wyniku.</p><div id="codingRanking"></div></div>
+        <div class="ranking"><h3 class="section-title">Najlepsze do programowania</h3><p class="help" style="margin-top:4px">Wybierz jeden test — wyników z różnych benchmarków nie mieszamy w sztuczną średnią.</p><div class="input-group" style="margin:8px 0 12px"><label for="codingBenchmark">Benchmark</label><select id="codingBenchmark"><option value="terminal_bench">Terminal-Bench</option><option value="livecodebench">LiveCodeBench</option><option value="swe_bench_pro">SWE-Bench Pro</option><option value="frontier_swe">FrontierSWE</option></select></div><div id="codingRanking"></div></div>
       </aside>
     </div>
 
@@ -238,7 +238,7 @@
     const REFRESH_MS = 30 * 60 * 1000;
     const COLORS = {openai:'#6ee7b7',anthropic:'#f0a57b',google:'#7dd3fc',xai:'#f8fafc',deepseek:'#9fa8ff',alibaba:'#fcd34d',moonshot:'#fb7185'};
     const SHORT = {openai:'OA',anthropic:'AN',google:'GG',xai:'xAI',deepseek:'DS',alibaba:'QW',moonshot:'KM'};
-    const state = { prices:null, history:null, benchmarks:null, provider:'all', query:'', sort:'cost', nextRefresh:Date.now()+REFRESH_MS };
+    const state = { prices:null, history:null, benchmarks:null, provider:'all', query:'', sort:'cost', codingBenchmark:'terminal_bench', nextRefresh:Date.now()+REFRESH_MS };
     const $ = id => document.getElementById(id);
     const esc = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
     const safeUrl = value => /^https:\/\//i.test(value || '') ? value : '#';
@@ -252,8 +252,18 @@
     };
     const priceCell = (model, field) => comparable(model) ? money(model[field]) : '—';
     const costCell = model => comparable(model) ? money(workload(model)) : 'Brak stawki';
-    const benchmarkRecord = model => state.benchmarks?.models?.[model.id] || null;
+    const benchmarkRecord = model => {
+      const direct = state.benchmarks?.models?.[model.id];
+      if (direct) return direct;
+      const target = state.benchmarks?.aliases?.[model.id];
+      return target ? state.benchmarks?.models?.[target] || null : null;
+    };
     const scoreFor = (model, benchmark) => benchmarkRecord(model)?.scores?.[benchmark] ?? null;
+    const evidenceFor = (model, benchmark) => {
+      const record = benchmarkRecord(model);
+      if (!record) return null;
+      return record.score_sources?.[benchmark] || record;
+    };
     const researchQuality = model => {
       const gpqa = scoreFor(model,'gpqa_diamond'), hle = scoreFor(model,'hle_no_tools');
       return Number.isFinite(gpqa) && Number.isFinite(hle) ? (gpqa+hle)/2 : null;
@@ -267,8 +277,8 @@
       return Math.max(1,Math.min(100,Math.round(100*Math.sqrt(raw/top))));
     };
     const benchmarkCell = (model, benchmark) => {
-      const value = scoreFor(model,benchmark), record = benchmarkRecord(model);
-      return Number.isFinite(value) ? `<a class="source" title="${esc(record.conditions || '')}" href="${esc(safeUrl(record.source_url))}" target="_blank" rel="noopener noreferrer">${value.toFixed(1)}%</a>` : '—';
+      const value = scoreFor(model,benchmark), evidence = evidenceFor(model,benchmark);
+      return Number.isFinite(value) ? `<a class="source" title="${esc(evidence?.conditions || '')}" href="${esc(safeUrl(evidence?.source_url))}" target="_blank" rel="noopener noreferrer">${value.toFixed(1)}%</a>` : '—';
     };
     const valueCell = model => {
       const score = valueScore(model), record = benchmarkRecord(model);
@@ -373,13 +383,14 @@
           <td>${benchmarkCell(model,'mmlu_pro')}</td>
           <td>${benchmarkCell(model,'gpqa_diamond')}</td>
           <td>${benchmarkCell(model,'hle_no_tools')}</td>
+          <td>${benchmarkCell(model,'livecodebench')}</td>
           <td>${benchmarkCell(model,'swe_bench_pro')}</td>
           <td>${benchmarkCell(model,'terminal_bench')}</td>
           <td>${benchmarkCell(model,'frontier_swe')}</td>
           <td>${valueCell(model)}</td>
           <td><span class="model-meta">${esc(accessFor(model))}</span></td>
           <td><a class="source" href="${esc(safeUrl(model.source_url))}" target="_blank" rel="noopener noreferrer">Otwórz ↗</a></td>
-        </tr>`).join('') : '<tr><td colspan="14" class="empty">Brak modeli pasujących do filtrów.</td></tr>';
+        </tr>`).join('') : '<tr><td colspan="15" class="empty">Brak modeli pasujących do filtrów.</td></tr>';
       renderRanking(models);
       renderCodingRanking(models);
     }
@@ -392,12 +403,14 @@
     }
 
     function renderCodingRanking(models) {
-      const ranked = models.filter(model=>model.active!==false && Number.isFinite(scoreFor(model,'terminal_bench'))).sort((a,b)=>scoreFor(b,'terminal_bench')-scoreFor(a,'terminal_bench')).slice(0,5);
-      const max = Math.max(...ranked.map(model=>scoreFor(model,'terminal_bench')),.000001);
+      const benchmark = state.codingBenchmark;
+      const label = state.benchmarks?.benchmarks?.find(item=>item.id===benchmark)?.label || benchmark;
+      const ranked = models.filter(model=>model.active!==false && Number.isFinite(scoreFor(model,benchmark))).sort((a,b)=>scoreFor(b,benchmark)-scoreFor(a,benchmark)).slice(0,5);
+      const max = Math.max(...ranked.map(model=>scoreFor(model,benchmark)),.000001);
       $('codingRanking').innerHTML = ranked.length ? ranked.map(model=>{
-        const record = benchmarkRecord(model), score = scoreFor(model,'terminal_bench');
-        return `<div class="rank-row"><div class="rank-line"><span class="rank-name"><a class="source" title="${esc(record.conditions || '')}" href="${esc(safeUrl(record.source_url))}" target="_blank" rel="noopener noreferrer">${esc(model.name)}</a></span><span class="rank-price">${score.toFixed(1)}%</span></div><div class="bar"><span style="width:${Math.max(3,score/max*100)}%"></span></div></div>`;
-      }).join('') : '<p class="help">Brak opublikowanych wyników Terminal-Bench dla bieżącego filtra.</p>';
+        const evidence = evidenceFor(model,benchmark), score = scoreFor(model,benchmark);
+        return `<div class="rank-row"><div class="rank-line"><span class="rank-name"><a class="source" title="${esc(evidence?.conditions || '')}" href="${esc(safeUrl(evidence?.source_url))}" target="_blank" rel="noopener noreferrer">${esc(model.name)}</a></span><span class="rank-price">${score.toFixed(1)}%</span></div><div class="bar"><span style="width:${Math.max(3,score/max*100)}%"></span></div></div>`;
+      }).join('') : `<p class="help">Brak opublikowanych wyników ${esc(label)} dla bieżącego filtra.</p>`;
     }
 
     function renderProviders() {
@@ -440,6 +453,7 @@
 
     $('search').addEventListener('input',event=>{state.query=event.target.value;renderModels();});
     $('sort').addEventListener('change',event=>{state.sort=event.target.value;renderModels();});
+    $('codingBenchmark').addEventListener('change',event=>{state.codingBenchmark=event.target.value;renderCodingRanking(filteredModels());});
     ['inputTokens','cachedTokens','outputTokens'].forEach(id=>$(id).addEventListener('input',renderModels));
     $('refreshBtn').addEventListener('click',()=>loadData(true));
     $('resetBtn').addEventListener('click',()=>{state.provider='all';state.query='';state.sort='cost';$('search').value='';$('sort').value='cost';renderFilters();renderModels();});
