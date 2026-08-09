@@ -50,6 +50,18 @@ Wskaźnik **Opłacalność** dzieli zweryfikowany wynik ogólny BenchLM przez ko
 
 Panel **Najlepsze do programowania** domyślnie używa zweryfikowanej kategorii BenchLM Coding. Można przełączyć go na pojedynczy surowy test: Terminal-Bench, LiveCodeBench, LiveCodeBench Pro, SWE-Bench Verified, SWE-Bench Pro albo FrontierSWE.
 
+## Porównanie własnych modeli
+
+Pole wyboru przy każdym modelu oznacza „mam do niego dostęp”. Wybór jest zapamiętywany lokalnie w przeglądarce i nie wymaga konta ani backendu. Panel **Moje modele** tworzy ranking tylko wśród zaznaczonych pozycji i reaguje na workload ustawiony w kalkulatorze.
+
+Końcowa ocena wykorzystuje trzy jawne składniki z regulowanymi wagami:
+
+- **Cena** — najtańszy wybrany model otrzymuje 100 punktów, pozostałe proporcjonalnie do relacji kosztów;
+- **Jakość badań** — zweryfikowany wynik ogólny BenchLM, a przy jego braku średnia GPQA i HLE;
+- **Efektywność** — jakość podzielona przez koszt workloadu, znormalizowana wśród wybranych modeli.
+
+Wynik jest dodatkowo mnożony przez współczynnik pewności dowodów. Dla danych BenchLM uwzględnia on ocenę pewności 1–4 oraz status `supported`/`estimated`. Model bez porównywalnej ceny lub badań pozostaje na liście użytkownika, ale nie dostaje sztucznej oceny.
+
 Benchmarki nie są automatycznie zgadywane na podstawie wyników wyszukiwarki. Dodanie nowego modelu do cennika nie oznacza automatycznie dostępnego i porównywalnego wyniku badania: najpierw musi istnieć źródło pierwotne, dokładna wersja modelu i opis trybu testu. Brak wyniku pozostaje oznaczony jako `—`.
 
 ## Uruchomienie krok po kroku

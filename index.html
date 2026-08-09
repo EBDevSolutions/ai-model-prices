@@ -87,8 +87,11 @@
     td { padding: 15px 16px; text-align: right; font-variant-numeric: tabular-nums; border-bottom: 1px solid rgba(255,255,255,.055); font-size: 13px; }
     tbody tr { transition: background .16s ease; }
     tbody tr:hover { background: rgba(255,255,255,.03); }
+    tbody tr.selected-row { background: rgba(110,231,183,.045); box-shadow: inset 3px 0 var(--green); }
     tbody tr:last-child td { border-bottom: 0; }
     .model-cell { display: flex; gap: 12px; align-items: center; min-width: 230px; }
+    .model-check { display: grid; place-items: center; flex: 0 0 auto; }
+    .model-check input { width: 17px; height: 17px; min-height: 0; margin: 0; accent-color: var(--green); }
     .logo { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 12px; font-weight: 850; color: #081013; flex: 0 0 auto; }
     .model-name { font-weight: 720; margin-bottom: 4px; }
     .model-meta { color: var(--muted); font-size: 11px; max-width: 280px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -115,6 +118,29 @@
     .bench-detail { display: flex; justify-content: space-between; gap: 8px; padding: 5px 7px; border: 1px solid var(--line); border-radius: 7px; background: rgba(255,255,255,.025); text-decoration: none; }
     .bench-detail:hover { border-color: rgba(125,211,252,.35); }
     .bench-detail strong { color: #dce1ea; }
+    .compare-panel { margin-top: 16px; overflow: hidden; }
+    .compare-body { padding: 18px 20px 20px; }
+    .compare-intro { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+    .compare-copy { margin: 4px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; max-width: 760px; }
+    .weight-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 18px 0; }
+    .weight-card { border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: rgba(255,255,255,.025); }
+    .weight-line { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px; color: #dce1ea; font-size: 11px; font-weight: 700; }
+    .weight-card input[type="range"] { min-height: 18px; height: 18px; padding: 0; border: 0; background: transparent; accent-color: var(--green); }
+    .selected-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+    .selected-model { display: inline-flex; align-items: center; gap: 7px; border: 1px solid rgba(110,231,183,.25); background: rgba(110,231,183,.06); color: #dcefe8; border-radius: 999px; padding: 5px 7px 5px 10px; font-size: 11px; }
+    .selected-model button { border: 0; background: transparent; color: var(--muted); padding: 0 3px; font-size: 15px; line-height: 1; }
+    .compare-results { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+    .compare-card { position: relative; border: 1px solid var(--line); border-radius: 14px; padding: 15px; background: rgba(255,255,255,.025); }
+    .compare-card.winner { border-color: rgba(110,231,183,.38); background: linear-gradient(145deg,rgba(110,231,183,.09),rgba(125,211,252,.035)); }
+    .compare-rank { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+    .compare-name { margin: 5px 0 12px; font-weight: 750; }
+    .compare-score { position: absolute; top: 13px; right: 14px; color: var(--green); font-size: 20px; font-weight: 800; letter-spacing: -.03em; }
+    .compare-metrics { display: grid; grid-template-columns: repeat(2,1fr); gap: 7px; }
+    .compare-metric { border-top: 1px solid var(--line); padding-top: 7px; }
+    .compare-metric span { display: block; color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .05em; }
+    .compare-metric strong { display: block; margin-top: 3px; font-size: 12px; }
+    .compare-note { margin-top: 9px; color: var(--muted); font-size: 10px; line-height: 1.4; }
+    .compare-empty { padding: 22px; text-align: center; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); font-size: 12px; }
     .empty { text-align: center !important; color: var(--muted); padding: 50px !important; }
     .calc-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
     .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -154,6 +180,7 @@
       .main, .side { grid-column: 1/-1; }
       .side { position: static; }
       .provider-card { grid-column: span 6; }
+      .compare-results { grid-template-columns: repeat(2,minmax(0,1fr)); }
     }
     @media (max-width: 720px) {
       .shell { width: min(100% - 20px, 1500px); padding-top: 22px; }
@@ -164,6 +191,9 @@
       .event { grid-template-columns: 1fr; gap: 6px; }
       .event-change { text-align: left; }
       footer { flex-direction: column; }
+      .weight-grid, .compare-results { grid-template-columns: 1fr; }
+      .compare-intro { display: block; }
+      .compare-intro .refresh { margin-top: 12px; }
     }
   </style>
 </head>
@@ -205,6 +235,20 @@
       </select>
       <button id="resetBtn" class="refresh" type="button">Wyczyść filtry</button>
       <div id="providerFilters" class="provider-filters"></div>
+    </section>
+
+    <section class="card compare-panel" aria-labelledby="compareTitle">
+      <div class="section-head"><div><h2 id="compareTitle" class="section-title">Moje modele — porównanie opłacalności</h2><p class="compare-copy">Zaznacz pole przy modelach, do których masz dostęp. Ranking reaguje na koszt Twojego workloadu oraz wybrane proporcje ceny, jakości badań i efektywności.</p></div><span id="selectedCount" class="count">0 wybranych</span></div>
+      <div class="compare-body">
+        <div class="compare-intro"><div><div class="section-title">Wagi oceny</div><p class="compare-copy">Pewność dowodów koryguje wynik dodatkowo; modeli bez ceny albo badań nie oceniamy sztucznie.</p></div><button id="clearSelectionBtn" class="refresh" type="button">Wyczyść wybór</button></div>
+        <div class="weight-grid">
+          <label class="weight-card" for="priceWeight"><span class="weight-line"><span>Cena</span><strong id="priceWeightValue">30%</strong></span><input id="priceWeight" type="range" min="0" max="100" step="5" value="30"></label>
+          <label class="weight-card" for="researchWeight"><span class="weight-line"><span>Jakość badań</span><strong id="researchWeightValue">40%</strong></span><input id="researchWeight" type="range" min="0" max="100" step="5" value="40"></label>
+          <label class="weight-card" for="efficiencyWeight"><span class="weight-line"><span>Efektywność</span><strong id="efficiencyWeightValue">30%</strong></span><input id="efficiencyWeight" type="range" min="0" max="100" step="5" value="30"></label>
+        </div>
+        <div id="selectedModels" class="selected-chips"></div>
+        <div id="compareResults"><div class="compare-empty">Zaznacz co najmniej dwa modele w tabeli poniżej.</div></div>
+      </div>
     </section>
 
     <div class="grid">
@@ -250,9 +294,14 @@
   <script>
     'use strict';
     const REFRESH_MS = 30 * 60 * 1000;
+    const SELECTION_KEY = 'ai-prices-owned-models-v1';
+    const WEIGHTS_KEY = 'ai-prices-comparison-weights-v1';
     const COLORS = {openai:'#6ee7b7',anthropic:'#f0a57b',google:'#7dd3fc',xai:'#f8fafc',deepseek:'#9fa8ff',alibaba:'#fcd34d',moonshot:'#fb7185'};
     const SHORT = {openai:'OA',anthropic:'AN',google:'GG',xai:'xAI',deepseek:'DS',alibaba:'QW',moonshot:'KM'};
-    const state = { prices:null, history:null, benchmarks:null, provider:'all', query:'', sort:'cost', codingBenchmark:'coding_category', nextRefresh:Date.now()+REFRESH_MS };
+    const readStored = (key, fallback) => { try { const value=JSON.parse(localStorage.getItem(key)); return value ?? fallback; } catch { return fallback; } };
+    const storedSelection = readStored(SELECTION_KEY, []);
+    const storedWeights = readStored(WEIGHTS_KEY, {price:30,research:40,efficiency:30});
+    const state = { prices:null, history:null, benchmarks:null, provider:'all', query:'', sort:'cost', codingBenchmark:'coding_category', selected:new Set(Array.isArray(storedSelection)?storedSelection:[]), weights:{price:Number(storedWeights.price) || 0,research:Number(storedWeights.research) || 0,efficiency:Number(storedWeights.efficiency) || 0}, nextRefresh:Date.now()+REFRESH_MS };
     const $ = id => document.getElementById(id);
     const esc = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
     const safeUrl = value => /^https:\/\//i.test(value || '') ? value : '#';
@@ -325,6 +374,12 @@
       const source = summary?.source_url || record?.source_url;
       const basis = summary ? `BenchLM ogółem ${summary.overall} / koszt workloadu · ${summary.verified_benchmark_count || 0} zweryfikowanych badań` : 'Średnia GPQA i HLE / koszt workloadu';
       return `<a class="availability active" title="${esc(basis)}" href="${esc(safeUrl(source))}" target="_blank" rel="noopener noreferrer">${score}/100</a>`;
+    };
+    const persistComparison = () => {
+      try {
+        localStorage.setItem(SELECTION_KEY,JSON.stringify([...state.selected]));
+        localStorage.setItem(WEIGHTS_KEY,JSON.stringify(state.weights));
+      } catch (error) { console.warn('Nie udało się zapisać preferencji porównania',error); }
     };
     const accessFor = model => ({alibaba:'Qwen Cloud · Model Studio · Qoder',moonshot:'Kimi · Moonshot API',openai:'API · Cursor*',anthropic:'API · Cursor*',google:'API · Cursor*',xai:'API · Cursor*',deepseek:'API · Cursor*'}[model.provider] || 'API');
     const dateTime = iso => {
@@ -417,8 +472,8 @@
       const providerNames = Object.fromEntries(state.prices.providers.map(p=>[p.id,p.name]));
       $('visibleCount').textContent = `${models.length} z ${state.prices.models.length}`;
       $('modelRows').innerHTML = models.length ? models.map(model=>`
-        <tr>
-          <td><div class="model-cell"><div class="logo" style="background:${COLORS[model.provider]||'#fff'}">${esc(SHORT[model.provider]||'?')}</div><div><div class="model-name">${esc(model.name)}<span class="availability ${esc(model.availability||'active')}">${esc(model.availability||'active')}</span></div><div class="model-meta" title="${esc(model.context_note||'')}">${esc(providerNames[model.provider])} · ${esc(model.tier||'standard')} · ${esc(model.context_note||'')}</div>${benchmarkDetails(model)}</div></div></td>
+        <tr class="${state.selected.has(model.id)?'selected-row':''}">
+          <td><div class="model-cell"><label class="model-check" title="Dodaj do porównania"><input class="model-select" type="checkbox" data-model-id="${esc(model.id)}" aria-label="Mam dostęp do ${esc(model.name)}" ${state.selected.has(model.id)?'checked':''}></label><div class="logo" style="background:${COLORS[model.provider]||'#fff'}">${esc(SHORT[model.provider]||'?')}</div><div><div class="model-name">${esc(model.name)}<span class="availability ${esc(model.availability||'active')}">${esc(model.availability||'active')}</span></div><div class="model-meta" title="${esc(model.context_note||'')}">${esc(providerNames[model.provider])} · ${esc(model.tier||'standard')} · ${esc(model.context_note||'')}</div>${benchmarkDetails(model)}</div></div></td>
           <td><span class="price">${priceCell(model,'input')}</span></td>
           <td><span class="price cache">${priceCell(model,'cached_input')}</span></td>
           <td><span class="price">${priceCell(model,'output')}</span></td>
@@ -434,6 +489,11 @@
         </tr>`).join('') : '<tr><td colspan="13" class="empty">Brak modeli pasujących do filtrów.</td></tr>';
       renderRanking(models);
       renderCodingRanking(models);
+      $('modelRows').querySelectorAll('.model-select').forEach(input=>input.addEventListener('change',()=>{
+        if (input.checked) state.selected.add(input.dataset.modelId); else state.selected.delete(input.dataset.modelId);
+        persistComparison(); renderModels();
+      }));
+      renderCompare();
     }
 
     function renderRanking(models) {
@@ -454,6 +514,48 @@
         const unit = benchmark==='coding_category' ? ' pkt' : '%';
         return `<div class="rank-row"><div class="rank-line"><span class="rank-name"><a class="source" title="${esc(evidence?.conditions || '')}" href="${esc(safeUrl(evidence?.source_url))}" target="_blank" rel="noopener noreferrer">${esc(model.name)}</a></span><span class="rank-price">${score.toFixed(1)}${unit}</span></div><div class="bar"><span style="width:${Math.max(3,score/max*100)}%"></span></div></div>`;
       }).join('') : `<p class="help">Brak opublikowanych wyników ${esc(label)} dla bieżącego filtra.</p>`;
+    }
+
+    function renderCompare() {
+      if (!state.prices) return;
+      const selected = state.prices.models.filter(model=>state.selected.has(model.id));
+      $('selectedCount').textContent = `${selected.length} wybranych`;
+      ['price','research','efficiency'].forEach(key=>{
+        const input = $(`${key}Weight`), label = $(`${key}WeightValue`);
+        input.value = state.weights[key]; label.textContent = `${state.weights[key]}%`;
+      });
+      $('selectedModels').innerHTML = selected.map(model=>`<span class="selected-model">${esc(model.name)}<button type="button" data-remove-model="${esc(model.id)}" aria-label="Usuń ${esc(model.name)} z porównania">×</button></span>`).join('');
+      $('selectedModels').querySelectorAll('[data-remove-model]').forEach(button=>button.addEventListener('click',()=>{state.selected.delete(button.dataset.removeModel);persistComparison();renderModels();}));
+      if (selected.length < 2) {
+        $('compareResults').innerHTML='<div class="compare-empty">Zaznacz co najmniej dwa modele w tabeli, aby utworzyć ranking opłacalności.</div>';
+        return;
+      }
+
+      const eligible = selected.filter(model=>comparable(model) && Number.isFinite(qualityForValue(model)));
+      if (!eligible.length) {
+        $('compareResults').innerHTML='<div class="compare-empty">Wybrane modele nie mają jednocześnie porównywalnej ceny i wyniku badań.</div>';
+        return;
+      }
+      const minCost = Math.min(...eligible.map(workload));
+      const maxEfficiency = Math.max(...eligible.map(model=>qualityForValue(model)/Math.max(workload(model),.000001)));
+      const weightTotal = Math.max(1,state.weights.price+state.weights.research+state.weights.efficiency);
+      const ranked = eligible.map(model=>{
+        const quality = qualityForValue(model), cost = workload(model);
+        const priceScore = Math.min(100,minCost/Math.max(cost,.000001)*100);
+        const efficiencyRaw = quality/Math.max(cost,.000001);
+        const efficiencyScore = Math.min(100,efficiencyRaw/Math.max(maxEfficiency,.000001)*100);
+        const summary = summaryFor(model), confidence = summary ? Math.max(0,Math.min(4,Number(summary.score_confidence)||0)) : 4;
+        const evidenceFactor = summary ? (0.82+0.045*confidence)*(summary.evidence_status==='estimated' ? .97 : 1) : 1;
+        const weighted = (priceScore*state.weights.price + quality*state.weights.research + efficiencyScore*state.weights.efficiency)/weightTotal;
+        return {model,quality,cost,priceScore,efficiencyRaw,efficiencyScore,confidence,evidenceFactor,score:Math.max(0,Math.min(100,weighted*evidenceFactor))};
+      }).sort((a,b)=>b.score-a.score);
+
+      const cards = ranked.map((item,index)=>{
+        const summary=summaryFor(item.model), evidence=summary?`${summary.verified_benchmark_count || 0} badań · pewność ${item.confidence}/4 · ${summary.evidence_status==='supported'?'wspierany':'szacowany'}`:'oficjalne wyniki źródłowe';
+        return `<article class="compare-card ${index===0?'winner':''}"><div class="compare-rank">${index===0?'Najbardziej opłacalny':`Miejsce ${index+1}`}</div><div class="compare-name">${esc(item.model.name)}</div><div class="compare-score">${item.score.toFixed(1)}</div><div class="compare-metrics"><div class="compare-metric"><span>Koszt</span><strong>${money(item.cost)}</strong></div><div class="compare-metric"><span>Jakość</span><strong>${item.quality.toFixed(1)} pkt</strong></div><div class="compare-metric"><span>Cena score</span><strong>${item.priceScore.toFixed(1)}</strong></div><div class="compare-metric"><span>Efektywność</span><strong>${item.efficiencyScore.toFixed(1)}</strong></div></div><div class="compare-note">${esc(evidence)} · korekta dowodów ×${item.evidenceFactor.toFixed(2)}</div></article>`;
+      });
+      const unavailable = selected.filter(model=>!comparable(model) || !Number.isFinite(qualityForValue(model))).map(model=>`<article class="compare-card"><div class="compare-rank">Bez oceny</div><div class="compare-name">${esc(model.name)}</div><div class="compare-note">Brakuje porównywalnej ceny lub badań. Model pozostaje w Twoim wyborze, ale nie wpływa na ranking.</div></article>`);
+      $('compareResults').innerHTML=`<div class="compare-results">${[...cards,...unavailable].join('')}</div>`;
     }
 
     function renderProviders() {
@@ -497,6 +599,8 @@
     $('search').addEventListener('input',event=>{state.query=event.target.value;renderModels();});
     $('sort').addEventListener('change',event=>{state.sort=event.target.value;renderModels();});
     $('codingBenchmark').addEventListener('change',event=>{state.codingBenchmark=event.target.value;renderCodingRanking(filteredModels());});
+    [['priceWeight','price'],['researchWeight','research'],['efficiencyWeight','efficiency']].forEach(([id,key])=>$(id).addEventListener('input',event=>{state.weights[key]=Number(event.target.value)||0;persistComparison();renderCompare();}));
+    $('clearSelectionBtn').addEventListener('click',()=>{state.selected.clear();persistComparison();renderModels();});
     ['inputTokens','cachedTokens','outputTokens'].forEach(id=>$(id).addEventListener('input',renderModels));
     $('refreshBtn').addEventListener('click',()=>loadData(true));
     $('resetBtn').addEventListener('click',()=>{state.provider='all';state.query='';state.sort='cost';$('search').value='';$('sort').value='cost';renderFilters();renderModels();});
