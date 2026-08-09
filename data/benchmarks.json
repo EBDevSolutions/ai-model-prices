@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "last_verified_at": "2026-08-09T08:00:00Z",
+  "methodology": {
+    "value_formula": "research_quality = 0.5 × GPQA Diamond + 0.5 × Humanity’s Last Exam (without tools); value = research_quality / user workload cost. The displayed 0–100 score is normalized only among models with both results.",
+    "required_for_value": ["gpqa_diamond", "hle_no_tools"],
+    "caveat": "Only same-named, publicly reported evaluations are combined. Coding tests are shown separately because SWE-Bench Pro, Terminal-Bench and FrontierSWE use different task sets and/or harnesses. Missing data is not estimated."
+  },
+  "benchmarks": [
+    {"id": "mmlu_pro", "label": "MMLU-Pro", "unit": "%", "higher_is_better": true},
+    {"id": "gpqa_diamond", "label": "GPQA Diamond", "unit": "%", "higher_is_better": true},
+    {"id": "hle_no_tools", "label": "HLE bez narzędzi", "unit": "%", "higher_is_better": true},
+    {"id": "swe_bench_pro", "label": "SWE-Bench Pro", "unit": "%", "higher_is_better": true},
+    {"id": "terminal_bench", "label": "Terminal-Bench", "unit": "%", "higher_is_better": true},
+    {"id": "frontier_swe", "label": "FrontierSWE", "unit": "%", "higher_is_better": true}
+  ],
+  "models": {
+    "openai:gpt-5.4": {
+      "scores": {"mmlu_pro": null, "gpqa_diamond": 93.0, "hle_no_tools": 39.8, "swe_bench_pro": 57.7, "terminal_bench": 75.1, "frontier_swe": null},
+      "conditions": "GPT-5.4 at xhigh reasoning effort; HLE without tools.",
+      "source_url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
+      "source_type": "vendor_report"
+    },
+    "openai:gpt-5.4-mini": {
+      "scores": {"mmlu_pro": null, "gpqa_diamond": 88.0, "hle_no_tools": 28.2, "swe_bench_pro": 54.4, "terminal_bench": 60.0, "frontier_swe": null},
+      "conditions": "GPT-5.4 mini at xhigh reasoning effort; HLE without tools.",
+      "source_url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
+      "source_type": "vendor_report"
+    },
+    "openai:gpt-5.4-nano": {
+      "scores": {"mmlu_pro": null, "gpqa_diamond": 82.8, "hle_no_tools": 24.3, "swe_bench_pro": 52.4, "terminal_bench": 46.3, "frontier_swe": null},
+      "conditions": "GPT-5.4 nano at xhigh reasoning effort; HLE without tools.",
+      "source_url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
+      "source_type": "vendor_report"
+    },
+    "moonshot:kimi-k3": {
+      "scores": {"mmlu_pro": null, "gpqa_diamond": 93.5, "hle_no_tools": 43.5, "swe_bench_pro": null, "terminal_bench": 88.3, "frontier_swe": 81.2},
+      "conditions": "Kimi K3 at max reasoning effort, temperature 1.0; HLE-Full without tools.",
+      "source_url": "https://arxiv.org/abs/2607.24653",
+      "source_type": "technical_report"
+    }
+  }
+}

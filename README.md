@@ -34,6 +34,12 @@ Updater izoluje błędy dostawców. Jeśli pobranie albo parser jednego źródł
 
 Modele multimodalne z wieloma osobnymi stawkami audio/obrazu nie są mieszane z jedną stawką tekstową, jeżeli oficjalna tabela nie daje jednoznacznej pary input/output. Dzięki temu ranking nie porównuje różnych jednostek jakby były tym samym kosztem.
 
+## Benchmarki i opłacalność badawcza
+
+`data/benchmarks.json` zawiera wyłącznie wyniki podane w cytowanych źródłach: MMLU-Pro, GPQA Diamond, Humanity's Last Exam bez narzędzi, SWE-Bench Pro, Terminal-Bench i FrontierSWE. Każda komórka z wynikiem prowadzi do publikacji oraz ma podpowiedź z warunkami uruchomienia.
+
+Wskaźnik **Wartość badawcza** nie używa nazw modeli ani szacunków. Dla modelu z pełnymi danymi oblicza średnią `GPQA Diamond` i `HLE bez narzędzi`, dzieli ją przez koszt workloadu z kalkulatora, a następnie skaluje wynik 0–100 wyłącznie w grupie modeli mających oba wyniki. Brak wyniku jest pokazywany jako `—` i wyłącza model z rankingu wartości. Testy codingowe pozostają osobnymi kolumnami, ponieważ różne zestawy/harnessy nie są rzetelnie wymienne.
+
 ## Uruchomienie krok po kroku
 
 ### 1. Utwórz repozytorium
@@ -137,6 +143,8 @@ Następnie otwórz `http://localhost:8000`. Nie otwieraj `index.html` przez `fil
 - [Alibaba Cloud Model Studio pricing](https://www.alibabacloud.com/help/en/model-studio/model-pricing)
 - [Qwen3.8-Max availability](https://help.aliyun.com/en/model-studio/web-search)
 - [Moonshot / Kimi pricing](https://platform.kimi.ai/docs/pricing/chat-k3)
+- [OpenAI GPT-5.4 evaluation report](https://openai.com/index/introducing-gpt-5-4-mini-and-nano/)
+- [Kimi K3 technical report](https://arxiv.org/abs/2607.24653)
 
 ## Utrzymanie
 

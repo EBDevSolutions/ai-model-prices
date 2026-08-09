@@ -186,7 +186,7 @@
         <option value="input">Cena input ↑</option>
         <option value="cached_input">Cena cache ↑</option>
         <option value="output">Cena output ↑</option>
-        <option value="value">Opłacalność ↓</option>
+        <option value="value">Wartość badawcza ↓</option>
         <option value="name">Nazwa A–Z</option>
       </select>
       <button id="resetBtn" class="refresh" type="button">Wyczyść filtry</button>
@@ -198,8 +198,8 @@
         <div class="section-head"><h2 class="section-title">Cennik modeli</h2><div id="visibleCount" class="count">—</div></div>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Model</th><th>Input</th><th>Cached input</th><th>Output</th><th>Twój koszt</th><th>Opłacalność</th><th>Dostęp</th><th>Źródło</th></tr></thead>
-            <tbody id="modelRows"><tr><td colspan="8" class="empty">Ładowanie oficjalnych cen…</td></tr></tbody>
+            <thead><tr><th>Model</th><th>Input</th><th>Cached input</th><th>Output</th><th>Twój koszt</th><th>MMLU-Pro</th><th>GPQA</th><th>HLE</th><th>SWE-Pro</th><th>Terminal</th><th>FrontierSWE</th><th>Wartość badawcza</th><th>Dostęp</th><th>Źródło ceny</th></tr></thead>
+            <tbody id="modelRows"><tr><td colspan="14" class="empty">Ładowanie oficjalnych cen i benchmarków…</td></tr></tbody>
           </table>
         </div>
       </section>
@@ -211,7 +211,7 @@
           <div class="input-group"><label for="cachedTokens">Cached</label><input id="cachedTokens" type="number" min="0" step="0.1" value="0"></div>
           <div class="input-group full"><label for="outputTokens">Output</label><input id="outputTokens" type="number" min="0" step="0.1" value="0.25"></div>
         </div>
-        <p class="help">Koszt = input × stawka input + cached × stawka cache + output × stawka output. „Opłacalność” łączy koszt workloadu z orientacyjną klasą modelu; nie jest niezależnym benchmarkiem jakości. Gwiazdka przy Cursor oznacza katalog zmienny — sprawdź selektor w swojej subskrypcji.</p>
+        <p class="help">Koszt = input × stawka input + cached × stawka cache + output × stawka output. Wartość badawcza = średnia GPQA Diamond i HLE bez narzędzi / koszt workloadu; wynik jest skalowany 0–100 tylko wśród modeli z oboma wynikami. Każdy wynik w tabeli prowadzi do źródła oraz warunków testu. Nie mieszamy różnych testów codingowych w jedną liczbę. Gwiazdka przy Cursor oznacza katalog zmienny — sprawdź selektor w swojej subskrypcji.</p>
         <div class="ranking"><h3 class="section-title">Najtańsze dla workloadu</h3><div id="ranking"></div></div>
       </aside>
     </div>
@@ -237,7 +237,7 @@
     const REFRESH_MS = 30 * 60 * 1000;
     const COLORS = {openai:'#6ee7b7',anthropic:'#f0a57b',google:'#7dd3fc',xai:'#f8fafc',deepseek:'#9fa8ff',alibaba:'#fcd34d',moonshot:'#fb7185'};
     const SHORT = {openai:'OA',anthropic:'AN',google:'GG',xai:'xAI',deepseek:'DS',alibaba:'QW',moonshot:'KM'};
-    const state = { prices:null, history:null, provider:'all', query:'', sort:'cost', nextRefresh:Date.now()+REFRESH_MS };
+    const state = { prices:null, history:null, benchmarks:null, provider:'all', query:'', sort:'cost', nextRefresh:Date.now()+REFRESH_MS };
     const $ = id => document.getElementById(id);
     const esc = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
     const safeUrl = value => /^https:\/\//i.test(value || '') ? value : '#';
@@ -251,20 +251,28 @@
     };
     const priceCell = (model, field) => comparable(model) ? money(model[field]) : '—';
     const costCell = model => comparable(model) ? money(workload(model)) : 'Brak stawki';
-    const capabilityWeight = model => {
-      const id = model.model_id.toLowerCase();
-      if (id==='kimi-k3' || id==='qwen3.8-max' || /(?:opus|pro|\bmax\b)/.test(id)) return 100;
-      if (/(?:coder|code|sonnet|plus|reasoning|thinking|k2\.7)/.test(id)) return 78;
-      if (/(?:flash|mini|nano|lite)/.test(id)) return 48;
-      return 65;
+    const benchmarkRecord = model => state.benchmarks?.models?.[model.id] || null;
+    const scoreFor = (model, benchmark) => benchmarkRecord(model)?.scores?.[benchmark] ?? null;
+    const researchQuality = model => {
+      const gpqa = scoreFor(model,'gpqa_diamond'), hle = scoreFor(model,'hle_no_tools');
+      return Number.isFinite(gpqa) && Number.isFinite(hle) ? (gpqa+hle)/2 : null;
     };
+    const researchValue = model => researchQuality(model) != null && comparable(model) ? researchQuality(model)/Math.max(workload(model),.000001) : null;
     const valueScore = model => {
-      if (!comparable(model)) return null;
-      const candidates = state.prices.models.filter(item=>item.active!==false && comparable(item));
-      const top = Math.max(...candidates.map(item=>capabilityWeight(item)/Math.max(workload(item),.000001)),.000001);
-      return Math.max(1,Math.min(100,Math.round(100*Math.sqrt((capabilityWeight(model)/Math.max(workload(model),.000001))/top))));
+      const raw = researchValue(model);
+      if (raw == null) return null;
+      const candidates = state.prices.models.map(researchValue).filter(Number.isFinite);
+      const top = Math.max(...candidates,.000001);
+      return Math.max(1,Math.min(100,Math.round(100*Math.sqrt(raw/top))));
     };
-    const valueCell = model => valueScore(model) == null ? '<span class="availability preview">brak ceny</span>' : `<span class="availability active">${valueScore(model)}/100</span>`;
+    const benchmarkCell = (model, benchmark) => {
+      const value = scoreFor(model,benchmark), record = benchmarkRecord(model);
+      return Number.isFinite(value) ? `<a class="source" title="${esc(record.conditions || '')}" href="${esc(safeUrl(record.source_url))}" target="_blank" rel="noopener noreferrer">${value.toFixed(1)}%</a>` : '—';
+    };
+    const valueCell = model => {
+      const score = valueScore(model), record = benchmarkRecord(model);
+      return score == null ? '<span class="availability preview">brak pełnych danych</span>' : `<a class="availability active" title="${esc(record.conditions || '')}" href="${esc(safeUrl(record.source_url))}" target="_blank" rel="noopener noreferrer">${score}/100</a>`;
+    };
     const accessFor = model => ({alibaba:'Qwen Cloud · Model Studio · Qoder',moonshot:'Kimi · Moonshot API',openai:'API · Cursor*',anthropic:'API · Cursor*',google:'API · Cursor*',xai:'API · Cursor*',deepseek:'API · Cursor*'}[model.provider] || 'API');
     const dateTime = iso => {
       if (!iso) return 'brak';
@@ -292,9 +300,9 @@
       button.textContent = manual ? 'Odświeżanie…' : '↻ Odśwież teraz';
       try {
         const stamp = Date.now();
-        const [prices, history] = await Promise.all([fetchJSON('data/prices.json',stamp), fetchJSON('data/history.json',stamp)]);
-        if (!Array.isArray(prices.models) || !Array.isArray(prices.providers)) throw new Error('Nieprawidłowy format prices.json');
-        state.prices = prices; state.history = history; state.nextRefresh = Date.now()+REFRESH_MS;
+        const [prices, history, benchmarks] = await Promise.all([fetchJSON('data/prices.json',stamp), fetchJSON('data/history.json',stamp), fetchJSON('data/benchmarks.json',stamp)]);
+        if (!Array.isArray(prices.models) || !Array.isArray(prices.providers) || !benchmarks.models) throw new Error('Nieprawidłowy format danych');
+        state.prices = prices; state.history = history; state.benchmarks = benchmarks; state.nextRefresh = Date.now()+REFRESH_MS;
         $('notice').style.display = 'none';
         renderAll();
       } catch (error) {
@@ -361,10 +369,16 @@
           <td><span class="price cache">${priceCell(model,'cached_input')}</span></td>
           <td><span class="price">${priceCell(model,'output')}</span></td>
           <td><span class="cost">${costCell(model)}</span></td>
+          <td>${benchmarkCell(model,'mmlu_pro')}</td>
+          <td>${benchmarkCell(model,'gpqa_diamond')}</td>
+          <td>${benchmarkCell(model,'hle_no_tools')}</td>
+          <td>${benchmarkCell(model,'swe_bench_pro')}</td>
+          <td>${benchmarkCell(model,'terminal_bench')}</td>
+          <td>${benchmarkCell(model,'frontier_swe')}</td>
           <td>${valueCell(model)}</td>
           <td><span class="model-meta">${esc(accessFor(model))}</span></td>
           <td><a class="source" href="${esc(safeUrl(model.source_url))}" target="_blank" rel="noopener noreferrer">Otwórz ↗</a></td>
-        </tr>`).join('') : '<tr><td colspan="8" class="empty">Brak modeli pasujących do filtrów.</td></tr>';
+        </tr>`).join('') : '<tr><td colspan="14" class="empty">Brak modeli pasujących do filtrów.</td></tr>';
       renderRanking(models);
     }
 
