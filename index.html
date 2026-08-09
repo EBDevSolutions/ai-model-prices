@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Aktualizowany automatycznie dashboard cen tokenów modeli AI.">
+  <meta name="color-scheme" content="dark">
+  <title>AI Model Prices — Dashboard</title>
+  <style>
+    :root {
+      --bg: #090b10;
+      --panel: rgba(18, 21, 30, .82);
+      --panel-2: #151925;
+      --line: rgba(255,255,255,.09);
+      --text: #f5f7fb;
+      --muted: #9199aa;
+      --green: #6ee7b7;
+      --blue: #7dd3fc;
+      --violet: #c4b5fd;
+      --amber: #fcd34d;
+      --red: #fb7185;
+      --shadow: 0 22px 70px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% -8%, rgba(124, 58, 237, .19), transparent 34rem),
+        radial-gradient(circle at 88% 4%, rgba(14, 165, 233, .14), transparent 28rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input, select { font: inherit; }
+    button, select { cursor: pointer; }
+    a { color: inherit; }
+    .shell { width: min(1500px, calc(100% - 32px)); margin: 0 auto; padding: 34px 0 60px; }
+    header { display: flex; justify-content: space-between; gap: 28px; align-items: flex-start; margin-bottom: 28px; }
+    .eyebrow { display: flex; gap: 10px; align-items: center; color: var(--blue); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(110,231,183,.11); }
+    h1 { margin: 10px 0 8px; font-size: clamp(34px, 5vw, 68px); line-height: .98; letter-spacing: -.055em; font-weight: 760; }
+    .lede { margin: 0; color: var(--muted); max-width: 720px; font-size: 16px; line-height: 1.6; }
+    .status-wrap { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; min-width: 260px; }
+    .status-line { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; }
+    .refresh {
+      color: var(--text); background: rgba(255,255,255,.055); border: 1px solid var(--line);
+      border-radius: 12px; padding: 10px 14px; transition: .2s ease;
+    }
+    .refresh:hover { background: rgba(255,255,255,.1); transform: translateY(-1px); }
+    .refresh:disabled { opacity: .55; transform: none; cursor: wait; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card {
+      background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: var(--shadow); backdrop-filter: blur(16px);
+    }
+    .metric { grid-column: span 3; padding: 19px 20px; min-height: 124px; display: flex; flex-direction: column; justify-content: space-between; }
+    .metric-label { color: var(--muted); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    .metric-value { font-size: 30px; line-height: 1; letter-spacing: -.04em; font-weight: 740; }
+    .metric-foot { color: var(--muted); font-size: 12px; }
+    .controls { margin-top: 16px; padding: 16px; display: grid; grid-template-columns: minmax(260px,1fr) 220px auto; gap: 12px; align-items: center; }
+    .field { position: relative; }
+    .field svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); width: 18px; }
+    input, select {
+      width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: 12px;
+      background: rgba(255,255,255,.045); color: var(--text); outline: none; padding: 10px 13px;
+    }
+    .field input { padding-left: 42px; }
+    input:focus, select:focus { border-color: rgba(125,211,252,.55); box-shadow: 0 0 0 3px rgba(125,211,252,.08); }
+    select option { background: #151925; }
+    .provider-filters { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; padding-top: 3px; }
+    .chip { border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; }
+    .chip:hover { color: var(--text); }
+    .chip.active { color: #07120f; background: var(--green); border-color: var(--green); }
+    .main { grid-column: span 9; overflow: hidden; margin-top: 16px; }
+    .side { grid-column: span 3; margin-top: 16px; padding: 18px; align-self: start; position: sticky; top: 16px; }
+    .section-head { padding: 18px 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    .section-title { margin: 0; font-size: 15px; font-weight: 750; letter-spacing: -.01em; }
+    .count { color: var(--muted); font-size: 12px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 850px; }
+    th { padding: 12px 16px; text-align: right; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .09em; font-weight: 750; border-bottom: 1px solid var(--line); }
+    th:first-child, td:first-child { text-align: left; }
+    td { padding: 15px 16px; text-align: right; font-variant-numeric: tabular-nums; border-bottom: 1px solid rgba(255,255,255,.055); font-size: 13px; }
+    tbody tr { transition: background .16s ease; }
+    tbody tr:hover { background: rgba(255,255,255,.03); }
+    tbody tr:last-child td { border-bottom: 0; }
+    .model-cell { display: flex; gap: 12px; align-items: center; min-width: 230px; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 12px; font-weight: 850; color: #081013; flex: 0 0 auto; }
+    .model-name { font-weight: 720; margin-bottom: 4px; }
+    .model-meta { color: var(--muted); font-size: 11px; max-width: 280px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .price { font-weight: 650; }
+    .price.cache { color: var(--green); }
+    .cost { color: var(--blue); font-weight: 780; }
+    .source { color: var(--muted); text-decoration: none; font-size: 12px; }
+    .source:hover { color: var(--blue); }
+    .empty { text-align: center !important; color: var(--muted); padding: 50px !important; }
+    .calc-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .input-group label { display: block; color: var(--muted); font-size: 11px; margin: 0 0 6px 2px; }
+    .input-group input { font-variant-numeric: tabular-nums; }
+    .input-group.full { grid-column: 1/-1; }
+    .help { color: var(--muted); font-size: 11px; line-height: 1.45; margin: 14px 0 0; }
+    .ranking { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .rank-row { margin-top: 13px; }
+    .rank-line { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; margin-bottom: 7px; }
+    .rank-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #dce1ea; }
+    .rank-price { font-variant-numeric: tabular-nums; font-weight: 750; }
+    .bar { height: 5px; border-radius: 99px; background: rgba(255,255,255,.06); overflow: hidden; }
+    .bar span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg,var(--green),var(--blue)); min-width: 3px; }
+    .below { margin-top: 16px; }
+    .provider-card { grid-column: span 4; padding: 18px; }
+    .provider-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .provider-name { display: flex; align-items: center; gap: 10px; font-weight: 730; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .dot.ok { background: var(--green); box-shadow: 0 0 0 4px rgba(110,231,183,.09); }
+    .dot.error { background: var(--red); box-shadow: 0 0 0 4px rgba(251,113,133,.09); }
+    .dot.partial, .dot.snapshot { background: var(--amber); box-shadow: 0 0 0 4px rgba(252,211,77,.09); }
+    .provider-status { color: var(--muted); text-transform: uppercase; font-size: 10px; letter-spacing: .08em; font-weight: 800; }
+    .provider-info { margin-top: 14px; color: var(--muted); font-size: 11px; line-height: 1.5; min-height: 34px; }
+    .history { grid-column: 1/-1; margin-top: 16px; overflow: hidden; }
+    .event { padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,.055); display: grid; grid-template-columns: 160px 1fr auto; gap: 15px; align-items: center; font-size: 12px; }
+    .event:last-child { border-bottom: 0; }
+    .event-time { color: var(--muted); }
+    .event-model { font-weight: 700; }
+    .event-change { color: var(--green); font-variant-numeric: tabular-nums; text-align: right; }
+    .notice { display: none; margin: 0 0 16px; border: 1px solid rgba(251,113,133,.3); background: rgba(251,113,133,.08); border-radius: 14px; padding: 14px 16px; color: #fecdd3; line-height: 1.5; font-size: 13px; }
+    footer { color: var(--muted); display: flex; justify-content: space-between; gap: 20px; font-size: 11px; padding: 26px 4px 0; }
+    .skeleton { animation: pulse-bg 1.4s ease-in-out infinite; color: transparent !important; border-radius: 5px; background: rgba(255,255,255,.07); }
+    @keyframes pulse-bg { 50% { opacity: .45; } }
+    @media (max-width: 1100px) {
+      .metric { grid-column: span 6; }
+      .main, .side { grid-column: 1/-1; }
+      .side { position: static; }
+      .provider-card { grid-column: span 6; }
+    }
+    @media (max-width: 720px) {
+      .shell { width: min(100% - 20px, 1500px); padding-top: 22px; }
+      header { display: block; }
+      .status-wrap { align-items: flex-start; margin-top: 18px; }
+      .metric, .provider-card { grid-column: 1/-1; }
+      .controls { grid-template-columns: 1fr; }
+      .event { grid-template-columns: 1fr; gap: 6px; }
+      .event-change { text-align: left; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div id="notice" class="notice" role="alert"></div>
+    <header>
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> Live pricing monitor</div>
+        <h1>AI model prices.</h1>
+        <p class="lede">Porównuj stawki API, obliczaj koszt własnego workloadu i kontroluj kondycję oficjalnych źródeł — bez backendu.</p>
+      </div>
+      <div class="status-wrap">
+        <div class="status-line"><span id="freshDot" class="dot snapshot"></span><span id="updatedLabel">Ładowanie danych…</span></div>
+        <div class="status-line">Następne odświeżenie: <strong id="countdown">30:00</strong></div>
+        <button id="refreshBtn" class="refresh" type="button">↻ Odśwież teraz</button>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="Podsumowanie">
+      <div class="card metric"><div class="metric-label">Modele</div><div id="modelCount" class="metric-value skeleton">00</div><div class="metric-foot">w monitorowanym snapshotcie</div></div>
+      <div class="card metric"><div class="metric-label">Dostawcy</div><div id="providerCount" class="metric-value skeleton">00</div><div id="providerFoot" class="metric-foot">sprawdzanie statusu…</div></div>
+      <div class="card metric"><div class="metric-label">Najtańszy input</div><div id="cheapestInput" class="metric-value skeleton">$0.00</div><div id="cheapestInputName" class="metric-foot">—</div></div>
+      <div class="card metric"><div class="metric-label">Najtańszy output</div><div id="cheapestOutput" class="metric-value skeleton">$0.00</div><div id="cheapestOutputName" class="metric-foot">—</div></div>
+    </section>
+
+    <section class="card controls" aria-label="Filtry">
+      <div class="field">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <input id="search" type="search" placeholder="Szukaj modelu lub dostawcy…" autocomplete="off">
+      </div>
+      <select id="sort" aria-label="Sortowanie">
+        <option value="cost">Koszt workloadu ↑</option>
+        <option value="input">Cena input ↑</option>
+        <option value="cached_input">Cena cache ↑</option>
+        <option value="output">Cena output ↑</option>
+        <option value="name">Nazwa A–Z</option>
+      </select>
+      <button id="resetBtn" class="refresh" type="button">Wyczyść filtry</button>
+      <div id="providerFilters" class="provider-filters"></div>
+    </section>
+
+    <div class="grid">
+      <section class="card main">
+        <div class="section-head"><h2 class="section-title">Cennik modeli</h2><div id="visibleCount" class="count">—</div></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Model</th><th>Input</th><th>Cached input</th><th>Output</th><th>Twój koszt</th><th>Źródło</th></tr></thead>
+            <tbody id="modelRows"><tr><td colspan="6" class="empty">Ładowanie oficjalnych cen…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <aside class="card side">
+        <div class="calc-head"><h2 class="section-title">Kalkulator</h2><span class="count">mln tokenów</span></div>
+        <div class="calc-grid">
+          <div class="input-group"><label for="inputTokens">Input</label><input id="inputTokens" type="number" min="0" step="0.1" value="1"></div>
+          <div class="input-group"><label for="cachedTokens">Cached</label><input id="cachedTokens" type="number" min="0" step="0.1" value="0"></div>
+          <div class="input-group full"><label for="outputTokens">Output</label><input id="outputTokens" type="number" min="0" step="0.1" value="0.25"></div>
+        </div>
+        <p class="help">Koszt = input × stawka input + cached × stawka cache + output × stawka output. Narzędzia, storage, batch i podatki nie są doliczane.</p>
+        <div class="ranking"><h3 class="section-title">Najtańsze dla workloadu</h3><div id="ranking"></div></div>
+      </aside>
+    </div>
+
+    <section class="below">
+      <div class="section-head" style="padding-left:4px;padding-right:4px;border:0"><h2 class="section-title">Kondycja źródeł</h2><span class="count">ostatnia próba parsera</span></div>
+      <div id="providerCards" class="grid"></div>
+    </section>
+
+    <section class="card history">
+      <div class="section-head"><h2 class="section-title">Ostatnie zmiany cen</h2><span id="historyCount" class="count">—</span></div>
+      <div id="historyList"><div class="empty">Ładowanie historii…</div></div>
+    </section>
+
+    <footer>
+      <span>Ceny w USD za 1 mln tokenów · snapshot nie zastępuje faktury dostawcy</span>
+      <span>Dane odświeżane z cache-bustingiem co 30 minut</span>
+    </footer>
+  </div>
+
+  <script>
+    'use strict';
+    const REFRESH_MS = 30 * 60 * 1000;
+    const COLORS = {openai:'#6ee7b7',anthropic:'#f0a57b',google:'#7dd3fc',xai:'#f8fafc',deepseek:'#9fa8ff',alibaba:'#fcd34d'};
+    const SHORT = {openai:'OA',anthropic:'AN',google:'GG',xai:'xAI',deepseek:'DS',alibaba:'QW'};
+    const state = { prices:null, history:null, provider:'all', query:'', sort:'cost', nextRefresh:Date.now()+REFRESH_MS };
+    const $ = id => document.getElementById(id);
+    const esc = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+    const safeUrl = value => /^https:\/\//i.test(value || '') ? value : '#';
+    const number = id => Math.max(0, Number($(id).value) || 0);
+    const workload = model => number('inputTokens')*model.input + number('cachedTokens')*model.cached_input + number('outputTokens')*model.output;
+    const money = value => {
+      const v = Number(value);
+      const digits = v < .01 ? 6 : v < 1 ? 4 : 2;
+      return '$' + v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:digits});
+    };
+    const dateTime = iso => {
+      if (!iso) return 'brak';
+      const date = new Date(iso);
+      return Number.isNaN(date.getTime()) ? 'brak' : new Intl.DateTimeFormat('pl-PL',{dateStyle:'medium',timeStyle:'short'}).format(date);
+    };
+    const relative = iso => {
+      if (!iso) return 'jeszcze nie sprawdzono';
+      const minutes = Math.round((Date.now()-new Date(iso).getTime())/60000);
+      if (minutes < 1) return 'przed chwilą';
+      if (minutes < 60) return `${minutes} min temu`;
+      const hours = Math.round(minutes/60);
+      return hours < 48 ? `${hours} godz. temu` : dateTime(iso);
+    };
+
+    async function fetchJSON(path, stamp) {
+      const response = await fetch(`${path}?v=${stamp}`, {cache:'no-store'});
+      if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
+      return response.json();
+    }
+
+    async function loadData(manual=false) {
+      const button = $('refreshBtn');
+      button.disabled = true;
+      button.textContent = manual ? 'Odświeżanie…' : '↻ Odśwież teraz';
+      try {
+        const stamp = Date.now();
+        const [prices, history] = await Promise.all([fetchJSON('data/prices.json',stamp), fetchJSON('data/history.json',stamp)]);
+        if (!Array.isArray(prices.models) || !Array.isArray(prices.providers)) throw new Error('Nieprawidłowy format prices.json');
+        state.prices = prices; state.history = history; state.nextRefresh = Date.now()+REFRESH_MS;
+        $('notice').style.display = 'none';
+        renderAll();
+      } catch (error) {
+        $('notice').innerHTML = `<strong>Nie udało się wczytać danych.</strong> ${esc(error.message)}. Jeśli otwierasz plik przez <code>file://</code>, użyj adresu GitHub Pages albo lokalnego serwera HTTP.`;
+        $('notice').style.display = 'block';
+        console.error(error);
+      } finally {
+        button.disabled = false; button.textContent = '↻ Odśwież teraz';
+      }
+    }
+
+    function renderAll() {
+      renderMetrics(); renderFilters(); renderModels(); renderProviders(); renderHistory(); renderFreshness();
+      document.querySelectorAll('.skeleton').forEach(el => el.classList.remove('skeleton'));
+    }
+
+    function renderMetrics() {
+      const {models,providers} = state.prices;
+      $('modelCount').textContent = models.length;
+      $('providerCount').textContent = providers.length;
+      const healthy = providers.filter(p=>p.status==='ok').length;
+      $('providerFoot').textContent = `${healthy} źródeł bez ostrzeżeń`;
+      const cheapestIn = [...models].sort((a,b)=>a.input-b.input)[0];
+      const cheapestOut = [...models].sort((a,b)=>a.output-b.output)[0];
+      $('cheapestInput').textContent = money(cheapestIn.input);
+      $('cheapestInputName').textContent = cheapestIn.name;
+      $('cheapestOutput').textContent = money(cheapestOut.output);
+      $('cheapestOutputName').textContent = cheapestOut.name;
+    }
+
+    function renderFilters() {
+      const container = $('providerFilters');
+      const chips = [{id:'all',name:'Wszyscy'},...state.prices.providers];
+      container.innerHTML = chips.map(p=>`<button type="button" class="chip ${state.provider===p.id?'active':''}" data-provider="${esc(p.id)}">${esc(p.name)}</button>`).join('');
+      container.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{state.provider=btn.dataset.provider;renderFilters();renderModels();}));
+    }
+
+    function filteredModels() {
+      const providers = Object.fromEntries(state.prices.providers.map(p=>[p.id,p.name]));
+      let models = state.prices.models.filter(model => {
+        const haystack = `${model.name} ${model.model_id} ${providers[model.provider] || model.provider}`.toLowerCase();
+        return (state.provider==='all' || model.provider===state.provider) && haystack.includes(state.query.toLowerCase());
+      });
+      return models.sort((a,b)=> state.sort==='name' ? a.name.localeCompare(b.name) : (state.sort==='cost' ? workload(a)-workload(b) : a[state.sort]-b[state.sort]));
+    }
+
+    function renderModels() {
+      if (!state.prices) return;
+      const models = filteredModels();
+      const providerNames = Object.fromEntries(state.prices.providers.map(p=>[p.id,p.name]));
+      $('visibleCount').textContent = `${models.length} z ${state.prices.models.length}`;
+      $('modelRows').innerHTML = models.length ? models.map(model=>`
+        <tr>
+          <td><div class="model-cell"><div class="logo" style="background:${COLORS[model.provider]||'#fff'}">${esc(SHORT[model.provider]||'?')}</div><div><div class="model-name">${esc(model.name)}</div><div class="model-meta" title="${esc(model.context_note||'')}">${esc(providerNames[model.provider])} · ${esc(model.tier||'standard')} · ${esc(model.context_note||'')}</div></div></div></td>
+          <td><span class="price">${money(model.input)}</span></td>
+          <td><span class="price cache">${money(model.cached_input)}</span></td>
+          <td><span class="price">${money(model.output)}</span></td>
+          <td><span class="cost">${money(workload(model))}</span></td>
+          <td><a class="source" href="${esc(safeUrl(model.source_url))}" target="_blank" rel="noopener noreferrer">Otwórz ↗</a></td>
+        </tr>`).join('') : '<tr><td colspan="6" class="empty">Brak modeli pasujących do filtrów.</td></tr>';
+      renderRanking(models);
+    }
+
+    function renderRanking(models) {
+      const ranked = [...models].sort((a,b)=>workload(a)-workload(b)).slice(0,5);
+      const max = Math.max(...ranked.map(workload),.000001);
+      $('ranking').innerHTML = ranked.length ? ranked.map(model=>`
+        <div class="rank-row"><div class="rank-line"><span class="rank-name">${esc(model.name)}</span><span class="rank-price">${money(workload(model))}</span></div><div class="bar"><span style="width:${Math.max(3,workload(model)/max*100)}%"></span></div></div>`).join('') : '<p class="help">Brak wyników.</p>';
+    }
+
+    function renderProviders() {
+      $('providerCards').innerHTML = state.prices.providers.map(provider=>{
+        const status = ['ok','partial','error','snapshot'].includes(provider.status) ? provider.status : 'snapshot';
+        const message = provider.error ? provider.error : (status==='snapshot' ? 'Snapshot startowy — uruchom pierwszą weryfikację.' : `Ostatni sukces: ${relative(provider.last_success_at)}`);
+        return `<article class="card provider-card"><div class="provider-top"><div class="provider-name"><span class="dot ${status}"></span>${esc(provider.name)}</div><span class="provider-status">${esc(status)}</span></div><div class="provider-info">${esc(message)}</div></article>`;
+      }).join('');
+    }
+
+    function renderHistory() {
+      const events = [...(state.history?.events || [])].reverse().slice(0,20);
+      $('historyCount').textContent = `${state.history?.events?.length || 0} wpisów`;
+      if (!events.length) { $('historyList').innerHTML='<div class="empty">Brak zmian od snapshotu startowego.</div>'; return; }
+      $('historyList').innerHTML = events.map(event=>{
+        const detail = Object.entries(event.changes||{}).map(([field,change])=>`${field}: ${money(change.from)} → ${money(change.to)}`).join(' · ');
+        return `<div class="event"><div class="event-time">${esc(dateTime(event.timestamp))}</div><div class="event-model">${esc(event.model_id)}</div><div class="event-change">${esc(detail)}</div></div>`;
+      }).join('');
+    }
+
+    function renderFreshness() {
+      const checked = state.prices.last_checked_at;
+      const age = checked ? Date.now()-new Date(checked).getTime() : Infinity;
+      $('updatedLabel').textContent = `Sprawdzono ${relative(checked)}`;
+      $('freshDot').className = `dot ${age < 45*60*1000 ? 'ok' : age < 24*60*60*1000 ? 'partial' : 'error'}`;
+      $('freshDot').title = checked ? dateTime(checked) : 'Brak sprawdzenia';
+    }
+
+    function tick() {
+      const left = Math.max(0,state.nextRefresh-Date.now());
+      const minutes = Math.floor(left/60000), seconds = Math.floor((left%60000)/1000);
+      $('countdown').textContent = `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+      if (left <= 0) loadData(false);
+    }
+
+    $('search').addEventListener('input',event=>{state.query=event.target.value;renderModels();});
+    $('sort').addEventListener('change',event=>{state.sort=event.target.value;renderModels();});
+    ['inputTokens','cachedTokens','outputTokens'].forEach(id=>$(id).addEventListener('input',renderModels));
+    $('refreshBtn').addEventListener('click',()=>loadData(true));
+    $('resetBtn').addEventListener('click',()=>{state.provider='all';state.query='';state.sort='cost';$('search').value='';$('sort').value='cost';renderFilters();renderModels();});
+    setInterval(tick,1000);
+    loadData(false);
+  </script>
+</body>
+</html>
