@@ -905,245 +905,35 @@
       "source_url": "https://docs.x.ai/developers/pricing"
     },
     {
-      "timestamp": "2026-08-09T08:02:15Z",
+      "timestamp": "2026-08-09T08:37:38Z",
       "provider": "alibaba",
-      "model_id": "alibaba:qwen3-max",
+      "model_id": "alibaba:qwen3.8-max",
       "event_type": "added",
       "changes": {
         "input": {
           "from": null,
-          "to": 1.2
+          "to": 0.0
         },
         "cached_input": {
           "from": null,
-          "to": 0.12
+          "to": 0.0
         },
         "output": {
           "from": null,
-          "to": 6.0
+          "to": 0.0
         }
       },
       "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
     },
     {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-max",
+      "timestamp": "2026-08-09T08:37:38Z",
+      "provider": "moonshot",
+      "model_id": "moonshot:kimi-k3",
       "event_type": "added",
       "changes": {
         "input": {
           "from": null,
-          "to": 1.6
-        },
-        "cached_input": {
-          "from": null,
-          "to": 1.6
-        },
-        "output": {
-          "from": null,
-          "to": 6.4
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-flash",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.05
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.005000000000000001
-        },
-        "output": {
-          "from": null,
-          "to": 0.4
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwq-plus",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.8
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.8
-        },
-        "output": {
-          "from": null,
-          "to": 2.4
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-long-latest",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.072
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.072
-        },
-        "output": {
-          "from": null,
-          "to": 0.287
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-vl-plus",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.2
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.020000000000000004
-        },
-        "output": {
-          "from": null,
-          "to": 1.6
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-vl-flash",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.05
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.005000000000000001
-        },
-        "output": {
-          "from": null,
-          "to": 0.4
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-vl-max",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.8
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.08000000000000002
-        },
-        "output": {
-          "from": null,
-          "to": 3.2
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-vl-plus",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.21
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.021
-        },
-        "output": {
-          "from": null,
-          "to": 0.63
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-vl-ocr",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.07
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.07
-        },
-        "output": {
-          "from": null,
-          "to": 0.16
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-coder-plus",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 1.0
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.1
-        },
-        "output": {
-          "from": null,
-          "to": 5.0
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-coder-flash",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.3
+          "to": 3.0
         },
         "cached_input": {
           "from": null,
@@ -1151,314 +941,62 @@
         },
         "output": {
           "from": null,
-          "to": 1.5
+          "to": 15.0
         }
       },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3"
     },
     {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-mt-plus",
+      "timestamp": "2026-08-09T08:37:38Z",
+      "provider": "moonshot",
+      "model_id": "moonshot:kimi-k2.7-code",
       "event_type": "added",
       "changes": {
         "input": {
           "from": null,
-          "to": 2.46
+          "to": 0.95
         },
         "cached_input": {
           "from": null,
-          "to": 2.46
-        },
-        "output": {
-          "from": null,
-          "to": 7.37
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-mt-flash",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.16
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.16
-        },
-        "output": {
-          "from": null,
-          "to": 0.49
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-mt-lite",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.12
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.12
-        },
-        "output": {
-          "from": null,
-          "to": 0.36
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-mt-turbo",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.16
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.16
-        },
-        "output": {
-          "from": null,
-          "to": 0.49
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-next-80b-a3b-thinking",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.15
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.15
-        },
-        "output": {
-          "from": null,
-          "to": 1.2
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-next-80b-a3b-instruct",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.15
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.15
-        },
-        "output": {
-          "from": null,
-          "to": 1.2
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-235b-a22b-thinking-2507",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.23
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.23
-        },
-        "output": {
-          "from": null,
-          "to": 2.3
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-235b-a22b-instruct-2507",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.23
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.23
-        },
-        "output": {
-          "from": null,
-          "to": 0.92
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-30b-a3b-thinking-2507",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.2
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.2
-        },
-        "output": {
-          "from": null,
-          "to": 2.4
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-30b-a3b-instruct-2507",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.2
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.2
-        },
-        "output": {
-          "from": null,
-          "to": 0.8
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-omni-30b-a3b-captioner",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 3.81
-        },
-        "cached_input": {
-          "from": null,
-          "to": 3.81
-        },
-        "output": {
-          "from": null,
-          "to": 3.06
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-vl-235b-a22b-thinking",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.4
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.4
+          "to": 0.19
         },
         "output": {
           "from": null,
           "to": 4.0
         }
       },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3"
     },
     {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-vl-235b-a22b-instruct",
+      "timestamp": "2026-08-09T08:37:38Z",
+      "provider": "moonshot",
+      "model_id": "moonshot:kimi-k2.7-code-highspeed",
       "event_type": "added",
       "changes": {
         "input": {
           "from": null,
-          "to": 0.4
+          "to": 1.9
         },
         "cached_input": {
           "from": null,
-          "to": 0.4
+          "to": 0.38
         },
         "output": {
           "from": null,
-          "to": 1.6
+          "to": 8.0
         }
       },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3"
     },
     {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-vl-32b-thinking",
+      "timestamp": "2026-08-09T08:37:38Z",
+      "provider": "moonshot",
+      "model_id": "moonshot:kimi-k2.6",
       "event_type": "added",
       "changes": {
         "input": {
           "from": null,
-          "to": 0.16
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.16
-        },
-        "output": {
-          "from": null,
-          "to": 0.64
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-vl-32b-instruct",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.16
+          "to": 0.95
         },
         "cached_input": {
           "from": null,
@@ -1466,220 +1004,10 @@
         },
         "output": {
           "from": null,
-          "to": 0.64
+          "to": 4.0
         }
       },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-vl-30b-a3b-thinking",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.2
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.2
-        },
-        "output": {
-          "from": null,
-          "to": 2.4
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-vl-30b-a3b-instruct",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.2
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.2
-        },
-        "output": {
-          "from": null,
-          "to": 0.8
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-vl-8b-thinking",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.18
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.18
-        },
-        "output": {
-          "from": null,
-          "to": 2.1
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-vl-8b-instruct",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.18
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.18
-        },
-        "output": {
-          "from": null,
-          "to": 0.7
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-coder-next",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.3
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.3
-        },
-        "output": {
-          "from": null,
-          "to": 1.5
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-coder-480b-a35b-instruct",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 1.5
-        },
-        "cached_input": {
-          "from": null,
-          "to": 1.5
-        },
-        "output": {
-          "from": null,
-          "to": 7.5
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen3-coder-30b-a3b-instruct",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.45
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.45
-        },
-        "output": {
-          "from": null,
-          "to": 2.25
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-plus-character",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.5
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.5
-        },
-        "output": {
-          "from": null,
-          "to": 1.4
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-flash-character",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.05
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.05
-        },
-        "output": {
-          "from": null,
-          "to": 0.4
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
-    },
-    {
-      "timestamp": "2026-08-09T08:02:15Z",
-      "provider": "alibaba",
-      "model_id": "alibaba:qwen-plus-character-ja",
-      "event_type": "added",
-      "changes": {
-        "input": {
-          "from": null,
-          "to": 0.5
-        },
-        "cached_input": {
-          "from": null,
-          "to": 0.5
-        },
-        "output": {
-          "from": null,
-          "to": 1.4
-        }
-      },
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3"
     }
   ]
 }

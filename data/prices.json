@@ -2,8 +2,8 @@
   "schema_version": 2,
   "currency": "USD",
   "unit": "1M tokens",
-  "last_checked_at": "2026-08-09T08:14:51Z",
-  "last_updated_at": "2026-08-09T08:02:15Z",
+  "last_checked_at": "2026-08-09T08:37:38Z",
+  "last_updated_at": "2026-08-09T08:37:38Z",
   "snapshot_note": "Dynamiczny katalog wykryty z oficjalnych tabel; zakres i jednostki opisuje README.",
   "providers": [
     {
@@ -11,8 +11,8 @@
       "name": "OpenAI",
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T08:14:51Z",
-      "last_success_at": "2026-08-09T08:14:51Z",
+      "last_checked_at": "2026-08-09T08:37:38Z",
+      "last_success_at": "2026-08-09T08:37:38Z",
       "error": null,
       "model_count": 11
     },
@@ -21,8 +21,8 @@
       "name": "Anthropic",
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T08:14:51Z",
-      "last_success_at": "2026-08-09T08:14:51Z",
+      "last_checked_at": "2026-08-09T08:37:38Z",
+      "last_success_at": "2026-08-09T08:37:38Z",
       "error": null,
       "model_count": 15
     },
@@ -31,8 +31,8 @@
       "name": "Google Gemini",
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T08:14:51Z",
-      "last_success_at": "2026-08-09T08:14:51Z",
+      "last_checked_at": "2026-08-09T08:37:38Z",
+      "last_success_at": "2026-08-09T08:37:38Z",
       "error": null,
       "model_count": 23
     },
@@ -41,8 +41,8 @@
       "name": "xAI",
       "source_url": "https://docs.x.ai/developers/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T08:14:51Z",
-      "last_success_at": "2026-08-09T08:14:51Z",
+      "last_checked_at": "2026-08-09T08:37:38Z",
+      "last_success_at": "2026-08-09T08:37:38Z",
       "error": null,
       "model_count": 6
     },
@@ -51,8 +51,8 @@
       "name": "DeepSeek",
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T08:14:51Z",
-      "last_success_at": "2026-08-09T08:14:51Z",
+      "last_checked_at": "2026-08-09T08:37:38Z",
+      "last_success_at": "2026-08-09T08:37:38Z",
       "error": null,
       "model_count": 2
     },
@@ -61,697 +61,23 @@
       "name": "Alibaba / Qwen",
       "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-09T08:14:51Z",
-      "last_success_at": "2026-08-09T08:14:51Z",
+      "last_checked_at": "2026-08-09T08:37:38Z",
+      "last_success_at": "2026-08-09T08:37:38Z",
       "error": null,
-      "model_count": 40
+      "model_count": 2
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot / Kimi",
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
+      "status": "ok",
+      "last_checked_at": "2026-08-09T08:37:38Z",
+      "last_success_at": "2026-08-09T08:37:38Z",
+      "error": null,
+      "model_count": 4
     }
   ],
   "models": [
-    {
-      "id": "alibaba:qwen-flash",
-      "provider": "alibaba",
-      "name": "Qwen Flash",
-      "model_id": "qwen-flash",
-      "input": 0.05,
-      "cached_input": 0.005,
-      "output": 0.4,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤256K; cache hit approximated at documented 10%.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-flash-character",
-      "provider": "alibaba",
-      "name": "Qwen Flash Character",
-      "model_id": "qwen-flash-character",
-      "input": 0.05,
-      "cached_input": 0.05,
-      "output": 0.4,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-long-latest",
-      "provider": "alibaba",
-      "name": "Qwen Long Latest",
-      "model_id": "qwen-long-latest",
-      "input": 0.072,
-      "cached_input": 0.072,
-      "output": 0.287,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-max",
-      "provider": "alibaba",
-      "name": "Qwen Max",
-      "model_id": "qwen-max",
-      "input": 1.6,
-      "cached_input": 1.6,
-      "output": 6.4,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-mt-flash",
-      "provider": "alibaba",
-      "name": "Qwen Mt Flash",
-      "model_id": "qwen-mt-flash",
-      "input": 0.16,
-      "cached_input": 0.16,
-      "output": 0.49,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-mt-lite",
-      "provider": "alibaba",
-      "name": "Qwen Mt Lite",
-      "model_id": "qwen-mt-lite",
-      "input": 0.12,
-      "cached_input": 0.12,
-      "output": 0.36,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-mt-plus",
-      "provider": "alibaba",
-      "name": "Qwen Mt Plus",
-      "model_id": "qwen-mt-plus",
-      "input": 2.46,
-      "cached_input": 2.46,
-      "output": 7.37,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-mt-turbo",
-      "provider": "alibaba",
-      "name": "Qwen Mt Turbo",
-      "model_id": "qwen-mt-turbo",
-      "input": 0.16,
-      "cached_input": 0.16,
-      "output": 0.49,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-plus-character",
-      "provider": "alibaba",
-      "name": "Qwen Plus Character",
-      "model_id": "qwen-plus-character",
-      "input": 0.5,
-      "cached_input": 0.5,
-      "output": 1.4,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-plus-character-ja",
-      "provider": "alibaba",
-      "name": "Qwen Plus Character Ja",
-      "model_id": "qwen-plus-character-ja",
-      "input": 0.5,
-      "cached_input": 0.5,
-      "output": 1.4,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-vl-max",
-      "provider": "alibaba",
-      "name": "Qwen VL Max",
-      "model_id": "qwen-vl-max",
-      "input": 0.8,
-      "cached_input": 0.08,
-      "output": 3.2,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; cache hit approximated at documented 10%.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-vl-ocr",
-      "provider": "alibaba",
-      "name": "Qwen VL Ocr",
-      "model_id": "qwen-vl-ocr",
-      "input": 0.07,
-      "cached_input": 0.07,
-      "output": 0.16,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen-vl-plus",
-      "provider": "alibaba",
-      "name": "Qwen VL Plus",
-      "model_id": "qwen-vl-plus",
-      "input": 0.21,
-      "cached_input": 0.021,
-      "output": 0.63,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; cache hit approximated at documented 10%.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-235b-a22b-instruct-2507",
-      "provider": "alibaba",
-      "name": "qwen3 235b a22b Instruct 2507",
-      "model_id": "qwen3-235b-a22b-instruct-2507",
-      "input": 0.23,
-      "cached_input": 0.23,
-      "output": 0.92,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-235b-a22b-thinking-2507",
-      "provider": "alibaba",
-      "name": "qwen3 235b a22b Thinking 2507",
-      "model_id": "qwen3-235b-a22b-thinking-2507",
-      "input": 0.23,
-      "cached_input": 0.23,
-      "output": 2.3,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-30b-a3b-instruct-2507",
-      "provider": "alibaba",
-      "name": "qwen3 30b a3b Instruct 2507",
-      "model_id": "qwen3-30b-a3b-instruct-2507",
-      "input": 0.2,
-      "cached_input": 0.2,
-      "output": 0.8,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-30b-a3b-thinking-2507",
-      "provider": "alibaba",
-      "name": "qwen3 30b a3b Thinking 2507",
-      "model_id": "qwen3-30b-a3b-thinking-2507",
-      "input": 0.2,
-      "cached_input": 0.2,
-      "output": 2.4,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-coder-30b-a3b-instruct",
-      "provider": "alibaba",
-      "name": "qwen3 Coder 30b a3b Instruct",
-      "model_id": "qwen3-coder-30b-a3b-instruct",
-      "input": 0.45,
-      "cached_input": 0.45,
-      "output": 2.25,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤32K; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-coder-480b-a35b-instruct",
-      "provider": "alibaba",
-      "name": "qwen3 Coder 480b a35b Instruct",
-      "model_id": "qwen3-coder-480b-a35b-instruct",
-      "input": 1.5,
-      "cached_input": 1.5,
-      "output": 7.5,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤32K; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-coder-flash",
-      "provider": "alibaba",
-      "name": "qwen3 Coder Flash",
-      "model_id": "qwen3-coder-flash",
-      "input": 0.3,
-      "cached_input": 0.3,
-      "output": 1.5,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤32K; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-coder-next",
-      "provider": "alibaba",
-      "name": "qwen3 Coder Next",
-      "model_id": "qwen3-coder-next",
-      "input": 0.3,
-      "cached_input": 0.3,
-      "output": 1.5,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤32K; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-coder-plus",
-      "provider": "alibaba",
-      "name": "qwen3 Coder Plus",
-      "model_id": "qwen3-coder-plus",
-      "input": 1.0,
-      "cached_input": 0.1,
-      "output": 5.0,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤32K; cache hit approximated at documented 10%.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-max",
-      "provider": "alibaba",
-      "name": "qwen3 Max",
-      "model_id": "qwen3-max",
-      "input": 1.2,
-      "cached_input": 0.12,
-      "output": 6.0,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤32K; cache hit approximated at documented 10%.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-next-80b-a3b-instruct",
-      "provider": "alibaba",
-      "name": "qwen3 Next 80b a3b Instruct",
-      "model_id": "qwen3-next-80b-a3b-instruct",
-      "input": 0.15,
-      "cached_input": 0.15,
-      "output": 1.2,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-next-80b-a3b-thinking",
-      "provider": "alibaba",
-      "name": "qwen3 Next 80b a3b Thinking",
-      "model_id": "qwen3-next-80b-a3b-thinking",
-      "input": 0.15,
-      "cached_input": 0.15,
-      "output": 1.2,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-omni-30b-a3b-captioner",
-      "provider": "alibaba",
-      "name": "qwen3 OMNI 30b a3b Captioner",
-      "model_id": "qwen3-omni-30b-a3b-captioner",
-      "input": 3.81,
-      "cached_input": 3.81,
-      "output": 3.06,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-vl-235b-a22b-instruct",
-      "provider": "alibaba",
-      "name": "qwen3 VL 235b a22b Instruct",
-      "model_id": "qwen3-vl-235b-a22b-instruct",
-      "input": 0.4,
-      "cached_input": 0.4,
-      "output": 1.6,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-vl-235b-a22b-thinking",
-      "provider": "alibaba",
-      "name": "qwen3 VL 235b a22b Thinking",
-      "model_id": "qwen3-vl-235b-a22b-thinking",
-      "input": 0.4,
-      "cached_input": 0.4,
-      "output": 4.0,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-vl-30b-a3b-instruct",
-      "provider": "alibaba",
-      "name": "qwen3 VL 30b a3b Instruct",
-      "model_id": "qwen3-vl-30b-a3b-instruct",
-      "input": 0.2,
-      "cached_input": 0.2,
-      "output": 0.8,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-vl-30b-a3b-thinking",
-      "provider": "alibaba",
-      "name": "qwen3 VL 30b a3b Thinking",
-      "model_id": "qwen3-vl-30b-a3b-thinking",
-      "input": 0.2,
-      "cached_input": 0.2,
-      "output": 2.4,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-vl-32b-instruct",
-      "provider": "alibaba",
-      "name": "qwen3 VL 32b Instruct",
-      "model_id": "qwen3-vl-32b-instruct",
-      "input": 0.16,
-      "cached_input": 0.16,
-      "output": 0.64,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-vl-32b-thinking",
-      "provider": "alibaba",
-      "name": "qwen3 VL 32b Thinking",
-      "model_id": "qwen3-vl-32b-thinking",
-      "input": 0.16,
-      "cached_input": 0.16,
-      "output": 0.64,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-vl-8b-instruct",
-      "provider": "alibaba",
-      "name": "qwen3 VL 8b Instruct",
-      "model_id": "qwen3-vl-8b-instruct",
-      "input": 0.18,
-      "cached_input": 0.18,
-      "output": 0.7,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-vl-8b-thinking",
-      "provider": "alibaba",
-      "name": "qwen3 VL 8b Thinking",
-      "model_id": "qwen3-vl-8b-thinking",
-      "input": 0.18,
-      "cached_input": 0.18,
-      "output": 2.1,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-vl-flash",
-      "provider": "alibaba",
-      "name": "qwen3 VL Flash",
-      "model_id": "qwen3-vl-flash",
-      "input": 0.05,
-      "cached_input": 0.005,
-      "output": 0.4,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤32K; cache hit approximated at documented 10%.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3-vl-plus",
-      "provider": "alibaba",
-      "name": "qwen3 VL Plus",
-      "model_id": "qwen3-vl-plus",
-      "input": 0.2,
-      "cached_input": 0.02,
-      "output": 1.6,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤32K; cache hit approximated at documented 10%.",
-      "availability": "active",
-      "active": true,
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
-    },
-    {
-      "id": "alibaba:qwen3.5-flash",
-      "provider": "alibaba",
-      "name": "qwen3.5 Flash",
-      "model_id": "qwen3.5-flash",
-      "input": 0.1,
-      "cached_input": 0.01,
-      "output": 0.4,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤1M; cache hit approximated at documented 10%.",
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "updated_at": "2026-08-09T00:00:00Z",
-      "availability": "active",
-      "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
-    },
-    {
-      "id": "alibaba:qwen3.6-flash",
-      "provider": "alibaba",
-      "name": "qwen3.6 Flash",
-      "model_id": "qwen3.6-flash",
-      "input": 0.25,
-      "cached_input": 0.025,
-      "output": 1.5,
-      "tier": "international",
-      "context_note": "Lowest listed International tier 0<Token≤256K; cache hit approximated at documented 10%.",
-      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "updated_at": "2026-08-09T00:00:00Z",
-      "availability": "active",
-      "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
-    },
     {
       "id": "alibaba:qwen3.7-max",
       "provider": "alibaba",
@@ -766,26 +92,28 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
-      "id": "alibaba:qwq-plus",
+      "id": "alibaba:qwen3.8-max",
       "provider": "alibaba",
-      "name": "Qwq Plus",
-      "model_id": "qwq-plus",
-      "input": 0.8,
-      "cached_input": 0.8,
-      "output": 2.4,
-      "tier": "international",
-      "context_note": "Lowest listed International tier ; no separate cache rate listed.",
-      "availability": "active",
+      "name": "Qwen3.8 Max",
+      "model_id": "qwen3.8-max",
+      "input": 0.0,
+      "cached_input": 0.0,
+      "output": 0.0,
+      "tier": "Qwen Cloud / Model Studio",
+      "context_note": "Officially listed as available; public USD token price is not listed yet.",
+      "availability": "preview",
       "active": true,
+      "price_comparable": false,
       "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
-      "updated_at": "2026-08-09T08:02:15Z",
+      "first_seen_at": "2026-08-09T08:37:38Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
+      "updated_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0
     },
     {
@@ -802,9 +130,10 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-haiku-4.5",
@@ -820,9 +149,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-mythos-5",
@@ -838,9 +168,10 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-opus-4.5",
@@ -856,9 +187,10 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-opus-4.6",
@@ -874,9 +206,10 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-opus-4.7",
@@ -892,9 +225,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-opus-4.8",
@@ -910,9 +244,10 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-opus-5",
@@ -928,9 +263,10 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-sonnet-4.5",
@@ -946,9 +282,10 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-sonnet-4.6",
@@ -964,9 +301,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-sonnet-5",
@@ -982,9 +320,10 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-haiku-3.5",
@@ -1000,9 +339,10 @@
       "active": false,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-opus-4",
@@ -1018,9 +358,10 @@
       "active": false,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-opus-4.1",
@@ -1036,9 +377,10 @@
       "active": false,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "anthropic:claude-sonnet-4",
@@ -1054,9 +396,10 @@
       "active": false,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "deepseek:deepseek-v4-flash",
@@ -1072,9 +415,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "deepseek:deepseek-v4-pro",
@@ -1090,9 +434,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "google:gemini-2.0-flash",
@@ -1108,9 +453,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-2.0-flash-lite",
@@ -1126,9 +472,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-2.5-computer-use-preview-10-2025",
@@ -1144,9 +491,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-2.5-flash",
@@ -1162,9 +510,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-2.5-flash-native-audio-preview-12-2025",
@@ -1180,9 +529,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-2.5-flash-preview-tts",
@@ -1198,9 +548,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-2.5-flash-lite",
@@ -1216,9 +567,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-2.5-flash-lite-preview-09-2025",
@@ -1234,9 +586,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-2.5-pro",
@@ -1252,9 +605,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "google:gemini-2.5-pro-preview-tts",
@@ -1270,9 +624,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-3-flash-preview",
@@ -1288,9 +643,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "preview",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "google:gemini-3.1-flash-live-preview",
@@ -1306,9 +662,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-3.1-flash-tts-preview",
@@ -1324,9 +681,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-3.1-flash-lite",
@@ -1342,9 +700,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-3.1-pro-preview",
@@ -1360,9 +719,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-3.5-flash",
@@ -1378,9 +738,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "google:gemini-3.5-flash-lite",
@@ -1396,9 +757,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-3.5-live-translate-preview",
@@ -1414,9 +776,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-3.6-flash",
@@ -1432,9 +795,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-omni-flash-preview",
@@ -1450,9 +814,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-robotics-er-1.6-preview",
@@ -1468,9 +833,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-robotics-er-2-preview",
@@ -1486,9 +852,10 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "google:gemini-robotics-er-2-streaming-preview",
@@ -1504,8 +871,85 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
+      "missing_checks": 0,
+      "price_comparable": true
+    },
+    {
+      "id": "moonshot:kimi-k2.6",
+      "provider": "moonshot",
+      "name": "Kimi k2.6",
+      "model_id": "kimi-k2.6",
+      "input": 0.95,
+      "cached_input": 0.16,
+      "output": 4.0,
+      "tier": "standard",
+      "context_note": "Official Moonshot API pricing; context 262,144 tokens.",
+      "availability": "active",
+      "active": true,
+      "price_comparable": true,
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
+      "first_seen_at": "2026-08-09T08:37:38Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
+      "updated_at": "2026-08-09T08:37:38Z",
+      "missing_checks": 0
+    },
+    {
+      "id": "moonshot:kimi-k2.7-code",
+      "provider": "moonshot",
+      "name": "Kimi k2.7 Code",
+      "model_id": "kimi-k2.7-code",
+      "input": 0.95,
+      "cached_input": 0.19,
+      "output": 4.0,
+      "tier": "standard",
+      "context_note": "Official Moonshot API pricing; context 262,144 tokens.",
+      "availability": "active",
+      "active": true,
+      "price_comparable": true,
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
+      "first_seen_at": "2026-08-09T08:37:38Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
+      "updated_at": "2026-08-09T08:37:38Z",
+      "missing_checks": 0
+    },
+    {
+      "id": "moonshot:kimi-k2.7-code-highspeed",
+      "provider": "moonshot",
+      "name": "Kimi k2.7 Code Highspeed",
+      "model_id": "kimi-k2.7-code-highspeed",
+      "input": 1.9,
+      "cached_input": 0.38,
+      "output": 8.0,
+      "tier": "standard",
+      "context_note": "Official Moonshot API pricing; context 262,144 tokens.",
+      "availability": "active",
+      "active": true,
+      "price_comparable": true,
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
+      "first_seen_at": "2026-08-09T08:37:38Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
+      "updated_at": "2026-08-09T08:37:38Z",
+      "missing_checks": 0
+    },
+    {
+      "id": "moonshot:kimi-k3",
+      "provider": "moonshot",
+      "name": "Kimi k3",
+      "model_id": "kimi-k3",
+      "input": 3.0,
+      "cached_input": 0.3,
+      "output": 15.0,
+      "tier": "standard",
+      "context_note": "Official Moonshot API pricing; context 1,048,576 tokens.",
+      "availability": "active",
+      "active": true,
+      "price_comparable": true,
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
+      "first_seen_at": "2026-08-09T08:37:38Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
+      "updated_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0
     },
     {
@@ -1522,9 +966,10 @@
       "active": true,
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "openai:gpt-5.3-codex",
@@ -1540,9 +985,10 @@
       "active": true,
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "openai:gpt-5.4",
@@ -1558,9 +1004,10 @@
       "active": true,
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "openai:gpt-5.4-mini",
@@ -1576,9 +1023,10 @@
       "active": true,
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "openai:gpt-5.4-nano",
@@ -1594,9 +1042,10 @@
       "active": true,
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "openai:gpt-5.4-pro",
@@ -1612,9 +1061,10 @@
       "active": true,
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "openai:gpt-5.5",
@@ -1630,9 +1080,10 @@
       "active": true,
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "openai:gpt-5.5-pro",
@@ -1648,9 +1099,10 @@
       "active": true,
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "openai:gpt-5.6-luna",
@@ -1666,9 +1118,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "openai:gpt-5.6-sol",
@@ -1684,9 +1137,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "openai:gpt-5.6-terra",
@@ -1702,9 +1156,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "xai:grok-4.20-0309-non-reasoning",
@@ -1720,9 +1175,10 @@
       "active": true,
       "source_url": "https://docs.x.ai/developers/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "xai:grok-4.20-0309-reasoning",
@@ -1738,9 +1194,10 @@
       "active": true,
       "source_url": "https://docs.x.ai/developers/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "xai:grok-4.20-multi-agent-0309",
@@ -1756,9 +1213,10 @@
       "active": true,
       "source_url": "https://docs.x.ai/developers/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 0
+      "missing_checks": 0,
+      "price_comparable": true
     },
     {
       "id": "xai:grok-4.3",
@@ -1774,9 +1232,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "xai:grok-4.5",
@@ -1792,9 +1251,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     },
     {
       "id": "xai:grok-build-0.1",
@@ -1810,9 +1270,10 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-09T08:14:51Z",
+      "last_seen_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0,
-      "first_seen_at": "2026-08-09T00:00:00Z"
+      "first_seen_at": "2026-08-09T00:00:00Z",
+      "price_comparable": true
     }
   ]
 }

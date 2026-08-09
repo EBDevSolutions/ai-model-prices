@@ -107,6 +107,7 @@ def model_record(
     tier: str,
     context_note: str,
     availability: str = "active",
+    price_comparable: bool = True,
 ) -> tuple[str, dict]:
     canonical = slugify(model_id)
     local_id = f"{provider}:{canonical}"
@@ -123,6 +124,7 @@ def model_record(
         "context_note": clean_space(context_note)[:240],
         "availability": availability,
         "active": availability not in {"retired", "not_listed"},
+        "price_comparable": price_comparable,
     }
 
 
@@ -393,16 +395,55 @@ def parse_alibaba(page: Page) -> dict[str, dict]:
             )
             candidates[item_id] = item
 
-    # Alibaba lists stable aliases side-by-side with dated snapshots and preview
-    # builds. A pricing dashboard should expose the public, durable API names;
-    # snapshots make the same model appear many times and are not the normal
-    # integration target. New stable IDs are still discovered automatically.
+    # Keep only the current Qwen generation and one generation back. Alibaba's
+    # wide catalogue includes specialist, historical and snapshot endpoints;
+    # keeping every one makes price comparison less useful than a curated view.
     result: dict[str, dict] = {}
     for item_id, item in candidates.items():
         model_id = item["model_id"].lower()
         if re.search(r"-20\d{2}-\d{2}-\d{2}$", model_id) or model_id.endswith("-preview"):
             continue
+        if not re.match(r"^qwen3\.7-", model_id):
+            continue
         result[item_id] = item
+
+    # The official capability documentation lists Qwen3.8-Max, while the public
+    # USD per-token price table has not caught up. Include it for discoverability
+    # but deliberately exclude it from numeric cost/value rankings.
+    item_id, item = model_record(
+        "alibaba", "qwen3.8-max", "Qwen3.8 Max", 0, 0, 0,
+        "Qwen Cloud / Model Studio", "Officially listed as available; public USD token price is not listed yet.",
+        "preview", price_comparable=False,
+    )
+    result[item_id] = item
+    return result
+
+
+MOONSHOT_PRICING_URLS = (
+    "https://platform.kimi.ai/docs/pricing/chat-k3.md",
+    "https://platform.kimi.ai/docs/pricing/chat-k27-code.md",
+    "https://platform.kimi.ai/docs/pricing/chat-k26.md",
+)
+
+
+def parse_moonshot(_: Page) -> dict[str, dict]:
+    """Read Moonshot's public Markdown tables for its current Kimi models."""
+    result: dict[str, dict] = {}
+    for url in MOONSHOT_PRICING_URLS:
+        response = requests.get(url, timeout=TIMEOUT, headers={"User-Agent": USER_AGENT})
+        response.raise_for_status()
+        if len(response.content) < 500:
+            raise ValueError(f"Moonshot pricing response unexpectedly short: {url}")
+        for model_id, cached, input_price, output_price, context in re.findall(
+            r'\["(kimi-[^"]+)", "1M tokens",.*?\$"\}(\d+(?:\.\d+)?)</>,.*?\$"\}(\d+(?:\.\d+)?)</>,.*?\$"\}(\d+(?:\.\d+)?)</>, "([^"]+)"\]',
+            response.text,
+            re.S,
+        ):
+            item_id, item = model_record(
+                "moonshot", model_id, title_from_id(model_id), float(input_price), float(cached), float(output_price),
+                "standard", f"Official Moonshot API pricing; context {context}."
+            )
+            result[item_id] = item
     return result
 
 
@@ -412,7 +453,8 @@ SPECS = [
     ProviderSpec("google", "https://ai.google.dev/gemini-api/docs/pricing", 8, parse_google),
     ProviderSpec("xai", "https://docs.x.ai/developers/pricing", 3, parse_xai),
     ProviderSpec("deepseek", "https://api-docs.deepseek.com/quick_start/pricing", 2, parse_deepseek),
-    ProviderSpec("alibaba", "https://www.alibabacloud.com/help/en/model-studio/model-pricing", 10, parse_alibaba),
+    ProviderSpec("alibaba", "https://www.alibabacloud.com/help/en/model-studio/model-pricing", 2, parse_alibaba),
+    ProviderSpec("moonshot", "https://platform.kimi.ai/docs/pricing/chat-k3", 4, parse_moonshot),
 ]
 
 
@@ -440,6 +482,8 @@ def fetch(session: requests.Session, url: str) -> Page:
 
 def valid_price_set(values: dict, old: dict | None = None) -> tuple[bool, str | None]:
     old = old or {}
+    if values.get("price_comparable") is False:
+        return True, None
     for field in PRICE_FIELDS:
         value = values.get(field)
         if not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0 or value > 10000:
@@ -476,9 +520,8 @@ def update(selected: set[str] | None = None, dry_run: bool = False) -> int:
     excluded_ids = {
         model["id"] for model in prices.get("models", [])
         if model.get("provider") == "google" and "-image" in model.get("model_id", "")
-        or model.get("provider") == "alibaba" and (
-            re.search(r"-20\d{2}-\d{2}-\d{2}$", model.get("model_id", "").lower())
-            or model.get("model_id", "").lower().endswith("-preview")
+        or model.get("provider") == "alibaba" and not re.match(
+            r"^qwen3\.(?:7|8)-", model.get("model_id", "").lower()
         )
     }
     if excluded_ids:
@@ -533,7 +576,7 @@ def update(selected: set[str] | None = None, dry_run: bool = False) -> int:
                     for field in PRICE_FIELDS
                     if not math.isclose(float(old[field]), float(discovered[field]), rel_tol=0, abs_tol=1e-9)
                 }
-                for field in ("name", "model_id", "tier", "context_note", "availability", "active"):
+                for field in ("name", "model_id", "tier", "context_note", "availability", "active", "price_comparable"):
                     old[field] = discovered[field]
                 for field in PRICE_FIELDS:
                     old[field] = round(discovered[field], 9)

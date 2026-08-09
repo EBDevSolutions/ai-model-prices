@@ -1,6 +1,6 @@
 # AI Model Prices Dashboard
 
-Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xAI, DeepSeek i Alibaba/Qwen. Publikacja działa przez GitHub Pages, a GitHub Actions co 30 minut sprawdza oficjalne źródła, aktualizuje ceny i automatycznie dodaje nowo wykryte modele. Nie potrzebujesz backendu, VPS-a, Dockera ani usługi działającej na własnym komputerze.
+Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xAI, DeepSeek, Alibaba/Qwen i Moonshot/Kimi. Publikacja działa przez GitHub Pages, a GitHub Actions co 30 minut sprawdza oficjalne źródła, aktualizuje ceny i automatycznie dodaje nowo wykryte modele. Nie potrzebujesz backendu, VPS-a, Dockera ani usługi działającej na własnym komputerze.
 
 > **Ważne — pierwsza weryfikacja:** `data/prices.json` zawiera snapshot startowy z 9 sierpnia 2026. Po utworzeniu repozytorium uruchom ręcznie workflow **Update AI prices** i porównaj wynik z oficjalnymi cennikami. Strony producentów zmieniają strukturę bez uprzedzenia, a część cen ma progi kontekstu, regiony, tryby lub promocje, których pojedyncza liczba nie oddaje w pełni.
 
@@ -29,7 +29,8 @@ Updater izoluje błędy dostawców. Jeśli pobranie albo parser jednego źródł
 - **Google Gemini:** modele z płatną ceną input i output w pierwszej tabeli Standard każdej sekcji modelu;
 - **xAI:** wszystkie modele z tabeli Text API, według ceny short context;
 - **DeepSeek:** wszystkie kolumny modeli z oficjalnej macierzy Models & Pricing;
-- **Alibaba/Qwen:** modele Qwen i QwQ z prostymi, porównywalnymi stawkami tekstowymi dla regionu International, według najniższego progu kontekstu.
+- **Alibaba/Qwen:** celowo mały katalog: bieżąca generacja `qwen3.8-max` i poprzednia `qwen3.7-max`. Snapshoty, preview i wyspecjalizowane warianty nie są osobnymi pozycjami. `qwen3.8-max` jest dostępny w Qwen Cloud/Model Studio, ale dopóki nie ma publicznej stawki USD za token, jest oznaczony jako nieporównywalny cenowo i nie wchodzi do rankingu.
+- **Moonshot/Kimi:** aktualne K3 oraz bezpośrednio poprzednie K2.7 Code i K2.6, odczytywane z oficjalnych tabel Moonshot API.
 
 Modele multimodalne z wieloma osobnymi stawkami audio/obrazu nie są mieszane z jedną stawką tekstową, jeżeli oficjalna tabela nie daje jednoznacznej pary input/output. Dzięki temu ranking nie porównuje różnych jednostek jakby były tym samym kosztem.
 
@@ -134,9 +135,11 @@ Następnie otwórz `http://localhost:8000`. Nie otwieraj `index.html` przez `fil
 - [xAI pricing](https://docs.x.ai/developers/pricing)
 - [DeepSeek models and pricing](https://api-docs.deepseek.com/quick_start/pricing)
 - [Alibaba Cloud Model Studio pricing](https://www.alibabacloud.com/help/en/model-studio/model-pricing)
+- [Qwen3.8-Max availability](https://help.aliyun.com/en/model-studio/web-search)
+- [Moonshot / Kimi pricing](https://platform.kimi.ai/docs/pricing/chat-k3)
 
 ## Utrzymanie
 
-Gdy dostawca zmieni układ strony, popraw odpowiednią funkcję `parse_*` w `scripts/update_prices.py`, uruchom ją z `--provider NAZWA --dry-run --verbose`, a dopiero potem zatwierdź zmianę. Dostępne nazwy: `openai`, `anthropic`, `google`, `xai`, `deepseek`, `alibaba`. Każdy parser ma minimalny oczekiwany rozmiar katalogu, więc przypadkowe pobranie niepełnej strony nie oznaczy masowo modeli jako brakujące.
+Gdy dostawca zmieni układ strony, popraw odpowiednią funkcję `parse_*` w `scripts/update_prices.py`, uruchom ją z `--provider NAZWA --dry-run --verbose`, a dopiero potem zatwierdź zmianę. Dostępne nazwy: `openai`, `anthropic`, `google`, `xai`, `deepseek`, `alibaba`, `moonshot`. Każdy parser ma minimalny oczekiwany rozmiar katalogu, więc przypadkowe pobranie niepełnej strony nie oznaczy masowo modeli jako brakujące.
 
 Nie są wymagane żadne klucze API ani sekrety. Updater czyta wyłącznie publiczne strony cenników.

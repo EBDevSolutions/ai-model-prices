@@ -186,6 +186,7 @@
         <option value="input">Cena input ↑</option>
         <option value="cached_input">Cena cache ↑</option>
         <option value="output">Cena output ↑</option>
+        <option value="value">Opłacalność ↓</option>
         <option value="name">Nazwa A–Z</option>
       </select>
       <button id="resetBtn" class="refresh" type="button">Wyczyść filtry</button>
@@ -197,8 +198,8 @@
         <div class="section-head"><h2 class="section-title">Cennik modeli</h2><div id="visibleCount" class="count">—</div></div>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Model</th><th>Input</th><th>Cached input</th><th>Output</th><th>Twój koszt</th><th>Źródło</th></tr></thead>
-            <tbody id="modelRows"><tr><td colspan="6" class="empty">Ładowanie oficjalnych cen…</td></tr></tbody>
+            <thead><tr><th>Model</th><th>Input</th><th>Cached input</th><th>Output</th><th>Twój koszt</th><th>Opłacalność</th><th>Dostęp</th><th>Źródło</th></tr></thead>
+            <tbody id="modelRows"><tr><td colspan="8" class="empty">Ładowanie oficjalnych cen…</td></tr></tbody>
           </table>
         </div>
       </section>
@@ -210,7 +211,7 @@
           <div class="input-group"><label for="cachedTokens">Cached</label><input id="cachedTokens" type="number" min="0" step="0.1" value="0"></div>
           <div class="input-group full"><label for="outputTokens">Output</label><input id="outputTokens" type="number" min="0" step="0.1" value="0.25"></div>
         </div>
-        <p class="help">Koszt = input × stawka input + cached × stawka cache + output × stawka output. Narzędzia, storage, batch i podatki nie są doliczane.</p>
+        <p class="help">Koszt = input × stawka input + cached × stawka cache + output × stawka output. „Opłacalność” łączy koszt workloadu z orientacyjną klasą modelu; nie jest niezależnym benchmarkiem jakości. Gwiazdka przy Cursor oznacza katalog zmienny — sprawdź selektor w swojej subskrypcji.</p>
         <div class="ranking"><h3 class="section-title">Najtańsze dla workloadu</h3><div id="ranking"></div></div>
       </aside>
     </div>
@@ -234,19 +235,37 @@
   <script>
     'use strict';
     const REFRESH_MS = 30 * 60 * 1000;
-    const COLORS = {openai:'#6ee7b7',anthropic:'#f0a57b',google:'#7dd3fc',xai:'#f8fafc',deepseek:'#9fa8ff',alibaba:'#fcd34d'};
-    const SHORT = {openai:'OA',anthropic:'AN',google:'GG',xai:'xAI',deepseek:'DS',alibaba:'QW'};
+    const COLORS = {openai:'#6ee7b7',anthropic:'#f0a57b',google:'#7dd3fc',xai:'#f8fafc',deepseek:'#9fa8ff',alibaba:'#fcd34d',moonshot:'#fb7185'};
+    const SHORT = {openai:'OA',anthropic:'AN',google:'GG',xai:'xAI',deepseek:'DS',alibaba:'QW',moonshot:'KM'};
     const state = { prices:null, history:null, provider:'all', query:'', sort:'cost', nextRefresh:Date.now()+REFRESH_MS };
     const $ = id => document.getElementById(id);
     const esc = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
     const safeUrl = value => /^https:\/\//i.test(value || '') ? value : '#';
     const number = id => Math.max(0, Number($(id).value) || 0);
-    const workload = model => number('inputTokens')*model.input + number('cachedTokens')*model.cached_input + number('outputTokens')*model.output;
+    const comparable = model => model.price_comparable !== false && [model.input,model.cached_input,model.output].every(Number.isFinite);
+    const workload = model => comparable(model) ? number('inputTokens')*model.input + number('cachedTokens')*model.cached_input + number('outputTokens')*model.output : Infinity;
     const money = value => {
       const v = Number(value);
       const digits = v < .01 ? 6 : v < 1 ? 4 : 2;
       return '$' + v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:digits});
     };
+    const priceCell = (model, field) => comparable(model) ? money(model[field]) : '—';
+    const costCell = model => comparable(model) ? money(workload(model)) : 'Brak stawki';
+    const capabilityWeight = model => {
+      const id = model.model_id.toLowerCase();
+      if (id==='kimi-k3' || id==='qwen3.8-max' || /(?:opus|pro|\bmax\b)/.test(id)) return 100;
+      if (/(?:coder|code|sonnet|plus|reasoning|thinking|k2\.7)/.test(id)) return 78;
+      if (/(?:flash|mini|nano|lite)/.test(id)) return 48;
+      return 65;
+    };
+    const valueScore = model => {
+      if (!comparable(model)) return null;
+      const candidates = state.prices.models.filter(item=>item.active!==false && comparable(item));
+      const top = Math.max(...candidates.map(item=>capabilityWeight(item)/Math.max(workload(item),.000001)),.000001);
+      return Math.max(1,Math.min(100,Math.round(100*Math.sqrt((capabilityWeight(model)/Math.max(workload(model),.000001))/top))));
+    };
+    const valueCell = model => valueScore(model) == null ? '<span class="availability preview">brak ceny</span>' : `<span class="availability active">${valueScore(model)}/100</span>`;
+    const accessFor = model => ({alibaba:'Qwen Cloud · Model Studio · Qoder',moonshot:'Kimi · Moonshot API',openai:'API · Cursor*',anthropic:'API · Cursor*',google:'API · Cursor*',xai:'API · Cursor*',deepseek:'API · Cursor*'}[model.provider] || 'API');
     const dateTime = iso => {
       if (!iso) return 'brak';
       const date = new Date(iso);
@@ -299,9 +318,9 @@
       $('providerCount').textContent = providers.length;
       const healthy = providers.filter(p=>p.status==='ok').length;
       $('providerFoot').textContent = `${healthy} źródeł bez ostrzeżeń`;
-      const comparable = models.filter(model=>model.active!==false);
-      const cheapestIn = [...comparable].sort((a,b)=>a.input-b.input)[0];
-      const cheapestOut = [...comparable].sort((a,b)=>a.output-b.output)[0];
+      const priced = models.filter(model=>model.active!==false && comparable(model));
+      const cheapestIn = [...priced].sort((a,b)=>a.input-b.input)[0];
+      const cheapestOut = [...priced].sort((a,b)=>a.output-b.output)[0];
       $('cheapestInput').textContent = money(cheapestIn.input);
       $('cheapestInputName').textContent = cheapestIn.name;
       $('cheapestOutput').textContent = money(cheapestOut.output);
@@ -324,7 +343,9 @@
       return models.sort((a,b)=> {
         const availabilityOrder = Number(a.active===false)-Number(b.active===false);
         if (availabilityOrder) return availabilityOrder;
-        return state.sort==='name' ? a.name.localeCompare(b.name) : (state.sort==='cost' ? workload(a)-workload(b) : a[state.sort]-b[state.sort]);
+        if (state.sort==='name') return a.name.localeCompare(b.name);
+        if (state.sort==='value') return (valueScore(b) ?? -1) - (valueScore(a) ?? -1);
+        return state.sort==='cost' ? workload(a)-workload(b) : (comparable(a)&&comparable(b) ? a[state.sort]-b[state.sort] : Number(comparable(b))-Number(comparable(a)));
       });
     }
 
@@ -336,17 +357,19 @@
       $('modelRows').innerHTML = models.length ? models.map(model=>`
         <tr>
           <td><div class="model-cell"><div class="logo" style="background:${COLORS[model.provider]||'#fff'}">${esc(SHORT[model.provider]||'?')}</div><div><div class="model-name">${esc(model.name)}<span class="availability ${esc(model.availability||'active')}">${esc(model.availability||'active')}</span></div><div class="model-meta" title="${esc(model.context_note||'')}">${esc(providerNames[model.provider])} · ${esc(model.tier||'standard')} · ${esc(model.context_note||'')}</div></div></div></td>
-          <td><span class="price">${money(model.input)}</span></td>
-          <td><span class="price cache">${money(model.cached_input)}</span></td>
-          <td><span class="price">${money(model.output)}</span></td>
-          <td><span class="cost">${money(workload(model))}</span></td>
+          <td><span class="price">${priceCell(model,'input')}</span></td>
+          <td><span class="price cache">${priceCell(model,'cached_input')}</span></td>
+          <td><span class="price">${priceCell(model,'output')}</span></td>
+          <td><span class="cost">${costCell(model)}</span></td>
+          <td>${valueCell(model)}</td>
+          <td><span class="model-meta">${esc(accessFor(model))}</span></td>
           <td><a class="source" href="${esc(safeUrl(model.source_url))}" target="_blank" rel="noopener noreferrer">Otwórz ↗</a></td>
-        </tr>`).join('') : '<tr><td colspan="6" class="empty">Brak modeli pasujących do filtrów.</td></tr>';
+        </tr>`).join('') : '<tr><td colspan="8" class="empty">Brak modeli pasujących do filtrów.</td></tr>';
       renderRanking(models);
     }
 
     function renderRanking(models) {
-      const ranked = models.filter(model=>model.active!==false).sort((a,b)=>workload(a)-workload(b)).slice(0,5);
+      const ranked = models.filter(model=>model.active!==false && comparable(model)).sort((a,b)=>workload(a)-workload(b)).slice(0,5);
       const max = Math.max(...ranked.map(workload),.000001);
       $('ranking').innerHTML = ranked.length ? ranked.map(model=>`
         <div class="rank-row"><div class="rank-line"><span class="rank-name">${esc(model.name)}</span><span class="rank-price">${money(workload(model))}</span></div><div class="bar"><span style="width:${Math.max(3,workload(model)/max*100)}%"></span></div></div>`).join('') : '<p class="help">Brak wyników.</p>';
