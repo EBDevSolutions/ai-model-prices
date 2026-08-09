@@ -40,6 +40,8 @@ Modele multimodalne z wieloma osobnymi stawkami audio/obrazu nie są mieszane z 
 
 Wskaźnik **Wartość badawcza** nie używa nazw modeli ani szacunków. Dla modelu z pełnymi danymi oblicza średnią `GPQA Diamond` i `HLE bez narzędzi`, dzieli ją przez koszt workloadu z kalkulatora, a następnie skaluje wynik 0–100 wyłącznie w grupie modeli mających oba wyniki. Brak wyniku jest pokazywany jako `—` i wyłącza model z rankingu wartości. Testy codingowe pozostają osobnymi kolumnami, ponieważ różne zestawy/harnessy nie są rzetelnie wymienne.
 
+Panel **Najlepsze do programowania** sortuje wyłącznie według opublikowanego wyniku Terminal-Bench. Wyniki SWE-Bench Pro i FrontierSWE są nadal widoczne osobno w tabeli, lecz nie są łączone w sztuczną średnią.
+
 ## Uruchomienie krok po kroku
 
 ### 1. Utwórz repozytorium

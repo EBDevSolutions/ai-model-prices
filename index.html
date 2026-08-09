@@ -213,6 +213,7 @@
         </div>
         <p class="help">Koszt = input × stawka input + cached × stawka cache + output × stawka output. Wartość badawcza = średnia GPQA Diamond i HLE bez narzędzi / koszt workloadu; wynik jest skalowany 0–100 tylko wśród modeli z oboma wynikami. Każdy wynik w tabeli prowadzi do źródła oraz warunków testu. Nie mieszamy różnych testów codingowych w jedną liczbę. Gwiazdka przy Cursor oznacza katalog zmienny — sprawdź selektor w swojej subskrypcji.</p>
         <div class="ranking"><h3 class="section-title">Najtańsze dla workloadu</h3><div id="ranking"></div></div>
+        <div class="ranking"><h3 class="section-title">Najlepsze do programowania</h3><p class="help" style="margin-top:4px">Terminal-Bench: wyższy wynik jest lepszy. Różne edycje benchmarku są opisane w źródle wyniku.</p><div id="codingRanking"></div></div>
       </aside>
     </div>
 
@@ -380,6 +381,7 @@
           <td><a class="source" href="${esc(safeUrl(model.source_url))}" target="_blank" rel="noopener noreferrer">Otwórz ↗</a></td>
         </tr>`).join('') : '<tr><td colspan="14" class="empty">Brak modeli pasujących do filtrów.</td></tr>';
       renderRanking(models);
+      renderCodingRanking(models);
     }
 
     function renderRanking(models) {
@@ -387,6 +389,15 @@
       const max = Math.max(...ranked.map(workload),.000001);
       $('ranking').innerHTML = ranked.length ? ranked.map(model=>`
         <div class="rank-row"><div class="rank-line"><span class="rank-name">${esc(model.name)}</span><span class="rank-price">${money(workload(model))}</span></div><div class="bar"><span style="width:${Math.max(3,workload(model)/max*100)}%"></span></div></div>`).join('') : '<p class="help">Brak wyników.</p>';
+    }
+
+    function renderCodingRanking(models) {
+      const ranked = models.filter(model=>model.active!==false && Number.isFinite(scoreFor(model,'terminal_bench'))).sort((a,b)=>scoreFor(b,'terminal_bench')-scoreFor(a,'terminal_bench')).slice(0,5);
+      const max = Math.max(...ranked.map(model=>scoreFor(model,'terminal_bench')),.000001);
+      $('codingRanking').innerHTML = ranked.length ? ranked.map(model=>{
+        const record = benchmarkRecord(model), score = scoreFor(model,'terminal_bench');
+        return `<div class="rank-row"><div class="rank-line"><span class="rank-name"><a class="source" title="${esc(record.conditions || '')}" href="${esc(safeUrl(record.source_url))}" target="_blank" rel="noopener noreferrer">${esc(model.name)}</a></span><span class="rank-price">${score.toFixed(1)}%</span></div><div class="bar"><span style="width:${Math.max(3,score/max*100)}%"></span></div></div>`;
+      }).join('') : '<p class="help">Brak opublikowanych wyników Terminal-Bench dla bieżącego filtra.</p>';
     }
 
     function renderProviders() {
