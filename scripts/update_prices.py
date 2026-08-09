@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Conservative, failure-isolated price updater for the static dashboard.
+"""Discover and update AI token prices from official public pricing tables.
 
-The official pricing pages are not stable APIs. Parsers therefore only update
-known model rows when all expected values can be found and validated. Existing
-prices are retained on HTTP, markup, parsing, or validation failures.
+The sources are web pages, not stable machine APIs. Every provider is isolated:
+a failed or incomplete parser never deletes working prices. Newly listed models
+are added automatically; models missing from three complete scans are retained
+but marked as not listed.
 """
 
 from __future__ import annotations
@@ -23,22 +24,30 @@ from pathlib import Path
 from typing import Callable
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 ROOT = Path(__file__).resolve().parents[1]
 PRICES_PATH = ROOT / "data" / "prices.json"
 HISTORY_PATH = ROOT / "data" / "history.json"
-TIMEOUT = (10, 35)
-USER_AGENT = "ai-model-prices-dashboard/1.0 (+GitHub Actions; public pricing monitor)"
+TIMEOUT = (10, 40)
+USER_AGENT = "ai-model-prices-dashboard/2.0 (+GitHub Actions; public pricing monitor)"
 PRICE_FIELDS = ("input", "cached_input", "output")
+MISSING_LIMIT = 3
 LOG = logging.getLogger("price-updater")
+
+
+@dataclass(frozen=True)
+class Page:
+    html: str
+    text: str
 
 
 @dataclass(frozen=True)
 class ProviderSpec:
     provider_id: str
     url: str
-    parser: Callable[[str], dict[str, dict[str, float]]]
+    minimum_models: int
+    parser: Callable[[Page], dict[str, dict]]
 
 
 def utc_now() -> str:
@@ -49,6 +58,11 @@ def money_values(text: str) -> list[float]:
     return [float(value.replace(",", "")) for value in re.findall(r"\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)", text)]
 
 
+def first_money(text: str) -> float | None:
+    values = money_values(text)
+    return values[0] if values else None
+
+
 def normalized_text(html: str) -> str:
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style", "noscript", "svg"]):
@@ -57,156 +71,336 @@ def normalized_text(html: str) -> str:
     return re.sub(r"\s+", " ", text.replace("\xa0", " ").replace("−", "-").replace("–", "-"))
 
 
-def anchored_block(text: str, anchor: str, next_anchors: list[str], span: int = 2600) -> str:
-    start = text.lower().find(anchor.lower())
-    if start < 0:
-        raise ValueError(f"missing anchor: {anchor}")
-    end = min(len(text), start + span)
-    tail = text[start + len(anchor) : end]
-    for candidate in next_anchors:
-        pos = tail.lower().find(candidate.lower())
-        if pos >= 0:
-            end = min(end, start + len(anchor) + pos)
-    return text[start:end]
+def clean_space(value: str) -> str:
+    return re.sub(r"\s+", " ", value).strip()
 
 
-def parse_openai(text: str) -> dict[str, dict[str, float]]:
-    models = [
-        ("openai:gpt-5.6-sol", "GPT-5.6 Sol"),
-        ("openai:gpt-5.6-terra", "GPT-5.6 Terra"),
-        ("openai:gpt-5.6-luna", "GPT-5.6 Luna"),
-    ]
-    result = {}
-    anchors = [name for _, name in models]
-    for model_id, name in models:
-        try:
-            block = anchored_block(text, name, [a for a in anchors if a != name], 1800)
-            match = re.search(
-                r"Pricing.*?Input\s*\$\s*([0-9.]+).*?Cached Input\s*\$\s*([0-9.]+).*?Output\s*\$\s*([0-9.]+)",
-                block,
-                re.I,
-            )
-            if match:
-                result[model_id] = dict(zip(PRICE_FIELDS, map(float, match.groups())))
-        except ValueError:
-            continue
-    return result
+def slugify(value: str) -> str:
+    value = value.lower().replace("≤", "-").replace("≥", "-")
+    value = re.sub(r"[^a-z0-9._-]+", "-", value)
+    return re.sub(r"-+", "-", value).strip("-")
 
 
-def parse_anthropic(text: str) -> dict[str, dict[str, float]]:
-    models = [
-        ("anthropic:claude-opus-4.7", "Claude Opus 4.7"),
-        ("anthropic:claude-sonnet-4.6", "Claude Sonnet 4.6"),
-        ("anthropic:claude-haiku-4.5", "Claude Haiku 4.5"),
-    ]
-    result = {}
-    anchors = [name for _, name in models]
-    for model_id, name in models:
-        try:
-            block = anchored_block(text, name, [a for a in anchors if a != name], 2400)
-            row_pos = re.search(r"Standard\s+(?:Global\s+)?(?:All|[≤<]=?\s*200K)", block, re.I)
-            values = money_values(block[row_pos.start() :] if row_pos else block)
-            # Current HTML table order: input, 5m write, 1h write, cache hit, output.
-            if len(values) >= 5:
-                result[model_id] = {"input": values[0], "cached_input": values[3], "output": values[4]}
-        except ValueError:
-            continue
-    return result
+def title_from_id(model_id: str) -> str:
+    parts = model_id.replace("_", "-").split("-")
+    rendered = []
+    for part in parts:
+        lower = part.lower()
+        if lower in {"gpt", "tts", "api", "vl", "omni"}:
+            rendered.append(lower.upper())
+        elif lower == "qwen":
+            rendered.append("Qwen")
+        elif lower == "grok":
+            rendered.append("Grok")
+        else:
+            rendered.append(part.capitalize() if part.isalpha() else part)
+    return " ".join(rendered)
 
 
-def parse_google(text: str) -> dict[str, dict[str, float]]:
-    models = [
-        ("google:gemini-3.5-flash", "Gemini 3.5 Flash"),
-        ("google:gemini-3-flash-preview", "Gemini 3 Flash Preview"),
-        ("google:gemini-2.5-pro", "Gemini 2.5 Pro"),
-    ]
-    result = {}
-    anchors = [name for _, name in models]
-    for model_id, name in models:
-        try:
-            block = anchored_block(text, name, [a for a in anchors if a != name], 4200)
-            standard = block[block.lower().find("standard") :]
-            input_match = re.search(r"Input price[^$]{0,220}\$\s*([0-9.]+)", standard, re.I)
-            output_match = re.search(r"Output price[^$]{0,220}\$\s*([0-9.]+)", standard, re.I)
-            cache_match = re.search(r"Context caching price[^$]{0,240}\$\s*([0-9.]+)", standard, re.I)
-            if input_match and output_match and cache_match:
-                result[model_id] = {
-                    "input": float(input_match.group(1)),
-                    "cached_input": float(cache_match.group(1)),
-                    "output": float(output_match.group(1)),
-                }
-        except ValueError:
-            continue
-    return result
-
-
-def parse_xai(text: str) -> dict[str, dict[str, float]]:
-    models = [
-        ("xai:grok-4.5", "grok-4.5"),
-        ("xai:grok-build-0.1", "grok-build-0.1"),
-        ("xai:grok-4.3", "grok-4.3"),
-    ]
-    result = {}
-    anchors = [anchor for _, anchor in models]
-    for model_id, anchor in models:
-        try:
-            block = anchored_block(text, anchor, [a for a in anchors if a != anchor], 900)
-            values = money_values(block)
-            # The official row is short-context input/cached/output, then long-context equivalents.
-            if len(values) >= 3:
-                result[model_id] = dict(zip(PRICE_FIELDS, values[:3]))
-        except ValueError:
-            continue
-    return result
-
-
-def parse_deepseek(text: str) -> dict[str, dict[str, float]]:
-    if "deepseek-v4-flash" not in text.lower() or "deepseek-v4-pro" not in text.lower():
-        return {}
-    match = re.search(
-        r"INPUT TOKENS \(CACHE HIT\)\s*\$\s*([0-9.]+)\s*\$\s*([0-9.]+).*?"
-        r"INPUT TOKENS \(CACHE MISS\)\s*\$\s*([0-9.]+)\s*\$\s*([0-9.]+).*?"
-        r"OUTPUT TOKENS\s*\$\s*([0-9.]+)\s*\$\s*([0-9.]+)",
-        text,
-        re.I,
-    )
-    if not match:
-        return {}
-    flash_hit, pro_hit, flash_input, pro_input, flash_output, pro_output = map(float, match.groups())
-    return {
-        "deepseek:deepseek-v4-flash": {"input": flash_input, "cached_input": flash_hit, "output": flash_output},
-        "deepseek:deepseek-v4-pro": {"input": pro_input, "cached_input": pro_hit, "output": pro_output},
+def model_record(
+    provider: str,
+    model_id: str,
+    name: str,
+    input_price: float,
+    cached_price: float | None,
+    output_price: float,
+    tier: str,
+    context_note: str,
+    availability: str = "active",
+) -> tuple[str, dict]:
+    canonical = slugify(model_id)
+    local_id = f"{provider}:{canonical}"
+    cached = input_price if cached_price is None else cached_price
+    return local_id, {
+        "id": local_id,
+        "provider": provider,
+        "name": clean_space(name),
+        "model_id": canonical,
+        "input": float(input_price),
+        "cached_input": float(cached),
+        "output": float(output_price),
+        "tier": tier,
+        "context_note": clean_space(context_note)[:240],
+        "availability": availability,
+        "active": availability not in {"retired", "not_listed"},
     }
 
 
-def parse_alibaba(text: str) -> dict[str, dict[str, float]]:
-    models = [
-        ("alibaba:qwen3.7-max", "qwen3.7-max"),
-        ("alibaba:qwen3.6-flash", "qwen3.6-flash"),
-        ("alibaba:qwen3.5-flash", "qwen3.5-flash"),
+def table_rows(table: Tag) -> list[list[str]]:
+    return [
+        [clean_space(cell.get_text(" ", strip=True)) for cell in row.find_all(["th", "td"])]
+        for row in table.find_all("tr")
     ]
-    result = {}
-    all_anchors = [anchor for _, anchor in models]
-    for model_id, anchor in models:
-        try:
-            block = anchored_block(text, anchor, [a for a in all_anchors if a != anchor], 2600)
-            international = re.search(r"International.{0,700}", block, re.I)
-            values = money_values(international.group(0) if international else block)
-            if len(values) >= 2:
-                # Alibaba documents cache hits as 10% of input for supported models.
-                result[model_id] = {"input": values[0], "cached_input": values[0] * 0.1, "output": values[1]}
-        except ValueError:
+
+
+def parse_openai(page: Page) -> dict[str, dict]:
+    soup = BeautifulSoup(page.html, "html.parser")
+    result: dict[str, dict] = {}
+
+    # The first flagship table is the Standard, short-context table. Later
+    # siblings contain Batch, Flex and Fast rates for the same models.
+    flagship = None
+    category = None
+    for table in soup.find_all("table"):
+        rows = table_rows(table)
+        header = " | ".join(rows[1] if len(rows) > 1 and rows[0] and rows[0][0] == "" else rows[0]) if rows else ""
+        if flagship is None and all(label in header for label in ("Model", "Input", "Cached input", "Cache writes", "Output")):
+            flagship = rows
+        if category is None and header.startswith("Category | Model | Input | Cached input | Output"):
+            category = rows
+
+    if flagship:
+        for cells in flagship:
+            if len(cells) < 5 or not re.fullmatch(r"(?:gpt|o)[a-z0-9._-]+", cells[0], re.I):
+                continue
+            input_price, cached_price, output_price = first_money(cells[1]), first_money(cells[2]), first_money(cells[4])
+            if input_price is None or output_price is None:
+                continue
+            item_id, item = model_record(
+                "openai", cells[0], title_from_id(cells[0]), input_price, cached_price, output_price,
+                "standard · short context", "Standard API token pricing; long-context rates may differ."
+            )
+            result[item_id] = item
+
+    if category:
+        for cells in category:
+            if len(cells) < 5 or cells[0] in {"Category", ""}:
+                continue
+            input_price, cached_price, output_price = first_money(cells[2]), first_money(cells[3]), first_money(cells[4])
+            if input_price is None or output_price is None:
+                continue
+            model_id = cells[1]
+            item_id, item = model_record(
+                "openai", model_id, title_from_id(model_id), input_price, cached_price, output_price,
+                "standard", f"{cells[0]} model; first listed text-token rate."
+            )
+            result[item_id] = item
+    return result
+
+
+def _date_qualified_name(name: str) -> tuple[str, bool]:
+    match = re.search(r"\s+(through|starting)\s+([A-Za-z]+\s+\d{1,2},\s+\d{4})$", name)
+    if not match:
+        return name, True
+    boundary = datetime.strptime(match.group(2), "%B %d, %Y").date()
+    today = datetime.now(timezone.utc).date()
+    eligible = today <= boundary if match.group(1) == "through" else today >= boundary
+    return name[: match.start()], eligible
+
+
+def parse_anthropic(page: Page) -> dict[str, dict]:
+    soup = BeautifulSoup(page.html, "html.parser")
+    result: dict[str, dict] = {}
+    pricing_rows = None
+    for table in soup.find_all("table"):
+        rows = table_rows(table)
+        header = " | ".join(rows[0]) if rows else ""
+        if all(label in header for label in ("Model", "Base Input Tokens", "Cache Hits", "Output Tokens")):
+            pricing_rows = rows
+            break
+    if not pricing_rows:
+        return result
+
+    for cells in pricing_rows[1:]:
+        if len(cells) < 6 or not cells[0].lower().startswith("claude"):
             continue
+        raw_name = cells[0]
+        availability = "active"
+        if "retired" in raw_name.lower():
+            availability = "retired"
+        elif "limited availability" in raw_name.lower():
+            availability = "limited"
+        display = re.sub(r"\s*\([^)]*(?:retired|limited availability)[^)]*\)\s*", " ", raw_name, flags=re.I).strip()
+        display, eligible = _date_qualified_name(display)
+        if not eligible:
+            continue
+        values = [first_money(cell) for cell in cells[1:6]]
+        if values[0] is None or values[3] is None or values[4] is None:
+            continue
+        model_id = slugify(display)
+        item_id, item = model_record(
+            "anthropic", model_id, display, values[0], values[3], values[4],
+            "Claude API · standard global", "Base input, cache-hit and output token rates.", availability
+        )
+        result[item_id] = item
+    return result
+
+
+def _next_before_h2(heading: Tag, wanted: str) -> Tag | None:
+    for node in heading.next_elements:
+        if node is heading:
+            continue
+        if isinstance(node, Tag) and node.name == "h2":
+            return None
+        if isinstance(node, Tag) and node.name == wanted:
+            return node
+    return None
+
+
+def parse_google(page: Page) -> dict[str, dict]:
+    soup = BeautifulSoup(page.html, "html.parser")
+    result: dict[str, dict] = {}
+    for heading in soup.find_all("h2"):
+        code = _next_before_h2(heading, "code")
+        table = _next_before_h2(heading, "table")
+        if code is None or table is None:
+            continue
+        model_id = clean_space(code.get_text(" ", strip=True))
+        if not model_id.startswith("gemini-"):
+            continue
+        # These rows quote output per generated image, not per 1M output
+        # tokens, so they cannot participate in the token-price calculator.
+        if "-image" in model_id:
+            continue
+        rows = table_rows(table)
+        input_price = output_price = cached_price = None
+        rate_notes: list[str] = []
+        for cells in rows:
+            if len(cells) < 2:
+                continue
+            label = cells[0].lower()
+            paid = cells[-1]
+            if label.startswith("input price") and input_price is None:
+                input_price = first_money(paid)
+                rate_notes.append(cells[0])
+            elif label.startswith("output price") and output_price is None:
+                output_price = first_money(paid)
+                rate_notes.append(cells[0])
+            elif label.startswith("context caching price") and cached_price is None:
+                cached_price = first_money(paid)
+        if input_price is None or output_price is None:
+            continue
+        name = clean_space(heading.get_text(" ", strip=True)).replace("🍌", "").strip()
+        availability = "preview" if "preview" in f"{name} {model_id}".lower() else "active"
+        cache_note = "cache rate listed" if cached_price is not None else "no separate cache rate listed"
+        item_id, item = model_record(
+            "google", model_id, name, input_price, cached_price, output_price,
+            "paid standard", f"First listed paid token rate ({cache_note}); modalities and thresholds may differ.", availability
+        )
+        result[item_id] = item
+    return result
+
+
+def parse_xai(page: Page) -> dict[str, dict]:
+    soup = BeautifulSoup(page.html, "html.parser")
+    result: dict[str, dict] = {}
+    for table in soup.find_all("table"):
+        rows = table_rows(table)
+        header = " | ".join(rows[0:2][0] + (rows[1] if len(rows) > 1 else [])) if rows else ""
+        if not all(label in header for label in ("Model", "Context", "Input", "Cached", "Output")):
+            continue
+        for cells in rows:
+            if len(cells) < 5:
+                continue
+            match = re.search(r"\b(grok-[a-z0-9._-]+)", cells[0], re.I)
+            if not match:
+                continue
+            model_id = match.group(1)
+            prices = [first_money(cell) for cell in cells[2:5]]
+            if any(value is None for value in prices):
+                continue
+            context = cells[1] if len(cells) > 1 else ""
+            item_id, item = model_record(
+                "xai", model_id, title_from_id(model_id), prices[0], prices[1], prices[2],
+                "standard · short context", f"Context: {context}; long-context rates may differ."
+            )
+            result[item_id] = item
+        if result:
+            break
+    return result
+
+
+def parse_deepseek(page: Page) -> dict[str, dict]:
+    soup = BeautifulSoup(page.html, "html.parser")
+    table = soup.find("table")
+    if table is None:
+        return {}
+    rows = table_rows(table)
+    if not rows or len(rows[0]) < 2 or rows[0][0] != "MODEL":
+        return {}
+    models = rows[0][1:]
+    versions = models[:]
+    hit = miss = output = None
+    for cells in rows[1:]:
+        label = cells[0].upper() if cells else ""
+        if label == "MODEL VERSION":
+            versions = cells[1:]
+        elif "INPUT TOKENS (CACHE HIT)" in " ".join(cells).upper():
+            hit = [first_money(cell) for cell in cells[-len(models):]]
+        elif "INPUT TOKENS (CACHE MISS)" in label:
+            miss = [first_money(cell) for cell in cells[1:1 + len(models)]]
+        elif "OUTPUT TOKENS" in label:
+            output = [first_money(cell) for cell in cells[1:1 + len(models)]]
+    if not hit or not miss or not output:
+        return {}
+    result: dict[str, dict] = {}
+    for index, model_id in enumerate(models):
+        if index >= len(hit) or index >= len(miss) or index >= len(output):
+            continue
+        if hit[index] is None or miss[index] is None or output[index] is None:
+            continue
+        version = versions[index] if index < len(versions) else model_id
+        item_id, item = model_record(
+            "deepseek", model_id, title_from_id(version), miss[index], hit[index], output[index],
+            "standard", "Official DeepSeek API; promotions or time-based rates may change."
+        )
+        result[item_id] = item
+    return result
+
+
+def parse_alibaba(page: Page) -> dict[str, dict]:
+    soup = BeautifulSoup(page.html, "html.parser")
+    result: dict[str, dict] = {}
+    for table in soup.find_all("table"):
+        rows = table_rows(table)
+        if not rows:
+            continue
+        header = " | ".join(rows[0])
+        if not all(label in header for label in ("Model ID", "Deployment scope", "Input price", "Output price")):
+            continue
+        # Multimodal tables expose several input/output columns. They are not
+        # directly comparable to the text-token rows in this dashboard.
+        if len(rows) > 1 and "audio" in " | ".join(rows[1]).lower() and not re.match(r"^(?:qwen|qwq)", rows[1][0], re.I):
+            continue
+        for cells in rows[1:]:
+            if len(cells) < 4:
+                continue
+            model_match = re.match(r"^((?:qwen|qwq)[a-z0-9._-]*)\b", cells[0], re.I)
+            if not model_match:
+                continue
+            if not any(scope.lower() == "international" for scope in cells[1:3]):
+                continue
+            model_id = model_match.group(1)
+            if f"alibaba:{slugify(model_id)}" in result:
+                continue
+            values = money_values(" | ".join(cells))
+            if len(values) < 2:
+                continue
+            # Skip multimodal rows with separate audio prices; simple text rows
+            # contain one input and one output dollar value.
+            if len(values) > 2:
+                continue
+            input_price, output_price = values[0], values[1]
+            supports_cache = "context cach" in cells[0].lower()
+            cached_price = input_price * 0.1 if supports_cache else None
+            bracket = next((cell for cell in cells if "token" in cell.lower() and any(ch in cell for ch in "≤<>")), "")
+            availability = "preview" if "preview" in model_id.lower() else "active"
+            cache_note = "cache hit approximated at documented 10%" if supports_cache else "no separate cache rate listed"
+            item_id, item = model_record(
+                "alibaba", model_id, title_from_id(model_id), input_price, cached_price, output_price,
+                "international", f"Lowest listed International tier {bracket}; {cache_note}.", availability
+            )
+            result[item_id] = item
     return result
 
 
 SPECS = [
-    ProviderSpec("openai", "https://developers.openai.com/api/docs/models/compare", parse_openai),
-    ProviderSpec("anthropic", "https://platform.claude.com/docs/en/about-claude/pricing", parse_anthropic),
-    ProviderSpec("google", "https://ai.google.dev/gemini-api/docs/pricing", parse_google),
-    ProviderSpec("xai", "https://docs.x.ai/developers/pricing", parse_xai),
-    ProviderSpec("deepseek", "https://api-docs.deepseek.com/quick_start/pricing", parse_deepseek),
-    ProviderSpec("alibaba", "https://www.alibabacloud.com/help/en/model-studio/model-pricing", parse_alibaba),
+    ProviderSpec("openai", "https://developers.openai.com/api/docs/pricing", 5, parse_openai),
+    ProviderSpec("anthropic", "https://platform.claude.com/docs/en/about-claude/pricing", 5, parse_anthropic),
+    ProviderSpec("google", "https://ai.google.dev/gemini-api/docs/pricing", 8, parse_google),
+    ProviderSpec("xai", "https://docs.x.ai/developers/pricing", 3, parse_xai),
+    ProviderSpec("deepseek", "https://api-docs.deepseek.com/quick_start/pricing", 2, parse_deepseek),
+    ProviderSpec("alibaba", "https://www.alibabacloud.com/help/en/model-studio/model-pricing", 10, parse_alibaba),
 ]
 
 
@@ -224,15 +418,16 @@ def atomic_json_write(path: Path, payload: dict) -> None:
     os.replace(temp_name, path)
 
 
-def fetch(session: requests.Session, url: str) -> str:
+def fetch(session: requests.Session, url: str) -> Page:
     response = session.get(url, timeout=TIMEOUT, headers={"Accept-Language": "en-US,en;q=0.9"})
     response.raise_for_status()
     if len(response.content) < 1000:
         raise ValueError(f"response unexpectedly short ({len(response.content)} bytes)")
-    return normalized_text(response.text)
+    return Page(response.text, normalized_text(response.text))
 
 
-def valid_price_set(values: dict[str, float], old: dict) -> tuple[bool, str | None]:
+def valid_price_set(values: dict, old: dict | None = None) -> tuple[bool, str | None]:
+    old = old or {}
     for field in PRICE_FIELDS:
         value = values.get(field)
         if not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0 or value > 10000:
@@ -247,17 +442,37 @@ def valid_price_set(values: dict[str, float], old: dict) -> tuple[bool, str | No
     return True, None
 
 
+def add_event(history: dict, now: str, provider: str, model_id: str, event_type: str, changes: dict, source: str) -> None:
+    history.setdefault("events", []).append({
+        "timestamp": now,
+        "provider": provider,
+        "model_id": model_id,
+        "event_type": event_type,
+        "changes": changes,
+        "source_url": source,
+    })
+
+
 def update(selected: set[str] | None = None, dry_run: bool = False) -> int:
     prices = load_json(PRICES_PATH)
     history = load_json(HISTORY_PATH)
     before_prices = copy.deepcopy(prices)
     before_history = copy.deepcopy(history)
+    # Schema v2 intentionally compares per-token rates only. Remove rows from
+    # early v2 snapshots that used a per-image output unit.
+    excluded_ids = {
+        model["id"] for model in prices.get("models", [])
+        if model.get("provider") == "google" and "-image" in model.get("model_id", "")
+    }
+    if excluded_ids:
+        prices["models"] = [model for model in prices["models"] if model["id"] not in excluded_ids]
+        history["events"] = [event for event in history.get("events", []) if event.get("model_id") not in excluded_ids]
     now = utc_now()
-    model_index = {model["id"]: model for model in prices["models"]}
+    model_index = {model["id"]: model for model in prices.get("models", [])}
     provider_index = {provider["id"]: provider for provider in prices["providers"]}
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
-    changed_count = 0
+    event_count = 0
 
     for spec in SPECS:
         if selected and spec.provider_id not in selected:
@@ -266,74 +481,99 @@ def update(selected: set[str] | None = None, dry_run: bool = False) -> int:
         provider["last_checked_at"] = now
         provider["source_url"] = spec.url
         try:
-            text = fetch(session, spec.url)
-            parsed = spec.parser(text)
-            if not parsed:
-                raise ValueError("parser returned no recognized model prices")
+            parsed = spec.parser(fetch(session, spec.url))
+            if len(parsed) < spec.minimum_models:
+                raise ValueError(f"incomplete discovery: {len(parsed)} model(s), expected at least {spec.minimum_models}")
             accepted = 0
             rejected: list[str] = []
-            for model_id, values in parsed.items():
-                old = model_index.get(model_id)
-                if old is None:
-                    rejected.append(f"unknown model {model_id}")
-                    continue
-                ok, reason = valid_price_set(values, old)
+            seen: set[str] = set()
+            for local_id, discovered in parsed.items():
+                old = model_index.get(local_id)
+                ok, reason = valid_price_set(discovered, old)
                 if not ok:
-                    rejected.append(f"{model_id}: {reason}")
+                    rejected.append(f"{local_id}: {reason}")
                     continue
                 accepted += 1
-                changes = {
-                    field: {"from": old[field], "to": round(values[field], 9)}
+                seen.add(local_id)
+                if old is None:
+                    discovered.update({
+                        "source_url": spec.url,
+                        "first_seen_at": now,
+                        "last_seen_at": now,
+                        "updated_at": now,
+                        "missing_checks": 0,
+                    })
+                    prices["models"].append(discovered)
+                    model_index[local_id] = discovered
+                    changes = {field: {"from": None, "to": discovered[field]} for field in PRICE_FIELDS}
+                    add_event(history, now, spec.provider_id, local_id, "added", changes, spec.url)
+                    event_count += 1
+                    continue
+
+                was_active = old.get("active", True)
+                price_changes = {
+                    field: {"from": old[field], "to": round(discovered[field], 9)}
                     for field in PRICE_FIELDS
-                    if not math.isclose(float(old[field]), float(values[field]), rel_tol=0, abs_tol=1e-9)
+                    if not math.isclose(float(old[field]), float(discovered[field]), rel_tol=0, abs_tol=1e-9)
                 }
-                if changes:
-                    previous = {field: old[field] for field in PRICE_FIELDS}
-                    for field in PRICE_FIELDS:
-                        old[field] = round(values[field], 9)
+                for field in ("name", "model_id", "tier", "context_note", "availability", "active"):
+                    old[field] = discovered[field]
+                for field in PRICE_FIELDS:
+                    old[field] = round(discovered[field], 9)
+                old.update({"source_url": spec.url, "last_seen_at": now, "missing_checks": 0})
+                old.setdefault("first_seen_at", old.get("updated_at", now))
+                if price_changes:
                     old["updated_at"] = now
-                    history["events"].append(
-                        {
-                            "timestamp": now,
-                            "provider": spec.provider_id,
-                            "model_id": model_id,
-                            "changes": changes,
-                            "previous": previous,
-                            "current": {field: old[field] for field in PRICE_FIELDS},
-                            "source_url": spec.url,
-                        }
-                    )
-                    changed_count += 1
-            if accepted == 0:
-                raise ValueError("all parsed rows failed validation: " + "; ".join(rejected))
+                    add_event(history, now, spec.provider_id, local_id, "price_changed", price_changes, spec.url)
+                    event_count += 1
+                if not was_active and old.get("active"):
+                    add_event(history, now, spec.provider_id, local_id, "reactivated", {}, spec.url)
+                    event_count += 1
+
+            complete_scan = not rejected and accepted >= spec.minimum_models
+            if complete_scan:
+                for old in [model for model in prices["models"] if model.get("provider") == spec.provider_id]:
+                    if old["id"] in seen:
+                        continue
+                    old["missing_checks"] = int(old.get("missing_checks", 0)) + 1
+                    if old["missing_checks"] >= MISSING_LIMIT and old.get("availability") != "not_listed":
+                        old["active"] = False
+                        old["availability"] = "not_listed"
+                        add_event(history, now, spec.provider_id, old["id"], "not_listed", {}, spec.url)
+                        event_count += 1
+
             provider["status"] = "ok" if not rejected else "partial"
             provider["last_success_at"] = now
             provider["error"] = "; ".join(rejected)[:500] or None
-            LOG.info("%s: accepted %d row(s), rejected %d", spec.provider_id, accepted, len(rejected))
+            provider["model_count"] = accepted
+            LOG.info("%s: discovered %d model(s), rejected %d", spec.provider_id, accepted, len(rejected))
         except Exception as exc:  # provider failures must never stop other providers
             provider["status"] = "error"
             provider["error"] = f"{type(exc).__name__}: {exc}"[:500]
-            LOG.warning("%s retained previous prices: %s", spec.provider_id, provider["error"])
+            LOG.warning("%s retained previous catalog: %s", spec.provider_id, provider["error"])
 
+    prices["schema_version"] = 2
     prices["last_checked_at"] = now
-    if changed_count:
+    if event_count:
         prices["last_updated_at"] = now
+    prices["models"].sort(key=lambda model: (model.get("provider", ""), not model.get("active", True), model.get("name", "").lower()))
+    history["schema_version"] = 2
     history["events"] = history.get("events", [])[-5000:]
 
     if dry_run:
-        LOG.info("dry run: %d model price change(s); no files written", changed_count)
+        additions = len(model_index) - len({model["id"] for model in before_prices.get("models", [])})
+        LOG.info("dry run: %d new model(s), %d catalog event(s); no files written", additions, event_count)
         return 0
-
     if prices != before_prices:
         atomic_json_write(PRICES_PATH, prices)
     if history != before_history:
         atomic_json_write(HISTORY_PATH, history)
-    LOG.info("finished: %d model price change(s)", changed_count)
+    LOG.info("finished: %d catalog event(s), %d total model(s)", event_count, len(prices["models"]))
     return 0
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Update AI token pricing from official public pages.")
+    parser = argparse.ArgumentParser(description="Discover and update AI token pricing from official public pages.")
     parser.add_argument("--provider", action="append", choices=[spec.provider_id for spec in SPECS])
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--verbose", action="store_true")
@@ -341,7 +581,7 @@ def main() -> int:
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, format="%(levelname)s %(message)s")
     try:
         return update(set(args.provider) if args.provider else None, args.dry_run)
-    except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
+    except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
         LOG.error("fatal local data error: %s", exc)
         return 1
 

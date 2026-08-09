@@ -92,6 +92,10 @@
     .logo { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 12px; font-weight: 850; color: #081013; flex: 0 0 auto; }
     .model-name { font-weight: 720; margin-bottom: 4px; }
     .model-meta { color: var(--muted); font-size: 11px; max-width: 280px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .availability { display: inline-flex; margin-left: 6px; padding: 2px 6px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 9px; line-height: 1.2; text-transform: uppercase; letter-spacing: .06em; vertical-align: 1px; }
+    .availability.active { color: var(--green); border-color: rgba(110,231,183,.28); }
+    .availability.preview, .availability.limited { color: var(--amber); border-color: rgba(252,211,77,.28); }
+    .availability.retired, .availability.not_listed { color: var(--red); border-color: rgba(251,113,133,.28); }
     .price { font-weight: 650; }
     .price.cache { color: var(--green); }
     .cost { color: var(--blue); font-weight: 780; }
@@ -166,7 +170,7 @@
     </header>
 
     <section class="grid" aria-label="Podsumowanie">
-      <div class="card metric"><div class="metric-label">Modele</div><div id="modelCount" class="metric-value skeleton">00</div><div class="metric-foot">w monitorowanym snapshotcie</div></div>
+      <div class="card metric"><div class="metric-label">Modele</div><div id="modelCount" class="metric-value skeleton">00</div><div id="modelFoot" class="metric-foot">w pełnym katalogu</div></div>
       <div class="card metric"><div class="metric-label">Dostawcy</div><div id="providerCount" class="metric-value skeleton">00</div><div id="providerFoot" class="metric-foot">sprawdzanie statusu…</div></div>
       <div class="card metric"><div class="metric-label">Najtańszy input</div><div id="cheapestInput" class="metric-value skeleton">$0.00</div><div id="cheapestInputName" class="metric-foot">—</div></div>
       <div class="card metric"><div class="metric-label">Najtańszy output</div><div id="cheapestOutput" class="metric-value skeleton">$0.00</div><div id="cheapestOutputName" class="metric-foot">—</div></div>
@@ -291,11 +295,13 @@
     function renderMetrics() {
       const {models,providers} = state.prices;
       $('modelCount').textContent = models.length;
+      $('modelFoot').textContent = `${models.filter(model=>model.active!==false).length} aktywnych lub dostępnych`;
       $('providerCount').textContent = providers.length;
       const healthy = providers.filter(p=>p.status==='ok').length;
       $('providerFoot').textContent = `${healthy} źródeł bez ostrzeżeń`;
-      const cheapestIn = [...models].sort((a,b)=>a.input-b.input)[0];
-      const cheapestOut = [...models].sort((a,b)=>a.output-b.output)[0];
+      const comparable = models.filter(model=>model.active!==false);
+      const cheapestIn = [...comparable].sort((a,b)=>a.input-b.input)[0];
+      const cheapestOut = [...comparable].sort((a,b)=>a.output-b.output)[0];
       $('cheapestInput').textContent = money(cheapestIn.input);
       $('cheapestInputName').textContent = cheapestIn.name;
       $('cheapestOutput').textContent = money(cheapestOut.output);
@@ -315,7 +321,11 @@
         const haystack = `${model.name} ${model.model_id} ${providers[model.provider] || model.provider}`.toLowerCase();
         return (state.provider==='all' || model.provider===state.provider) && haystack.includes(state.query.toLowerCase());
       });
-      return models.sort((a,b)=> state.sort==='name' ? a.name.localeCompare(b.name) : (state.sort==='cost' ? workload(a)-workload(b) : a[state.sort]-b[state.sort]));
+      return models.sort((a,b)=> {
+        const availabilityOrder = Number(a.active===false)-Number(b.active===false);
+        if (availabilityOrder) return availabilityOrder;
+        return state.sort==='name' ? a.name.localeCompare(b.name) : (state.sort==='cost' ? workload(a)-workload(b) : a[state.sort]-b[state.sort]);
+      });
     }
 
     function renderModels() {
@@ -325,7 +335,7 @@
       $('visibleCount').textContent = `${models.length} z ${state.prices.models.length}`;
       $('modelRows').innerHTML = models.length ? models.map(model=>`
         <tr>
-          <td><div class="model-cell"><div class="logo" style="background:${COLORS[model.provider]||'#fff'}">${esc(SHORT[model.provider]||'?')}</div><div><div class="model-name">${esc(model.name)}</div><div class="model-meta" title="${esc(model.context_note||'')}">${esc(providerNames[model.provider])} · ${esc(model.tier||'standard')} · ${esc(model.context_note||'')}</div></div></div></td>
+          <td><div class="model-cell"><div class="logo" style="background:${COLORS[model.provider]||'#fff'}">${esc(SHORT[model.provider]||'?')}</div><div><div class="model-name">${esc(model.name)}<span class="availability ${esc(model.availability||'active')}">${esc(model.availability||'active')}</span></div><div class="model-meta" title="${esc(model.context_note||'')}">${esc(providerNames[model.provider])} · ${esc(model.tier||'standard')} · ${esc(model.context_note||'')}</div></div></div></td>
           <td><span class="price">${money(model.input)}</span></td>
           <td><span class="price cache">${money(model.cached_input)}</span></td>
           <td><span class="price">${money(model.output)}</span></td>
@@ -336,7 +346,7 @@
     }
 
     function renderRanking(models) {
-      const ranked = [...models].sort((a,b)=>workload(a)-workload(b)).slice(0,5);
+      const ranked = models.filter(model=>model.active!==false).sort((a,b)=>workload(a)-workload(b)).slice(0,5);
       const max = Math.max(...ranked.map(workload),.000001);
       $('ranking').innerHTML = ranked.length ? ranked.map(model=>`
         <div class="rank-row"><div class="rank-line"><span class="rank-name">${esc(model.name)}</span><span class="rank-price">${money(workload(model))}</span></div><div class="bar"><span style="width:${Math.max(3,workload(model)/max*100)}%"></span></div></div>`).join('') : '<p class="help">Brak wyników.</p>';
@@ -345,7 +355,7 @@
     function renderProviders() {
       $('providerCards').innerHTML = state.prices.providers.map(provider=>{
         const status = ['ok','partial','error','snapshot'].includes(provider.status) ? provider.status : 'snapshot';
-        const message = provider.error ? provider.error : (status==='snapshot' ? 'Snapshot startowy — uruchom pierwszą weryfikację.' : `Ostatni sukces: ${relative(provider.last_success_at)}`);
+        const message = provider.error ? provider.error : (status==='snapshot' ? 'Snapshot startowy — uruchom pierwszą weryfikację.' : `${provider.model_count ?? '—'} wykrytych modeli · ostatni sukces: ${relative(provider.last_success_at)}`);
         return `<article class="card provider-card"><div class="provider-top"><div class="provider-name"><span class="dot ${status}"></span>${esc(provider.name)}</div><span class="provider-status">${esc(status)}</span></div><div class="provider-info">${esc(message)}</div></article>`;
       }).join('');
     }
@@ -355,7 +365,12 @@
       $('historyCount').textContent = `${state.history?.events?.length || 0} wpisów`;
       if (!events.length) { $('historyList').innerHTML='<div class="empty">Brak zmian od snapshotu startowego.</div>'; return; }
       $('historyList').innerHTML = events.map(event=>{
-        const detail = Object.entries(event.changes||{}).map(([field,change])=>`${field}: ${money(change.from)} → ${money(change.to)}`).join(' · ');
+        const type = event.event_type || 'price_changed';
+        const labels = {added:'Dodano nowy model',reactivated:'Ponownie dostępny',not_listed:'Nieobecny w źródle',price_changed:'Zmiana ceny'};
+        const price = value => value == null ? '—' : money(value);
+        const detail = type==='price_changed'
+          ? Object.entries(event.changes||{}).map(([field,change])=>`${field}: ${price(change.from)} → ${price(change.to)}`).join(' · ')
+          : (labels[type] || type);
         return `<div class="event"><div class="event-time">${esc(dateTime(event.timestamp))}</div><div class="event-model">${esc(event.model_id)}</div><div class="event-change">${esc(detail)}</div></div>`;
       }).join('');
     }

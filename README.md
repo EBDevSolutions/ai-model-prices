@@ -1,6 +1,6 @@
 # AI Model Prices Dashboard
 
-Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xAI, DeepSeek i Alibaba/Qwen. Publikacja działa przez GitHub Pages, a GitHub Actions sprawdza oficjalne źródła co 30 minut. Nie potrzebujesz backendu, VPS-a, Dockera ani usługi działającej na własnym komputerze.
+Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xAI, DeepSeek i Alibaba/Qwen. Publikacja działa przez GitHub Pages, a GitHub Actions co 30 minut sprawdza oficjalne źródła, aktualizuje ceny i automatycznie dodaje nowo wykryte modele. Nie potrzebujesz backendu, VPS-a, Dockera ani usługi działającej na własnym komputerze.
 
 > **Ważne — pierwsza weryfikacja:** `data/prices.json` zawiera snapshot startowy z 9 sierpnia 2026. Po utworzeniu repozytorium uruchom ręcznie workflow **Update AI prices** i porównaj wynik z oficjalnymi cennikami. Strony producentów zmieniają strukturę bez uprzedzenia, a część cen ma progi kontekstu, regiony, tryby lub promocje, których pojedyncza liczba nie oddaje w pełni.
 
@@ -20,7 +20,18 @@ Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xA
     └── pages.yml
 ```
 
-Updater izoluje błędy dostawców. Jeśli pobranie albo parser jednego źródła zawiedzie, jego dotychczasowe ceny pozostają bez zmian, a pozostali dostawcy nadal są sprawdzani. Historia dostaje wpis wyłącznie wtedy, gdy zmieni się `input`, `cached_input` lub `output` konkretnego modelu.
+Updater izoluje błędy dostawców. Jeśli pobranie albo parser jednego źródła zawiedzie, jego dotychczasowy katalog pozostaje bez zmian, a pozostali dostawcy nadal są sprawdzani. Nowe wiersze oficjalnych tabel są automatycznie dopisywane do `data/prices.json`. Historia rejestruje dodanie modelu, zmianę ceny, ponowne pojawienie się i zniknięcie z aktualnego cennika.
+
+## Zakres automatycznego katalogu
+
+- **OpenAI:** modele tekstowe z aktualnych tabel Standard oraz tabel kategorii w oficjalnym cenniku;
+- **Anthropic:** wszystkie wiersze głównej tabeli Claude API, włącznie z oznaczeniami limited i retired;
+- **Google Gemini:** modele z płatną ceną input i output w pierwszej tabeli Standard każdej sekcji modelu;
+- **xAI:** wszystkie modele z tabeli Text API, według ceny short context;
+- **DeepSeek:** wszystkie kolumny modeli z oficjalnej macierzy Models & Pricing;
+- **Alibaba/Qwen:** modele Qwen i QwQ z prostymi, porównywalnymi stawkami tekstowymi dla regionu International, według najniższego progu kontekstu.
+
+Modele multimodalne z wieloma osobnymi stawkami audio/obrazu nie są mieszane z jedną stawką tekstową, jeżeli oficjalna tabela nie daje jednoznacznej pary input/output. Dzięki temu ranking nie porównuje różnych jednostek jakby były tym samym kosztem.
 
 ## Uruchomienie krok po kroku
 
@@ -93,10 +104,12 @@ To dwa uruchomienia na godzinę, o minutach `07` i `37` czasu UTC. Przesunięcie
 
 - każdy dostawca jest pobierany i parsowany niezależnie;
 - błąd HTTP, timeout albo brak oczekiwanego wzorca nie zeruje cen;
-- nieznane i podejrzanie duże skoki są odrzucane;
+- nowe identyfikatory modeli są automatycznie dodawane;
+- podejrzanie duże skoki cen są odrzucane;
+- model znika z aktywnego katalogu dopiero po trzech kolejnych pełnych skanach bez jego obecności; jego ostatnia cena pozostaje w danych;
 - zapis jest atomowy, więc przerwany proces nie zostawia połowy JSON-a;
 - `last_checked_at` zapisuje czas próby, a `last_success_at` czas udanego parsera;
-- `history.json` zmienia się tylko przy rzeczywistej zmianie ceny;
+- `history.json` rejestruje dodania modeli, zmiany cen oraz zmiany dostępności;
 - workflow commitujący sprawdza różnicę plików przed commitem.
 
 Parser HTML zawsze może wymagać korekty po zmianie strony producenta. Błąd jest widoczny w polu `providers[].error` i na dashboardzie.
@@ -115,7 +128,7 @@ Następnie otwórz `http://localhost:8000`. Nie otwieraj `index.html` przez `fil
 
 ## Oficjalne źródła
 
-- [OpenAI API models/pricing](https://developers.openai.com/api/docs/models/compare)
+- [OpenAI API pricing](https://developers.openai.com/api/docs/pricing)
 - [Anthropic Claude pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [Google Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing)
 - [xAI pricing](https://docs.x.ai/developers/pricing)
@@ -124,6 +137,6 @@ Następnie otwórz `http://localhost:8000`. Nie otwieraj `index.html` przez `fil
 
 ## Utrzymanie
 
-Gdy dostawca zmieni układ strony, popraw odpowiednią funkcję `parse_*` w `scripts/update_prices.py`, uruchom ją z `--provider NAZWA --dry-run --verbose`, a dopiero potem zatwierdź zmianę. Dostępne nazwy: `openai`, `anthropic`, `google`, `xai`, `deepseek`, `alibaba`.
+Gdy dostawca zmieni układ strony, popraw odpowiednią funkcję `parse_*` w `scripts/update_prices.py`, uruchom ją z `--provider NAZWA --dry-run --verbose`, a dopiero potem zatwierdź zmianę. Dostępne nazwy: `openai`, `anthropic`, `google`, `xai`, `deepseek`, `alibaba`. Każdy parser ma minimalny oczekiwany rozmiar katalogu, więc przypadkowe pobranie niepełnej strony nie oznaczy masowo modeli jako brakujące.
 
 Nie są wymagane żadne klucze API ani sekrety. Updater czyta wyłącznie publiczne strony cenników.
