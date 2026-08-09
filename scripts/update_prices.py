@@ -350,7 +350,7 @@ def parse_deepseek(page: Page) -> dict[str, dict]:
 
 def parse_alibaba(page: Page) -> dict[str, dict]:
     soup = BeautifulSoup(page.html, "html.parser")
-    result: dict[str, dict] = {}
+    candidates: dict[str, dict] = {}
     for table in soup.find_all("table"):
         rows = table_rows(table)
         if not rows:
@@ -360,7 +360,7 @@ def parse_alibaba(page: Page) -> dict[str, dict]:
             continue
         # Multimodal tables expose several input/output columns. They are not
         # directly comparable to the text-token rows in this dashboard.
-        if len(rows) > 1 and "audio" in " | ".join(rows[1]).lower() and not re.match(r"^(?:qwen|qwq)", rows[1][0], re.I):
+        if "audio" in header.lower():
             continue
         for cells in rows[1:]:
             if len(cells) < 4:
@@ -371,7 +371,8 @@ def parse_alibaba(page: Page) -> dict[str, dict]:
             if not any(scope.lower() == "international" for scope in cells[1:3]):
                 continue
             model_id = model_match.group(1)
-            if f"alibaba:{slugify(model_id)}" in result:
+            local_id = f"alibaba:{slugify(model_id)}"
+            if local_id in candidates:
                 continue
             values = money_values(" | ".join(cells))
             if len(values) < 2:
@@ -390,7 +391,18 @@ def parse_alibaba(page: Page) -> dict[str, dict]:
                 "alibaba", model_id, title_from_id(model_id), input_price, cached_price, output_price,
                 "international", f"Lowest listed International tier {bracket}; {cache_note}.", availability
             )
-            result[item_id] = item
+            candidates[item_id] = item
+
+    # Alibaba lists stable aliases side-by-side with dated snapshots and preview
+    # builds. A pricing dashboard should expose the public, durable API names;
+    # snapshots make the same model appear many times and are not the normal
+    # integration target. New stable IDs are still discovered automatically.
+    result: dict[str, dict] = {}
+    for item_id, item in candidates.items():
+        model_id = item["model_id"].lower()
+        if re.search(r"-20\d{2}-\d{2}-\d{2}$", model_id) or model_id.endswith("-preview"):
+            continue
+        result[item_id] = item
     return result
 
 
@@ -459,10 +471,15 @@ def update(selected: set[str] | None = None, dry_run: bool = False) -> int:
     before_prices = copy.deepcopy(prices)
     before_history = copy.deepcopy(history)
     # Schema v2 intentionally compares per-token rates only. Remove rows from
-    # early v2 snapshots that used a per-image output unit.
+    # early v2 snapshots that used a per-image output unit, and remove Alibaba
+    # dated/preview aliases which were mistakenly catalogued as separate models.
     excluded_ids = {
         model["id"] for model in prices.get("models", [])
         if model.get("provider") == "google" and "-image" in model.get("model_id", "")
+        or model.get("provider") == "alibaba" and (
+            re.search(r"-20\d{2}-\d{2}-\d{2}$", model.get("model_id", "").lower())
+            or model.get("model_id", "").lower().endswith("-preview")
+        )
     }
     if excluded_ids:
         prices["models"] = [model for model in prices["models"] if model["id"] not in excluded_ids]
