@@ -14,7 +14,8 @@ Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xA
 │   ├── history.json
 │   └── benchmarks.json
 ├── scripts/
-│   └── update_prices.py
+│   ├── update_prices.py
+│   └── update_benchmarks.py
 ├── requirements.txt
 └── .github/workflows/
     ├── update-prices.yml
@@ -22,6 +23,8 @@ Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xA
 ```
 
 Updater izoluje błędy dostawców. Jeśli pobranie albo parser jednego źródła zawiedzie, jego dotychczasowy katalog pozostaje bez zmian, a pozostali dostawcy nadal są sprawdzani. Nowe wiersze oficjalnych tabel są automatycznie dopisywane do `data/prices.json`. Historia rejestruje dodanie modelu, zmianę ceny, ponowne pojawienie się i zniknięcie z aktualnego cennika.
+
+Ten sam workflow uzupełnia benchmarki z publicznego zbioru [BenchLM](https://benchlm.ai/data), udostępnionego na licencji MIT. Import obejmuje wyłącznie dokładnie dopasowane modele ze statusem `supported`, bez wygenerowanych rekordów, i tylko surowe wyniki identycznie nazwanych testów. Wyniki oraz estymacje kompozytowe BenchAlign nie są przepisywane jako rezultaty badań. Dane z oficjalnej karty producenta mają zawsze pierwszeństwo przed agregatorem.
 
 ## Zakres automatycznego katalogu
 

@@ -3,17 +3,55 @@
   "last_verified_at": "2026-08-09T12:00:00Z",
   "methodology": {
     "value_formula": "research_quality = 0.5 × GPQA Diamond + 0.5 × Humanity’s Last Exam (without tools); value = research_quality / user workload cost. The displayed 0–100 score is normalized only among models with both results.",
-    "required_for_value": ["gpqa_diamond", "hle_no_tools"],
+    "required_for_value": [
+      "gpqa_diamond",
+      "hle_no_tools"
+    ],
     "caveat": "Only same-named, publicly reported evaluations are combined. Every score may carry its own source and run conditions. MMLU-Pro is not MMMU-Pro. Coding tests are ranked separately because LiveCodeBench, SWE-Bench Pro, Terminal-Bench and FrontierSWE use different task sets and/or harnesses. Missing data is not estimated."
   },
   "benchmarks": [
-    {"id": "mmlu_pro", "label": "MMLU-Pro", "unit": "%", "higher_is_better": true},
-    {"id": "gpqa_diamond", "label": "GPQA Diamond", "unit": "%", "higher_is_better": true},
-    {"id": "hle_no_tools", "label": "HLE bez narzędzi", "unit": "%", "higher_is_better": true},
-    {"id": "livecodebench", "label": "LiveCodeBench", "unit": "%", "higher_is_better": true},
-    {"id": "swe_bench_pro", "label": "SWE-Bench Pro", "unit": "%", "higher_is_better": true},
-    {"id": "terminal_bench", "label": "Terminal-Bench", "unit": "%", "higher_is_better": true},
-    {"id": "frontier_swe", "label": "FrontierSWE", "unit": "%", "higher_is_better": true}
+    {
+      "id": "mmlu_pro",
+      "label": "MMLU-Pro",
+      "unit": "%",
+      "higher_is_better": true
+    },
+    {
+      "id": "gpqa_diamond",
+      "label": "GPQA Diamond",
+      "unit": "%",
+      "higher_is_better": true
+    },
+    {
+      "id": "hle_no_tools",
+      "label": "HLE bez narzędzi",
+      "unit": "%",
+      "higher_is_better": true
+    },
+    {
+      "id": "livecodebench",
+      "label": "LiveCodeBench",
+      "unit": "%",
+      "higher_is_better": true
+    },
+    {
+      "id": "swe_bench_pro",
+      "label": "SWE-Bench Pro",
+      "unit": "%",
+      "higher_is_better": true
+    },
+    {
+      "id": "terminal_bench",
+      "label": "Terminal-Bench",
+      "unit": "%",
+      "higher_is_better": true
+    },
+    {
+      "id": "frontier_swe",
+      "label": "FrontierSWE",
+      "unit": "%",
+      "higher_is_better": true
+    }
   ],
   "aliases": {
     "google:gemini-2.0-flash-lite-001": "google:gemini-2.0-flash-lite",
@@ -22,96 +60,682 @@
   },
   "models": {
     "openai:gpt-5.4": {
-      "scores": {"mmlu_pro": null, "gpqa_diamond": 93.0, "hle_no_tools": 39.8, "livecodebench": null, "swe_bench_pro": 57.7, "terminal_bench": 75.1, "frontier_swe": null},
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 93.0,
+        "hle_no_tools": 39.8,
+        "livecodebench": null,
+        "swe_bench_pro": 57.7,
+        "terminal_bench": 75.1,
+        "frontier_swe": null
+      },
       "conditions": "GPT-5.4 at xhigh reasoning effort; HLE without tools.",
       "source_url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
-      "source_type": "vendor_report"
+      "source_type": "vendor_report",
+      "score_sources": {}
     },
     "openai:gpt-5.4-mini": {
-      "scores": {"mmlu_pro": null, "gpqa_diamond": 88.0, "hle_no_tools": 28.2, "livecodebench": null, "swe_bench_pro": 54.4, "terminal_bench": 60.0, "frontier_swe": null},
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 88.0,
+        "hle_no_tools": 28.2,
+        "livecodebench": null,
+        "swe_bench_pro": 54.4,
+        "terminal_bench": 60.0,
+        "frontier_swe": null
+      },
       "conditions": "GPT-5.4 mini at xhigh reasoning effort; HLE without tools.",
       "source_url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
       "source_type": "vendor_report"
     },
     "openai:gpt-5.4-nano": {
-      "scores": {"mmlu_pro": null, "gpqa_diamond": 82.8, "hle_no_tools": 24.3, "livecodebench": null, "swe_bench_pro": 52.4, "terminal_bench": 46.3, "frontier_swe": null},
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 82.8,
+        "hle_no_tools": 24.3,
+        "livecodebench": null,
+        "swe_bench_pro": 52.4,
+        "terminal_bench": 46.3,
+        "frontier_swe": null
+      },
       "conditions": "GPT-5.4 nano at xhigh reasoning effort; HLE without tools.",
       "source_url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
-      "source_type": "vendor_report"
+      "source_type": "vendor_report",
+      "score_sources": {}
     },
     "google:gemini-2.0-flash-lite": {
-      "scores": {"mmlu_pro": 71.6, "gpqa_diamond": 51.5, "hle_no_tools": null, "livecodebench": 28.9, "swe_bench_pro": null, "terminal_bench": null, "frontier_swe": null},
+      "scores": {
+        "mmlu_pro": 71.6,
+        "gpqa_diamond": 51.5,
+        "hle_no_tools": null,
+        "livecodebench": 28.9,
+        "swe_bench_pro": null,
+        "terminal_bench": null,
+        "frontier_swe": null
+      },
       "conditions": "Gemini 2.0 Flash-Lite Public Preview; official Google model card.",
       "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
       "source_type": "vendor_model_card",
       "score_sources": {
-        "mmlu_pro": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf", "conditions": "MMLU-Pro; Gemini 2.0 Flash-Lite Public Preview."},
-        "gpqa_diamond": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf", "conditions": "GPQA Diamond; Gemini 2.0 Flash-Lite Public Preview."},
-        "livecodebench": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf", "conditions": "LiveCodeBench v5 UI, 01.10.2024–01.02.2025; Public Preview."}
+        "mmlu_pro": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
+          "conditions": "MMLU-Pro; Gemini 2.0 Flash-Lite Public Preview."
+        },
+        "gpqa_diamond": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
+          "conditions": "GPQA Diamond; Gemini 2.0 Flash-Lite Public Preview."
+        },
+        "livecodebench": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
+          "conditions": "LiveCodeBench v5 UI, 01.10.2024–01.02.2025; Public Preview."
+        }
       }
     },
     "google:gemini-2.0-flash": {
-      "scores": {"mmlu_pro": 77.6, "gpqa_diamond": 65.2, "hle_no_tools": 5.1, "livecodebench": 29.1, "swe_bench_pro": null, "terminal_bench": null, "frontier_swe": null},
+      "scores": {
+        "mmlu_pro": 77.6,
+        "gpqa_diamond": 65.2,
+        "hle_no_tools": 5.1,
+        "livecodebench": 29.1,
+        "swe_bench_pro": null,
+        "terminal_bench": null,
+        "frontier_swe": null
+      },
       "conditions": "Gemini 2.0 Flash; results come from official Google model cards.",
       "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
       "source_type": "vendor_model_card",
       "score_sources": {
-        "mmlu_pro": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf", "conditions": "MMLU-Pro; Gemini 2.0 Flash GA."},
-        "gpqa_diamond": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf", "conditions": "GPQA Diamond; comparison result in the Gemini 2.5 Flash-Lite model card."},
-        "hle_no_tools": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf", "conditions": "Humanity’s Last Exam, no tools; comparison result marked with an asterisk by Google."},
-        "livecodebench": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf", "conditions": "LiveCodeBench v5; comparison result in the Gemini 2.5 Flash-Lite model card."}
+        "mmlu_pro": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
+          "conditions": "MMLU-Pro; Gemini 2.0 Flash GA."
+        },
+        "gpqa_diamond": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+          "conditions": "GPQA Diamond; comparison result in the Gemini 2.5 Flash-Lite model card."
+        },
+        "hle_no_tools": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+          "conditions": "Humanity’s Last Exam, no tools; comparison result marked with an asterisk by Google."
+        },
+        "livecodebench": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+          "conditions": "LiveCodeBench v5; comparison result in the Gemini 2.5 Flash-Lite model card."
+        }
       }
     },
     "google:gemini-2.5-flash-lite": {
-      "scores": {"mmlu_pro": null, "gpqa_diamond": 66.7, "hle_no_tools": 6.9, "livecodebench": 34.3, "swe_bench_pro": null, "terminal_bench": null, "frontier_swe": null},
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 66.7,
+        "hle_no_tools": 6.9,
+        "livecodebench": 34.3,
+        "swe_bench_pro": null,
+        "terminal_bench": null,
+        "frontier_swe": null
+      },
       "conditions": "Gemini 2.5 Flash-Lite (06-17), thinking mode. The non-thinking row has different results.",
       "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
       "source_type": "vendor_model_card",
       "score_sources": {
-        "gpqa_diamond": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf", "conditions": "GPQA Diamond; 06-17 release, thinking mode (non-thinking: 64.6)."},
-        "hle_no_tools": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf", "conditions": "Humanity’s Last Exam, no tools; 06-17 release, thinking mode (non-thinking: 5.1)."},
-        "livecodebench": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf", "conditions": "LiveCodeBench v5; 06-17 release, thinking mode (non-thinking: 33.7)."}
+        "gpqa_diamond": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+          "conditions": "GPQA Diamond; 06-17 release, thinking mode (non-thinking: 64.6)."
+        },
+        "hle_no_tools": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+          "conditions": "Humanity’s Last Exam, no tools; 06-17 release, thinking mode (non-thinking: 5.1)."
+        },
+        "livecodebench": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+          "conditions": "LiveCodeBench v5; 06-17 release, thinking mode (non-thinking: 33.7)."
+        }
       }
     },
     "google:gemini-2.5-flash-lite-preview-09-2025": {
-      "scores": {"mmlu_pro": null, "gpqa_diamond": 71.7, "hle_no_tools": 7.3, "livecodebench": 58.4, "swe_bench_pro": null, "terminal_bench": null, "frontier_swe": null},
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 71.7,
+        "hle_no_tools": 7.3,
+        "livecodebench": 58.4,
+        "swe_bench_pro": null,
+        "terminal_bench": null,
+        "frontier_swe": null
+      },
       "conditions": "Gemini 2.5 Flash-Lite Preview 09-2025, thinking mode. The non-thinking row has different results.",
       "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
       "source_type": "vendor_model_card",
       "score_sources": {
-        "gpqa_diamond": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf", "conditions": "GPQA Diamond; Preview 09-2025, thinking mode (non-thinking: 70.2)."},
-        "hle_no_tools": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf", "conditions": "Humanity’s Last Exam, no tools; Preview 09-2025, thinking mode (non-thinking: 6.4)."},
-        "livecodebench": {"source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf", "conditions": "LiveCodeBench v5; Preview 09-2025, thinking mode (non-thinking: 52.1)."}
+        "gpqa_diamond": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+          "conditions": "GPQA Diamond; Preview 09-2025, thinking mode (non-thinking: 70.2)."
+        },
+        "hle_no_tools": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+          "conditions": "Humanity’s Last Exam, no tools; Preview 09-2025, thinking mode (non-thinking: 6.4)."
+        },
+        "livecodebench": {
+          "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+          "conditions": "LiveCodeBench v5; Preview 09-2025, thinking mode (non-thinking: 52.1)."
+        }
       }
     },
     "google:gemini-3.1-flash-lite": {
-      "scores": {"mmlu_pro": null, "gpqa_diamond": 86.9, "hle_no_tools": 16.0, "livecodebench": 72.0, "swe_bench_pro": 38.3, "terminal_bench": 31.0, "frontier_swe": null},
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 86.9,
+        "hle_no_tools": 16.0,
+        "livecodebench": 72.0,
+        "swe_bench_pro": 38.3,
+        "terminal_bench": 31.0,
+        "frontier_swe": null
+      },
       "conditions": "Gemini 3.1 Flash-Lite, High where specified. Google reports MMMU-Pro, not MMLU-Pro, so MMLU-Pro remains empty.",
       "source_url": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/",
       "source_type": "vendor_model_card",
       "score_sources": {
-        "gpqa_diamond": {"source_url": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/", "conditions": "GPQA Diamond; Gemini 3.1 Flash-Lite High."},
-        "hle_no_tools": {"source_url": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/", "conditions": "Humanity’s Last Exam without tools; Gemini 3.1 Flash-Lite High."},
-        "livecodebench": {"source_url": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/", "conditions": "LiveCodeBench; Gemini 3.1 Flash-Lite High."},
-        "swe_bench_pro": {"source_url": "https://deepmind.google/models/gemini/flash-lite/", "conditions": "SWE-Bench Pro Public; same-harness comparison published with Gemini 3.5 Flash-Lite."},
-        "terminal_bench": {"source_url": "https://deepmind.google/models/gemini/flash-lite/", "conditions": "Terminal-Bench 2.1, Terminus-2; same-harness comparison published with Gemini 3.5 Flash-Lite."}
+        "gpqa_diamond": {
+          "source_url": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/",
+          "conditions": "GPQA Diamond; Gemini 3.1 Flash-Lite High."
+        },
+        "hle_no_tools": {
+          "source_url": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/",
+          "conditions": "Humanity’s Last Exam without tools; Gemini 3.1 Flash-Lite High."
+        },
+        "livecodebench": {
+          "source_url": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/",
+          "conditions": "LiveCodeBench; Gemini 3.1 Flash-Lite High."
+        },
+        "swe_bench_pro": {
+          "source_url": "https://deepmind.google/models/gemini/flash-lite/",
+          "conditions": "SWE-Bench Pro Public; same-harness comparison published with Gemini 3.5 Flash-Lite."
+        },
+        "terminal_bench": {
+          "source_url": "https://deepmind.google/models/gemini/flash-lite/",
+          "conditions": "Terminal-Bench 2.1, Terminus-2; same-harness comparison published with Gemini 3.5 Flash-Lite."
+        }
       }
     },
     "google:gemini-3.5-flash-lite": {
-      "scores": {"mmlu_pro": null, "gpqa_diamond": null, "hle_no_tools": null, "livecodebench": null, "swe_bench_pro": 54.2, "terminal_bench": 54.0, "frontier_swe": null},
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": null,
+        "hle_no_tools": null,
+        "livecodebench": null,
+        "swe_bench_pro": 54.2,
+        "terminal_bench": 54.0,
+        "frontier_swe": null
+      },
       "conditions": "Gemini 3.5 Flash-Lite; official Google evaluation table.",
       "source_url": "https://deepmind.google/models/gemini/flash-lite/",
       "source_type": "vendor_model_card",
       "score_sources": {
-        "swe_bench_pro": {"source_url": "https://deepmind.google/models/gemini/flash-lite/", "conditions": "SWE-Bench Pro Public."},
-        "terminal_bench": {"source_url": "https://deepmind.google/models/gemini/flash-lite/", "conditions": "Terminal-Bench 2.1, Terminus-2."}
+        "swe_bench_pro": {
+          "source_url": "https://deepmind.google/models/gemini/flash-lite/",
+          "conditions": "SWE-Bench Pro Public."
+        },
+        "terminal_bench": {
+          "source_url": "https://deepmind.google/models/gemini/flash-lite/",
+          "conditions": "Terminal-Bench 2.1, Terminus-2."
+        }
       }
     },
     "moonshot:kimi-k3": {
-      "scores": {"mmlu_pro": null, "gpqa_diamond": 93.5, "hle_no_tools": 43.5, "livecodebench": null, "swe_bench_pro": null, "terminal_bench": 88.3, "frontier_swe": 81.2},
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 93.5,
+        "hle_no_tools": 43.5,
+        "livecodebench": null,
+        "swe_bench_pro": null,
+        "terminal_bench": 88.3,
+        "frontier_swe": 81.2
+      },
       "conditions": "Kimi K3 at max reasoning effort, temperature 1.0; HLE-Full without tools.",
       "source_url": "https://arxiv.org/abs/2607.24653",
-      "source_type": "technical_report"
+      "source_type": "technical_report",
+      "score_sources": {}
+    },
+    "alibaba:qwen3.7-max": {
+      "scores": {
+        "mmlu_pro": 89.6,
+        "gpqa_diamond": 92.4,
+        "hle_no_tools": null,
+        "livecodebench": 91.6,
+        "swe_bench_pro": 60.6,
+        "terminal_bench": 69.7,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/qwen3-7-max",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "mmlu_pro": {
+          "source_url": "https://benchlm.ai/models/qwen3-7-max",
+          "source_type": "independent_aggregator",
+          "conditions": "MMLU-Pro; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 32."
+        },
+        "gpqa_diamond": {
+          "source_url": "https://benchlm.ai/models/qwen3-7-max",
+          "source_type": "independent_aggregator",
+          "conditions": "GPQA Diamond; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 32."
+        },
+        "livecodebench": {
+          "source_url": "https://benchlm.ai/models/qwen3-7-max",
+          "source_type": "independent_aggregator",
+          "conditions": "LiveCodeBench; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 32."
+        },
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/qwen3-7-max",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 32."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/qwen3-7-max",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 32."
+        }
+      }
+    },
+    "anthropic:claude-fable-5": {
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": null,
+        "hle_no_tools": null,
+        "livecodebench": null,
+        "swe_bench_pro": 80.0,
+        "terminal_bench": 84.3,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/claude-fable",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/claude-fable",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 11."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/claude-fable",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 11."
+        }
+      }
+    },
+    "anthropic:claude-mythos-5": {
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 94.1,
+        "hle_no_tools": 59.0,
+        "livecodebench": null,
+        "swe_bench_pro": 80.3,
+        "terminal_bench": 88.0,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/claude-mythos-5",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "gpqa_diamond": {
+          "source_url": "https://benchlm.ai/models/claude-mythos-5",
+          "source_type": "independent_aggregator",
+          "conditions": "GPQA Diamond; raw BenchLM row for Claude Mythos 5. Evidence: supported; verified rows for model: 15."
+        },
+        "hle_no_tools": {
+          "source_url": "https://benchlm.ai/models/claude-mythos-5",
+          "source_type": "independent_aggregator",
+          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Mythos 5. Evidence: supported; verified rows for model: 15."
+        },
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/claude-mythos-5",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Mythos 5. Evidence: supported; verified rows for model: 15."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/claude-mythos-5",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Mythos 5. Evidence: supported; verified rows for model: 15."
+        }
+      }
+    },
+    "anthropic:claude-opus-4.5": {
+      "scores": {
+        "mmlu_pro": 89.5,
+        "gpqa_diamond": 87.0,
+        "hle_no_tools": null,
+        "livecodebench": null,
+        "swe_bench_pro": 57.1,
+        "terminal_bench": 59.3,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/claude-opus-4-5",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "mmlu_pro": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-5",
+          "source_type": "independent_aggregator",
+          "conditions": "MMLU-Pro; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+        },
+        "gpqa_diamond": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-5",
+          "source_type": "independent_aggregator",
+          "conditions": "GPQA Diamond; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+        },
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-5",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-5",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+        }
+      }
+    },
+    "anthropic:claude-opus-4.6": {
+      "scores": {
+        "mmlu_pro": 82.0,
+        "gpqa_diamond": 89.2,
+        "hle_no_tools": 40.0,
+        "livecodebench": null,
+        "swe_bench_pro": 53.4,
+        "terminal_bench": 65.4,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/claude-opus-4-6",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "mmlu_pro": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-6",
+          "source_type": "independent_aggregator",
+          "conditions": "MMLU-Pro; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+        },
+        "gpqa_diamond": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-6",
+          "source_type": "independent_aggregator",
+          "conditions": "GPQA Diamond; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+        },
+        "hle_no_tools": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-6",
+          "source_type": "independent_aggregator",
+          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+        },
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-6",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-6",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+        }
+      }
+    },
+    "anthropic:claude-opus-4.8": {
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 93.6,
+        "hle_no_tools": 49.8,
+        "livecodebench": null,
+        "swe_bench_pro": 69.2,
+        "terminal_bench": 74.6,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/claude-opus-4-8",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "gpqa_diamond": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-8",
+          "source_type": "independent_aggregator",
+          "conditions": "GPQA Diamond; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+        },
+        "hle_no_tools": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-8",
+          "source_type": "independent_aggregator",
+          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+        },
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-8",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/claude-opus-4-8",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+        }
+      }
+    },
+    "anthropic:claude-opus-5": {
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": null,
+        "hle_no_tools": 56.3,
+        "livecodebench": null,
+        "swe_bench_pro": 79.2,
+        "terminal_bench": null,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/claude-opus-5",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "hle_no_tools": {
+          "source_url": "https://benchlm.ai/models/claude-opus-5",
+          "source_type": "independent_aggregator",
+          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Opus 5. Evidence: supported; verified rows for model: 59."
+        },
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/claude-opus-5",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 5. Evidence: supported; verified rows for model: 59."
+        }
+      }
+    },
+    "anthropic:claude-sonnet-4.6": {
+      "scores": {
+        "mmlu_pro": 79.2,
+        "gpqa_diamond": 89.9,
+        "hle_no_tools": null,
+        "livecodebench": null,
+        "swe_bench_pro": null,
+        "terminal_bench": 59.1,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "mmlu_pro": {
+          "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
+          "source_type": "independent_aggregator",
+          "conditions": "MMLU-Pro; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 18."
+        },
+        "gpqa_diamond": {
+          "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
+          "source_type": "independent_aggregator",
+          "conditions": "GPQA Diamond; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 18."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 18."
+        }
+      }
+    },
+    "deepseek:deepseek-v4-pro": {
+      "scores": {
+        "mmlu_pro": 82.9,
+        "gpqa_diamond": 72.9,
+        "hle_no_tools": null,
+        "livecodebench": null,
+        "swe_bench_pro": 52.1,
+        "terminal_bench": 59.1,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/deepseek-v4-pro",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "mmlu_pro": {
+          "source_url": "https://benchlm.ai/models/deepseek-v4-pro",
+          "source_type": "independent_aggregator",
+          "conditions": "MMLU-Pro; raw BenchLM row for DeepSeek V4 Pro. Evidence: supported; verified rows for model: 20."
+        },
+        "gpqa_diamond": {
+          "source_url": "https://benchlm.ai/models/deepseek-v4-pro",
+          "source_type": "independent_aggregator",
+          "conditions": "GPQA Diamond; raw BenchLM row for DeepSeek V4 Pro. Evidence: supported; verified rows for model: 20."
+        },
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/deepseek-v4-pro",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for DeepSeek V4 Pro. Evidence: supported; verified rows for model: 20."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/deepseek-v4-pro",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for DeepSeek V4 Pro. Evidence: supported; verified rows for model: 20."
+        }
+      }
+    },
+    "google:gemini-2.5-pro": {
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 83.0,
+        "hle_no_tools": null,
+        "livecodebench": null,
+        "swe_bench_pro": null,
+        "terminal_bench": null,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/gemini-2-5-pro",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "gpqa_diamond": {
+          "source_url": "https://benchlm.ai/models/gemini-2-5-pro",
+          "source_type": "independent_aggregator",
+          "conditions": "GPQA Diamond; raw BenchLM row for Gemini 2.5 Pro. Evidence: supported; verified rows for model: 5."
+        }
+      }
+    },
+    "openai:gpt-5.3-codex": {
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": null,
+        "hle_no_tools": null,
+        "livecodebench": null,
+        "swe_bench_pro": 56.8,
+        "terminal_bench": 77.3,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 7."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 7."
+        }
+      }
+    },
+    "openai:gpt-5.6-sol": {
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 94.6,
+        "hle_no_tools": null,
+        "livecodebench": null,
+        "swe_bench_pro": 64.6,
+        "terminal_bench": 91.9,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "gpqa_diamond": {
+          "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
+          "source_type": "independent_aggregator",
+          "conditions": "GPQA Diamond; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 22."
+        },
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 22."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 22."
+        }
+      }
+    },
+    "xai:grok-4.3": {
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": 90.1,
+        "hle_no_tools": null,
+        "livecodebench": null,
+        "swe_bench_pro": null,
+        "terminal_bench": null,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/grok-4-3",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "gpqa_diamond": {
+          "source_url": "https://benchlm.ai/models/grok-4-3",
+          "source_type": "independent_aggregator",
+          "conditions": "GPQA Diamond; raw BenchLM row for Grok 4.3. Evidence: supported; verified rows for model: 6."
+        }
+      }
+    },
+    "xai:grok-4.5": {
+      "scores": {
+        "mmlu_pro": null,
+        "gpqa_diamond": null,
+        "hle_no_tools": null,
+        "livecodebench": null,
+        "swe_bench_pro": 64.7,
+        "terminal_bench": 83.3,
+        "frontier_swe": null
+      },
+      "conditions": "Raw benchmark rows aggregated by BenchLM; see the model evidence page.",
+      "source_url": "https://benchlm.ai/models/grok-4-5",
+      "source_type": "independent_aggregator",
+      "score_sources": {
+        "swe_bench_pro": {
+          "source_url": "https://benchlm.ai/models/grok-4-5",
+          "source_type": "independent_aggregator",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Grok 4.5. Evidence: supported; verified rows for model: 8."
+        },
+        "terminal_bench": {
+          "source_url": "https://benchlm.ai/models/grok-4-5",
+          "source_type": "independent_aggregator",
+          "conditions": "Terminal-Bench; raw BenchLM row for Grok 4.5. Evidence: supported; verified rows for model: 8."
+        }
+      }
     }
+  },
+  "benchlm": {
+    "source_url": "https://benchlm.ai/data/models.json",
+    "dataset_url": "https://benchlm.ai/data",
+    "license": "MIT",
+    "generated_at": "2026-08-07T06:26:33.567Z",
+    "source_last_updated": "August 7, 2026",
+    "policy": "Exact provider/model matches; supported non-generated evidence; raw named benchmarks only; vendor evidence has priority.",
+    "matched_models": 22
   }
 }
