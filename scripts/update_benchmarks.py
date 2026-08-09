@@ -2,9 +2,9 @@
 """Supplement benchmark coverage with exact raw rows published by BenchLM.
 
 Official vendor/model-card evidence always wins. BenchLM is used only when an
-exact provider + model identity match exists and the model has supported,
-non-generated evidence. Estimated BenchAlign composite scores are deliberately
-not imported as raw benchmark results.
+exact provider + model identity match exists and verified, non-generated rows
+are present. An ``estimated`` BenchAlign position does not invalidate its raw
+verified rows; the label and uncertainty are retained on the category summary.
 """
 
 from __future__ import annotations
@@ -43,9 +43,14 @@ RAW_SCORE_PATHS = {
     "gpqa_diamond": (("knowledge", "gpqaDiamond"), ("knowledge", "gpqa")),
     "hle_no_tools": (("knowledge", "hleNoTools"),),
     "livecodebench": (("coding", "liveCodeBench"),),
+    "livecodebench_pro": (("coding", "liveCodeBenchPro"),),
+    "swe_bench_verified": (("coding", "sweVerified"),),
     "swe_bench_pro": (("coding", "swePro"),),
     "terminal_bench": (("coding", "terminalBench2"), ("agentic", "terminalBench2")),
     "frontier_swe": (("coding", "frontierSwe"),),
+    "browsecomp": (("agentic", "browseComp"),),
+    "osworld_verified": (("agentic", "osWorldVerified"),),
+    "tau2_bench": (("agentic", "tau2Bench"),),
 }
 
 EXPLICIT_ALIASES = {
@@ -120,8 +125,7 @@ def main() -> int:
     for item in items:
         coverage = item.get("coverage") or {}
         if (
-            item.get("evidenceStatus") == "supported"
-            and (coverage.get("verifiedBenchmarkCount") or 0) > 0
+            (coverage.get("verifiedBenchmarkCount") or 0) > 0
             and (coverage.get("generatedBenchmarkCount") or 0) == 0
         ):
             eligible.append(item)
@@ -145,9 +149,6 @@ def main() -> int:
             benchmark_id: raw_score(bench_model, paths)
             for benchmark_id, paths in RAW_SCORE_PATHS.items()
         }
-        if not any(value is not None for value in direct_scores.values()):
-            continue
-
         record = models.setdefault(
             price_model["id"],
             {
@@ -185,13 +186,33 @@ def main() -> int:
             }
             imported += 1
 
+        bench_scores = bench_model.get("scores") or {}
+        coverage = bench_model.get("coverage") or {}
+        verified_categories = bench_scores.get("verifiedDisplayCategoryScores") or {}
+        interval = bench_model.get("scoreInterval90") or {}
+        record["benchlm_summary"] = {
+            "overall": bench_scores.get("verifiedDisplayScore"),
+            "categories": {
+                "coding": verified_categories.get("coding"),
+                "agentic": verified_categories.get("agentic"),
+                "knowledge": verified_categories.get("knowledge"),
+                "reasoning": verified_categories.get("reasoning"),
+            },
+            "evidence_status": bench_model.get("evidenceStatus"),
+            "score_confidence": coverage.get("scoreConfidence"),
+            "verified_benchmark_count": coverage.get("verifiedBenchmarkCount"),
+            "interval_90": {"lower": interval.get("lower"), "upper": interval.get("upper")},
+            "source_url": bench_model.get("url"),
+            "model_key": bench_model.get("canonicalModelKey"),
+        }
+
     updated["benchlm"] = {
         "source_url": SOURCE_URL,
         "dataset_url": "https://benchlm.ai/data",
         "license": "MIT",
         "generated_at": source.get("generatedAt"),
         "source_last_updated": source.get("sourceLastUpdated"),
-        "policy": "Exact provider/model matches; supported non-generated evidence; raw named benchmarks only; vendor evidence has priority.",
+        "policy": "Exact provider/model matches; verified non-generated rows; raw named benchmarks plus clearly labelled verified category summaries; vendor evidence has priority.",
         "matched_models": matched,
     }
 

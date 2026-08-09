@@ -24,7 +24,7 @@ Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xA
 
 Updater izoluje błędy dostawców. Jeśli pobranie albo parser jednego źródła zawiedzie, jego dotychczasowy katalog pozostaje bez zmian, a pozostali dostawcy nadal są sprawdzani. Nowe wiersze oficjalnych tabel są automatycznie dopisywane do `data/prices.json`. Historia rejestruje dodanie modelu, zmianę ceny, ponowne pojawienie się i zniknięcie z aktualnego cennika.
 
-Ten sam workflow uzupełnia benchmarki z publicznego zbioru [BenchLM](https://benchlm.ai/data), udostępnionego na licencji MIT. Import obejmuje wyłącznie dokładnie dopasowane modele ze statusem `supported`, bez wygenerowanych rekordów, i tylko surowe wyniki identycznie nazwanych testów. Wyniki oraz estymacje kompozytowe BenchAlign nie są przepisywane jako rezultaty badań. Dane z oficjalnej karty producenta mają zawsze pierwszeństwo przed agregatorem.
+Ten sam workflow uzupełnia benchmarki z publicznego zbioru [BenchLM](https://benchlm.ai/data), udostępnionego na licencji MIT. Import wymaga dokładnego dopasowania modelu i dostawcy, przynajmniej jednego zweryfikowanego rekordu oraz braku wyników generowanych. Status całej pozycji `estimated` nie odrzuca jej surowych zweryfikowanych badań; jest zachowany razem z przedziałem niepewności i oceną pewności. Dane z oficjalnej karty producenta mają zawsze pierwszeństwo przed agregatorem.
 
 ## Zakres automatycznego katalogu
 
@@ -40,13 +40,15 @@ Modele multimodalne z wieloma osobnymi stawkami audio/obrazu nie są mieszane z 
 
 ## Benchmarki i opłacalność badawcza
 
-`data/benchmarks.json` zawiera wyłącznie wyniki podane w cytowanych źródłach: MMLU-Pro, GPQA Diamond, Humanity's Last Exam bez narzędzi, LiveCodeBench, SWE-Bench Pro, Terminal-Bench i FrontierSWE. Każda komórka z wynikiem prowadzi do źródła właściwego dla tej konkretnej liczby oraz ma podpowiedź z warunkami uruchomienia. Identyfikatory cen są łączone z wynikami przez dokładny klucz lub jawny alias — podobna nazwa nie wystarcza.
+`data/benchmarks.json` przechowuje surowe wyniki MMLU-Pro, GPQA Diamond, Humanity's Last Exam bez narzędzi, LiveCodeBench, LiveCodeBench Pro, SWE-Bench Verified, SWE-Bench Pro, Terminal-Bench, FrontierSWE, BrowseComp, OSWorld Verified i τ²-bench. Każda liczba prowadzi do właściwego źródła i ma opis warunków. Identyfikatory cen są łączone przez dokładny klucz lub jawny alias — podobna nazwa nie wystarcza.
 
 Przykład kontroli mapowania: oficjalna karta Gemini 2.0 Flash-Lite podaje dla wariantu Public Preview `71,6% MMLU-Pro`, `51,5% GPQA Diamond` i `28,9% LiveCodeBench v5`. Dashboard przypisuje te wyniki wyłącznie do `google:gemini-2.0-flash-lite`. `MMLU-Pro` i `MMMU-Pro` są różnymi benchmarkami i nie trafiają do tej samej kolumny.
 
-Wskaźnik **Wartość badawcza** nie używa nazw modeli ani szacunków. Dla modelu z pełnymi danymi oblicza średnią `GPQA Diamond` i `HLE bez narzędzi`, dzieli ją przez koszt workloadu z kalkulatora, a następnie skaluje wynik 0–100 wyłącznie w grupie modeli mających oba wyniki. Brak wyniku jest pokazywany jako `—` i wyłącza model z rankingu wartości. Testy codingowe pozostają osobnymi kolumnami, ponieważ różne zestawy/harnessy nie są rzetelnie wymienne.
+Główna tabela pokazuje zweryfikowany kompozyt BenchLM oraz osobne kategorie Coding, Agentic i Knowledge, liczbę badań, ocenę pewności i status `supported`/`estimated`. Konkretne surowe testy są dostępne po rozwinięciu modelu i nie są sztucznie uśredniane ze sobą.
 
-Panel **Najlepsze do programowania** pozwala wybrać osobno Terminal-Bench, LiveCodeBench, SWE-Bench Pro albo FrontierSWE. Ranking zawsze używa jednego testu naraz; wyniki nie są łączone w sztuczną średnią.
+Wskaźnik **Opłacalność** dzieli zweryfikowany wynik ogólny BenchLM przez koszt workloadu, a następnie skaluje rezultat 0–100 w porównywalnym katalogu. Jeśli model nie ma kompozytu BenchLM, używana jest średnia GPQA Diamond i HLE bez narzędzi. Status oraz liczba dowodów pozostają widoczne, dzięki czemu wynik oparty na skąpych danych nie wygląda tak samo jak pozycja dobrze potwierdzona.
+
+Panel **Najlepsze do programowania** domyślnie używa zweryfikowanej kategorii BenchLM Coding. Można przełączyć go na pojedynczy surowy test: Terminal-Bench, LiveCodeBench, LiveCodeBench Pro, SWE-Bench Verified, SWE-Bench Pro albo FrontierSWE.
 
 Benchmarki nie są automatycznie zgadywane na podstawie wyników wyszukiwarki. Dodanie nowego modelu do cennika nie oznacza automatycznie dostępnego i porównywalnego wyniku badania: najpierw musi istnieć źródło pierwotne, dokładna wersja modelu i opis trybu testu. Brak wyniku pozostaje oznaczony jako `—`.
 
