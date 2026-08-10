@@ -1008,6 +1008,54 @@
         }
       },
       "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3"
+    },
+    {
+      "timestamp": "2026-08-10T19:37:31Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-5.4",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-08-10T19:37:31Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-5.4-mini",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-08-10T19:37:31Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-5.4-nano",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-08-10T19:37:31Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-5.4-pro",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-08-10T19:37:31Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-5.5",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-08-10T19:37:31Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-5.5-pro",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://developers.openai.com/api/docs/pricing"
     }
   ]
 }
