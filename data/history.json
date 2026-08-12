@@ -1056,6 +1056,27 @@
       "event_type": "not_listed",
       "changes": {},
       "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-08-12T16:31:36Z",
+      "provider": "xai",
+      "model_id": "xai:grok-4.6",
+      "event_type": "added",
+      "changes": {
+        "input": {
+          "from": null,
+          "to": 2.0
+        },
+        "cached_input": {
+          "from": null,
+          "to": 0.5
+        },
+        "output": {
+          "from": null,
+          "to": 6.0
+        }
+      },
+      "source_url": "https://docs.x.ai/developers/pricing"
     }
   ]
 }
