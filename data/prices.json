@@ -2,7 +2,7 @@
   "schema_version": 2,
   "currency": "USD",
   "unit": "1M tokens",
-  "last_checked_at": "2026-08-12T17:36:21Z",
+  "last_checked_at": "2026-08-12T18:35:22Z",
   "last_updated_at": "2026-08-12T16:31:36Z",
   "snapshot_note": "Dynamiczny katalog wykryty z oficjalnych tabel; zakres i jednostki opisuje README.",
   "providers": [
@@ -11,8 +11,8 @@
       "name": "OpenAI",
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-12T17:36:21Z",
-      "last_success_at": "2026-08-12T17:36:21Z",
+      "last_checked_at": "2026-08-12T18:35:22Z",
+      "last_success_at": "2026-08-12T18:35:22Z",
       "error": null,
       "model_count": 5
     },
@@ -21,8 +21,8 @@
       "name": "Anthropic",
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-12T17:36:21Z",
-      "last_success_at": "2026-08-12T17:36:21Z",
+      "last_checked_at": "2026-08-12T18:35:22Z",
+      "last_success_at": "2026-08-12T18:35:22Z",
       "error": null,
       "model_count": 15
     },
@@ -31,8 +31,8 @@
       "name": "Google Gemini",
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-12T17:36:21Z",
-      "last_success_at": "2026-08-12T17:36:21Z",
+      "last_checked_at": "2026-08-12T18:35:22Z",
+      "last_success_at": "2026-08-12T18:35:22Z",
       "error": null,
       "model_count": 23
     },
@@ -41,8 +41,8 @@
       "name": "xAI",
       "source_url": "https://docs.x.ai/developers/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-12T17:36:21Z",
-      "last_success_at": "2026-08-12T17:36:21Z",
+      "last_checked_at": "2026-08-12T18:35:22Z",
+      "last_success_at": "2026-08-12T18:35:22Z",
       "error": null,
       "model_count": 7
     },
@@ -51,8 +51,8 @@
       "name": "DeepSeek",
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-12T17:36:21Z",
-      "last_success_at": "2026-08-12T17:36:21Z",
+      "last_checked_at": "2026-08-12T18:35:22Z",
+      "last_success_at": "2026-08-12T18:35:22Z",
       "error": null,
       "model_count": 2
     },
@@ -61,8 +61,8 @@
       "name": "Alibaba / Qwen",
       "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
       "status": "ok",
-      "last_checked_at": "2026-08-12T17:36:21Z",
-      "last_success_at": "2026-08-12T17:36:21Z",
+      "last_checked_at": "2026-08-12T18:35:22Z",
+      "last_success_at": "2026-08-12T18:35:22Z",
       "error": null,
       "model_count": 2
     },
@@ -71,8 +71,8 @@
       "name": "Moonshot / Kimi",
       "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
       "status": "ok",
-      "last_checked_at": "2026-08-12T17:36:21Z",
-      "last_success_at": "2026-08-12T17:36:21Z",
+      "last_checked_at": "2026-08-12T18:35:22Z",
+      "last_success_at": "2026-08-12T18:35:22Z",
       "error": null,
       "model_count": 4
     }
@@ -92,7 +92,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -112,7 +112,7 @@
       "price_comparable": false,
       "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
       "first_seen_at": "2026-08-09T08:37:38Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0
     },
@@ -130,7 +130,7 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -149,7 +149,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -168,7 +168,7 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -187,7 +187,7 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -206,7 +206,7 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -225,7 +225,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -244,7 +244,7 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -263,7 +263,7 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -282,7 +282,7 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -301,7 +301,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -320,7 +320,7 @@
       "active": true,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -339,7 +339,7 @@
       "active": false,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -358,7 +358,7 @@
       "active": false,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -377,7 +377,7 @@
       "active": false,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -396,7 +396,7 @@
       "active": false,
       "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -415,7 +415,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -434,7 +434,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -453,7 +453,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -472,7 +472,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -491,7 +491,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -510,7 +510,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -529,7 +529,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -548,7 +548,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -567,7 +567,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -586,7 +586,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -605,7 +605,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -624,7 +624,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -643,7 +643,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "preview",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -662,7 +662,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -681,7 +681,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -700,7 +700,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -719,7 +719,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -738,7 +738,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -757,7 +757,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -776,7 +776,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -795,7 +795,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -814,7 +814,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -833,7 +833,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -852,7 +852,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -871,7 +871,7 @@
       "active": true,
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -891,7 +891,7 @@
       "price_comparable": true,
       "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
       "first_seen_at": "2026-08-09T08:37:38Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0
     },
@@ -910,7 +910,7 @@
       "price_comparable": true,
       "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
       "first_seen_at": "2026-08-09T08:37:38Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0
     },
@@ -929,7 +929,7 @@
       "price_comparable": true,
       "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
       "first_seen_at": "2026-08-09T08:37:38Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0
     },
@@ -948,7 +948,7 @@
       "price_comparable": true,
       "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
       "first_seen_at": "2026-08-09T08:37:38Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:37:38Z",
       "missing_checks": 0
     },
@@ -966,7 +966,7 @@
       "active": true,
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -985,7 +985,7 @@
       "active": true,
       "source_url": "https://developers.openai.com/api/docs/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -1004,7 +1004,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -1023,7 +1023,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -1042,7 +1042,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -1063,7 +1063,7 @@
       "first_seen_at": "2026-08-09T08:02:15Z",
       "last_seen_at": "2026-08-10T16:27:35Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 37,
+      "missing_checks": 38,
       "price_comparable": true
     },
     {
@@ -1082,7 +1082,7 @@
       "first_seen_at": "2026-08-09T08:02:15Z",
       "last_seen_at": "2026-08-10T16:27:35Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 37,
+      "missing_checks": 38,
       "price_comparable": true
     },
     {
@@ -1101,7 +1101,7 @@
       "first_seen_at": "2026-08-09T08:02:15Z",
       "last_seen_at": "2026-08-10T16:27:35Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 37,
+      "missing_checks": 38,
       "price_comparable": true
     },
     {
@@ -1120,7 +1120,7 @@
       "first_seen_at": "2026-08-09T08:02:15Z",
       "last_seen_at": "2026-08-10T16:27:35Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 37,
+      "missing_checks": 38,
       "price_comparable": true
     },
     {
@@ -1139,7 +1139,7 @@
       "first_seen_at": "2026-08-09T08:02:15Z",
       "last_seen_at": "2026-08-10T16:27:35Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 37,
+      "missing_checks": 38,
       "price_comparable": true
     },
     {
@@ -1158,7 +1158,7 @@
       "first_seen_at": "2026-08-09T08:02:15Z",
       "last_seen_at": "2026-08-10T16:27:35Z",
       "updated_at": "2026-08-09T08:02:15Z",
-      "missing_checks": 37,
+      "missing_checks": 38,
       "price_comparable": true
     },
     {
@@ -1175,7 +1175,7 @@
       "active": true,
       "source_url": "https://docs.x.ai/developers/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -1194,7 +1194,7 @@
       "active": true,
       "source_url": "https://docs.x.ai/developers/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -1213,7 +1213,7 @@
       "active": true,
       "source_url": "https://docs.x.ai/developers/pricing",
       "first_seen_at": "2026-08-09T08:02:15Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-09T08:02:15Z",
       "missing_checks": 0,
       "price_comparable": true
@@ -1232,7 +1232,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -1251,7 +1251,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
@@ -1271,7 +1271,7 @@
       "price_comparable": true,
       "source_url": "https://docs.x.ai/developers/pricing",
       "first_seen_at": "2026-08-12T16:31:36Z",
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "updated_at": "2026-08-12T16:31:36Z",
       "missing_checks": 0
     },
@@ -1289,7 +1289,7 @@
       "updated_at": "2026-08-09T00:00:00Z",
       "availability": "active",
       "active": true,
-      "last_seen_at": "2026-08-12T17:36:21Z",
+      "last_seen_at": "2026-08-12T18:35:22Z",
       "missing_checks": 0,
       "first_seen_at": "2026-08-09T00:00:00Z",
       "price_comparable": true
