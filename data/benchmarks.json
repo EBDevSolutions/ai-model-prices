@@ -498,7 +498,7 @@
       "source_type": "technical_report",
       "score_sources": {
         "browsecomp": {
-          "source_url": "https://benchlm.ai/models/kimi-3",
+          "source_url": "https://benchlm.ai/models/kimi-k3",
           "source_type": "independent_aggregator",
           "conditions": "BrowseComp; raw BenchLM row for Kimi K3. Evidence: supported; verified rows for model: 29."
         }
@@ -518,7 +518,7 @@
           "lower": 77.65,
           "upper": 83.42
         },
-        "source_url": "https://benchlm.ai/models/kimi-3",
+        "source_url": "https://benchlm.ai/models/kimi-k3",
         "model_key": "kimi-3"
       }
     },
@@ -2379,7 +2379,7 @@
     "source_url": "https://benchlm.ai/data/models.json",
     "dataset_url": "https://benchlm.ai/data",
     "license": "MIT",
-    "generated_at": "2026-08-19T18:26:07.879Z",
+    "generated_at": "2026-08-19T19:09:27.670Z",
     "source_last_updated": "August 19, 2026",
     "policy": "Exact provider/model matches; verified non-generated rows; raw named benchmarks plus clearly labelled verified category summaries; vendor evidence has priority.",
     "matched_models": 37
