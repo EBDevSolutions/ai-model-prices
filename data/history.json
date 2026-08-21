@@ -1169,6 +1169,27 @@
       "event_type": "not_listed",
       "changes": {},
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing"
+    },
+    {
+      "timestamp": "2026-08-21T19:33:25Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-5.6-sol",
+      "event_type": "price_changed",
+      "changes": {
+        "input": {
+          "from": 5.0,
+          "to": 4.0
+        },
+        "cached_input": {
+          "from": 0.5,
+          "to": 0.4
+        },
+        "output": {
+          "from": 30.0,
+          "to": 20.0
+        }
+      },
+      "source_url": "https://developers.openai.com/api/docs/pricing"
     }
   ]
 }
