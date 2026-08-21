@@ -1161,6 +1161,14 @@
         }
       },
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing"
+    },
+    {
+      "timestamp": "2026-08-21T11:36:33Z",
+      "provider": "deepseek",
+      "model_id": "deepseek:deepseek-v4-flash",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing"
     }
   ]
 }
