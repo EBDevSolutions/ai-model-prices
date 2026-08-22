@@ -2379,8 +2379,8 @@
     "source_url": "https://benchlm.ai/data/models.json",
     "dataset_url": "https://benchlm.ai/data",
     "license": "MIT",
-    "generated_at": "2026-08-21T18:03:40.928Z",
-    "source_last_updated": "August 21, 2026",
+    "generated_at": "2026-08-22T06:29:18.167Z",
+    "source_last_updated": "August 22, 2026",
     "policy": "Exact provider/model matches; verified non-generated rows; raw named benchmarks plus clearly labelled verified category summaries; vendor evidence has priority.",
     "matched_models": 36
   }
