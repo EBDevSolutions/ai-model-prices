@@ -130,12 +130,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 66,
+        "overall": 64,
         "categories": {
-          "coding": 44.4,
-          "agentic": 74.8,
-          "knowledge": 77.3,
-          "reasoning": 73.2
+          "coding": 40.1,
+          "agentic": 74.5,
+          "knowledge": 75.3,
+          "reasoning": 69.8
         },
         "evidence_status": "supported",
         "score_confidence": 3,
@@ -179,11 +179,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 58,
+        "overall": 54,
         "categories": {
           "coding": null,
-          "agentic": 54.7,
-          "knowledge": 60.2,
+          "agentic": 55.4,
+          "knowledge": 56.8,
           "reasoning": null
         },
         "evidence_status": "estimated",
@@ -228,11 +228,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 36,
+        "overall": 34,
         "categories": {
           "coding": null,
-          "agentic": 14.6,
-          "knowledge": 54.1,
+          "agentic": 15.5,
+          "knowledge": 50.2,
           "reasoning": null
         },
         "evidence_status": "supported",
@@ -408,7 +408,7 @@
         }
       },
       "benchlm_summary": {
-        "overall": 55,
+        "overall": 45,
         "categories": {
           "coding": null,
           "agentic": null,
@@ -460,12 +460,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 53,
+        "overall": 50,
         "categories": {
-          "coding": 36.5,
-          "agentic": 50.9,
+          "coding": 33.7,
+          "agentic": 51.7,
           "knowledge": null,
-          "reasoning": 62.1
+          "reasoning": 54.3
         },
         "evidence_status": "supported",
         "score_confidence": 1,
@@ -504,11 +504,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 83,
+        "overall": 81,
         "categories": {
           "coding": null,
-          "agentic": 94.9,
-          "knowledge": 84.8,
+          "agentic": 94.6,
+          "knowledge": 83.8,
           "reasoning": null
         },
         "evidence_status": "supported",
@@ -578,12 +578,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 78,
+        "overall": 76,
         "categories": {
-          "coding": 83.5,
-          "agentic": 64,
-          "knowledge": 71.7,
-          "reasoning": 85.8
+          "coding": 79.5,
+          "agentic": 64.1,
+          "knowledge": 70.2,
+          "reasoning": 78
         },
         "evidence_status": "supported",
         "score_confidence": 4,
@@ -642,10 +642,10 @@
         }
       },
       "benchlm_summary": {
-        "overall": 79,
+        "overall": 78,
         "categories": {
-          "coding": 82.7,
-          "agentic": 92.4,
+          "coding": 83,
+          "agentic": 92.8,
           "knowledge": null,
           "reasoning": null
         },
@@ -716,11 +716,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 87,
+        "overall": 86,
         "categories": {
-          "coding": 82.7,
+          "coding": 83,
           "agentic": 97.7,
-          "knowledge": 93.9,
+          "knowledge": 97.4,
           "reasoning": null
         },
         "evidence_status": "supported",
@@ -790,12 +790,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 59,
+        "overall": 54,
         "categories": {
-          "coding": 57.9,
-          "agentic": 47.8,
-          "knowledge": 59.4,
-          "reasoning": 86.6
+          "coding": 51.6,
+          "agentic": 48.5,
+          "knowledge": 56.7,
+          "reasoning": 77
         },
         "evidence_status": "supported",
         "score_confidence": 4,
@@ -879,11 +879,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 68,
+        "overall": 65,
         "categories": {
-          "coding": 66.8,
-          "agentic": 65.5,
-          "knowledge": 82.7,
+          "coding": 63.2,
+          "agentic": 65.3,
+          "knowledge": 82.4,
           "reasoning": null
         },
         "evidence_status": "supported",
@@ -958,12 +958,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 79,
+        "overall": 76,
         "categories": {
-          "coding": 78.3,
-          "agentic": 83.1,
-          "knowledge": 87.6,
-          "reasoning": 71.2
+          "coding": 68.8,
+          "agentic": 82.8,
+          "knowledge": 86.8,
+          "reasoning": 68.3
         },
         "evidence_status": "supported",
         "score_confidence": 3,
@@ -1017,12 +1017,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 85,
+        "overall": 84,
         "categories": {
-          "coding": 82.7,
-          "agentic": 84.4,
-          "knowledge": 93.5,
-          "reasoning": 90.8
+          "coding": 83,
+          "agentic": 84.3,
+          "knowledge": 97,
+          "reasoning": 83.5
         },
         "evidence_status": "supported",
         "score_confidence": 3,
@@ -1086,11 +1086,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 63,
+        "overall": 59,
         "categories": {
-          "coding": 67.1,
-          "agentic": 53.8,
-          "knowledge": 76.9,
+          "coding": 63.2,
+          "agentic": 54.6,
+          "knowledge": 76.1,
           "reasoning": null
         },
         "evidence_status": "supported",
@@ -1160,11 +1160,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 67,
+        "overall": 63,
         "categories": {
-          "coding": 55.9,
-          "agentic": 67.8,
-          "knowledge": 77,
+          "coding": 50,
+          "agentic": 67.2,
+          "knowledge": 70.2,
           "reasoning": null
         },
         "evidence_status": "estimated",
@@ -1214,11 +1214,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 43,
+        "overall": 40,
         "categories": {
-          "coding": 38.7,
+          "coding": 34.5,
           "agentic": null,
-          "knowledge": 23.5,
+          "knowledge": 21.7,
           "reasoning": null
         },
         "evidence_status": "supported",
@@ -1278,10 +1278,10 @@
         }
       },
       "benchlm_summary": {
-        "overall": 64,
+        "overall": 62,
         "categories": {
-          "coding": 62.5,
-          "agentic": 63.7,
+          "coding": 58.1,
+          "agentic": 64.2,
           "knowledge": null,
           "reasoning": null
         },
@@ -1342,12 +1342,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 83,
+        "overall": 80,
         "categories": {
-          "coding": 59.8,
-          "agentic": 94.9,
-          "knowledge": 83.5,
-          "reasoning": 93
+          "coding": 52.7,
+          "agentic": 94.6,
+          "knowledge": 86,
+          "reasoning": 85.2
         },
         "evidence_status": "supported",
         "score_confidence": 3,
@@ -1391,11 +1391,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 62,
+        "overall": 57,
         "categories": {
-          "coding": 57.4,
+          "coding": 52.2,
           "agentic": null,
-          "knowledge": 53.4,
+          "knowledge": 49.7,
           "reasoning": null
         },
         "evidence_status": "supported",
@@ -1440,12 +1440,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 66,
+        "overall": 64,
         "categories": {
-          "coding": 60,
-          "agentic": 84.2,
+          "coding": 52.9,
+          "agentic": 84.1,
           "knowledge": null,
-          "reasoning": 50.5
+          "reasoning": 52.1
         },
         "evidence_status": "supported",
         "score_confidence": 2,
@@ -1504,12 +1504,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 80,
+        "overall": 78,
         "categories": {
-          "coding": 66.7,
-          "agentic": 85.6,
-          "knowledge": 66.5,
-          "reasoning": 94.3
+          "coding": 58.4,
+          "agentic": 86.7,
+          "knowledge": 63.9,
+          "reasoning": 95.5
         },
         "evidence_status": "supported",
         "score_confidence": 2,
@@ -1548,9 +1548,9 @@
         }
       },
       "benchlm_summary": {
-        "overall": 55,
+        "overall": 51,
         "categories": {
-          "coding": 54.2,
+          "coding": 48.1,
           "agentic": null,
           "knowledge": null,
           "reasoning": null
@@ -1592,7 +1592,7 @@
         }
       },
       "benchlm_summary": {
-        "overall": 62,
+        "overall": 61,
         "categories": {
           "coding": null,
           "agentic": null,
@@ -1651,12 +1651,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 48,
+        "overall": 45,
         "categories": {
-          "coding": 60.6,
-          "agentic": 33.4,
-          "knowledge": 72.2,
-          "reasoning": 27.5
+          "coding": 53.7,
+          "agentic": 34.2,
+          "knowledge": 74.7,
+          "reasoning": 19.7
         },
         "evidence_status": "estimated",
         "score_confidence": 2,
@@ -1720,11 +1720,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 77,
+        "overall": 73,
         "categories": {
-          "coding": 68.7,
-          "agentic": 86.2,
-          "knowledge": 85.9,
+          "coding": 60.7,
+          "agentic": 85.8,
+          "knowledge": 84.6,
           "reasoning": null
         },
         "evidence_status": "estimated",
@@ -1789,11 +1789,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 57,
+        "overall": 54,
         "categories": {
-          "coding": 51.4,
-          "agentic": 47.3,
-          "knowledge": 60.1,
+          "coding": 46.2,
+          "agentic": 46.8,
+          "knowledge": 59.5,
           "reasoning": null
         },
         "evidence_status": null,
@@ -1833,7 +1833,7 @@
         }
       },
       "benchlm_summary": {
-        "overall": 45,
+        "overall": 43,
         "categories": {
           "coding": null,
           "agentic": null,
@@ -1897,12 +1897,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 69,
+        "overall": 66,
         "categories": {
-          "coding": 56.8,
-          "agentic": 77.3,
-          "knowledge": 61.4,
-          "reasoning": 68.6
+          "coding": 53.2,
+          "agentic": 77.9,
+          "knowledge": 58.4,
+          "reasoning": 62.6
         },
         "evidence_status": "estimated",
         "score_confidence": 4,
@@ -1941,10 +1941,10 @@
         }
       },
       "benchlm_summary": {
-        "overall": 75,
+        "overall": 74,
         "categories": {
           "coding": null,
-          "agentic": 82.1,
+          "agentic": 83.1,
           "knowledge": null,
           "reasoning": null
         },
@@ -2034,12 +2034,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 80,
+        "overall": 77,
         "categories": {
           "coding": null,
-          "agentic": 82,
-          "knowledge": 88,
-          "reasoning": 83.2
+          "agentic": 81.8,
+          "knowledge": 86.9,
+          "reasoning": 77.6
         },
         "evidence_status": "estimated",
         "score_confidence": 2,
@@ -2108,12 +2108,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 72,
+        "overall": 69,
         "categories": {
-          "coding": 46.4,
-          "agentic": 85,
-          "knowledge": 79.3,
-          "reasoning": 85
+          "coding": 41.7,
+          "agentic": 84.6,
+          "knowledge": 77.7,
+          "reasoning": 79
         },
         "evidence_status": "estimated",
         "score_confidence": 3,
@@ -2157,11 +2157,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 77,
+        "overall": 75,
         "categories": {
           "coding": null,
-          "agentic": 83.3,
-          "knowledge": 85.5,
+          "agentic": 83.1,
+          "knowledge": 84.3,
           "reasoning": null
         },
         "evidence_status": "estimated",
@@ -2216,12 +2216,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 70,
+        "overall": 68,
         "categories": {
-          "coding": 55.5,
-          "agentic": 85,
-          "knowledge": 81.5,
-          "reasoning": 57.8
+          "coding": 49.2,
+          "agentic": 84.2,
+          "knowledge": 83.6,
+          "reasoning": 57.9
         },
         "evidence_status": "estimated",
         "score_confidence": 3,
@@ -2280,12 +2280,12 @@
         }
       },
       "benchlm_summary": {
-        "overall": 78,
+        "overall": 75,
         "categories": {
-          "coding": 57.1,
-          "agentic": 91.6,
-          "knowledge": 82.2,
-          "reasoning": 83.8
+          "coding": 50.5,
+          "agentic": 90.7,
+          "knowledge": 84.2,
+          "reasoning": 78.1
         },
         "evidence_status": "estimated",
         "score_confidence": 3,
@@ -2379,7 +2379,7 @@
     "source_url": "https://benchlm.ai/data/models.json",
     "dataset_url": "https://benchlm.ai/data",
     "license": "MIT",
-    "generated_at": "2026-08-26T19:28:00.499Z",
+    "generated_at": "2026-08-27T00:41:54.452Z",
     "source_last_updated": "August 26, 2026",
     "policy": "Exact provider/model matches; verified non-generated rows; raw named benchmarks plus clearly labelled verified category summaries; vendor evidence has priority.",
     "matched_models": 36
