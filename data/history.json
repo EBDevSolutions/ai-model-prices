@@ -1253,6 +1253,51 @@
         }
       },
       "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
+    },
+    {
+      "timestamp": "2026-08-27T23:59:37Z",
+      "provider": "google",
+      "model_id": "google:gemini-omni-1.1-flash",
+      "event_type": "added",
+      "changes": {
+        "input": {
+          "from": null,
+          "to": 1.5
+        },
+        "cached_input": {
+          "from": null,
+          "to": 1.5
+        },
+        "output": {
+          "from": null,
+          "to": 9.0
+        }
+      },
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-08-27T23:59:37Z",
+      "provider": "google",
+      "model_id": "google:gemini-2.0-flash",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-08-27T23:59:37Z",
+      "provider": "google",
+      "model_id": "google:gemini-2.0-flash-lite",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-08-27T23:59:37Z",
+      "provider": "google",
+      "model_id": "google:gemini-2.5-flash-lite-preview-09-2025",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing"
     }
   ]
 }
