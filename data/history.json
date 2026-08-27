@@ -1232,6 +1232,27 @@
         }
       },
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-08-27T14:36:55Z",
+      "provider": "alibaba",
+      "model_id": "alibaba:qwen3.7-flash",
+      "event_type": "added",
+      "changes": {
+        "input": {
+          "from": null,
+          "to": 0.03
+        },
+        "cached_input": {
+          "from": null,
+          "to": 0.003
+        },
+        "output": {
+          "from": null,
+          "to": 0.13
+        }
+      },
+      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
     }
   ]
 }
