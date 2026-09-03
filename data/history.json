@@ -1319,6 +1319,27 @@
         }
       },
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-09-03T20:56:58Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-6-astra",
+      "event_type": "added",
+      "changes": {
+        "input": {
+          "from": null,
+          "to": 10.0
+        },
+        "cached_input": {
+          "from": null,
+          "to": 1.0
+        },
+        "output": {
+          "from": null,
+          "to": 50.0
+        }
+      },
+      "source_url": "https://developers.openai.com/api/docs/pricing"
     }
   ]
 }
