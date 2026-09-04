@@ -111,38 +111,38 @@
         "livecodebench_pro": {
           "source_url": "https://benchlm.ai/models/gpt-5-4",
           "source_type": "independent_aggregator",
-          "conditions": "LiveCodeBench Pro; raw BenchLM row for GPT-5.4. Evidence: supported; verified rows for model: 32."
+          "conditions": "LiveCodeBench Pro; raw BenchLM row for GPT-5.4. Evidence: supported; verified rows for model: 41."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/gpt-5-4",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for GPT-5.4. Evidence: supported; verified rows for model: 32."
+          "conditions": "BrowseComp; raw BenchLM row for GPT-5.4. Evidence: supported; verified rows for model: 41."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/gpt-5-4",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.4. Evidence: supported; verified rows for model: 32."
+          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.4. Evidence: supported; verified rows for model: 41."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-4",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for GPT-5.4. Evidence: supported; verified rows for model: 32."
+          "conditions": "τ²-bench; raw BenchLM row for GPT-5.4. Evidence: supported; verified rows for model: 41."
         }
       },
       "benchlm_summary": {
-        "overall": 64,
+        "overall": 62,
         "categories": {
           "coding": 40.9,
-          "agentic": 74.8,
-          "knowledge": 75.1,
-          "reasoning": 69.8
+          "agentic": 70.2,
+          "knowledge": 74.3,
+          "reasoning": 57
         },
         "evidence_status": "supported",
-        "score_confidence": 3,
-        "verified_benchmark_count": 32,
+        "score_confidence": 4,
+        "verified_benchmark_count": 41,
         "interval_90": {
-          "lower": 69.07,
-          "upper": 76.71
+          "lower": 68.16,
+          "upper": 73.76
         },
         "source_url": "https://benchlm.ai/models/gpt-5-4",
         "model_key": "gpt-5-4"
@@ -170,28 +170,28 @@
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/gpt-5-4-mini",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.4 mini. Evidence: estimated; verified rows for model: 12."
+          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.4 mini. Evidence: supported; verified rows for model: 26."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-4-mini",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for GPT-5.4 mini. Evidence: estimated; verified rows for model: 12."
+          "conditions": "τ²-bench; raw BenchLM row for GPT-5.4 mini. Evidence: supported; verified rows for model: 26."
         }
       },
       "benchlm_summary": {
-        "overall": 55,
+        "overall": 59,
         "categories": {
-          "coding": null,
-          "agentic": 55.1,
-          "knowledge": 56.7,
-          "reasoning": null
+          "coding": 56.1,
+          "agentic": 52.5,
+          "knowledge": 56.6,
+          "reasoning": 73.5
         },
-        "evidence_status": "estimated",
-        "score_confidence": 3,
-        "verified_benchmark_count": 12,
+        "evidence_status": "supported",
+        "score_confidence": 4,
+        "verified_benchmark_count": 26,
         "interval_90": {
-          "lower": 45.27,
-          "upper": 68.3
+          "lower": 54.6,
+          "upper": 70.66
         },
         "source_url": "https://benchlm.ai/models/gpt-5-4-mini",
         "model_key": "gpt-5-4-mini"
@@ -219,28 +219,28 @@
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/gpt-5-4-nano",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.4 nano. Evidence: supported; verified rows for model: 11."
+          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.4 nano. Evidence: supported; verified rows for model: 25."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-4-nano",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for GPT-5.4 nano. Evidence: supported; verified rows for model: 11."
+          "conditions": "τ²-bench; raw BenchLM row for GPT-5.4 nano. Evidence: supported; verified rows for model: 25."
         }
       },
       "benchlm_summary": {
-        "overall": 34,
+        "overall": 47,
         "categories": {
-          "coding": null,
-          "agentic": 14.9,
-          "knowledge": 50.1,
-          "reasoning": null
+          "coding": 62.7,
+          "agentic": 16.9,
+          "knowledge": 45.1,
+          "reasoning": 72.8
         },
         "evidence_status": "supported",
-        "score_confidence": 2,
-        "verified_benchmark_count": 11,
+        "score_confidence": 4,
+        "verified_benchmark_count": 25,
         "interval_90": {
-          "lower": 54.74,
-          "upper": 78.49
+          "lower": 51.07,
+          "upper": 73.32
         },
         "source_url": "https://benchlm.ai/models/gpt-5-4-nano",
         "model_key": "gpt-5-4-nano"
@@ -408,19 +408,19 @@
         }
       },
       "benchlm_summary": {
-        "overall": 46,
+        "overall": 55,
         "categories": {
-          "coding": null,
+          "coding": 52.5,
           "agentic": null,
-          "knowledge": null,
+          "knowledge": 72.1,
           "reasoning": null
         },
         "evidence_status": "supported",
         "score_confidence": 1,
-        "verified_benchmark_count": 2,
+        "verified_benchmark_count": 7,
         "interval_90": {
-          "lower": 24.85,
-          "upper": 77.51
+          "lower": 43.63,
+          "upper": 68.63
         },
         "source_url": "https://benchlm.ai/models/gemini-3-1-flash-lite",
         "model_key": "gemini-3-1-flash-lite"
@@ -456,23 +456,23 @@
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/gemini-3-5-flash-lite",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Gemini 3.5 Flash-Lite. Evidence: supported; verified rows for model: 5."
+          "conditions": "OSWorld Verified; raw BenchLM row for Gemini 3.5 Flash-Lite. Evidence: supported; verified rows for model: 20."
         }
       },
       "benchlm_summary": {
-        "overall": 50,
+        "overall": 55,
         "categories": {
-          "coding": 34.5,
-          "agentic": 51.2,
-          "knowledge": null,
-          "reasoning": 54.3
+          "coding": 37.8,
+          "agentic": 48.8,
+          "knowledge": 65.2,
+          "reasoning": 60.8
         },
         "evidence_status": "supported",
-        "score_confidence": 1,
-        "verified_benchmark_count": 5,
+        "score_confidence": 3,
+        "verified_benchmark_count": 20,
         "interval_90": {
-          "lower": 52.34,
-          "upper": 77.61
+          "lower": 48.98,
+          "upper": 72.02
         },
         "source_url": "https://benchlm.ai/models/gemini-3-5-flash-lite",
         "model_key": "gemini-3-5-flash-lite"
@@ -500,23 +500,23 @@
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/kimi-k3",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for Kimi K3. Evidence: supported; verified rows for model: 30."
+          "conditions": "BrowseComp; raw BenchLM row for Kimi K3. Evidence: supported; verified rows for model: 52."
         }
       },
       "benchlm_summary": {
-        "overall": 82,
+        "overall": 76,
         "categories": {
-          "coding": null,
-          "agentic": 94.5,
-          "knowledge": 83.5,
-          "reasoning": null
+          "coding": 63,
+          "agentic": 83.2,
+          "knowledge": 81.6,
+          "reasoning": 78.5
         },
         "evidence_status": "supported",
-        "score_confidence": 2,
-        "verified_benchmark_count": 30,
+        "score_confidence": 3,
+        "verified_benchmark_count": 52,
         "interval_90": {
-          "lower": 77.5,
-          "upper": 81.8
+          "lower": 71.4,
+          "upper": 78.35
         },
         "source_url": "https://benchlm.ai/models/kimi-k3",
         "model_key": "kimi-3"
@@ -544,53 +544,53 @@
         "mmlu_pro": {
           "source_url": "https://benchlm.ai/models/qwen3-7-max",
           "source_type": "independent_aggregator",
-          "conditions": "MMLU-Pro; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 33."
+          "conditions": "MMLU-Pro; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 47."
         },
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/qwen3-7-max",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 33."
+          "conditions": "GPQA Diamond; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 47."
         },
         "livecodebench": {
           "source_url": "https://benchlm.ai/models/qwen3-7-max",
           "source_type": "independent_aggregator",
-          "conditions": "LiveCodeBench; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 33."
+          "conditions": "LiveCodeBench; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 47."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/qwen3-7-max",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 33."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 47."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/qwen3-7-max",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 33."
+          "conditions": "Terminal-Bench; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 47."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/qwen3-7-max",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 33."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 47."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/qwen3-7-max",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 33."
+          "conditions": "τ²-bench; raw BenchLM row for Qwen3.7 Max. Evidence: supported; verified rows for model: 47."
         }
       },
       "benchlm_summary": {
-        "overall": 76,
+        "overall": 72,
         "categories": {
-          "coding": 81.7,
-          "agentic": 64,
-          "knowledge": 70.1,
-          "reasoning": 78
+          "coding": 69.4,
+          "agentic": 60.7,
+          "knowledge": 69.9,
+          "reasoning": 74.8
         },
         "evidence_status": "supported",
         "score_confidence": 4,
-        "verified_benchmark_count": 33,
+        "verified_benchmark_count": 47,
         "interval_90": {
-          "lower": 62.98,
-          "upper": 79.39
+          "lower": 62.5,
+          "upper": 74.62
         },
         "source_url": "https://benchlm.ai/models/qwen3-7-max",
         "model_key": "qwen3-7-max"
@@ -618,43 +618,43 @@
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/claude-fable",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 11."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 30."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/claude-fable",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 11."
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 30."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/claude-fable",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 11."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 30."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/claude-fable",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 11."
+          "conditions": "OSWorld Verified; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 30."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/claude-fable",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 11."
+          "conditions": "τ²-bench; raw BenchLM row for Claude Fable 5. Evidence: supported; verified rows for model: 30."
         }
       },
       "benchlm_summary": {
-        "overall": 78,
+        "overall": 80,
         "categories": {
-          "coding": 83,
-          "agentic": 92.7,
-          "knowledge": null,
-          "reasoning": null
+          "coding": 89.7,
+          "agentic": 86.7,
+          "knowledge": 87.3,
+          "reasoning": 76.2
         },
         "evidence_status": "supported",
-        "score_confidence": 2,
-        "verified_benchmark_count": 11,
+        "score_confidence": 3,
+        "verified_benchmark_count": 30,
         "interval_90": {
-          "lower": 80.05,
-          "upper": 84.41
+          "lower": 78.68,
+          "upper": 83.13
         },
         "source_url": "https://benchlm.ai/models/claude-fable",
         "model_key": "claude-fable-5"
@@ -716,11 +716,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 86,
+        "overall": 84,
         "categories": {
-          "coding": 83,
-          "agentic": 97.7,
-          "knowledge": 97.1,
+          "coding": 87.4,
+          "agentic": 90.4,
+          "knowledge": 94.3,
           "reasoning": null
         },
         "evidence_status": null,
@@ -756,53 +756,53 @@
         "mmlu_pro": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "MMLU-Pro; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+          "conditions": "MMLU-Pro; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 50."
         },
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+          "conditions": "GPQA Diamond; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 50."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 50."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 50."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 50."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+          "conditions": "OSWorld Verified; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 50."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 41."
+          "conditions": "τ²-bench; raw BenchLM row for Claude Opus 4.5. Evidence: supported; verified rows for model: 50."
         }
       },
       "benchlm_summary": {
-        "overall": 55,
+        "overall": 53,
         "categories": {
-          "coding": 56.4,
-          "agentic": 48.1,
-          "knowledge": 56.6,
-          "reasoning": 77
+          "coding": 49.1,
+          "agentic": 46.4,
+          "knowledge": 58,
+          "reasoning": 72.1
         },
         "evidence_status": "supported",
         "score_confidence": 4,
-        "verified_benchmark_count": 41,
+        "verified_benchmark_count": 50,
         "interval_90": {
-          "lower": 48.7,
-          "upper": 78.49
+          "lower": 50.85,
+          "upper": 69.64
         },
         "source_url": "https://benchlm.ai/models/claude-opus-4-5",
         "model_key": "claude-opus-4-5"
@@ -830,68 +830,68 @@
         "mmlu_pro": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "MMLU-Pro; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+          "conditions": "MMLU-Pro; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 38."
         },
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+          "conditions": "GPQA Diamond; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 38."
         },
         "hle_no_tools": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 38."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 38."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 38."
         },
         "livecodebench_pro": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "LiveCodeBench Pro; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+          "conditions": "LiveCodeBench Pro; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 38."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 38."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+          "conditions": "BrowseComp; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 38."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+          "conditions": "OSWorld Verified; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 38."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 30."
+          "conditions": "τ²-bench; raw BenchLM row for Claude Opus 4.6. Evidence: supported; verified rows for model: 38."
         }
       },
       "benchlm_summary": {
-        "overall": 66,
+        "overall": 61,
         "categories": {
-          "coding": 66.3,
-          "agentic": 65.5,
-          "knowledge": 82.2,
-          "reasoning": null
+          "coding": 50.5,
+          "agentic": 62.1,
+          "knowledge": 79.8,
+          "reasoning": 65.8
         },
         "evidence_status": "supported",
-        "score_confidence": 3,
-        "verified_benchmark_count": 30,
+        "score_confidence": 4,
+        "verified_benchmark_count": 38,
         "interval_90": {
-          "lower": 53.41,
-          "upper": 82.55
+          "lower": 60.49,
+          "upper": 79.19
         },
         "source_url": "https://benchlm.ai/models/claude-opus-4-6",
         "model_key": "claude-opus-4-6"
@@ -919,58 +919,58 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-8",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+          "conditions": "GPQA Diamond; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 45."
         },
         "hle_no_tools": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-8",
           "source_type": "independent_aggregator",
-          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 45."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-8",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 45."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-8",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 45."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-8",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 45."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-8",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+          "conditions": "BrowseComp; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 45."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-8",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+          "conditions": "OSWorld Verified; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 45."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-8",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 30."
+          "conditions": "τ²-bench; raw BenchLM row for Claude Opus 4.8. Evidence: supported; verified rows for model: 45."
         }
       },
       "benchlm_summary": {
-        "overall": 78,
+        "overall": 72,
         "categories": {
-          "coding": 74.9,
-          "agentic": 83.1,
-          "knowledge": 86.5,
-          "reasoning": 68.3
+          "coding": 73.4,
+          "agentic": 74.1,
+          "knowledge": 86.3,
+          "reasoning": 55.1
         },
         "evidence_status": "supported",
-        "score_confidence": 3,
-        "verified_benchmark_count": 30,
+        "score_confidence": 4,
+        "verified_benchmark_count": 45,
         "interval_90": {
-          "lower": 73.26,
-          "upper": 78.24
+          "lower": 69.92,
+          "upper": 74.69
         },
         "source_url": "https://benchlm.ai/models/claude-opus-4-8",
         "model_key": "claude-opus-4-8"
@@ -998,38 +998,38 @@
         "hle_no_tools": {
           "source_url": "https://benchlm.ai/models/claude-opus-5",
           "source_type": "independent_aggregator",
-          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Opus 5. Evidence: supported; verified rows for model: 59."
+          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Opus 5. Evidence: supported; verified rows for model: 83."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/claude-opus-5",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 5. Evidence: supported; verified rows for model: 59."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Opus 5. Evidence: supported; verified rows for model: 83."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/claude-opus-5",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Opus 5. Evidence: supported; verified rows for model: 59."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Opus 5. Evidence: supported; verified rows for model: 83."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/claude-opus-5",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for Claude Opus 5. Evidence: supported; verified rows for model: 59."
+          "conditions": "BrowseComp; raw BenchLM row for Claude Opus 5. Evidence: supported; verified rows for model: 83."
         }
       },
       "benchlm_summary": {
-        "overall": 84,
+        "overall": 81,
         "categories": {
-          "coding": 83,
-          "agentic": 84.2,
-          "knowledge": 97,
-          "reasoning": 83.5
+          "coding": 89.9,
+          "agentic": 71.1,
+          "knowledge": 97.5,
+          "reasoning": 75.6
         },
         "evidence_status": "supported",
         "score_confidence": 3,
-        "verified_benchmark_count": 59,
+        "verified_benchmark_count": 83,
         "interval_90": {
-          "lower": 79.57,
-          "upper": 84.7
+          "lower": 78.28,
+          "upper": 83.05
         },
         "source_url": "https://benchlm.ai/models/claude-opus-5",
         "model_key": "claude-opus-5"
@@ -1057,48 +1057,48 @@
         "mmlu_pro": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "MMLU-Pro; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 18."
+          "conditions": "MMLU-Pro; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 31."
         },
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 18."
+          "conditions": "GPQA Diamond; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 31."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 18."
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 31."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 18."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 31."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 18."
+          "conditions": "OSWorld Verified; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 31."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 18."
+          "conditions": "τ²-bench; raw BenchLM row for Claude Sonnet 4.6. Evidence: supported; verified rows for model: 31."
         }
       },
       "benchlm_summary": {
-        "overall": 60,
+        "overall": 58,
         "categories": {
-          "coding": 66.7,
-          "agentic": 54.2,
-          "knowledge": 76,
-          "reasoning": null
+          "coding": 61.9,
+          "agentic": 47.6,
+          "knowledge": 75.4,
+          "reasoning": 65.8
         },
         "evidence_status": "supported",
-        "score_confidence": 3,
-        "verified_benchmark_count": 18,
+        "score_confidence": 4,
+        "verified_benchmark_count": 31,
         "interval_90": {
-          "lower": 50.63,
-          "upper": 78.51
+          "lower": 54.58,
+          "upper": 73.85
         },
         "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
         "model_key": "claude-sonnet-4-6"
@@ -1126,53 +1126,53 @@
         "mmlu_pro": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-pro-0813",
           "source_type": "independent_aggregator",
-          "conditions": "MMLU-Pro; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 23."
+          "conditions": "MMLU-Pro; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 35."
         },
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-pro-0813",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 23."
+          "conditions": "GPQA Diamond; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 35."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-pro-0813",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 23."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 35."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-pro-0813",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 23."
+          "conditions": "Terminal-Bench; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 35."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-pro-0813",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 23."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 35."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-pro-0813",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 23."
+          "conditions": "BrowseComp; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 35."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-pro-0813",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 23."
+          "conditions": "τ²-bench; raw BenchLM row for DeepSeek V4 Pro 0813. Evidence: estimated; verified rows for model: 35."
         }
       },
       "benchlm_summary": {
-        "overall": 64,
+        "overall": 62,
         "categories": {
-          "coding": 54.7,
-          "agentic": 67.5,
-          "knowledge": 70,
+          "coding": 53.6,
+          "agentic": 61.8,
+          "knowledge": 69.3,
           "reasoning": null
         },
         "evidence_status": "estimated",
-        "score_confidence": 2,
-        "verified_benchmark_count": 23,
+        "score_confidence": 3,
+        "verified_benchmark_count": 35,
         "interval_90": {
-          "lower": 44.84,
-          "upper": 77.73
+          "lower": 54.83,
+          "upper": 77.86
         },
         "source_url": "https://benchlm.ai/models/deepseek-v4-pro-0813",
         "model_key": "deepseek-v4-pro-max"
@@ -1200,33 +1200,33 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/gemini-2-5-pro",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for Gemini 2.5 Pro. Evidence: supported; verified rows for model: 5."
+          "conditions": "GPQA Diamond; raw BenchLM row for Gemini 2.5 Pro. Evidence: supported; verified rows for model: 14."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/gemini-2-5-pro",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Gemini 2.5 Pro. Evidence: supported; verified rows for model: 5."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Gemini 2.5 Pro. Evidence: supported; verified rows for model: 14."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gemini-2-5-pro",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Gemini 2.5 Pro. Evidence: supported; verified rows for model: 5."
+          "conditions": "τ²-bench; raw BenchLM row for Gemini 2.5 Pro. Evidence: supported; verified rows for model: 14."
         }
       },
       "benchlm_summary": {
-        "overall": 41,
+        "overall": 51,
         "categories": {
-          "coding": 37,
+          "coding": 38,
           "agentic": null,
-          "knowledge": 21.7,
-          "reasoning": null
+          "knowledge": 29.6,
+          "reasoning": 68.5
         },
         "evidence_status": "supported",
-        "score_confidence": 1,
-        "verified_benchmark_count": 5,
+        "score_confidence": 3,
+        "verified_benchmark_count": 14,
         "interval_90": {
-          "lower": 38.4,
-          "upper": 75.92
+          "lower": 45.08,
+          "upper": 70.89
         },
         "source_url": "https://benchlm.ai/models/gemini-2-5-pro",
         "model_key": "gemini-2-5-pro"
@@ -1254,43 +1254,43 @@
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 7."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 15."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 7."
+          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 15."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 7."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 15."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 7."
+          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 15."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 7."
+          "conditions": "τ²-bench; raw BenchLM row for GPT-5.3 Codex. Evidence: supported; verified rows for model: 15."
         }
       },
       "benchlm_summary": {
-        "overall": 63,
+        "overall": 67,
         "categories": {
-          "coding": 61.7,
-          "agentic": 64,
-          "knowledge": null,
-          "reasoning": null
+          "coding": 52.2,
+          "agentic": 61.4,
+          "knowledge": 79.6,
+          "reasoning": 77.3
         },
         "evidence_status": "supported",
-        "score_confidence": 1,
-        "verified_benchmark_count": 7,
+        "score_confidence": 3,
+        "verified_benchmark_count": 15,
         "interval_90": {
-          "lower": 60.94,
-          "upper": 70.1
+          "lower": 61.7,
+          "upper": 68.74
         },
         "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
         "model_key": "gpt-5-3-codex"
@@ -1318,43 +1318,43 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 23."
+          "conditions": "GPQA Diamond; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 47."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 23."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 47."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 23."
+          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 47."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 23."
+          "conditions": "BrowseComp; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 47."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 23."
+          "conditions": "τ²-bench; raw BenchLM row for GPT-5.6 Sol. Evidence: supported; verified rows for model: 47."
         }
       },
       "benchlm_summary": {
-        "overall": 80,
+        "overall": 78,
         "categories": {
-          "coding": 53.5,
-          "agentic": 94.5,
-          "knowledge": 85.9,
-          "reasoning": 85.2
+          "coding": 60.2,
+          "agentic": 90.8,
+          "knowledge": 84.7,
+          "reasoning": 69.8
         },
         "evidence_status": "supported",
-        "score_confidence": 3,
-        "verified_benchmark_count": 23,
+        "score_confidence": 4,
+        "verified_benchmark_count": 47,
         "interval_90": {
-          "lower": 79.31,
-          "upper": 84.24
+          "lower": 77.45,
+          "upper": 81.85
         },
         "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
         "model_key": "gpt-5-6-sol"
@@ -1382,28 +1382,28 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/grok-4-3",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for Grok 4.3. Evidence: supported; verified rows for model: 6."
+          "conditions": "GPQA Diamond; raw BenchLM row for Grok 4.3. Evidence: supported; verified rows for model: 20."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/grok-4-3",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Grok 4.3. Evidence: supported; verified rows for model: 6."
+          "conditions": "τ²-bench; raw BenchLM row for Grok 4.3. Evidence: supported; verified rows for model: 20."
         }
       },
       "benchlm_summary": {
-        "overall": 58,
+        "overall": 62,
         "categories": {
-          "coding": 53,
+          "coding": 59.2,
           "agentic": null,
-          "knowledge": 49.6,
-          "reasoning": null
+          "knowledge": 54.5,
+          "reasoning": 67.2
         },
         "evidence_status": "supported",
-        "score_confidence": 1,
-        "verified_benchmark_count": 6,
+        "score_confidence": 3,
+        "verified_benchmark_count": 20,
         "interval_90": {
-          "lower": 52.46,
-          "upper": 75.28
+          "lower": 52.2,
+          "upper": 68.56
         },
         "source_url": "https://benchlm.ai/models/grok-4-3",
         "model_key": "grok-4-3"
@@ -1431,28 +1431,28 @@
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/grok-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for Grok 4.5. Evidence: supported; verified rows for model: 8."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Grok 4.5. Evidence: supported; verified rows for model: 25."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/grok-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for Grok 4.5. Evidence: supported; verified rows for model: 8."
+          "conditions": "Terminal-Bench; raw BenchLM row for Grok 4.5. Evidence: supported; verified rows for model: 25."
         }
       },
       "benchlm_summary": {
-        "overall": 64,
+        "overall": 68,
         "categories": {
-          "coding": 53.7,
-          "agentic": 84.2,
-          "knowledge": null,
-          "reasoning": 52.1
+          "coding": 65,
+          "agentic": 79.8,
+          "knowledge": 80.2,
+          "reasoning": 44.3
         },
         "evidence_status": "supported",
-        "score_confidence": 2,
-        "verified_benchmark_count": 8,
+        "score_confidence": 3,
+        "verified_benchmark_count": 25,
         "interval_90": {
-          "lower": 70.08,
-          "upper": 79.33
+          "lower": 63.33,
+          "upper": 73.95
         },
         "source_url": "https://benchlm.ai/models/grok-4-5",
         "model_key": "grok-4-5"
@@ -1480,43 +1480,43 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/qwen3-8-max",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for Qwen3.8 Max. Evidence: supported; verified rows for model: 42."
+          "conditions": "GPQA Diamond; raw BenchLM row for Qwen3.8 Max. Evidence: supported; verified rows for model: 55."
         },
         "hle_no_tools": {
           "source_url": "https://benchlm.ai/models/qwen3-8-max",
           "source_type": "independent_aggregator",
-          "conditions": "HLE bez narzędzi; raw BenchLM row for Qwen3.8 Max. Evidence: supported; verified rows for model: 42."
+          "conditions": "HLE bez narzędzi; raw BenchLM row for Qwen3.8 Max. Evidence: supported; verified rows for model: 55."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/qwen3-8-max",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for Qwen3.8 Max. Evidence: supported; verified rows for model: 42."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Qwen3.8 Max. Evidence: supported; verified rows for model: 55."
         },
         "frontier_swe": {
           "source_url": "https://benchlm.ai/models/qwen3-8-max",
           "source_type": "independent_aggregator",
-          "conditions": "FrontierSWE; raw BenchLM row for Qwen3.8 Max. Evidence: supported; verified rows for model: 42."
+          "conditions": "FrontierSWE; raw BenchLM row for Qwen3.8 Max. Evidence: supported; verified rows for model: 55."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/qwen3-8-max",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Qwen3.8 Max. Evidence: supported; verified rows for model: 42."
+          "conditions": "OSWorld Verified; raw BenchLM row for Qwen3.8 Max. Evidence: supported; verified rows for model: 55."
         }
       },
       "benchlm_summary": {
-        "overall": 78,
+        "overall": 72,
         "categories": {
-          "coding": 59.2,
-          "agentic": 86.1,
-          "knowledge": 63.7,
-          "reasoning": 95.5
+          "coding": 68.1,
+          "agentic": 62,
+          "knowledge": 67.3,
+          "reasoning": 86.6
         },
         "evidence_status": "supported",
-        "score_confidence": 2,
-        "verified_benchmark_count": 42,
+        "score_confidence": 3,
+        "verified_benchmark_count": 55,
         "interval_90": {
-          "lower": 76.05,
-          "upper": 80.58
+          "lower": 68.69,
+          "upper": 76.18
         },
         "source_url": "https://benchlm.ai/models/qwen3-8-max",
         "model_key": "qwen3-8-max"
@@ -1544,23 +1544,23 @@
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/claude-haiku-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Haiku 4.5. Evidence: estimated; verified rows for model: 5."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Haiku 4.5. Evidence: supported; verified rows for model: 10."
         }
       },
       "benchlm_summary": {
-        "overall": 54,
+        "overall": 44,
         "categories": {
-          "coding": 53.2,
+          "coding": 30.8,
           "agentic": null,
-          "knowledge": null,
+          "knowledge": 53.7,
           "reasoning": null
         },
-        "evidence_status": "estimated",
-        "score_confidence": 1,
-        "verified_benchmark_count": 5,
+        "evidence_status": "supported",
+        "score_confidence": 2,
+        "verified_benchmark_count": 10,
         "interval_90": {
-          "lower": 46.2,
-          "upper": 69.23
+          "lower": 40.18,
+          "upper": 65.28
         },
         "source_url": "https://benchlm.ai/models/claude-haiku-4-5",
         "model_key": "claude-haiku-4-5"
@@ -1588,23 +1588,23 @@
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/claude-opus-4-7",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Claude Opus 4.7. Evidence: supported; verified rows for model: 6."
+          "conditions": "τ²-bench; raw BenchLM row for Claude Opus 4.7. Evidence: supported; verified rows for model: 11."
         }
       },
       "benchlm_summary": {
-        "overall": 61,
+        "overall": 58,
         "categories": {
-          "coding": null,
-          "agentic": null,
-          "knowledge": null,
+          "coding": 65.5,
+          "agentic": 35.4,
+          "knowledge": 81.2,
           "reasoning": null
         },
         "evidence_status": "supported",
-        "score_confidence": 1,
-        "verified_benchmark_count": 6,
+        "score_confidence": 2,
+        "verified_benchmark_count": 11,
         "interval_90": {
-          "lower": 60.73,
-          "upper": 84.65
+          "lower": 63.88,
+          "upper": 76.57
         },
         "source_url": "https://benchlm.ai/models/claude-opus-4-7",
         "model_key": "claude-opus-4-7"
@@ -1632,38 +1632,38 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for Claude Sonnet 4.5. Evidence: estimated; verified rows for model: 9."
+          "conditions": "GPQA Diamond; raw BenchLM row for Claude Sonnet 4.5. Evidence: supported; verified rows for model: 9."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Sonnet 4.5. Evidence: estimated; verified rows for model: 9."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Sonnet 4.5. Evidence: supported; verified rows for model: 9."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for Claude Sonnet 4.5. Evidence: estimated; verified rows for model: 9."
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Sonnet 4.5. Evidence: supported; verified rows for model: 9."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-4-5",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Claude Sonnet 4.5. Evidence: estimated; verified rows for model: 9."
+          "conditions": "OSWorld Verified; raw BenchLM row for Claude Sonnet 4.5. Evidence: supported; verified rows for model: 9."
         }
       },
       "benchlm_summary": {
-        "overall": 46,
+        "overall": 45,
         "categories": {
-          "coding": 59.8,
-          "agentic": 33.7,
-          "knowledge": 74.6,
-          "reasoning": 19.7
+          "coding": 59.6,
+          "agentic": 33.4,
+          "knowledge": 72.9,
+          "reasoning": 19.1
         },
-        "evidence_status": "estimated",
+        "evidence_status": "supported",
         "score_confidence": 2,
         "verified_benchmark_count": 9,
         "interval_90": {
-          "lower": 43.36,
-          "upper": 66.39
+          "lower": 49.86,
+          "upper": 57.62
         },
         "source_url": "https://benchlm.ai/models/claude-sonnet-4-5",
         "model_key": "claude-sonnet-4-5"
@@ -1691,48 +1691,48 @@
         "hle_no_tools": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-5",
           "source_type": "independent_aggregator",
-          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Sonnet 5. Evidence: estimated; verified rows for model: 15."
+          "conditions": "HLE bez narzędzi; raw BenchLM row for Claude Sonnet 5. Evidence: supported; verified rows for model: 31."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-5",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Sonnet 5. Evidence: estimated; verified rows for model: 15."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for Claude Sonnet 5. Evidence: supported; verified rows for model: 31."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-5",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Sonnet 5. Evidence: estimated; verified rows for model: 15."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Claude Sonnet 5. Evidence: supported; verified rows for model: 31."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-5",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for Claude Sonnet 5. Evidence: estimated; verified rows for model: 15."
+          "conditions": "Terminal-Bench; raw BenchLM row for Claude Sonnet 5. Evidence: supported; verified rows for model: 31."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-5",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for Claude Sonnet 5. Evidence: estimated; verified rows for model: 15."
+          "conditions": "BrowseComp; raw BenchLM row for Claude Sonnet 5. Evidence: supported; verified rows for model: 31."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/claude-sonnet-5",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Claude Sonnet 5. Evidence: estimated; verified rows for model: 15."
+          "conditions": "OSWorld Verified; raw BenchLM row for Claude Sonnet 5. Evidence: supported; verified rows for model: 31."
         }
       },
       "benchlm_summary": {
-        "overall": 75,
+        "overall": 73,
         "categories": {
-          "coding": 66.2,
-          "agentic": 86.2,
-          "knowledge": 84.3,
-          "reasoning": null
+          "coding": 59.4,
+          "agentic": 80.1,
+          "knowledge": 80.3,
+          "reasoning": 76.4
         },
-        "evidence_status": "estimated",
-        "score_confidence": 2,
-        "verified_benchmark_count": 15,
+        "evidence_status": "supported",
+        "score_confidence": 3,
+        "verified_benchmark_count": 31,
         "interval_90": {
-          "lower": 51.86,
-          "upper": 77.78
+          "lower": 67.81,
+          "upper": 73.7
         },
         "source_url": "https://benchlm.ai/models/claude-sonnet-5",
         "model_key": "claude-sonnet-5"
@@ -1760,45 +1760,45 @@
         "mmlu_pro": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-flash-0731",
           "source_type": "independent_aggregator",
-          "conditions": "MMLU-Pro; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 24."
+          "conditions": "MMLU-Pro; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 36."
         },
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-flash-0731",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 24."
+          "conditions": "GPQA Diamond; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 36."
         },
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-flash-0731",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 24."
+          "conditions": "SWE-Bench Verified; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 36."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-flash-0731",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 24."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 36."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-flash-0731",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 24."
+          "conditions": "Terminal-Bench; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 36."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/deepseek-v4-flash-0731",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 24."
+          "conditions": "BrowseComp; raw BenchLM row for DeepSeek V4 Flash 0731. Evidence: None; verified rows for model: 36."
         }
       },
       "benchlm_summary": {
-        "overall": 55,
+        "overall": 52,
         "categories": {
-          "coding": 50.6,
-          "agentic": 47,
-          "knowledge": 59.5,
+          "coding": 48.8,
+          "agentic": 39.8,
+          "knowledge": 60.3,
           "reasoning": null
         },
         "evidence_status": null,
         "score_confidence": 2,
-        "verified_benchmark_count": 24,
+        "verified_benchmark_count": 36,
         "interval_90": {
           "lower": null,
           "upper": null
@@ -1829,23 +1829,23 @@
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gemini-2-5-flash",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Gemini 2.5 Flash. Evidence: supported; verified rows for model: 2."
+          "conditions": "τ²-bench; raw BenchLM row for Gemini 2.5 Flash. Evidence: supported; verified rows for model: 10."
         }
       },
       "benchlm_summary": {
-        "overall": 44,
+        "overall": 52,
         "categories": {
           "coding": null,
           "agentic": null,
-          "knowledge": null,
-          "reasoning": null
+          "knowledge": 51.6,
+          "reasoning": 55.5
         },
         "evidence_status": "supported",
-        "score_confidence": 1,
-        "verified_benchmark_count": 2,
+        "score_confidence": 2,
+        "verified_benchmark_count": 10,
         "interval_90": {
-          "lower": 24.4,
-          "upper": 71.21
+          "lower": 36.02,
+          "upper": 67.34
         },
         "source_url": "https://benchlm.ai/models/gemini-2-5-flash",
         "model_key": "gemini-2-5-flash"
@@ -1873,43 +1873,43 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/gemini-3-5-flash",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for Gemini 3.5 Flash. Evidence: estimated; verified rows for model: 23."
+          "conditions": "GPQA Diamond; raw BenchLM row for Gemini 3.5 Flash. Evidence: supported; verified rows for model: 39."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/gemini-3-5-flash",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for Gemini 3.5 Flash. Evidence: estimated; verified rows for model: 23."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for Gemini 3.5 Flash. Evidence: supported; verified rows for model: 39."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/gemini-3-5-flash",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for Gemini 3.5 Flash. Evidence: estimated; verified rows for model: 23."
+          "conditions": "Terminal-Bench; raw BenchLM row for Gemini 3.5 Flash. Evidence: supported; verified rows for model: 39."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/gemini-3-5-flash",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Gemini 3.5 Flash. Evidence: estimated; verified rows for model: 23."
+          "conditions": "OSWorld Verified; raw BenchLM row for Gemini 3.5 Flash. Evidence: supported; verified rows for model: 39."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gemini-3-5-flash",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Gemini 3.5 Flash. Evidence: estimated; verified rows for model: 23."
+          "conditions": "τ²-bench; raw BenchLM row for Gemini 3.5 Flash. Evidence: supported; verified rows for model: 39."
         }
       },
       "benchlm_summary": {
-        "overall": 66,
+        "overall": 65,
         "categories": {
-          "coding": 54,
-          "agentic": 77.7,
-          "knowledge": 58.2,
-          "reasoning": 62.6
+          "coding": 45.9,
+          "agentic": 73.2,
+          "knowledge": 65.9,
+          "reasoning": 60.2
         },
-        "evidence_status": "estimated",
+        "evidence_status": "supported",
         "score_confidence": 4,
-        "verified_benchmark_count": 23,
+        "verified_benchmark_count": 39,
         "interval_90": {
-          "lower": 54.61,
-          "upper": 73.85
+          "lower": 64.95,
+          "upper": 75.07
         },
         "source_url": "https://benchlm.ai/models/gemini-3-5-flash",
         "model_key": "gemini-3-5-flash"
@@ -1937,23 +1937,23 @@
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/gemini-3-6-flash",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for Gemini 3.6 Flash. Evidence: supported; verified rows for model: 2."
+          "conditions": "OSWorld Verified; raw BenchLM row for Gemini 3.6 Flash. Evidence: supported; verified rows for model: 17."
         }
       },
       "benchlm_summary": {
-        "overall": 74,
+        "overall": 73,
         "categories": {
-          "coding": null,
-          "agentic": 82.5,
-          "knowledge": null,
-          "reasoning": null
+          "coding": 57.1,
+          "agentic": 78.6,
+          "knowledge": 79.7,
+          "reasoning": 77.8
         },
         "evidence_status": "supported",
-        "score_confidence": 1,
-        "verified_benchmark_count": 2,
+        "score_confidence": 3,
+        "verified_benchmark_count": 17,
         "interval_90": {
-          "lower": 69.15,
-          "upper": 80.62
+          "lower": 63.67,
+          "upper": 75.87
         },
         "source_url": "https://benchlm.ai/models/gemini-3-6-flash",
         "model_key": "gemini-3-6-flash"
@@ -1981,23 +1981,23 @@
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/kimi-k2-7-code",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Kimi K2.7 Code. Evidence: estimated; verified rows for model: 3."
+          "conditions": "τ²-bench; raw BenchLM row for Kimi K2.7 Code. Evidence: estimated; verified rows for model: 11."
         }
       },
       "benchlm_summary": {
-        "overall": null,
+        "overall": 55,
         "categories": {
-          "coding": null,
+          "coding": 25.8,
           "agentic": null,
-          "knowledge": null,
-          "reasoning": null
+          "knowledge": 65.7,
+          "reasoning": 74.9
         },
         "evidence_status": "estimated",
-        "score_confidence": 1,
-        "verified_benchmark_count": 3,
+        "score_confidence": 2,
+        "verified_benchmark_count": 11,
         "interval_90": {
-          "lower": 48.39,
-          "upper": 69.64
+          "lower": 53.54,
+          "upper": 71.16
         },
         "source_url": "https://benchlm.ai/models/kimi-k2-7-code",
         "model_key": "kimi-k2-7-code"
@@ -2025,28 +2025,28 @@
         "hle_no_tools": {
           "source_url": "https://benchlm.ai/models/gpt-5-4-pro",
           "source_type": "independent_aggregator",
-          "conditions": "HLE bez narzędzi; raw BenchLM row for GPT-5.4 Pro. Evidence: estimated; verified rows for model: 11."
+          "conditions": "HLE bez narzędzi; raw BenchLM row for GPT-5.4 Pro. Evidence: estimated; verified rows for model: 12."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/gpt-5-4-pro",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for GPT-5.4 Pro. Evidence: estimated; verified rows for model: 11."
+          "conditions": "BrowseComp; raw BenchLM row for GPT-5.4 Pro. Evidence: estimated; verified rows for model: 12."
         }
       },
       "benchlm_summary": {
-        "overall": 78,
+        "overall": 74,
         "categories": {
           "coding": null,
-          "agentic": 81.8,
-          "knowledge": 86.6,
-          "reasoning": 77.6
+          "agentic": 77.7,
+          "knowledge": 81.7,
+          "reasoning": 70.2
         },
         "evidence_status": "estimated",
-        "score_confidence": 2,
-        "verified_benchmark_count": 11,
+        "score_confidence": 3,
+        "verified_benchmark_count": 12,
         "interval_90": {
-          "lower": 44.81,
-          "upper": 78.67
+          "lower": 50.24,
+          "upper": 73.27
         },
         "source_url": "https://benchlm.ai/models/gpt-5-4-pro",
         "model_key": "gpt-5-4-pro"
@@ -2074,53 +2074,53 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/gpt-5-5",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for GPT-5.5. Evidence: estimated; verified rows for model: 29."
+          "conditions": "GPQA Diamond; raw BenchLM row for GPT-5.5. Evidence: supported; verified rows for model: 44."
         },
         "hle_no_tools": {
           "source_url": "https://benchlm.ai/models/gpt-5-5",
           "source_type": "independent_aggregator",
-          "conditions": "HLE bez narzędzi; raw BenchLM row for GPT-5.5. Evidence: estimated; verified rows for model: 29."
+          "conditions": "HLE bez narzędzi; raw BenchLM row for GPT-5.5. Evidence: supported; verified rows for model: 44."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/gpt-5-5",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.5. Evidence: estimated; verified rows for model: 29."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.5. Evidence: supported; verified rows for model: 44."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-5",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.5. Evidence: estimated; verified rows for model: 29."
+          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.5. Evidence: supported; verified rows for model: 44."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/gpt-5-5",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for GPT-5.5. Evidence: estimated; verified rows for model: 29."
+          "conditions": "BrowseComp; raw BenchLM row for GPT-5.5. Evidence: supported; verified rows for model: 44."
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/gpt-5-5",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.5. Evidence: estimated; verified rows for model: 29."
+          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.5. Evidence: supported; verified rows for model: 44."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-5",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for GPT-5.5. Evidence: estimated; verified rows for model: 29."
+          "conditions": "τ²-bench; raw BenchLM row for GPT-5.5. Evidence: supported; verified rows for model: 44."
         }
       },
       "benchlm_summary": {
-        "overall": 69,
+        "overall": 67,
         "categories": {
-          "coding": 42.5,
-          "agentic": 85,
-          "knowledge": 77.5,
-          "reasoning": 79
+          "coding": 50.1,
+          "agentic": 74.8,
+          "knowledge": 78.8,
+          "reasoning": 63.5
         },
-        "evidence_status": "estimated",
-        "score_confidence": 3,
-        "verified_benchmark_count": 29,
+        "evidence_status": "supported",
+        "score_confidence": 4,
+        "verified_benchmark_count": 44,
         "interval_90": {
-          "lower": 64.61,
-          "upper": 81.36
+          "lower": 70.96,
+          "upper": 75.59
         },
         "source_url": "https://benchlm.ai/models/gpt-5-5",
         "model_key": "gpt-5-5"
@@ -2148,28 +2148,28 @@
         "hle_no_tools": {
           "source_url": "https://benchlm.ai/models/gpt-5-5-pro",
           "source_type": "independent_aggregator",
-          "conditions": "HLE bez narzędzi; raw BenchLM row for GPT-5.5 Pro. Evidence: estimated; verified rows for model: 6."
+          "conditions": "HLE bez narzędzi; raw BenchLM row for GPT-5.5 Pro. Evidence: estimated; verified rows for model: 7."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/gpt-5-5-pro",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for GPT-5.5 Pro. Evidence: estimated; verified rows for model: 6."
+          "conditions": "BrowseComp; raw BenchLM row for GPT-5.5 Pro. Evidence: estimated; verified rows for model: 7."
         }
       },
       "benchlm_summary": {
-        "overall": 75,
+        "overall": 72,
         "categories": {
           "coding": null,
-          "agentic": 83.1,
-          "knowledge": 84,
+          "agentic": 79,
+          "knowledge": 79.8,
           "reasoning": null
         },
         "evidence_status": "estimated",
         "score_confidence": 1,
-        "verified_benchmark_count": 6,
+        "verified_benchmark_count": 7,
         "interval_90": {
-          "lower": 50.39,
-          "upper": 79.06
+          "lower": 51.56,
+          "upper": 74.59
         },
         "source_url": "https://benchlm.ai/models/gpt-5-5-pro",
         "model_key": "gpt-5-5-pro"
@@ -2197,38 +2197,38 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-luna",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for GPT-5.6 Luna. Evidence: estimated; verified rows for model: 21."
+          "conditions": "GPQA Diamond; raw BenchLM row for GPT-5.6 Luna. Evidence: estimated; verified rows for model: 39."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-luna",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.6 Luna. Evidence: estimated; verified rows for model: 21."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.6 Luna. Evidence: estimated; verified rows for model: 39."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-luna",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.6 Luna. Evidence: estimated; verified rows for model: 21."
+          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.6 Luna. Evidence: estimated; verified rows for model: 39."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-luna",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for GPT-5.6 Luna. Evidence: estimated; verified rows for model: 21."
+          "conditions": "BrowseComp; raw BenchLM row for GPT-5.6 Luna. Evidence: estimated; verified rows for model: 39."
         }
       },
       "benchlm_summary": {
-        "overall": 69,
+        "overall": 65,
         "categories": {
-          "coding": 50,
-          "agentic": 84.7,
-          "knowledge": 83.6,
-          "reasoning": 57.9
+          "coding": 52,
+          "agentic": 78.9,
+          "knowledge": 74.9,
+          "reasoning": 49.2
         },
         "evidence_status": "estimated",
         "score_confidence": 3,
-        "verified_benchmark_count": 21,
+        "verified_benchmark_count": 39,
         "interval_90": {
-          "lower": 56.38,
-          "upper": 75.09
+          "lower": 59.79,
+          "upper": 71.3
         },
         "source_url": "https://benchlm.ai/models/gpt-5-6-luna",
         "model_key": "gpt-5-6-luna"
@@ -2256,43 +2256,43 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-terra",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for GPT-5.6 Terra. Evidence: estimated; verified rows for model: 21."
+          "conditions": "GPQA Diamond; raw BenchLM row for GPT-5.6 Terra. Evidence: estimated; verified rows for model: 44."
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-terra",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.6 Terra. Evidence: estimated; verified rows for model: 21."
+          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.6 Terra. Evidence: estimated; verified rows for model: 44."
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-terra",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.6 Terra. Evidence: estimated; verified rows for model: 21."
+          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.6 Terra. Evidence: estimated; verified rows for model: 44."
         },
         "browsecomp": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-terra",
           "source_type": "independent_aggregator",
-          "conditions": "BrowseComp; raw BenchLM row for GPT-5.6 Terra. Evidence: estimated; verified rows for model: 21."
+          "conditions": "BrowseComp; raw BenchLM row for GPT-5.6 Terra. Evidence: estimated; verified rows for model: 44."
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-6-terra",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for GPT-5.6 Terra. Evidence: estimated; verified rows for model: 21."
+          "conditions": "τ²-bench; raw BenchLM row for GPT-5.6 Terra. Evidence: estimated; verified rows for model: 44."
         }
       },
       "benchlm_summary": {
-        "overall": 76,
+        "overall": 74,
         "categories": {
-          "coding": 51.3,
-          "agentic": 91.2,
-          "knowledge": 84.2,
-          "reasoning": 78.1
+          "coding": 60.7,
+          "agentic": 85.4,
+          "knowledge": 77.2,
+          "reasoning": 63.2
         },
         "evidence_status": "estimated",
-        "score_confidence": 3,
-        "verified_benchmark_count": 21,
+        "score_confidence": 4,
+        "verified_benchmark_count": 44,
         "interval_90": {
-          "lower": 63.45,
-          "upper": 81.61
+          "lower": 65.68,
+          "upper": 77.19
         },
         "source_url": "https://benchlm.ai/models/gpt-5-6-terra",
         "model_key": "gpt-5-6-terra"
@@ -2318,19 +2318,19 @@
       "source_type": "independent_aggregator",
       "score_sources": {},
       "benchlm_summary": {
-        "overall": null,
+        "overall": 71,
         "categories": {
-          "coding": null,
+          "coding": 74.9,
           "agentic": null,
-          "knowledge": null,
-          "reasoning": null
+          "knowledge": 79.1,
+          "reasoning": 74.9
         },
-        "evidence_status": "estimated",
-        "score_confidence": 1,
-        "verified_benchmark_count": 4,
+        "evidence_status": "supported",
+        "score_confidence": 2,
+        "verified_benchmark_count": 22,
         "interval_90": {
-          "lower": 63.29,
-          "upper": 86.32
+          "lower": 65.92,
+          "upper": 74.46
         },
         "source_url": "https://benchlm.ai/models/grok-4-6",
         "model_key": "grok-4-6"
@@ -2356,19 +2356,19 @@
       "source_type": "independent_aggregator",
       "score_sources": {},
       "benchlm_summary": {
-        "overall": 70,
+        "overall": 71,
         "categories": {
-          "coding": null,
-          "agentic": null,
-          "knowledge": null,
-          "reasoning": null
+          "coding": 75,
+          "agentic": 53,
+          "knowledge": 83.3,
+          "reasoning": 78.5
         },
         "evidence_status": "estimated",
-        "score_confidence": 2,
-        "verified_benchmark_count": 8,
+        "score_confidence": 3,
+        "verified_benchmark_count": 31,
         "interval_90": {
-          "lower": 63.47,
-          "upper": 86.5
+          "lower": 63.63,
+          "upper": 75.96
         },
         "source_url": "https://benchlm.ai/models/gemini-3-7-flash",
         "model_key": "gemini-3-7-flash"
@@ -2394,19 +2394,19 @@
       "source_type": "independent_aggregator",
       "score_sources": {},
       "benchlm_summary": {
-        "overall": null,
+        "overall": 75,
         "categories": {
-          "coding": null,
-          "agentic": null,
-          "knowledge": null,
-          "reasoning": null
+          "coding": 75.5,
+          "agentic": 71,
+          "knowledge": 83.1,
+          "reasoning": 78.5
         },
-        "evidence_status": "estimated",
-        "score_confidence": 1,
-        "verified_benchmark_count": 6,
+        "evidence_status": "supported",
+        "score_confidence": 3,
+        "verified_benchmark_count": 28,
         "interval_90": {
-          "lower": 63.57,
-          "upper": 86.6
+          "lower": 75.9,
+          "upper": 80.91
         },
         "source_url": "https://benchlm.ai/models/gemini-3-8-flash",
         "model_key": "gemini-3-8-flash"
@@ -2423,7 +2423,7 @@
         "swe_bench_pro": null,
         "terminal_bench": null,
         "frontier_swe": null,
-        "browsecomp": null,
+        "browsecomp": 91.5,
         "osworld_verified": null,
         "tau2_bench": null
       },
@@ -2434,23 +2434,28 @@
         "gpqa_diamond": {
           "source_url": "https://benchlm.ai/models/gpt-6-astra",
           "source_type": "independent_aggregator",
-          "conditions": "GPQA Diamond; raw BenchLM row for GPT-6 Astra. Evidence: estimated; verified rows for model: 12."
+          "conditions": "GPQA Diamond; raw BenchLM row for GPT-6 Astra. Evidence: estimated; verified rows for model: 33."
+        },
+        "browsecomp": {
+          "source_url": "https://benchlm.ai/models/gpt-6-astra",
+          "source_type": "independent_aggregator",
+          "conditions": "BrowseComp; raw BenchLM row for GPT-6 Astra. Evidence: estimated; verified rows for model: 33."
         }
       },
       "benchlm_summary": {
-        "overall": 77,
+        "overall": 82,
         "categories": {
           "coding": null,
-          "agentic": null,
-          "knowledge": 85.9,
-          "reasoning": 85.2
+          "agentic": 88.4,
+          "knowledge": 86.9,
+          "reasoning": 88.8
         },
         "evidence_status": "estimated",
-        "score_confidence": 2,
-        "verified_benchmark_count": 12,
+        "score_confidence": 3,
+        "verified_benchmark_count": 33,
         "interval_90": {
-          "lower": 70.36,
-          "upper": 93.39
+          "lower": 73.5,
+          "upper": 88.6
         },
         "source_url": "https://benchlm.ai/models/gpt-6-astra",
         "model_key": "gpt-6-astra"
@@ -2461,8 +2466,8 @@
     "source_url": "https://benchlm.ai/data/models.json",
     "dataset_url": "https://benchlm.ai/data",
     "license": "MIT",
-    "generated_at": "2026-09-03T23:37:49.543Z",
-    "source_last_updated": "September 3, 2026",
+    "generated_at": "2026-09-04T15:26:24.895Z",
+    "source_last_updated": "September 4, 2026",
     "policy": "Exact provider/model matches; verified non-generated rows; raw named benchmarks plus clearly labelled verified category summaries; vendor evidence has priority.",
     "matched_models": 39
   }
