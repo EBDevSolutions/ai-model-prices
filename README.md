@@ -40,13 +40,20 @@ Modele multimodalne z wieloma osobnymi stawkami audio/obrazu nie są mieszane z 
 
 ## Badania i opłacalność
 
-`data/benchmarks.json` przechowuje surowe wyniki i źródła oraz osobne kompozyty BenchLM. Wyniki surowe są przeglądem publikacji: ta sama nazwa benchmarku nie gwarantuje tej samej wersji, agenta czy budżetu. `terminalBench2` nie oznacza obecnego Terminal-Bench 4.0. MMLU-Pro i MMMU-Pro pozostają różnymi testami.
+Aktualna [metodologia i pokrycie źródeł](docs/research-methodology.md) opisuje integrację Artificial Analysis z 8 września 2026. AA jest głównym źródłem niezależnych testów; wcześniejsze wyniki producentów i BenchLM pozostają w szczegółach.
 
-W **Moich modelach** wybierz programowanie (Coding) lub agentów (Agentic), minimum jakości i budżet. Tabela pokazuje koszt tokenów i wynik kategorii osobno. „Bez dominacji” oznacza, że w wybranym zbiorze nie ma pozycji nie droższej i nie gorszej, z przynajmniej jedną ścisłą przewagą. To porównanie poglądowe, nie test statystyczny.
+Dashboard pokazuje oddzielnie AA Intelligence Index 4.3, Terminal-Bench 4.0, SciCode i AutomationBench. Po rozwinięciu modelu dostępne jest do 15 miar, źródło, jednostka i wariant. Wariant rozumowania wybiera użytkownik. Brak wyniku nie jest zerem; wynik szacowanego kompozytu nie ukrywa surowych obserwacji.
 
-Nie ma mieszania kompozytu z GPQA/HLE, wag podwójnie premiujących cenę ani arbitralnego mnożnika pewności. `Wynik / USD` to pomocniczy iloraz wybranej kategorii i dodatniego kosztu. Nie jest prawdopodobieństwem sukcesu. Brak danych pozostaje brakiem; wynik zero pozostaje zerem. Pozycje estimated są domyślnie wyłączone. Wybór modeli zapisuje się lokalnie w przeglądarce.
+Porównanie ceny i jakości używa jednego wybranego testu AA albo jawnie wybranej kategorii BenchLM. Nie mieszamy skal ani wersji benchmarków. Oznaczenie Pareto zależy od wybranego zbioru i nie dowodzi przewagi statystycznej. Koszt tokenów jest scenariuszem, a koszt całego zadania AA Index widnieje oddzielnie w szczegółach.
 
-Zestawienia kosztowe wymagają aktywnej dostępności, ceny potwierdzonej w ostatnich 48 godzinach i poprawnego ostatniego skanu dostawcy. Pozycje preview, limited, retired i not_listed nie uczestniczą w rekomendacjach kosztowych. Sam status active z cennika nie gwarantuje dostępu na konkretnym koncie. Domyślne ograniczenie 48 h jest polityką produktu, nie gwarancją aktualności cennika.
+`data/research-model-map.json` zawiera jawne mapowania dostawcy, rodziny i wariantu. `data/research.json` zawiera wyniki, datę odczytu, status źródła oraz pokrycie. Import nie wykonuje kodu stron. Odrzuca nieznany schemat lub wersję metodologii; zachowuje ostatnie obserwacje z oznaczeniem awarii. Publiczny adapter nie wymaga klucza API.
+
+```bash
+python scripts/update_research.py --dry-run
+python scripts/update_research.py
+```
+
+Szczegółowe zasady, ograniczenia i kolejka braków są w metodologii. Rankingi wymagają aktywnej dostępności i świeżej ceny; wyniki badań pozostają widoczne także dla pozycji wyłączonych z rankingu.
 
 ## Zakres kalkulatora
 
@@ -67,7 +74,7 @@ Archiwalny wynik z 7 września jest w `docs/research-snapshot-2026-09-07.json`. 
 ```bash
 python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
-node --test tests/value.test.cjs
+node --test tests/value.test.cjs tests/research.test.cjs
 python scripts/update_prices.py --dry-run
 ```
 
