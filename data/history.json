@@ -1340,6 +1340,119 @@
         }
       },
       "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-09-07T21:03:09Z",
+      "provider": "anthropic",
+      "model_id": "anthropic:claude-fable-5.1",
+      "event_type": "added",
+      "changes": {
+        "input": {
+          "from": null,
+          "to": 10.0
+        },
+        "cached_input": {
+          "from": null,
+          "to": 0.25
+        },
+        "output": {
+          "from": null,
+          "to": 50.0
+        }
+      },
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    {
+      "timestamp": "2026-09-07T21:03:09Z",
+      "provider": "anthropic",
+      "model_id": "anthropic:claude-mythos-5.1",
+      "event_type": "added",
+      "changes": {
+        "input": {
+          "from": null,
+          "to": 10.0
+        },
+        "cached_input": {
+          "from": null,
+          "to": 0.25
+        },
+        "output": {
+          "from": null,
+          "to": 50.0
+        }
+      },
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    {
+      "timestamp": "2026-09-07T21:03:09Z",
+      "provider": "deepseek",
+      "model_id": "deepseek:deepseek-v4-flash",
+      "event_type": "price_changed",
+      "changes": {
+        "input": {
+          "from": 0.14,
+          "to": 0.44
+        },
+        "cached_input": {
+          "from": 0.0028,
+          "to": 0.014
+        },
+        "output": {
+          "from": 0.28,
+          "to": 1.32
+        }
+      },
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "timestamp": "2026-09-07T21:03:09Z",
+      "provider": "deepseek",
+      "model_id": "deepseek:deepseek-v4-flash",
+      "event_type": "reactivated",
+      "changes": {},
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "timestamp": "2026-09-07T21:03:09Z",
+      "provider": "deepseek",
+      "model_id": "deepseek:deepseek-v4-pro",
+      "event_type": "price_changed",
+      "changes": {
+        "input": {
+          "from": 0.22,
+          "to": 1.32
+        },
+        "cached_input": {
+          "from": 0.022,
+          "to": 0.044
+        },
+        "output": {
+          "from": 0.66,
+          "to": 3.96
+        }
+      },
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "timestamp": "2026-09-07T21:03:09Z",
+      "provider": "deepseek",
+      "model_id": "deepseek:deepseek-v4-flash-vision-exp",
+      "event_type": "price_changed",
+      "changes": {
+        "input": {
+          "from": 0.66,
+          "to": 0.44
+        },
+        "cached_input": {
+          "from": 0.007,
+          "to": 0.014
+        },
+        "output": {
+          "from": 1.98,
+          "to": 1.32
+        }
+      },
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
     }
   ]
 }

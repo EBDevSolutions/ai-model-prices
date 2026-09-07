@@ -230,7 +230,7 @@
         <option value="input">Cena input ↑</option>
         <option value="cached_input">Cena cache ↑</option>
         <option value="output">Cena output ↑</option>
-        <option value="value">Opłacalność jakości ↓</option>
+        <option value="value">Wynik kategorii / USD ↓</option>
         <option value="name">Nazwa A–Z</option>
       </select>
       <button id="resetBtn" class="refresh" type="button">Wyczyść filtry</button>
@@ -238,14 +238,15 @@
     </section>
 
     <section class="card compare-panel" aria-labelledby="compareTitle">
-      <div class="section-head"><div><h2 id="compareTitle" class="section-title">Moje modele — porównanie opłacalności</h2><p class="compare-copy">Zaznacz pole przy modelach, do których masz dostęp. Ranking reaguje na koszt Twojego workloadu oraz wybrane proporcje ceny, jakości badań i efektywności.</p></div><span id="selectedCount" class="count">0 wybranych</span></div>
+      <div class="section-head"><div><h2 id="compareTitle" class="section-title">Moje modele — porównanie opłacalności</h2><p class="compare-copy">Zaznacz pole przy modelach, do których masz dostęp. Wybierz programowanie lub agentów, minimalny wynik i budżet. Najpierw wybierz modele, potem porównaj ich koszt i wyniki.</p></div><span id="selectedCount" class="count">0 wybranych</span></div>
       <div class="compare-body">
-        <div class="compare-intro"><div><div class="section-title">Wagi oceny</div><p class="compare-copy">Pewność dowodów koryguje wynik dodatkowo; modeli bez ceny albo badań nie oceniamy sztucznie.</p></div><button id="clearSelectionBtn" class="refresh" type="button">Wyczyść wybór</button></div>
+        <div class="compare-intro"><div><div class="section-title">Koszt i jakość osobno</div><p class="compare-copy">Porównanie poglądowe kategorii BenchLM. Różne zestawy testów i agenci ograniczają porównywalność. „Bez dominacji” oznacza brak tańszego modelu o co najmniej takim wyniku w tym wyborze.</p></div><button id="clearSelectionBtn" class="refresh" type="button">Wyczyść wybór</button></div>
         <div class="weight-grid">
-          <label class="weight-card" for="priceWeight"><span class="weight-line"><span>Cena</span><strong id="priceWeightValue">30%</strong></span><input id="priceWeight" type="range" min="0" max="100" step="5" value="30"></label>
-          <label class="weight-card" for="researchWeight"><span class="weight-line"><span>Jakość badań</span><strong id="researchWeightValue">40%</strong></span><input id="researchWeight" type="range" min="0" max="100" step="5" value="40"></label>
-          <label class="weight-card" for="efficiencyWeight"><span class="weight-line"><span>Efektywność</span><strong id="efficiencyWeightValue">30%</strong></span><input id="efficiencyWeight" type="range" min="0" max="100" step="5" value="30"></label>
+          <div class="input-group"><label for="valueCategory">Zastosowanie</label><select id="valueCategory"><option value="coding">Programowanie · BenchLM Coding</option><option value="agentic">Agenci · BenchLM Agentic</option></select></div>
+          <div class="input-group"><label for="minimumQuality">Minimalny wynik kategorii (0–100)</label><input id="minimumQuality" type="number" min="0" max="100" value="0"></div>
+          <div class="input-group"><label for="maximumBudget">Budżet USD (0 = bez limitu)</label><input id="maximumBudget" type="number" min="0" step="0.01" value="0"></div>
         </div>
+        <label class="compare-copy" style="display:flex;align-items:center;gap:8px;margin:12px 0"><input id="includeEstimated" type="checkbox" style="width:18px;height:18px;min-height:18px;margin:0"> Uwzględnij pozycje szacowane (estimated)</label>
         <div id="selectedModels" class="selected-chips"></div>
         <div id="compareResults"><div class="compare-empty">Zaznacz co najmniej dwa modele w tabeli poniżej.</div></div>
       </div>
@@ -256,7 +257,7 @@
         <div class="section-head"><h2 class="section-title">Cennik modeli</h2><div id="visibleCount" class="count">—</div></div>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Model i badania</th><th>Input</th><th>Cached input</th><th>Output</th><th>Twój koszt</th><th>BenchLM ogółem</th><th>Coding</th><th>Agentic</th><th>Knowledge</th><th>Opłacalność</th><th>Dowody</th><th>Dostęp</th><th>Źródło ceny</th></tr></thead>
+            <thead><tr><th>Model i badania</th><th>Input</th><th>Cached input</th><th>Output</th><th>Twój koszt</th><th>BenchLM ogółem</th><th>Coding</th><th>Agentic</th><th>Knowledge</th><th>Wynik / USD</th><th>Dowody</th><th>Dostęp</th><th>Źródło ceny</th></tr></thead>
             <tbody id="modelRows"><tr><td colspan="13" class="empty">Ładowanie oficjalnych cen i benchmarków…</td></tr></tbody>
           </table>
         </div>
@@ -265,13 +266,13 @@
       <aside class="card side">
         <div class="calc-head"><h2 class="section-title">Kalkulator</h2><span class="count">mln tokenów</span></div>
         <div class="calc-grid">
-          <div class="input-group"><label for="inputTokens">Input</label><input id="inputTokens" type="number" min="0" step="0.1" value="1"></div>
+          <div class="input-group"><label for="inputTokens">Input</label><input id="inputTokens" type="number" min="0" step="0.1" value="0.1"></div>
           <div class="input-group"><label for="cachedTokens">Cached</label><input id="cachedTokens" type="number" min="0" step="0.1" value="0"></div>
-          <div class="input-group full"><label for="outputTokens">Output</label><input id="outputTokens" type="number" min="0" step="0.1" value="0.25"></div>
+          <div class="input-group full"><label for="outputTokens">Output</label><input id="outputTokens" type="number" min="0" step="0.1" value="0.02"></div>
         </div>
-        <p class="help">Opłacalność = zweryfikowany wynik ogólny BenchLM / koszt workloadu, przeskalowany 0–100 w całym porównywalnym katalogu. Jeśli model nie ma kompozytu BenchLM, używana jest średnia GPQA i HLE. Status „szacowany” dotyczy kompletności kompozytu, a nie prawdziwości pokazanych surowych rekordów. Rozwiń „wyniki surowe” przy modelu, aby zobaczyć konkretne testy i źródła. Gwiazdka przy Cursor oznacza katalog zmienny.</p>
+        <p class="help">Kwoty są szacunkiem kosztu tokenów, nie ceną ukończonego zadania. Input oznacza tokeny bez cache, Cached — dodatkowe odczyty cache, Output — wszystkie płatne tokeny wyjścia, w tym rozumowanie. Wolumen to suma wielu krótkich zapytań w bazowym progu ceny; ten sam tekst może mieć różną liczbę tokenów u różnych dostawców. Zapis i przechowywanie cache, narzędzia, retry, batch oraz długi kontekst wymagają osobnego rozliczenia. Stawki DeepSeek to PEAK. Wynik/USD jest wskaźnikiem poglądowym wybranej kategorii, nie prawdopodobieństwem sukcesu. Brak danych i zerowy workload nie dają rankingu. <a class="source" href="docs/research-review-2026-09-07.md">Badania i metodologia ↗</a></p>
         <div class="ranking"><h3 class="section-title">Najtańsze dla workloadu</h3><div id="ranking"></div></div>
-        <div class="ranking"><h3 class="section-title">Najlepsze do programowania</h3><p class="help" style="margin-top:4px">Domyślnie używana jest zweryfikowana kategoria Coding BenchLM. Możesz też wybrać jeden surowy test.</p><div class="input-group" style="margin:8px 0 12px"><label for="codingBenchmark">Miara</label><select id="codingBenchmark"><option value="coding_category">BenchLM Coding</option><option value="terminal_bench">Terminal-Bench 2</option><option value="livecodebench">LiveCodeBench</option><option value="livecodebench_pro">LiveCodeBench Pro</option><option value="swe_bench_verified">SWE-Bench Verified</option><option value="swe_bench_pro">SWE-Bench Pro</option><option value="frontier_swe">FrontierSWE</option></select></div><div id="codingRanking"></div></div>
+        <div class="ranking"><h3 class="section-title">Wyniki badań programowania</h3><p class="help" style="margin-top:4px">Domyślnie używana jest zweryfikowana kategoria Coding BenchLM. Surowe testy to zestawienia publikacji, często z różnymi agentami, wersjami i budżetami; nie dowodzą przewagi samego modelu.</p><div class="input-group" style="margin:8px 0 12px"><label for="codingBenchmark">Miara</label><select id="codingBenchmark"><option value="coding_category">BenchLM Coding</option><option value="terminal_bench">Terminal-Bench 2</option><option value="livecodebench">LiveCodeBench</option><option value="livecodebench_pro">LiveCodeBench Pro</option><option value="swe_bench_verified">SWE-Bench Verified</option><option value="swe_bench_pro">SWE-Bench Pro</option><option value="frontier_swe">FrontierSWE</option></select></div><div id="codingRanking"></div></div>
       </aside>
     </div>
 
@@ -291,23 +292,23 @@
     </footer>
   </div>
 
+  <script src="assets/value.js"></script>
   <script>
     'use strict';
     const REFRESH_MS = 30 * 60 * 1000;
     const SELECTION_KEY = 'ai-prices-owned-models-v1';
-    const WEIGHTS_KEY = 'ai-prices-comparison-weights-v1';
     const COLORS = {openai:'#6ee7b7',anthropic:'#f0a57b',google:'#7dd3fc',xai:'#f8fafc',deepseek:'#9fa8ff',alibaba:'#fcd34d',moonshot:'#fb7185'};
     const SHORT = {openai:'OA',anthropic:'AN',google:'GG',xai:'xAI',deepseek:'DS',alibaba:'QW',moonshot:'KM'};
     const readStored = (key, fallback) => { try { const value=JSON.parse(localStorage.getItem(key)); return value ?? fallback; } catch { return fallback; } };
     const storedSelection = readStored(SELECTION_KEY, []);
-    const storedWeights = readStored(WEIGHTS_KEY, {price:30,research:40,efficiency:30});
-    const state = { prices:null, history:null, benchmarks:null, provider:'all', query:'', sort:'cost', codingBenchmark:'coding_category', selected:new Set(Array.isArray(storedSelection)?storedSelection:[]), weights:{price:Number(storedWeights.price) || 0,research:Number(storedWeights.research) || 0,efficiency:Number(storedWeights.efficiency) || 0}, nextRefresh:Date.now()+REFRESH_MS };
+    const state = { prices:null, history:null, benchmarks:null, provider:'all', query:'', sort:'cost', codingBenchmark:'coding_category', selected:new Set(Array.isArray(storedSelection)?storedSelection:[]), category:'coding', includeEstimated:false, nextRefresh:Date.now()+REFRESH_MS };
     const $ = id => document.getElementById(id);
     const esc = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
     const safeUrl = value => /^https:\/\//i.test(value || '') ? value : '#';
     const number = id => Math.max(0, Number($(id).value) || 0);
-    const comparable = model => model.price_comparable !== false && [model.input,model.cached_input,model.output].every(Number.isFinite);
-    const workload = model => comparable(model) ? number('inputTokens')*model.input + number('cachedTokens')*model.cached_input + number('outputTokens')*model.output : Infinity;
+    const comparable = model => model.price_comparable !== false && [model.input,model.cached_input,model.output].every(value=>Number.isFinite(value)&&value>=0);
+    const workload = model => ValueAnalysis.cost(model,{input:number('inputTokens'),cached:number('cachedTokens'),output:number('outputTokens')}) ?? Infinity;
+    const rankEligible = model => ValueAnalysis.eligible(model,state.prices?.providers?.find(p=>p.id===model.provider));
     const money = value => {
       const v = Number(value);
       const digits = v < .01 ? 6 : v < 1 ? 4 : 2;
@@ -329,19 +330,9 @@
       if (!record) return null;
       return record.score_sources?.[benchmark] || record;
     };
-    const researchQuality = model => {
-      const gpqa = scoreFor(model,'gpqa_diamond'), hle = scoreFor(model,'hle_no_tools');
-      return Number.isFinite(gpqa) && Number.isFinite(hle) ? (gpqa+hle)/2 : null;
-    };
-    const qualityForValue = model => Number.isFinite(summaryFor(model)?.overall) ? summaryFor(model).overall : researchQuality(model);
-    const researchValue = model => qualityForValue(model) != null && comparable(model) ? qualityForValue(model)/Math.max(workload(model),.000001) : null;
-    const valueScore = model => {
-      const raw = researchValue(model);
-      if (raw == null) return null;
-      const candidates = state.prices.models.map(researchValue).filter(Number.isFinite);
-      const top = Math.max(...candidates,.000001);
-      return Math.max(1,Math.min(100,Math.round(100*Math.sqrt(raw/top))));
-    };
+    const qualityForValue = model => ValueAnalysis.quality(benchmarkRecord(model),state.category,state.includeEstimated);
+    const researchValue = model => rankEligible(model) && Number.isFinite(qualityForValue(model)) && Number.isFinite(workload(model)) && workload(model)>0 ? qualityForValue(model)/workload(model) : null;
+    const valueScore = researchValue;
     const benchmarkCell = (model, benchmark) => {
       const value = scoreFor(model,benchmark), evidence = evidenceFor(model,benchmark);
       return Number.isFinite(value) ? `<a class="source" title="${esc(evidence?.conditions || '')}" href="${esc(safeUrl(evidence?.source_url))}" target="_blank" rel="noopener noreferrer">${value.toFixed(1)}%</a>` : '—';
@@ -349,16 +340,16 @@
     const summaryCell = (model, category='overall') => {
       const summary = summaryFor(model), value = category==='overall' ? summary?.overall : summary?.categories?.[category];
       if (!Number.isFinite(value)) return '—';
-      const interval = summary.interval_90 || {};
-      const title = `${summary.evidence_status==='estimated'?'Pozycja szacowana':'Pozycja wspierana'} · ${summary.verified_benchmark_count || 0} zweryfikowanych badań${Number.isFinite(interval.lower)&&Number.isFinite(interval.upper)?` · przedział 90%: ${interval.lower.toFixed(1)}–${interval.upper.toFixed(1)}`:''}`;
+      const interval = category==='overall' && summary.interval_90_metric==='verifiedDisplayScore' ? summary.interval_90 || {} : {};
+      const title = `${summary.evidence_status==='estimated'?'Pozycja szacowana':'Pozycja wspierana'} · ${summary.verified_benchmark_count || 0} rekordów oznaczonych verified przez BenchLM${Number.isFinite(interval.lower)&&Number.isFinite(interval.upper)?` · przedział 90%: ${interval.lower.toFixed(1)}–${interval.upper.toFixed(1)}`:''}`;
       return `<a class="source score ${value>=75?'strong':''}" title="${esc(title)}" href="${esc(safeUrl(summary.source_url))}" target="_blank" rel="noopener noreferrer">${value.toFixed(1)}</a>`;
     };
     const evidenceCell = model => {
       const summary = summaryFor(model);
-      if (!summary) return '<span class="evidence-label">źródło własne</span>';
+      if (!summary) return `<span class="evidence-label">${benchmarkRecord(model)?'wyniki źródłowe':'brak badań'}</span>`;
       const confidence = Math.max(0,Math.min(4,Number(summary.score_confidence)||0));
       const status = summary.evidence_status==='supported' ? 'supported' : 'estimated';
-      return `<div class="evidence-stack"><span class="evidence-count">${summary.verified_benchmark_count || 0} badań</span><span class="confidence" title="Pewność BenchLM: ${confidence}/4">${'●'.repeat(confidence)}${'○'.repeat(4-confidence)}</span><span class="evidence-label ${status}">${status==='supported'?'wspierany':'szacowany'}</span></div>`;
+      return `<div class="evidence-stack"><span class="evidence-count">${summary.verified_benchmark_count || 0} rekordów</span><span class="confidence" title="Pewność BenchLM: ${confidence}/4">${'●'.repeat(confidence)}${'○'.repeat(4-confidence)}</span><span class="evidence-label ${status}">${status==='supported'?'wspierany':'szacowany'}</span></div>`;
     };
     const benchmarkDetails = model => {
       const record = benchmarkRecord(model);
@@ -369,19 +360,16 @@
       return `<details class="bench-details"><summary>${available.length} wyników surowych</summary><div class="bench-detail-list">${available.map(item=>{const evidence=evidenceFor(model,item.id);return `<a class="bench-detail" title="${esc(evidence?.conditions || '')}" href="${esc(safeUrl(evidence?.source_url))}" target="_blank" rel="noopener noreferrer"><span>${esc(item.label)}</span><strong>${record.scores[item.id].toFixed(1)}%</strong></a>`;}).join('')}</div></details>`;
     };
     const valueCell = model => {
-      const score = valueScore(model), record = benchmarkRecord(model), summary = summaryFor(model);
-      if (score == null) return '<span class="availability preview">brak danych</span>';
-      const source = summary?.source_url || record?.source_url;
-      const basis = summary ? `BenchLM ogółem ${summary.overall} / koszt workloadu · ${summary.verified_benchmark_count || 0} zweryfikowanych badań` : 'Średnia GPQA i HLE / koszt workloadu';
-      return `<a class="availability active" title="${esc(basis)}" href="${esc(safeUrl(source))}" target="_blank" rel="noopener noreferrer">${score}/100</a>`;
+      const value = researchValue(model);
+      if (!Number.isFinite(value)) return '<span class="availability preview">poza rankingiem</span>';
+      return `<span class="availability active" title="Poglądowo: BenchLM ${esc(state.category)} / bazowy koszt tokenów">${value.toLocaleString('pl-PL',{maximumFractionDigits:2})} pkt/$</span>`;
     };
     const persistComparison = () => {
       try {
         localStorage.setItem(SELECTION_KEY,JSON.stringify([...state.selected]));
-        localStorage.setItem(WEIGHTS_KEY,JSON.stringify(state.weights));
       } catch (error) { console.warn('Nie udało się zapisać preferencji porównania',error); }
     };
-    const accessFor = model => ({alibaba:'Qwen Cloud · Model Studio · Qoder',moonshot:'Kimi · Moonshot API',openai:'API · Cursor*',anthropic:'API · Cursor*',google:'API · Cursor*',xai:'API · Cursor*',deepseek:'API · Cursor*'}[model.provider] || 'API');
+    const accessFor = model => model.availability==='limited' ? 'Dostęp ograniczony' : 'API dostawcy';
     const dateTime = iso => {
       if (!iso) return 'brak';
       const date = new Date(iso);
@@ -435,13 +423,13 @@
       $('providerCount').textContent = providers.length;
       const healthy = providers.filter(p=>p.status==='ok').length;
       $('providerFoot').textContent = `${healthy} źródeł bez ostrzeżeń`;
-      const priced = models.filter(model=>model.active!==false && comparable(model));
+      const priced = models.filter(model=>rankEligible(model) && comparable(model));
       const cheapestIn = [...priced].sort((a,b)=>a.input-b.input)[0];
       const cheapestOut = [...priced].sort((a,b)=>a.output-b.output)[0];
-      $('cheapestInput').textContent = money(cheapestIn.input);
-      $('cheapestInputName').textContent = cheapestIn.name;
-      $('cheapestOutput').textContent = money(cheapestOut.output);
-      $('cheapestOutputName').textContent = cheapestOut.name;
+      $('cheapestInput').textContent = cheapestIn ? money(cheapestIn.input) : '—';
+      $('cheapestInputName').textContent = cheapestIn?.name || 'brak danych';
+      $('cheapestOutput').textContent = cheapestOut ? money(cheapestOut.output) : '—';
+      $('cheapestOutputName').textContent = cheapestOut?.name || 'brak danych';
     }
 
     function renderFilters() {
@@ -497,7 +485,7 @@
     }
 
     function renderRanking(models) {
-      const ranked = models.filter(model=>model.active!==false && comparable(model)).sort((a,b)=>workload(a)-workload(b)).slice(0,5);
+      const ranked = models.filter(model=>rankEligible(model) && comparable(model)).sort((a,b)=>workload(a)-workload(b)).slice(0,5);
       const max = Math.max(...ranked.map(workload),.000001);
       $('ranking').innerHTML = ranked.length ? ranked.map(model=>`
         <div class="rank-row"><div class="rank-line"><span class="rank-name">${esc(model.name)}</span><span class="rank-price">${money(workload(model))}</span></div><div class="bar"><span style="width:${Math.max(3,workload(model)/max*100)}%"></span></div></div>`).join('') : '<p class="help">Brak wyników.</p>';
@@ -507,7 +495,7 @@
       const benchmark = state.codingBenchmark;
       const metric = model => benchmark==='coding_category' ? categoryFor(model,'coding') : scoreFor(model,benchmark);
       const label = benchmark==='coding_category' ? 'BenchLM Coding' : state.benchmarks?.benchmarks?.find(item=>item.id===benchmark)?.label || benchmark;
-      const ranked = models.filter(model=>model.active!==false && Number.isFinite(metric(model))).sort((a,b)=>metric(b)-metric(a)).slice(0,5);
+      const ranked = models.filter(model=>rankEligible(model) && Number.isFinite(metric(model)) && (state.includeEstimated || summaryFor(model)?.evidence_status!=='estimated')).sort((a,b)=>metric(b)-metric(a)).slice(0,5);
       const max = Math.max(...ranked.map(metric),.000001);
       $('codingRanking').innerHTML = ranked.length ? ranked.map(model=>{
         const summary = summaryFor(model), evidence = benchmark==='coding_category' ? {source_url:summary?.source_url,conditions:`Zweryfikowana kategoria Coding · ${summary?.verified_benchmark_count || 0} badań · ${summary?.evidence_status || ''}`} : evidenceFor(model,benchmark), score = metric(model);
@@ -520,10 +508,6 @@
       if (!state.prices) return;
       const selected = state.prices.models.filter(model=>state.selected.has(model.id));
       $('selectedCount').textContent = `${selected.length} wybranych`;
-      ['price','research','efficiency'].forEach(key=>{
-        const input = $(`${key}Weight`), label = $(`${key}WeightValue`);
-        input.value = state.weights[key]; label.textContent = `${state.weights[key]}%`;
-      });
       $('selectedModels').innerHTML = selected.map(model=>`<span class="selected-model">${esc(model.name)}<button type="button" data-remove-model="${esc(model.id)}" aria-label="Usuń ${esc(model.name)} z porównania">×</button></span>`).join('');
       $('selectedModels').querySelectorAll('[data-remove-model]').forEach(button=>button.addEventListener('click',()=>{state.selected.delete(button.dataset.removeModel);persistComparison();renderModels();}));
       if (selected.length < 2) {
@@ -531,31 +515,19 @@
         return;
       }
 
-      const eligible = selected.filter(model=>comparable(model) && Number.isFinite(qualityForValue(model)));
-      if (!eligible.length) {
-        $('compareResults').innerHTML='<div class="compare-empty">Wybrane modele nie mają jednocześnie porównywalnej ceny i wyniku badań.</div>';
-        return;
-      }
-      const minCost = Math.min(...eligible.map(workload));
-      const maxEfficiency = Math.max(...eligible.map(model=>qualityForValue(model)/Math.max(workload(model),.000001)));
-      const weightTotal = Math.max(1,state.weights.price+state.weights.research+state.weights.efficiency);
-      const ranked = eligible.map(model=>{
-        const quality = qualityForValue(model), cost = workload(model);
-        const priceScore = Math.min(100,minCost/Math.max(cost,.000001)*100);
-        const efficiencyRaw = quality/Math.max(cost,.000001);
-        const efficiencyScore = Math.min(100,efficiencyRaw/Math.max(maxEfficiency,.000001)*100);
-        const summary = summaryFor(model), confidence = summary ? Math.max(0,Math.min(4,Number(summary.score_confidence)||0)) : 4;
-        const evidenceFactor = summary ? (0.82+0.045*confidence)*(summary.evidence_status==='estimated' ? .97 : 1) : 1;
-        const weighted = (priceScore*state.weights.price + quality*state.weights.research + efficiencyScore*state.weights.efficiency)/weightTotal;
-        return {model,quality,cost,priceScore,efficiencyRaw,efficiencyScore,confidence,evidenceFactor,score:Math.max(0,Math.min(100,weighted*evidenceFactor))};
-      }).sort((a,b)=>b.score-a.score);
-
-      const cards = ranked.map((item,index)=>{
-        const summary=summaryFor(item.model), evidence=summary?`${summary.verified_benchmark_count || 0} badań · pewność ${item.confidence}/4 · ${summary.evidence_status==='supported'?'wspierany':'szacowany'}`:'oficjalne wyniki źródłowe';
-        return `<article class="compare-card ${index===0?'winner':''}"><div class="compare-rank">${index===0?'Najbardziej opłacalny':`Miejsce ${index+1}`}</div><div class="compare-name">${esc(item.model.name)}</div><div class="compare-score">${item.score.toFixed(1)}</div><div class="compare-metrics"><div class="compare-metric"><span>Koszt</span><strong>${money(item.cost)}</strong></div><div class="compare-metric"><span>Jakość</span><strong>${item.quality.toFixed(1)} pkt</strong></div><div class="compare-metric"><span>Cena score</span><strong>${item.priceScore.toFixed(1)}</strong></div><div class="compare-metric"><span>Efektywność</span><strong>${item.efficiencyScore.toFixed(1)}</strong></div></div><div class="compare-note">${esc(evidence)} · korekta dowodów ×${item.evidenceFactor.toFixed(2)}</div></article>`;
+      const minimum = number('minimumQuality'), budget = number('maximumBudget');
+      const rows = selected.map(model=>({id:model.id,model,cost:workload(model),quality:qualityForValue(model)}));
+      const eligible = rows.filter(row=>rankEligible(row.model) && Number.isFinite(row.cost) && row.cost>0 && Number.isFinite(row.quality) && row.quality>=minimum && (!budget || row.cost<=budget));
+      const ranked = ValueAnalysis.frontier(eligible).sort((a,b)=>a.cost-b.cost || b.quality-a.quality);
+      const cards = ranked.map(item=>{
+        const summary=summaryFor(item.model);
+        return `<article class="compare-card ${item.dominated?'':'winner'}"><div class="compare-rank">${item.dominated?'Istnieje tańsza lub lepsza opcja':'Bez dominacji w tym wyborze'}</div><div class="compare-name">${esc(item.model.name)}</div><div class="compare-metrics"><div class="compare-metric"><span>Koszt tokenów</span><strong>${money(item.cost)}</strong></div><div class="compare-metric"><span>${esc(state.category)} (BenchLM)</span><strong>${item.quality.toFixed(1)} pkt</strong></div></div><div class="compare-note">${summary.verified_benchmark_count || 0} rekordów · ${esc(summary.evidence_status)} · zestawienie poglądowe</div></article>`;
       });
-      const unavailable = selected.filter(model=>!comparable(model) || !Number.isFinite(qualityForValue(model))).map(model=>`<article class="compare-card"><div class="compare-rank">Bez oceny</div><div class="compare-name">${esc(model.name)}</div><div class="compare-note">Brakuje porównywalnej ceny lub badań. Model pozostaje w Twoim wyborze, ale nie wpływa na ranking.</div></article>`);
-      $('compareResults').innerHTML=`<div class="compare-results">${[...cards,...unavailable].join('')}</div>`;
+      const unavailable = rows.filter(row=>!eligible.some(item=>item.id===row.id)).map(item=>{
+        const reason = !rankEligible(item.model) ? 'Nieaktywna/ograniczona dostępność albo cena niepotwierdzona w ostatnich 48 h i poprawnym skanie dostawcy.' : !Number.isFinite(item.cost) ? 'Brak porównywalnej ceny.' : item.cost<=0 ? 'Ustaw dodatni wolumen tokenów; koszt zerowy nie wyznacza opłacalności.' : !Number.isFinite(item.quality) ? 'Brak wyniku tej kategorii lub wyłączone pozycje szacowane.' : 'Poza ustawionym budżetem lub progiem jakości.';
+        return `<article class="compare-card"><div class="compare-rank">Poza zestawieniem</div><div class="compare-name">${esc(item.model.name)}</div><div class="compare-note">${esc(reason)}</div></article>`;
+      });
+      $('compareResults').innerHTML=`<p class="compare-copy">${eligible.length}/${selected.length} modeli spełnia warunki. Kolejność według kosztu; oznaczenia dotyczą tylko wybranego zbioru. To nie jest wynik kontrolowanego badania ani rekomendacja oparta na skuteczności Twoich zadań.</p><div class="compare-results">${[...cards,...unavailable].join('')}</div>`;
     }
 
     function renderProviders() {
@@ -585,7 +557,7 @@
       const checked = state.prices.last_checked_at;
       const age = checked ? Date.now()-new Date(checked).getTime() : Infinity;
       $('updatedLabel').textContent = `Sprawdzono ${relative(checked)}`;
-      $('freshDot').className = `dot ${age < 45*60*1000 ? 'ok' : age < 24*60*60*1000 ? 'partial' : 'error'}`;
+      $('freshDot').className = `dot ${state.prices.providers.some(p=>p.status!=='ok') ? 'partial' : age < 45*60*1000 ? 'ok' : age < 24*60*60*1000 ? 'partial' : 'error'}`;
       $('freshDot').title = checked ? dateTime(checked) : 'Brak sprawdzenia';
     }
 
@@ -599,7 +571,9 @@
     $('search').addEventListener('input',event=>{state.query=event.target.value;renderModels();});
     $('sort').addEventListener('change',event=>{state.sort=event.target.value;renderModels();});
     $('codingBenchmark').addEventListener('change',event=>{state.codingBenchmark=event.target.value;renderCodingRanking(filteredModels());});
-    [['priceWeight','price'],['researchWeight','research'],['efficiencyWeight','efficiency']].forEach(([id,key])=>$(id).addEventListener('input',event=>{state.weights[key]=Number(event.target.value)||0;persistComparison();renderCompare();}));
+    $('valueCategory').addEventListener('change',event=>{state.category=event.target.value;renderModels();});
+    $('includeEstimated').addEventListener('change',event=>{state.includeEstimated=event.target.checked;renderModels();});
+    ['minimumQuality','maximumBudget'].forEach(id=>$(id).addEventListener('input',renderCompare));
     $('clearSelectionBtn').addEventListener('click',()=>{state.selected.clear();persistComparison();renderModels();});
     ['inputTokens','cachedTokens','outputTokens'].forEach(id=>$(id).addEventListener('input',renderModels));
     $('refreshBtn').addEventListener('click',()=>loadData(true));
