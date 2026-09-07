@@ -44,15 +44,24 @@ jobs:
         if: steps.benchmarks.outcome == 'failure'
         run: echo '::warning::Benchmark update failed; retaining previous research data and publishing independently refreshed prices.'
 
+      - name: Update Artificial Analysis research
+        id: research
+        continue-on-error: true
+        run: python scripts/update_research.py
+
+      - name: Report research source failure
+        if: steps.research.outcome == 'failure'
+        run: echo '::warning::Artificial Analysis update failed; last good observations retained with source error status.'
+
       - name: Commit changed data
         shell: bash
         run: |
-          if git diff --quiet -- data/prices.json data/history.json data/benchmarks.json; then
+          if git diff --quiet -- data/prices.json data/history.json data/benchmarks.json data/research.json; then
             echo "No data files changed."
             exit 0
           fi
           git config user.name "AI Price Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/prices.json data/history.json data/benchmarks.json
+          git add data/prices.json data/history.json data/benchmarks.json data/research.json
           git commit -m "chore(data): refresh AI prices and benchmarks"
           git push

@@ -1,0 +1,259 @@
+[
+  {
+    "id": "2f339a97-9a0d-499a-9cb5-e0db665bfa25",
+    "slug": "gpt-6-astra",
+    "name": "GPT-6 Astra (max)",
+    "creator": {
+      "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+      "slug": "openai",
+      "name": "OpenAI",
+      "logo": "/img/logos/openai_small.svg",
+      "color": "#1f1f1f",
+      "country": "us",
+      "url": "https://openai.com/"
+    },
+    "release": {
+      "slug": "gpt-6-astra",
+      "name": "GPT-6 Astra"
+    },
+    "effort": {
+      "slug": "max",
+      "label": "max",
+      "level": 60
+    },
+    "isReasoning": true,
+    "intelligenceIndex": 52.814069395513,
+    "intelligenceIndexIsEstimated": false,
+    "scicode": 0.564814814814815,
+    "terminalbenchV40": 0.590909090909091,
+    "terminalbenchV21": 0.883895131086142,
+    "automationBenchPartialScore": 0.6849174806688876,
+    "gpqa": 0.960606060606061,
+    "hle": 0.546802594995366,
+    "omniscience": 43.4,
+    "intelligenceIndexCostPerTask": {
+      "cost": {
+        "total": 3.2575003134834164,
+        "input": 1.897225067659909,
+        "nonCacheInput": 0.2150003946397127,
+        "cacheRead": 0.9812903754697416,
+        "cacheWrite": 0.7009342975504547,
+        "output": 1.3602752458235075,
+        "reasoning": 0.8345619022352239,
+        "answer": 0.5257133435882834
+      },
+      "evaluations": [
+        {
+          "slug": "aa-briefcase",
+          "weightedCostPerTask": 1.4253125872586803
+        },
+        {
+          "slug": "gdpval-aa",
+          "weightedCostPerTask": 0.45294844005565466
+        },
+        {
+          "slug": "automationbench-aa",
+          "weightedCostPerTask": 0.07977961555688814
+        },
+        {
+          "slug": "terminalbench-v4-0",
+          "weightedCostPerTask": 0.8498119471851334
+        },
+        {
+          "slug": "scicode",
+          "weightedCostPerTask": 0.023225916666666666
+        },
+        {
+          "slug": "humanitys-last-exam",
+          "weightedCostPerTask": 0.0378076797961075
+        },
+        {
+          "slug": "gdp-pdf",
+          "weightedCostPerTask": 0.20758206999999998
+        },
+        {
+          "slug": "critpt",
+          "weightedCostPerTask": 0.11661618571428572
+        },
+        {
+          "slug": "omniscience",
+          "weightedCostPerTask": 0.014550586249999999
+        },
+        {
+          "slug": "artificial-analysis-long-context-reasoning",
+          "weightedCostPerTask": 0.04986528500000001
+        }
+      ]
+    }
+  },
+  {
+    "id": "27202e5f-c82d-4710-92e9-4317877d4883",
+    "slug": "gemini-2-5-pro",
+    "name": "Gemini 2.5 Pro",
+    "creator": {
+      "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+      "slug": "google",
+      "name": "Google",
+      "logo": "/img/logos/google_small.svg",
+      "color": "#34A853",
+      "country": "us",
+      "url": "https://deepmind.google/technologies/gemini/"
+    },
+    "release": {
+      "slug": "gemini-2-5-pro",
+      "name": "Gemini 2.5 Pro"
+    },
+    "effort": null,
+    "isReasoning": true,
+    "intelligenceIndex": 16.6573962941864,
+    "intelligenceIndexIsEstimated": false,
+    "scicode": 0.462962962962963,
+    "terminalbenchV40": 0,
+    "terminalbenchV21": 0.284644194756554,
+    "automationBenchPartialScore": 0.021749464193408737,
+    "gpqa": 0.844444444444444,
+    "hle": 0.225208526413346,
+    "omniscience": -16.35,
+    "intelligenceIndexCostPerTask": {
+      "cost": {
+        "total": 0.23166603200256353,
+        "input": 0.1261723827130317,
+        "nonCacheInput": 0.013170713617252895,
+        "cacheRead": 0.022836335408506794,
+        "cacheWrite": 0.090165333687272,
+        "output": 0.10549364928953187,
+        "reasoning": 0.06770828935960758,
+        "answer": 0.03778535992992428
+      },
+      "evaluations": [
+        {
+          "slug": "aa-briefcase",
+          "weightedCostPerTask": 0.04960931927325067
+        },
+        {
+          "slug": "gdpval-aa",
+          "weightedCostPerTask": 0.02386378419603816
+        },
+        {
+          "slug": "automationbench-aa",
+          "weightedCostPerTask": 0.006476637792309795
+        },
+        {
+          "slug": "terminalbench-v4-0",
+          "weightedCostPerTask": 0.08247727626474503
+        },
+        {
+          "slug": "scicode",
+          "weightedCostPerTask": 0.007984639756944445
+        },
+        {
+          "slug": "humanitys-last-exam",
+          "weightedCostPerTask": 0.014609955746061165
+        },
+        {
+          "slug": "gdp-pdf",
+          "weightedCostPerTask": 0.010541543749999998
+        },
+        {
+          "slug": "critpt",
+          "weightedCostPerTask": 0.026686426785714285
+        },
+        {
+          "slug": "omniscience",
+          "weightedCostPerTask": 0.0025901296874999997
+        },
+        {
+          "slug": "artificial-analysis-long-context-reasoning",
+          "weightedCostPerTask": 0.006826318750000001
+        }
+      ]
+    }
+  },
+  {
+    "id": "a3f8100d-e38f-408b-b0fa-0085dae18dc1",
+    "slug": "gpt-6-astra-low",
+    "name": "GPT-6 Astra (low)",
+    "creator": {
+      "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+      "slug": "openai",
+      "name": "OpenAI",
+      "logo": "/img/logos/openai_small.svg",
+      "color": "#1f1f1f",
+      "country": "us",
+      "url": "https://openai.com/"
+    },
+    "release": {
+      "slug": "gpt-6-astra",
+      "name": "GPT-6 Astra"
+    },
+    "effort": {
+      "slug": "low",
+      "label": "low",
+      "level": 20
+    },
+    "isReasoning": true,
+    "intelligenceIndex": 45.9944993120341,
+    "intelligenceIndexIsEstimated": false,
+    "scicode": 0.540509259259259,
+    "terminalbenchV40": 0.419191919191919,
+    "terminalbenchV21": 0.880149812734082,
+    "automationBenchPartialScore": 0.5909672610445402,
+    "gpqa": 0.931313131313131,
+    "hle": 0.492122335495829,
+    "omniscience": 40.55,
+    "intelligenceIndexCostPerTask": {
+      "cost": {
+        "total": 0.8175139285656057,
+        "input": 0.5958764887300737,
+        "nonCacheInput": 0.2165716940950248,
+        "cacheRead": 0.18536249244267217,
+        "cacheWrite": 0.19394230219237674,
+        "output": 0.22163743983553194,
+        "reasoning": 0.04688430087765605,
+        "answer": 0.17475313895787586
+      },
+      "evaluations": [
+        {
+          "slug": "aa-briefcase",
+          "weightedCostPerTask": 0.21644863739292058
+        },
+        {
+          "slug": "gdpval-aa",
+          "weightedCostPerTask": 0.08545092471972231
+        },
+        {
+          "slug": "automationbench-aa",
+          "weightedCostPerTask": 0.04995425794534181
+        },
+        {
+          "slug": "terminalbench-v4-0",
+          "weightedCostPerTask": 0.22485580260976215
+        },
+        {
+          "slug": "scicode",
+          "weightedCostPerTask": 0.004250701388888889
+        },
+        {
+          "slug": "humanitys-last-exam",
+          "weightedCostPerTask": 0.003886476830398517
+        },
+        {
+          "slug": "gdp-pdf",
+          "weightedCostPerTask": 0.16963186
+        },
+        {
+          "slug": "critpt",
+          "weightedCostPerTask": 0.01448597142857143
+        },
+        {
+          "slug": "omniscience",
+          "weightedCostPerTask": 0.0010444112499999997
+        },
+        {
+          "slug": "artificial-analysis-long-context-reasoning",
+          "weightedCostPerTask": 0.047504885000000004
+        }
+      ]
+    }
+  }
+]
