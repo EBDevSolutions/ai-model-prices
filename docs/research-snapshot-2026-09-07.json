@@ -1,0 +1,290 @@
+{
+  "price_snapshot_checked_at": "2026-09-07T21:06:09Z",
+  "benchlm_generated_at": "2026-09-05T13:18:54.260Z",
+  "unit": "USD; token volumes in millions",
+  "scope": "Arithmetic scenarios, not measured task costs. Short-context standard/DeepSeek PEAK. Cache reads only; no write/storage, tools, retries, tax or subscription fees. Output includes billable reasoning.",
+  "scenarios": {
+    "patch": {
+      "input": 0.1,
+      "cached_input": 0,
+      "output": 0.02
+    },
+    "agent_cache_reads": {
+      "input": 0.4,
+      "cached_input": 0.6,
+      "output": 0.08
+    },
+    "output_heavy": {
+      "input": 0.1,
+      "cached_input": 0,
+      "output": 0.1
+    }
+  },
+  "models": [
+    {
+      "id": "openai:gpt-5.6-luna",
+      "name": "GPT 5.6 Luna",
+      "rates_usd_per_million": {
+        "input": 0.2,
+        "cached_input": 0.02,
+        "output": 1.2
+      },
+      "source_url": "https://developers.openai.com/api/docs/pricing",
+      "last_seen_at": "2026-09-07T21:03:09Z",
+      "tier": "standard · short context",
+      "scenario_cost_usd": {
+        "patch": 0.044,
+        "agent_cache_reads": 0.188,
+        "output_heavy": 0.14
+      },
+      "benchlm_categories": {
+        "coding": 52,
+        "agentic": 78.9,
+        "knowledge": 74.9,
+        "reasoning": 49.2
+      },
+      "benchlm_evidence_status": "estimated",
+      "benchmark_source_url": "https://benchlm.ai/models/gpt-5-6-luna"
+    },
+    {
+      "id": "openai:gpt-5.6-terra",
+      "name": "GPT 5.6 Terra",
+      "rates_usd_per_million": {
+        "input": 2.0,
+        "cached_input": 0.2,
+        "output": 12.0
+      },
+      "source_url": "https://developers.openai.com/api/docs/pricing",
+      "last_seen_at": "2026-09-07T21:03:09Z",
+      "tier": "standard · short context",
+      "scenario_cost_usd": {
+        "patch": 0.44,
+        "agent_cache_reads": 1.88,
+        "output_heavy": 1.4
+      },
+      "benchlm_categories": {
+        "coding": 60.7,
+        "agentic": 85.4,
+        "knowledge": 77.2,
+        "reasoning": 63.2
+      },
+      "benchlm_evidence_status": "estimated",
+      "benchmark_source_url": "https://benchlm.ai/models/gpt-5-6-terra"
+    },
+    {
+      "id": "openai:gpt-5.6-sol",
+      "name": "GPT 5.6 Sol",
+      "rates_usd_per_million": {
+        "input": 4.0,
+        "cached_input": 0.4,
+        "output": 20.0
+      },
+      "source_url": "https://developers.openai.com/api/docs/pricing",
+      "last_seen_at": "2026-09-07T21:03:09Z",
+      "tier": "standard · short context",
+      "scenario_cost_usd": {
+        "patch": 0.8,
+        "agent_cache_reads": 3.44,
+        "output_heavy": 2.4
+      },
+      "benchlm_categories": {
+        "coding": 60.2,
+        "agentic": 90.8,
+        "knowledge": 84.7,
+        "reasoning": 69.8
+      },
+      "benchlm_evidence_status": "supported",
+      "benchmark_source_url": "https://benchlm.ai/models/gpt-5-6-sol"
+    },
+    {
+      "id": "anthropic:claude-sonnet-5",
+      "name": "Claude Sonnet 5",
+      "rates_usd_per_million": {
+        "input": 2.0,
+        "cached_input": 0.2,
+        "output": 10.0
+      },
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "last_seen_at": "2026-09-07T21:03:09Z",
+      "tier": "Claude API · standard global",
+      "scenario_cost_usd": {
+        "patch": 0.4,
+        "agent_cache_reads": 1.72,
+        "output_heavy": 1.2
+      },
+      "benchlm_categories": {
+        "coding": 59.4,
+        "agentic": 80.1,
+        "knowledge": 80.3,
+        "reasoning": 76.4
+      },
+      "benchlm_evidence_status": "supported",
+      "benchmark_source_url": "https://benchlm.ai/models/claude-sonnet-5"
+    },
+    {
+      "id": "anthropic:claude-opus-5",
+      "name": "Claude Opus 5",
+      "rates_usd_per_million": {
+        "input": 5.0,
+        "cached_input": 0.5,
+        "output": 25.0
+      },
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "last_seen_at": "2026-09-07T21:03:09Z",
+      "tier": "Claude API · standard global",
+      "scenario_cost_usd": {
+        "patch": 1.0,
+        "agent_cache_reads": 4.3,
+        "output_heavy": 3.0
+      },
+      "benchlm_categories": {
+        "coding": 89.9,
+        "agentic": 71.1,
+        "knowledge": 97.5,
+        "reasoning": 75.6
+      },
+      "benchlm_evidence_status": "supported",
+      "benchmark_source_url": "https://benchlm.ai/models/claude-opus-5"
+    },
+    {
+      "id": "anthropic:claude-fable-5.1",
+      "name": "Claude Fable 5.1",
+      "rates_usd_per_million": {
+        "input": 10.0,
+        "cached_input": 0.25,
+        "output": 50.0
+      },
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "last_seen_at": "2026-09-07T21:03:09Z",
+      "tier": "Claude API · standard global",
+      "scenario_cost_usd": {
+        "patch": 2.0,
+        "agent_cache_reads": 8.15,
+        "output_heavy": 6.0
+      },
+      "benchlm_categories": {
+        "coding": 90.6,
+        "agentic": 52.3,
+        "knowledge": 97.5,
+        "reasoning": 79.4
+      },
+      "benchlm_evidence_status": "supported",
+      "benchmark_source_url": "https://benchlm.ai/models/claude-fable-5-1"
+    },
+    {
+      "id": "deepseek:deepseek-v4-flash",
+      "name": "Deepseek V4 Flash 0731",
+      "rates_usd_per_million": {
+        "input": 0.44,
+        "cached_input": 0.014,
+        "output": 1.32
+      },
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "last_seen_at": "2026-09-07T21:03:09Z",
+      "tier": "peak",
+      "scenario_cost_usd": {
+        "patch": 0.0704,
+        "agent_cache_reads": 0.29,
+        "output_heavy": 0.176
+      },
+      "benchlm_categories": null,
+      "benchlm_evidence_status": null,
+      "benchmark_source_url": null
+    },
+    {
+      "id": "deepseek:deepseek-v4-pro",
+      "name": "Deepseek V4 Pro 0813",
+      "rates_usd_per_million": {
+        "input": 1.32,
+        "cached_input": 0.044,
+        "output": 3.96
+      },
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "last_seen_at": "2026-09-07T21:03:09Z",
+      "tier": "peak",
+      "scenario_cost_usd": {
+        "patch": 0.2112,
+        "agent_cache_reads": 0.8712,
+        "output_heavy": 0.528
+      },
+      "benchlm_categories": null,
+      "benchlm_evidence_status": null,
+      "benchmark_source_url": null
+    },
+    {
+      "id": "google:gemini-3.1-flash-lite",
+      "name": "Gemini 3.1 Flash-Lite",
+      "rates_usd_per_million": {
+        "input": 0.25,
+        "cached_input": 0.025,
+        "output": 1.5
+      },
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "last_seen_at": "2026-09-07T21:06:09Z",
+      "tier": "paid standard",
+      "scenario_cost_usd": {
+        "patch": 0.055,
+        "agent_cache_reads": 0.235,
+        "output_heavy": 0.175
+      },
+      "benchlm_categories": {
+        "coding": 52.5,
+        "agentic": null,
+        "knowledge": 72.1,
+        "reasoning": null
+      },
+      "benchlm_evidence_status": "supported",
+      "benchmark_source_url": "https://benchlm.ai/models/gemini-3-1-flash-lite"
+    },
+    {
+      "id": "google:gemini-3.8-flash",
+      "name": "Gemini 3.8 Flash",
+      "rates_usd_per_million": {
+        "input": 0.75,
+        "cached_input": 0.075,
+        "output": 3.75
+      },
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "last_seen_at": "2026-09-07T21:06:09Z",
+      "tier": "paid standard",
+      "scenario_cost_usd": {
+        "patch": 0.15,
+        "agent_cache_reads": 0.645,
+        "output_heavy": 0.45
+      },
+      "benchlm_categories": {
+        "coding": 75.5,
+        "agentic": 71,
+        "knowledge": 83.1,
+        "reasoning": 78.5
+      },
+      "benchlm_evidence_status": "supported",
+      "benchmark_source_url": "https://benchlm.ai/models/gemini-3-8-flash"
+    },
+    {
+      "id": "moonshot:kimi-k3",
+      "name": "Kimi k3",
+      "rates_usd_per_million": {
+        "input": 3.0,
+        "cached_input": 0.3,
+        "output": 15.0
+      },
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3",
+      "last_seen_at": "2026-09-07T21:03:09Z",
+      "tier": "standard",
+      "scenario_cost_usd": {
+        "patch": 0.6,
+        "agent_cache_reads": 2.58,
+        "output_heavy": 1.8
+      },
+      "benchlm_categories": {
+        "coding": 63,
+        "agentic": 83.2,
+        "knowledge": 81.6,
+        "reasoning": 78.5
+      },
+      "benchlm_evidence_status": "supported",
+      "benchmark_source_url": "https://benchlm.ai/models/kimi-k3"
+    }
+  ]
+}

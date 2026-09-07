@@ -197,7 +197,7 @@ def parse_anthropic(page: Page) -> dict[str, dict]:
     for table in soup.find_all("table"):
         rows = table_rows(table)
         header = " | ".join(rows[0]) if rows else ""
-        if all(label in header for label in ("Model", "Base Input Tokens", "Cache Hits", "Output Tokens")):
+        if all(label in header.casefold() for label in ("model", "base input tokens", "cache hits", "output tokens")):
             pricing_rows = rows
             break
     if not pricing_rows:
@@ -277,7 +277,8 @@ def parse_google(page: Page) -> dict[str, dict]:
         cache_note = "cache rate listed" if cached_price is not None else "no separate cache rate listed"
         item_id, item = model_record(
             "google", model_id, name, input_price, cached_price, output_price,
-            "paid standard", f"First listed paid token rate ({cache_note}); modalities and thresholds may differ.", availability
+            "paid standard", f"First listed paid token rate ({cache_note}); modalities and thresholds may differ.", availability,
+            price_comparable=not any(marker in model_id for marker in ("-tts", "-audio", "-live", "-transcribe", "-streaming")),
         )
         result[item_id] = item
     return result
@@ -322,17 +323,32 @@ def parse_deepseek(page: Page) -> dict[str, dict]:
         return {}
     models = rows[0][1:]
     versions = models[:]
-    hit = miss = output = None
+    rates: dict[str, list] = {}
+    field = None
+    time_tiered = False
     for cells in rows[1:]:
-        label = cells[0].upper() if cells else ""
-        if label == "MODEL VERSION":
+        label = " ".join(cells).upper()
+        if cells and cells[0].upper() == "MODEL VERSION":
             versions = cells[1:]
-        elif "INPUT TOKENS (CACHE HIT)" in " ".join(cells).upper():
-            hit = [first_money(cell) for cell in cells[-len(models):]]
+        if "INPUT TOKENS (CACHE HIT)" in label:
+            field = "hit"
         elif "INPUT TOKENS (CACHE MISS)" in label:
-            miss = [first_money(cell) for cell in cells[1:1 + len(models)]]
+            field = "miss"
         elif "OUTPUT TOKENS" in label:
-            output = [first_money(cell) for cell in cells[1:1 + len(models)]]
+            field = "output"
+        elif not cells or cells[0].upper() not in {"PEAK", "OFF-PEAK"}:
+            continue
+        if field is None:
+            continue
+        # Rowspans omit labels on the following PEAK row. Use the final model
+        # columns and explicitly select PEAK, never the first (discounted) row.
+        if "OFF-PEAK" in label:
+            time_tiered = True
+            continue
+        values = [first_money(cell) for cell in cells[-len(models):]]
+        if len(values) == len(models) and all(value is not None for value in values):
+            rates[field] = values
+    hit, miss, output = (rates.get(key) for key in ("hit", "miss", "output"))
     if not hit or not miss or not output:
         return {}
     result: dict[str, dict] = {}
@@ -344,7 +360,10 @@ def parse_deepseek(page: Page) -> dict[str, dict]:
         version = versions[index] if index < len(versions) else model_id
         item_id, item = model_record(
             "deepseek", model_id, title_from_id(version), miss[index], hit[index], output[index],
-            "standard", "Official DeepSeek API; promotions or time-based rates may change."
+            "peak" if time_tiered else "standard",
+            "Peak token rates; off-peak discounts excluded. See source for UTC schedule." if time_tiered
+            else "Official DeepSeek API standard token rates.",
+            "preview" if "-exp" in model_id else "active",
         )
         result[item_id] = item
     return result
@@ -452,7 +471,7 @@ SPECS = [
     ProviderSpec("anthropic", "https://platform.claude.com/docs/en/about-claude/pricing", 5, parse_anthropic),
     ProviderSpec("google", "https://ai.google.dev/gemini-api/docs/pricing", 8, parse_google),
     ProviderSpec("xai", "https://docs.x.ai/developers/pricing", 3, parse_xai),
-    ProviderSpec("deepseek", "https://api-docs.deepseek.com/quick_start/pricing", 2, parse_deepseek),
+    ProviderSpec("deepseek", "https://api-docs.deepseek.com/quick_start/pricing/", 2, parse_deepseek),
     ProviderSpec("alibaba", "https://www.alibabacloud.com/help/en/model-studio/model-pricing", 2, parse_alibaba),
     ProviderSpec("moonshot", "https://platform.kimi.ai/docs/pricing/chat-k3", 4, parse_moonshot),
 ]
@@ -486,7 +505,7 @@ def valid_price_set(values: dict, old: dict | None = None) -> tuple[bool, str | 
         return True, None
     for field in PRICE_FIELDS:
         value = values.get(field)
-        if not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0 or value > 10000:
+        if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0 or value > 10000:
             return False, f"invalid {field}={value!r}"
         previous = old.get(field)
         if previous and value:
@@ -526,13 +545,13 @@ def update(selected: set[str] | None = None, dry_run: bool = False) -> int:
     }
     if excluded_ids:
         prices["models"] = [model for model in prices["models"] if model["id"] not in excluded_ids]
-        history["events"] = [event for event in history.get("events", []) if event.get("model_id") not in excluded_ids]
     now = utc_now()
     model_index = {model["id"]: model for model in prices.get("models", [])}
     provider_index = {provider["id"]: provider for provider in prices["providers"]}
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
     event_count = 0
+    successful_providers = 0
 
     for spec in SPECS:
         if selected and spec.provider_id not in selected:
@@ -544,6 +563,14 @@ def update(selected: set[str] | None = None, dry_run: bool = False) -> int:
             parsed = spec.parser(fetch(session, spec.url))
             if len(parsed) < spec.minimum_models:
                 raise ValueError(f"incomplete discovery: {len(parsed)} model(s), expected at least {spec.minimum_models}")
+            previous_count = provider.get("model_count", 0)
+            if previous_count and len(parsed) < previous_count * 0.6:
+                raise ValueError(f"catalog shrink: {previous_count} to {len(parsed)}; manual parser review required")
+            # Validate the complete provider before mutating any existing row.
+            for local_id, discovered in parsed.items():
+                ok, reason = valid_price_set(discovered, model_index.get(local_id))
+                if not ok:
+                    raise ValueError(f"rejected provider snapshot: {local_id}: {reason}")
             accepted = 0
             rejected: list[str] = []
             seen: set[str] = set()
@@ -606,6 +633,7 @@ def update(selected: set[str] | None = None, dry_run: bool = False) -> int:
             provider["last_success_at"] = now
             provider["error"] = "; ".join(rejected)[:500] or None
             provider["model_count"] = accepted
+            successful_providers += 1
             LOG.info("%s: discovered %d model(s), rejected %d", spec.provider_id, accepted, len(rejected))
         except Exception as exc:  # provider failures must never stop other providers
             provider["status"] = "error"
@@ -623,13 +651,13 @@ def update(selected: set[str] | None = None, dry_run: bool = False) -> int:
     if dry_run:
         additions = len(model_index) - len({model["id"] for model in before_prices.get("models", [])})
         LOG.info("dry run: %d new model(s), %d catalog event(s); no files written", additions, event_count)
-        return 0
+        return 0 if successful_providers else 1
     if prices != before_prices:
         atomic_json_write(PRICES_PATH, prices)
     if history != before_history:
         atomic_json_write(HISTORY_PATH, history)
     LOG.info("finished: %d catalog event(s), %d total model(s)", event_count, len(prices["models"]))
-    return 0
+    return 0 if successful_providers else 1
 
 
 def main() -> int:

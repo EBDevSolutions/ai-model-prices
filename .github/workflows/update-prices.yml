@@ -36,7 +36,13 @@ jobs:
         run: python scripts/update_prices.py
 
       - name: Update verified benchmark coverage
+        id: benchmarks
+        continue-on-error: true
         run: python scripts/update_benchmarks.py
+
+      - name: Report benchmark source failure
+        if: steps.benchmarks.outcome == 'failure'
+        run: echo '::warning::Benchmark update failed; retaining previous research data and publishing independently refreshed prices.'
 
       - name: Commit changed data
         shell: bash

@@ -2,7 +2,7 @@
 
 Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xAI, DeepSeek, Alibaba/Qwen i Moonshot/Kimi. Publikacja działa przez GitHub Pages, a GitHub Actions co 30 minut sprawdza oficjalne źródła, aktualizuje ceny i automatycznie dodaje nowo wykryte modele. Nie potrzebujesz backendu, VPS-a, Dockera ani usługi działającej na własnym komputerze.
 
-> **Ważne — pierwsza weryfikacja:** `data/prices.json` zawiera snapshot startowy z 9 sierpnia 2026. Po utworzeniu repozytorium uruchom ręcznie workflow **Update AI prices** i porównaj wynik z oficjalnymi cennikami. Strony producentów zmieniają strukturę bez uprzedzenia, a część cen ma progi kontekstu, regiony, tryby lub promocje, których pojedyncza liczba nie oddaje w pełni.
+> **Audyt 7 września 2026:** [badania, porównanie kosztów i plan rozwoju](docs/research-review-2026-09-07.md). Ranking skupia się na programowaniu i agentach. Ceny bazowe nie obejmują całkowitego kosztu wykonania zadania.
 
 ## Co znajduje się w repozytorium
 
@@ -24,7 +24,7 @@ Statyczny dashboard cen tokenów API modeli OpenAI, Anthropic, Google Gemini, xA
 
 Updater izoluje błędy dostawców. Jeśli pobranie albo parser jednego źródła zawiedzie, jego dotychczasowy katalog pozostaje bez zmian, a pozostali dostawcy nadal są sprawdzani. Nowe wiersze oficjalnych tabel są automatycznie dopisywane do `data/prices.json`. Historia rejestruje dodanie modelu, zmianę ceny, ponowne pojawienie się i zniknięcie z aktualnego cennika.
 
-Ten sam workflow uzupełnia benchmarki z publicznego zbioru [BenchLM](https://benchlm.ai/data), udostępnionego na licencji MIT. Import wymaga dokładnego dopasowania modelu i dostawcy, przynajmniej jednego zweryfikowanego rekordu oraz braku wyników generowanych. Status całej pozycji `estimated` nie odrzuca jej surowych zweryfikowanych badań; jest zachowany razem z przedziałem niepewności i oceną pewności. Dane z oficjalnej karty producenta mają zawsze pierwszeństwo przed agregatorem.
+Ten sam workflow uzupełnia benchmarki z publicznego zbioru [BenchLM](https://benchlm.ai/data). Import wymaga zgodnego identyfikatora i dostawcy, znanego statusu dowodów, dodatniej liczby rekordów verified i braku rekordów generated na poziomie modelu. Nie jest to weryfikacja każdej komórki ani warunków eksperymentu. Źródła producentów mają pierwszeństwo; wycofane komórki agregatora są usuwane po poprawnym odczycie kompletnego zbioru.
 
 ## Zakres automatycznego katalogu
 
@@ -32,37 +32,46 @@ Ten sam workflow uzupełnia benchmarki z publicznego zbioru [BenchLM](https://be
 - **Anthropic:** wszystkie wiersze głównej tabeli Claude API, włącznie z oznaczeniami limited i retired;
 - **Google Gemini:** modele z płatną ceną input i output w pierwszej tabeli Standard każdej sekcji modelu;
 - **xAI:** wszystkie modele z tabeli Text API, według ceny short context;
-- **DeepSeek:** wszystkie kolumny modeli z oficjalnej macierzy Models & Pricing;
+- **DeepSeek:** kolumny modeli z oficjalnej macierzy Models & Pricing, jawna taryfa PEAK;
 - **Alibaba/Qwen:** celowo mały katalog: bieżąca generacja `qwen3.8-max` i poprzednia `qwen3.7-max`. Snapshoty, preview i wyspecjalizowane warianty nie są osobnymi pozycjami. `qwen3.8-max` jest dostępny w Qwen Cloud/Model Studio, ale dopóki nie ma publicznej stawki USD za token, jest oznaczony jako nieporównywalny cenowo i nie wchodzi do rankingu.
 - **Moonshot/Kimi:** aktualne K3 oraz bezpośrednio poprzednie K2.7 Code i K2.6, odczytywane z oficjalnych tabel Moonshot API.
 
 Modele multimodalne z wieloma osobnymi stawkami audio/obrazu nie są mieszane z jedną stawką tekstową, jeżeli oficjalna tabela nie daje jednoznacznej pary input/output. Dzięki temu ranking nie porównuje różnych jednostek jakby były tym samym kosztem.
 
-## Benchmarki i opłacalność badawcza
+## Badania i opłacalność
 
-`data/benchmarks.json` przechowuje surowe wyniki MMLU-Pro, GPQA Diamond, Humanity's Last Exam bez narzędzi, LiveCodeBench, LiveCodeBench Pro, SWE-Bench Verified, SWE-Bench Pro, Terminal-Bench, FrontierSWE, BrowseComp, OSWorld Verified i τ²-bench. Każda liczba prowadzi do właściwego źródła i ma opis warunków. Identyfikatory cen są łączone przez dokładny klucz lub jawny alias — podobna nazwa nie wystarcza.
+`data/benchmarks.json` przechowuje surowe wyniki i źródła oraz osobne kompozyty BenchLM. Wyniki surowe są przeglądem publikacji: ta sama nazwa benchmarku nie gwarantuje tej samej wersji, agenta czy budżetu. `terminalBench2` nie oznacza obecnego Terminal-Bench 4.0. MMLU-Pro i MMMU-Pro pozostają różnymi testami.
 
-Przykład kontroli mapowania: oficjalna karta Gemini 2.0 Flash-Lite podaje dla wariantu Public Preview `71,6% MMLU-Pro`, `51,5% GPQA Diamond` i `28,9% LiveCodeBench v5`. Dashboard przypisuje te wyniki wyłącznie do `google:gemini-2.0-flash-lite`. `MMLU-Pro` i `MMMU-Pro` są różnymi benchmarkami i nie trafiają do tej samej kolumny.
+W **Moich modelach** wybierz programowanie (Coding) lub agentów (Agentic), minimum jakości i budżet. Tabela pokazuje koszt tokenów i wynik kategorii osobno. „Bez dominacji” oznacza, że w wybranym zbiorze nie ma pozycji nie droższej i nie gorszej, z przynajmniej jedną ścisłą przewagą. To porównanie poglądowe, nie test statystyczny.
 
-Główna tabela pokazuje zweryfikowany kompozyt BenchLM oraz osobne kategorie Coding, Agentic i Knowledge, liczbę badań, ocenę pewności i status `supported`/`estimated`. Konkretne surowe testy są dostępne po rozwinięciu modelu i nie są sztucznie uśredniane ze sobą.
+Nie ma mieszania kompozytu z GPQA/HLE, wag podwójnie premiujących cenę ani arbitralnego mnożnika pewności. `Wynik / USD` to pomocniczy iloraz wybranej kategorii i dodatniego kosztu. Nie jest prawdopodobieństwem sukcesu. Brak danych pozostaje brakiem; wynik zero pozostaje zerem. Pozycje estimated są domyślnie wyłączone. Wybór modeli zapisuje się lokalnie w przeglądarce.
 
-Wskaźnik **Opłacalność** dzieli zweryfikowany wynik ogólny BenchLM przez koszt workloadu, a następnie skaluje rezultat 0–100 w porównywalnym katalogu. Jeśli model nie ma kompozytu BenchLM, używana jest średnia GPQA Diamond i HLE bez narzędzi. Status oraz liczba dowodów pozostają widoczne, dzięki czemu wynik oparty na skąpych danych nie wygląda tak samo jak pozycja dobrze potwierdzona.
+Zestawienia kosztowe wymagają aktywnej dostępności, ceny potwierdzonej w ostatnich 48 godzinach i poprawnego ostatniego skanu dostawcy. Pozycje preview, limited, retired i not_listed nie uczestniczą w rekomendacjach kosztowych. Sam status active z cennika nie gwarantuje dostępu na konkretnym koncie. Domyślne ograniczenie 48 h jest polityką produktu, nie gwarancją aktualności cennika.
 
-Panel **Najlepsze do programowania** domyślnie używa zweryfikowanej kategorii BenchLM Coding. Można przełączyć go na pojedynczy surowy test: Terminal-Bench, LiveCodeBench, LiveCodeBench Pro, SWE-Bench Verified, SWE-Bench Pro albo FrontierSWE.
+## Zakres kalkulatora
 
-## Porównanie własnych modeli
+Wolumeny podaje się w milionach tokenów: input bez cache, dodatkowe odczyty cache i cały płatny output, łącznie z rozumowaniem. Kalkulator zakłada wiele zapytań mieszczących się w podstawowym progu kontekstu. Koszt = input × stawka input + cache read × stawka cache + output × stawka output.
 
-Pole wyboru przy każdym modelu oznacza „mam do niego dostęp”. Wybór jest zapamiętywany lokalnie w przeglądarce i nie wymaga konta ani backendu. Panel **Moje modele** tworzy ranking tylko wśród zaznaczonych pozycji i reaguje na workload ustawiony w kalkulatorze.
+Nie uwzględnia jeszcze zapisu/przechowywania cache, narzędzi, retry, pracy człowieka, regionów, podatków, batch/flex i abonamentów IDE. DeepSeek używa jawnych stawek PEAK, nie chwilowego rabatu. Gdy osobnego cache read nie opublikowano, dotychczasowy schemat przyjmuje stawkę zwykłego input; uwaga przy modelu sygnalizuje to założenie. Specjalistyczne rodziny audio/live/transcribe/streaming Gemini są nieporównywalne z tekstem. Pełny model taryf opisuje plan w raporcie.
 
-Końcowa ocena wykorzystuje trzy jawne składniki z regulowanymi wagami:
+Porównania scenariuszowe można odtworzyć bez wywoływania API modeli:
 
-- **Cena** — najtańszy wybrany model otrzymuje 100 punktów, pozostałe proporcjonalnie do relacji kosztów;
-- **Jakość badań** — zweryfikowany wynik ogólny BenchLM, a przy jego braku średnia GPQA i HLE;
-- **Efektywność** — jakość podzielona przez koszt workloadu, znormalizowana wśród wybranych modeli.
+```bash
+python scripts/research_snapshot.py
+```
 
-Wynik jest dodatkowo mnożony przez współczynnik pewności dowodów. Dla danych BenchLM uwzględnia on ocenę pewności 1–4 oraz status `supported`/`estimated`. Model bez porównywalnej ceny lub badań pozostaje na liście użytkownika, ale nie dostaje sztucznej oceny.
+Archiwalny wynik z 7 września jest w `docs/research-snapshot-2026-09-07.json`. Uruchomienie skryptu używa bieżących lokalnych danych; nie nadpisuje archiwum.
 
-Benchmarki nie są automatycznie zgadywane na podstawie wyników wyszukiwarki. Dodanie nowego modelu do cennika nie oznacza automatycznie dostępnego i porównywalnego wyniku badania: najpierw musi istnieć źródło pierwotne, dokładna wersja modelu i opis trybu testu. Brak wyniku pozostaje oznaczony jako `—`.
+## Weryfikacja zmian
+
+```bash
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+node --test tests/value.test.cjs
+python scripts/update_prices.py --dry-run
+```
+
+Workflow `Validate pricing and research` uruchamia testy na pull requestach. Fixture zawierają oficjalne tabele Anthropic i DeepSeek pobrane 7 września 2026. Nie wymagają sieci. Live dry-run sprawdza aktualne strony i nie zapisuje danych.
 
 ## Uruchomienie krok po kroku
 
