@@ -1453,6 +1453,48 @@
         }
       },
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "timestamp": "2026-09-08T16:34:32Z",
+      "provider": "google",
+      "model_id": "google:gemini-robotics-er-2-preview",
+      "event_type": "price_changed",
+      "changes": {
+        "input": {
+          "from": 2.0,
+          "to": 1.0
+        },
+        "cached_input": {
+          "from": 0.2,
+          "to": 0.1
+        },
+        "output": {
+          "from": 10.0,
+          "to": 5.0
+        }
+      },
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-09-08T16:34:32Z",
+      "provider": "google",
+      "model_id": "google:gemini-robotics-er-2-streaming-preview",
+      "event_type": "price_changed",
+      "changes": {
+        "input": {
+          "from": 2.0,
+          "to": 1.0
+        },
+        "cached_input": {
+          "from": 2.0,
+          "to": 1.0
+        },
+        "output": {
+          "from": 10.0,
+          "to": 5.0
+        }
+      },
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing"
     }
   ]
 }
