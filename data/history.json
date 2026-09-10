@@ -1537,6 +1537,30 @@
         }
       },
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "timestamp": "2026-09-10T16:20:14Z",
+      "provider": "deepseek",
+      "model_id": "deepseek:deepseek-v4-flash",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "timestamp": "2026-09-10T16:20:14Z",
+      "provider": "deepseek",
+      "model_id": "deepseek:deepseek-v4-flash-vision-exp",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "timestamp": "2026-09-10T16:20:14Z",
+      "provider": "deepseek",
+      "model_id": "deepseek:deepseek-v4-pro",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
     }
   ]
 }
