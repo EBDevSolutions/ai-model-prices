@@ -5,11 +5,11 @@
     "name": "Artificial Analysis",
     "source_url": "https://artificialanalysis.ai/models/gpt-6-astra",
     "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
-    "retrieved_at": "2026-09-11T13:33:31Z",
-    "last_checked_at": "2026-09-11T13:33:31Z",
+    "retrieved_at": "2026-09-11T17:11:30Z",
+    "last_checked_at": "2026-09-11T17:11:30Z",
     "status": "ok",
     "error": null,
-    "sha256": "1a50ec68c9e7b169e5c8fd8ae2300f2f626ea7b92879b1994aa440fa5c62174e",
+    "sha256": "4ff8a922fafe22e42a566c5cada3f4bab2bbb53942fb4afa6e512a5b54cd1e9a",
     "index_version": "4.3",
     "source_variant_count": 647,
     "adapter": "public model page serialized chart data; not authenticated Data API"
@@ -212,7 +212,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/qwen3-7-max",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.515152,
@@ -234,8 +234,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 151.882282280244,
-              "first_answer_seconds": 18.177118844811506
+              "tokens_per_second": 141.704279177103,
+              "first_answer_seconds": 19.351639717036953
             }
           },
           "rank_compatible": true
@@ -258,7 +258,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/qwen3-8-max",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 18.686869,
@@ -279,12 +279,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 40.8412574253044,
-              "first_answer_seconds": 50.767928275932185
+              "tokens_per_second": 41.2203186574546,
+              "first_answer_seconds": 50.3176003120193
             },
             "long": {
               "tokens_per_second": 37.8745082744988,
-              "first_answer_seconds": 55.30911205306988
+              "first_answer_seconds": 55.350982462069894
             },
             "hundredK": {
               "tokens_per_second": 55.0751311342027,
@@ -315,7 +315,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 42.424242,
@@ -338,11 +338,11 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 69.2158779369501,
-              "first_answer_seconds": 55.9861443635
+              "first_answer_seconds": 57.5271852105
             },
             "long": {
               "tokens_per_second": 65.0893702906227,
-              "first_answer_seconds": 104.728358162
+              "first_answer_seconds": 99.6688284625
             },
             "hundredK": {
               "tokens_per_second": 43.0078294508143,
@@ -373,7 +373,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5-1-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 40.40404,
@@ -393,12 +393,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 54.4086722540436,
+              "tokens_per_second": 53.8176842832324,
               "first_answer_seconds": 5.72039689050002
             },
             "long": {
               "tokens_per_second": 46.6204480932779,
-              "first_answer_seconds": 6.07167030750001
+              "first_answer_seconds": 5.61745999600001
             },
             "hundredK": {
               "tokens_per_second": 60.2131146913139,
@@ -420,7 +420,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5-1-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 44.949495,
@@ -440,7 +440,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 56.2663143300474,
+              "tokens_per_second": 55.9317296066172,
               "first_answer_seconds": 7.24339870499998
             },
             "long": {
@@ -467,7 +467,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5-1",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 52.020202,
@@ -489,11 +489,11 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 66.1377024854706,
-              "first_answer_seconds": 139.5378331245
+              "first_answer_seconds": 131.8144890565
             },
             "long": {
               "tokens_per_second": 66.9786454821568,
-              "first_answer_seconds": 268.3805135205
+              "first_answer_seconds": 288.981945678
             },
             "mediumParallel": {
               "tokens_per_second": 74.6690485538709,
@@ -511,7 +511,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5-1-xhigh",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 55.050505,
@@ -531,8 +531,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 60.9425133137408,
-              "first_answer_seconds": 40.924089086
+              "tokens_per_second": 62.3707871054785,
+              "first_answer_seconds": 40.4756302605
             },
             "long": {
               "tokens_per_second": 59.5411229848749,
@@ -558,7 +558,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5-1-high",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 52.020202,
@@ -579,7 +579,7 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 57.761207319438,
-              "first_answer_seconds": 12.537402275
+              "first_answer_seconds": 10.3700346585
             },
             "long": {
               "tokens_per_second": 49.1960497902978,
@@ -614,7 +614,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-4-5-haiku-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -638,7 +638,7 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 109.248644920747,
-              "first_answer_seconds": 14.2451008955
+              "first_answer_seconds": 14.895754137
             },
             "long": {
               "tokens_per_second": 84.6708949729414,
@@ -664,7 +664,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-4-5-haiku",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 64.646465,
@@ -681,10 +681,10 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 92.1143305967236,
-              "first_answer_seconds": 0.64034362049999
+              "first_answer_seconds": 0.63367128599998
             },
             "long": {
-              "tokens_per_second": 78.8350836698349,
+              "tokens_per_second": 78.3191013946793,
               "first_answer_seconds": 0.755837598499966
             },
             "hundredK": {
@@ -732,7 +732,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-5-thinking",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 86.565657,
@@ -748,8 +748,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 46.3834966817317,
-              "first_answer_seconds": 17.271887128
+              "tokens_per_second": 45.2160509616759,
+              "first_answer_seconds": 16.773354513
             }
           },
           "rank_compatible": true
@@ -763,7 +763,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-5",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 81.010101,
@@ -779,8 +779,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 45.4900456592754,
-              "first_answer_seconds": 1.3216268650001
+              "tokens_per_second": 44.3329249470749,
+              "first_answer_seconds": 1.31351682499997
             }
           },
           "rank_compatible": true
@@ -803,7 +803,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-6",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 84.040404,
@@ -819,7 +819,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 37.0936212104411,
+              "tokens_per_second": 36.5640244661579,
               "first_answer_seconds": 2.34139860299998
             }
           },
@@ -834,7 +834,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-6-adaptive",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 89.59596,
@@ -851,7 +851,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 39.1135972696026,
-              "first_answer_seconds": 27.2485112695
+              "first_answer_seconds": 26.70088688
             }
           },
           "rank_compatible": true
@@ -874,7 +874,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-7-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 88.484848,
@@ -891,7 +891,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 43.21852632926,
-              "first_answer_seconds": 1.438088123
+              "first_answer_seconds": 1.34719821299996
             }
           },
           "rank_compatible": true
@@ -905,7 +905,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-7",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 83.146067,
@@ -948,7 +948,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-8",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 21.717172,
@@ -971,7 +971,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 58.9004286370359,
-              "first_answer_seconds": 33.4924868075
+              "first_answer_seconds": 29.3192222985
             }
           },
           "rank_compatible": true
@@ -994,7 +994,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-5-xhigh",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 46.464646,
@@ -1042,7 +1042,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-5-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 26.262626,
@@ -1063,12 +1063,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 55.5823404794491,
+              "tokens_per_second": 55.4240445446399,
               "first_answer_seconds": 2.98811397400005
             },
             "long": {
               "tokens_per_second": 47.773083970594,
-              "first_answer_seconds": 3.0296322495
+              "first_answer_seconds": 2.89981545149999
             },
             "hundredK": {
               "tokens_per_second": 58.6663950532555,
@@ -1090,7 +1090,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-5-high",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 45.959596,
@@ -1111,12 +1111,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 58.794947415534,
+              "tokens_per_second": 54.7614503950747,
               "first_answer_seconds": 17.343969035
             },
             "long": {
               "tokens_per_second": 50.3375941671508,
-              "first_answer_seconds": 21.338283639
+              "first_answer_seconds": 18.2138366964999
             },
             "hundredK": {
               "tokens_per_second": 58.5511690027506,
@@ -1138,7 +1138,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-5",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 48.989899,
@@ -1160,12 +1160,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 60.6080280718504,
-              "first_answer_seconds": 35.8108551645
+              "tokens_per_second": 61.428972036748,
+              "first_answer_seconds": 37.9603506595
             },
             "long": {
-              "tokens_per_second": 52.0341813321968,
-              "first_answer_seconds": 86.115122405
+              "tokens_per_second": 51.751424621557,
+              "first_answer_seconds": 79.0263760969999
             },
             "hundredK": {
               "tokens_per_second": 58.406655288667,
@@ -1187,7 +1187,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-5-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 34.343434,
@@ -1208,12 +1208,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 56.5436076056805,
+              "tokens_per_second": 54.4071805667487,
               "first_answer_seconds": 8.89252380950001
             },
             "long": {
-              "tokens_per_second": 48.9724754747033,
-              "first_answer_seconds": 6.60098696099999
+              "tokens_per_second": 48.2717410799927,
+              "first_answer_seconds": 5.70158873850005
             },
             "hundredK": {
               "tokens_per_second": 59.0527332052541,
@@ -1244,7 +1244,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-4-5-sonnet-thinking",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -1266,7 +1266,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 43.4716639927615,
+              "tokens_per_second": 41.7344974523966,
               "first_answer_seconds": 16.110122037
             }
           },
@@ -1281,7 +1281,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-4-5-sonnet",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 72.727273,
@@ -1297,7 +1297,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 40.0163890712689,
+              "tokens_per_second": 39.0794717515471,
               "first_answer_seconds": 1.49487352400012
             }
           },
@@ -1321,7 +1321,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-4-6",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 79.89899,
@@ -1337,7 +1337,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 43.0957520287178,
+              "tokens_per_second": 42.3983711072031,
               "first_answer_seconds": 1.99156947250003
             }
           },
@@ -1352,7 +1352,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-4-6-adaptive",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 3.030303,
@@ -1376,7 +1376,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 57.8308072887813,
-              "first_answer_seconds": 110.053082005
+              "first_answer_seconds": 108.241128987
             }
           },
           "rank_compatible": true
@@ -1390,7 +1390,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-4-6-non-reasoning-low-effort",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 79.69697,
@@ -1407,11 +1407,11 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 55.6052687341683,
-              "first_answer_seconds": 1.14558757949999
+              "first_answer_seconds": 1.12949900049997
             },
             "long": {
-              "tokens_per_second": 42.5492879894669,
-              "first_answer_seconds": 2.08782058600001
+              "tokens_per_second": 42.2363706184003,
+              "first_answer_seconds": 2.19520568999999
             },
             "hundredK": {
               "tokens_per_second": 45.1254399355173,
@@ -1442,7 +1442,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 2.525253,
@@ -1460,7 +1460,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 68.4294035888281,
+              "tokens_per_second": 67.4524359380202,
               "first_answer_seconds": 1.05176071850002
             },
             "long": {
@@ -1487,7 +1487,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 14.141414,
@@ -1536,7 +1536,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-xhigh",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 7.070707,
@@ -1544,20 +1544,22 @@
             "automationbench": 34.476269,
             "hle": 39.017609,
             "gdp_pdf": 12.6,
+            "critpt": 15.428571,
             "lcr": 76.666667,
-            "gdpval": 1410.49,
+            "gdpval": 1400.77,
+            "intelligence": 34.707237,
             "omniscience": 3.183333
           },
-          "index_cost_per_task_usd": null,
+          "index_cost_per_task_usd": 2.8720437784323134,
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 81.7007125269282,
-              "first_answer_seconds": 20.8452175635
+              "first_answer_seconds": 23.386051303
             },
             "long": {
               "tokens_per_second": 64.9788770092914,
-              "first_answer_seconds": 29.885261187
+              "first_answer_seconds": 27.177092643
             },
             "hundredK": {
               "tokens_per_second": 63.0722651300517,
@@ -1579,7 +1581,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-high",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 5.050505,
@@ -1598,7 +1600,7 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 71.8622991397533,
-              "first_answer_seconds": 5.04417418650002
+              "first_answer_seconds": 3.667726972
             },
             "long": {
               "tokens_per_second": 60.8630148110274,
@@ -1624,7 +1626,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 75.280899,
@@ -1642,7 +1644,7 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 72.1785342864631,
-              "first_answer_seconds": 1.123193453
+              "first_answer_seconds": 1.02693792949999
             },
             "long": {
               "tokens_per_second": 56.4330671843031,
@@ -1668,7 +1670,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 2.020202,
@@ -1686,8 +1688,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 72.5625073787967,
-              "first_answer_seconds": 1.47357792749999
+              "tokens_per_second": 70.8946881859432,
+              "first_answer_seconds": 1.38105960449999
             },
             "long": {
               "tokens_per_second": 57.8135695446057,
@@ -1770,7 +1772,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/deepseek-v4-flash",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 12.121212,
@@ -1794,8 +1796,8 @@
               "first_answer_seconds": 9.150041566588232
             },
             "long": {
-              "tokens_per_second": 217.434724187154,
-              "first_answer_seconds": 10.229336396338079
+              "tokens_per_second": 210.085717523865,
+              "first_answer_seconds": 10.501398525874182
             },
             "hundredK": {
               "tokens_per_second": 143.106825766235,
@@ -1834,7 +1836,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/deepseek-v4-pro",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 14.141414,
@@ -1854,12 +1856,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 69.6780951015723,
-              "first_answer_seconds": 29.75109932865597
+              "tokens_per_second": 65.8374272203151,
+              "first_answer_seconds": 31.41550625537034
             },
             "long": {
-              "tokens_per_second": 75.843544438685,
-              "first_answer_seconds": 28.132272797824182
+              "tokens_per_second": 72.3051592009313,
+              "first_answer_seconds": 29.42840297030437
             },
             "mediumParallel": {
               "tokens_per_second": 62.1712544658655,
@@ -1894,7 +1896,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 78.989899,
@@ -1910,7 +1912,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 206.964364115129,
+              "tokens_per_second": 204.672151444021,
               "first_answer_seconds": 16.7265833875
             }
           },
@@ -1925,7 +1927,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 68.282828,
@@ -1942,7 +1944,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 186.808174485259,
-              "first_answer_seconds": 0.471207679999907
+              "first_answer_seconds": 0.46245096049995
             }
           },
           "rank_compatible": true
@@ -1981,7 +1983,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 47.373737,
@@ -2012,7 +2014,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 62.525253,
@@ -2028,7 +2030,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 347.450749495252,
+              "tokens_per_second": 354.122662320071,
               "first_answer_seconds": 18.6833927675
             }
           },
@@ -2052,7 +2054,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-pro",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -2074,7 +2076,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 123.062367879872,
+              "tokens_per_second": 120.747851257848,
               "first_answer_seconds": 23.319381176
             }
           },
@@ -2106,7 +2108,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-flash",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 81.212121,
@@ -2137,7 +2139,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-flash-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 89.79798,
@@ -2154,7 +2156,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 180.175060266218,
-              "first_answer_seconds": 6.41679642099996
+              "first_answer_seconds": 6.23530688100002
             }
           },
           "rank_compatible": true
@@ -2193,7 +2195,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-1-flash-lite-preview",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0.505051,
@@ -2240,7 +2242,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 4.040404,
@@ -2263,12 +2265,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 123.926217030062,
-              "first_answer_seconds": 24.4774635305
+              "tokens_per_second": 125.029180530997,
+              "first_answer_seconds": 25.3765782895
             },
             "long": {
               "tokens_per_second": 107.991066025633,
-              "first_answer_seconds": 30.4601919495
+              "first_answer_seconds": 28.3976521755
             },
             "hundredK": {
               "tokens_per_second": 128.758298840877,
@@ -2299,7 +2301,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-5-flash",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 6.565657,
@@ -2323,7 +2325,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 209.563150312985,
-              "first_answer_seconds": 14.9984753444999
+              "first_answer_seconds": 14.6203898265001
             }
           },
           "rank_compatible": true
@@ -2337,7 +2339,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-5-flash-minimal",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 82.828283,
@@ -2353,12 +2355,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 235.753439024813,
-              "first_answer_seconds": 0.749961107000047
+              "tokens_per_second": 240.074794533496,
+              "first_answer_seconds": 0.775111546500042
             },
             "long": {
               "tokens_per_second": 198.593904409757,
-              "first_answer_seconds": 0.894220953000002
+              "first_answer_seconds": 0.88772570750001
             },
             "hundredK": {
               "tokens_per_second": 254.464617044669,
@@ -2380,7 +2382,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-5-flash-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 92.121212,
@@ -2396,8 +2398,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 236.056876482881,
-              "first_answer_seconds": 11.383894061
+              "tokens_per_second": 253.911096492822,
+              "first_answer_seconds": 11.6468757724999
             },
             "long": {
               "tokens_per_second": 217.245094502046,
@@ -2432,7 +2434,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-5-flash-lite",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.010101,
@@ -2454,11 +2456,11 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 330.955941119137,
-              "first_answer_seconds": 7.445738762
+              "first_answer_seconds": 7.69406181099999
             },
             "long": {
-              "tokens_per_second": 347.662474064465,
-              "first_answer_seconds": 7.44948138400008
+              "tokens_per_second": 366.458183580821,
+              "first_answer_seconds": 7.08932995800007
             },
             "hundredK": {
               "tokens_per_second": 316.720464297175,
@@ -2513,7 +2515,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-6-flash",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 7.070707,
@@ -2534,8 +2536,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 201.728272843932,
-              "first_answer_seconds": 11.6295424265
+              "tokens_per_second": 207.825597263924,
+              "first_answer_seconds": 11.9901949015
             },
             "long": {
               "tokens_per_second": 195.2818915482,
@@ -2570,7 +2572,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-7-flash",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 13.636364,
@@ -2592,12 +2594,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 328.244251386893,
-              "first_answer_seconds": 7.54953139350001
+              "tokens_per_second": 333.341754818597,
+              "first_answer_seconds": 8.0499453325
             },
             "long": {
               "tokens_per_second": 292.475268690879,
-              "first_answer_seconds": 8.49064995949996
+              "first_answer_seconds": 8.39886265849998
             },
             "hundredK": {
               "tokens_per_second": 221.885945369726,
@@ -2619,7 +2621,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-7-flash-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 79.775281,
@@ -2637,12 +2639,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 313.428668699306,
-              "first_answer_seconds": 0.580206658000002
+              "tokens_per_second": 346.246346649208,
+              "first_answer_seconds": 0.597737599500014
             },
             "long": {
               "tokens_per_second": 287.127967077847,
-              "first_answer_seconds": 0.67454377200005
+              "first_answer_seconds": 0.677539686999978
             },
             "hundredK": {
               "tokens_per_second": 192.117142969554,
@@ -2664,7 +2666,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-7-flash-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 78.277154,
@@ -2682,7 +2684,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 338.830348501107,
+              "tokens_per_second": 343.304592372556,
               "first_answer_seconds": 4.73866268750007
             },
             "long": {
@@ -2718,7 +2720,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-8-flash-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 19.69697,
@@ -2754,7 +2756,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 19.69697,
@@ -2775,11 +2777,11 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 330.576203088591,
-              "first_answer_seconds": 11.122341042
+              "tokens_per_second": 333.434716774056,
+              "first_answer_seconds": 11.7156190105
             },
             "long": {
-              "tokens_per_second": 262.058394188645,
+              "tokens_per_second": 261.296382657189,
               "first_answer_seconds": 11.8173689855
             },
             "hundredK": {
@@ -2802,7 +2804,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-8-flash-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 10.10101,
@@ -2887,7 +2889,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-0-flash",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 62.323232,
@@ -2929,7 +2931,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-preview-09-2025",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 65.050505,
@@ -2955,7 +2957,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-preview-09-2025-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 70.909091,
@@ -2990,7 +2992,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/kimi-k2-6",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 65.917603,
@@ -3011,8 +3013,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 42.6520150543762,
-              "first_answer_seconds": 107.29296109020693
+              "tokens_per_second": 42.3416625058207,
+              "first_answer_seconds": 108.0486057085913
             }
           },
           "rank_compatible": true
@@ -3026,7 +3028,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/kimi-k2-6-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 78.787879,
@@ -3041,8 +3043,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 38.8269038107059,
-              "first_answer_seconds": 2.96551542700001
+              "tokens_per_second": 39.4438450199038,
+              "first_answer_seconds": 2.94170201599997
             }
           },
           "rank_compatible": true
@@ -3065,7 +3067,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/kimi-k2-7-code",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.010101,
@@ -3086,12 +3088,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 39.4581315641226,
-              "first_answer_seconds": 57.81122636454545
+              "tokens_per_second": 36.1169448813845,
+              "first_answer_seconds": 63.008993762050885
             },
             "long": {
-              "tokens_per_second": 47.7100095905016,
-              "first_answer_seconds": 49.63876232492953
+              "tokens_per_second": 48.5623465510465,
+              "first_answer_seconds": 48.80005192527427
             },
             "hundredK": {
               "tokens_per_second": 32.0129609106429,
@@ -3130,7 +3132,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/kimi-k3-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 82.397004,
@@ -3150,12 +3152,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 40.8829263242914,
-              "first_answer_seconds": 52.50486947615697
+              "tokens_per_second": 40.6517095867882,
+              "first_answer_seconds": 52.64981173047365
             },
             "long": {
-              "tokens_per_second": 38.1954661177942,
-              "first_answer_seconds": 55.89700211227096
+              "tokens_per_second": 38.1773270302661,
+              "first_answer_seconds": 56.04871624662711
             },
             "hundredK": {
               "tokens_per_second": 42.2361254128642,
@@ -3177,7 +3179,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/kimi-k3",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 12.626263,
@@ -3199,12 +3201,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 37.2570664488176,
-              "first_answer_seconds": 56.65826497925841
+              "tokens_per_second": 37.0294133449449,
+              "first_answer_seconds": 56.97226713052011
             },
             "long": {
-              "tokens_per_second": 37.9012262755633,
-              "first_answer_seconds": 56.56806253186476
+              "tokens_per_second": 38.8344265601858,
+              "first_answer_seconds": 55.09843880728202
             },
             "hundredK": {
               "tokens_per_second": 45.0535243557738,
@@ -3243,7 +3245,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-3-codex",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 91.515152,
@@ -3259,12 +3261,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 120.605529694385,
+              "tokens_per_second": 128.961680412587,
               "first_answer_seconds": 38.5206000415
             },
             "long": {
               "tokens_per_second": 120.682679738266,
-              "first_answer_seconds": 51.6314130635
+              "first_answer_seconds": 50.5011274745
             },
             "hundredK": {
               "tokens_per_second": 153.748558844167,
@@ -3295,7 +3297,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -3316,12 +3318,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 119.321411972604,
-              "first_answer_seconds": 1.64624213200001
+              "tokens_per_second": 120.724847494809,
+              "first_answer_seconds": 1.644889089
             },
             "long": {
-              "tokens_per_second": 102.366793387352,
-              "first_answer_seconds": 1.53403264199994
+              "tokens_per_second": 102.76615278772,
+              "first_answer_seconds": 1.49751912299993
             },
             "hundredK": {
               "tokens_per_second": 121.143956113868,
@@ -3343,7 +3345,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 11.616162,
@@ -3369,7 +3371,7 @@
             },
             "long": {
               "tokens_per_second": 109.561864223469,
-              "first_answer_seconds": 135.079555871
+              "first_answer_seconds": 135.026061934
             },
             "hundredK": {
               "tokens_per_second": 132.466166909944,
@@ -3391,7 +3393,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0.505051,
@@ -3417,7 +3419,7 @@
             },
             "long": {
               "tokens_per_second": 103.817294087533,
-              "first_answer_seconds": 3.055724946
+              "first_answer_seconds": 2.95477508199995
             },
             "hundredK": {
               "tokens_per_second": 126.073183724558,
@@ -3439,7 +3441,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-xhigh",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 3.535354,
@@ -3460,12 +3462,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 113.013797841294,
+              "tokens_per_second": 114.875808080813,
               "first_answer_seconds": 40.7345744865
             },
             "long": {
-              "tokens_per_second": 106.55957454921,
-              "first_answer_seconds": 49.64308817
+              "tokens_per_second": 106.633582304325,
+              "first_answer_seconds": 47.133709203
             },
             "hundredK": {
               "tokens_per_second": 125.040141896783,
@@ -3487,7 +3489,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-high",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 2.525253,
@@ -3508,8 +3510,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 119.698900500216,
-              "first_answer_seconds": 15.5458364755
+              "tokens_per_second": 121.812802128767,
+              "first_answer_seconds": 14.8037212445
             },
             "long": {
               "tokens_per_second": 103.589813921785,
@@ -3535,7 +3537,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 38.951311,
@@ -3552,12 +3554,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 113.803561231687,
+              "tokens_per_second": 116.768340357151,
               "first_answer_seconds": 0.86292349899999
             },
             "long": {
               "tokens_per_second": 101.697537826602,
-              "first_answer_seconds": 0.913561840499995
+              "first_answer_seconds": 0.911008030999938
             },
             "hundredK": {
               "tokens_per_second": 124.172110355771,
@@ -3588,7 +3590,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.010101,
@@ -3614,8 +3616,8 @@
               "first_answer_seconds": 2.7701172285
             },
             "long": {
-              "tokens_per_second": 54.2598060728261,
-              "first_answer_seconds": 3.06887455999999
+              "tokens_per_second": 52.8971698845081,
+              "first_answer_seconds": 3.04750125049998
             },
             "hundredK": {
               "tokens_per_second": 91.1282140273632,
@@ -3637,7 +3639,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 14.646465,
@@ -3664,7 +3666,7 @@
             },
             "long": {
               "tokens_per_second": 56.5146860442309,
-              "first_answer_seconds": 7.70614715400001
+              "first_answer_seconds": 6.21706190300009
             },
             "hundredK": {
               "tokens_per_second": 70.6876584009186,
@@ -3686,7 +3688,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 74.157303,
@@ -3704,7 +3706,7 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 65.1728157196572,
-              "first_answer_seconds": 1.14221405900001
+              "first_answer_seconds": 1.10987661749998
             },
             "long": {
               "tokens_per_second": 61.6617796202606,
@@ -3730,7 +3732,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-high",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 20.707071,
@@ -3752,7 +3754,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 64.4069534490471,
+              "tokens_per_second": 66.0875227721264,
               "first_answer_seconds": 17.826696765
             },
             "long": {
@@ -3779,7 +3781,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 39.89899,
@@ -3802,12 +3804,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 67.0955610551937,
+              "tokens_per_second": 68.7102939402844,
               "first_answer_seconds": 116.4740328225
             },
             "long": {
               "tokens_per_second": 57.3792167250169,
-              "first_answer_seconds": 136.176081079
+              "first_answer_seconds": 132.205091899
             },
             "hundredK": {
               "tokens_per_second": 91.7617963408669,
@@ -3829,7 +3831,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-xhigh",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 24.747475,
@@ -3852,11 +3854,11 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 65.6633708026069,
-              "first_answer_seconds": 35.64605651
+              "first_answer_seconds": 33.65491689
             },
             "long": {
               "tokens_per_second": 61.0037266087889,
-              "first_answer_seconds": 62.0975794075
+              "first_answer_seconds": 49.893085006
             },
             "hundredK": {
               "tokens_per_second": 97.3608526828032,
@@ -3887,7 +3889,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.010101,
@@ -3909,12 +3911,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 92.0197697321852,
-              "first_answer_seconds": 2.41056487399999
+              "tokens_per_second": 94.6557370704884,
+              "first_answer_seconds": 2.5062097725
             },
             "long": {
               "tokens_per_second": 75.5128048653277,
-              "first_answer_seconds": 2.17281999150003
+              "first_answer_seconds": 2.07928677749999
             },
             "hundredK": {
               "tokens_per_second": 86.5099036231967,
@@ -3936,7 +3938,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-high",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.515152,
@@ -3958,8 +3960,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 83.7233398770209,
-              "first_answer_seconds": 2.5373783055
+              "tokens_per_second": 88.0720615734213,
+              "first_answer_seconds": 2.45167745050002
             },
             "long": {
               "tokens_per_second": 78.3719244100019,
@@ -3985,7 +3987,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 56.179775,
@@ -4002,12 +4004,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 80.9888357054139,
-              "first_answer_seconds": 0.81932739499996
+              "tokens_per_second": 86.9156486357864,
+              "first_answer_seconds": 0.828457832499979
             },
             "long": {
               "tokens_per_second": 73.8471045677259,
-              "first_answer_seconds": 0.975300265500068
+              "first_answer_seconds": 0.955916360500026
             },
             "hundredK": {
               "tokens_per_second": 93.585841215636,
@@ -4029,7 +4031,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-xhigh",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 10.10101,
@@ -4051,12 +4053,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 90.171726917409,
-              "first_answer_seconds": 23.290867965
+              "tokens_per_second": 92.6446058201268,
+              "first_answer_seconds": 14.7893472435
             },
             "long": {
-              "tokens_per_second": 75.793912081947,
-              "first_answer_seconds": 33.5806607154999
+              "tokens_per_second": 75.0613982109357,
+              "first_answer_seconds": 32.193838219
             },
             "hundredK": {
               "tokens_per_second": 116.654750075521,
@@ -4078,7 +4080,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 35.353535,
@@ -4100,12 +4102,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 97.3261188291519,
-              "first_answer_seconds": 107.1097043805
+              "tokens_per_second": 103.105343403121,
+              "first_answer_seconds": 107.124811679
             },
             "long": {
-              "tokens_per_second": 85.2524248608813,
-              "first_answer_seconds": 195.517622361
+              "tokens_per_second": 84.9745594387817,
+              "first_answer_seconds": 190.895942856
             },
             "hundredK": {
               "tokens_per_second": 98.4543292746322,
@@ -4127,7 +4129,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.515152,
@@ -4149,12 +4151,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 92.7082163896993,
-              "first_answer_seconds": 1.82108591849999
+              "tokens_per_second": 94.1913867095635,
+              "first_answer_seconds": 1.91680818500001
             },
             "long": {
               "tokens_per_second": 73.7638655107095,
-              "first_answer_seconds": 1.90661122399999
+              "first_answer_seconds": 1.85879388399999
             },
             "hundredK": {
               "tokens_per_second": 103.622358680467,
@@ -4185,7 +4187,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 59.090909,
@@ -4207,12 +4209,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 55.8981250068931,
-              "first_answer_seconds": 227.9641383995
+              "tokens_per_second": 56.6233012006656,
+              "first_answer_seconds": 212.4577668115
             },
             "long": {
               "tokens_per_second": 54.1388561690827,
-              "first_answer_seconds": 331.543975673
+              "first_answer_seconds": 322.1430470355
             },
             "hundredK": {
               "tokens_per_second": 62.8037081227427,
@@ -4234,7 +4236,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra-xhigh",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 59.59596,
@@ -4255,12 +4257,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 51.0689204579504,
-              "first_answer_seconds": 95.5550276185
+              "tokens_per_second": 53.3625831996694,
+              "first_answer_seconds": 94.1119376415
             },
             "long": {
               "tokens_per_second": 51.2219471050474,
-              "first_answer_seconds": 189.920656064
+              "first_answer_seconds": 177.8818918955
             },
             "hundredK": {
               "tokens_per_second": 63.2796130354718,
@@ -4282,7 +4284,7 @@
           "is_reasoning": false,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 50.505051,
@@ -4313,7 +4315,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 41.919192,
@@ -4334,12 +4336,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 49.4300872042525,
+              "tokens_per_second": 50.9630406408482,
               "first_answer_seconds": 2.11503464200002
             },
             "long": {
               "tokens_per_second": 49.9925707056714,
-              "first_answer_seconds": 2.47534957249999
+              "first_answer_seconds": 2.442078912
             },
             "hundredK": {
               "tokens_per_second": 61.7540522597699,
@@ -4361,7 +4363,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra-high",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 54.040404,
@@ -4382,12 +4384,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 52.886202142875,
-              "first_answer_seconds": 34.518980067
+              "tokens_per_second": 54.8566728865957,
+              "first_answer_seconds": 32.900887275
             },
             "long": {
               "tokens_per_second": 49.6263087995104,
-              "first_answer_seconds": 83.169156878
+              "first_answer_seconds": 48.705800759
             },
             "hundredK": {
               "tokens_per_second": 65.6378400385779,
@@ -4409,7 +4411,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 49.494949,
@@ -4430,8 +4432,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 49.0434500868656,
-              "first_answer_seconds": 6.67791084850001
+              "tokens_per_second": 49.7111816980094,
+              "first_answer_seconds": 6.580055609
             },
             "long": {
               "tokens_per_second": 49.5631267036136,
@@ -4466,7 +4468,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 74.848485,
@@ -4497,7 +4499,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 87.070707,
@@ -4513,7 +4515,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 90.6447415729067,
+              "tokens_per_second": 88.6521216955059,
               "first_answer_seconds": 1.71182045050005
             }
           },
@@ -4528,7 +4530,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 78.277154,
@@ -4547,7 +4549,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 130.436782981545,
-              "first_answer_seconds": 107.894863034
+              "first_answer_seconds": 103.49468896
             }
           },
           "rank_compatible": true
@@ -4570,7 +4572,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-mini-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 82.323232,
@@ -4587,7 +4589,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 179.088774804788,
-              "first_answer_seconds": 5.48511165949998
+              "first_answer_seconds": 4.39220901800002
             }
           },
           "rank_compatible": true
@@ -4601,7 +4603,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-mini-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 60.606061,
@@ -4618,8 +4620,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 139.099926796998,
-              "first_answer_seconds": 0.750416725999969
+              "tokens_per_second": 137.408755965021,
+              "first_answer_seconds": 0.735251240499991
             }
           },
           "rank_compatible": true
@@ -4633,7 +4635,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-mini",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 2.020202,
@@ -4656,8 +4658,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 181.285397211318,
-              "first_answer_seconds": 128.495028236
+              "tokens_per_second": 173.664208195277,
+              "first_answer_seconds": 125.592421948
             }
           },
           "rank_compatible": true
@@ -4680,7 +4682,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-nano-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 76.060606,
@@ -4696,8 +4698,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 167.850920320447,
-              "first_answer_seconds": 6.18293412750006
+              "tokens_per_second": 162.961432132438,
+              "first_answer_seconds": 5.93975705950001
             }
           },
           "rank_compatible": true
@@ -4711,7 +4713,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-nano-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 55.757576,
@@ -4743,7 +4745,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-nano",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0.505051,
@@ -4766,7 +4768,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 153.706279533534,
-              "first_answer_seconds": 71.128110426
+              "first_answer_seconds": 68.2966524750001
             }
           },
           "rank_compatible": true
@@ -4789,7 +4791,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-pro",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "critpt": 30.0
@@ -4817,7 +4819,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 14.646465,
@@ -4841,7 +4843,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 85.0346175417587,
-              "first_answer_seconds": 56.0102579235
+              "first_answer_seconds": 55.157701819
             }
           },
           "rank_compatible": true
@@ -4855,7 +4857,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 5.050505,
@@ -4878,7 +4880,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 73.1212942669475,
-              "first_answer_seconds": 7.637520301
+              "first_answer_seconds": 6.183738928
             }
           },
           "rank_compatible": true
@@ -4892,7 +4894,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 61.048689,
@@ -4926,7 +4928,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5-high",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 9.090909,
@@ -4948,7 +4950,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 79.9111349116886,
+              "tokens_per_second": 77.5835773687047,
               "first_answer_seconds": 10.597237482
             }
           },
@@ -4963,7 +4965,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 65.543071,
@@ -4982,7 +4984,7 @@
           "speed_by_prompt": {
             "long": {
               "tokens_per_second": 71.8450799642184,
-              "first_answer_seconds": 1.6672736685
+              "first_answer_seconds": 1.61347162949999
             }
           },
           "rank_compatible": true
@@ -5005,7 +5007,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5-pro",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "critpt": 30.571429
@@ -5033,7 +5035,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/grok-4-20-0309-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 78.484848,
@@ -5068,7 +5070,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/grok-4-20-0309",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 88.484848,
@@ -5111,7 +5113,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/grok-4-3-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 88.989899,
@@ -5128,11 +5130,11 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 124.604067254349,
-              "first_answer_seconds": 19.247474947
+              "first_answer_seconds": 19.284400904
             },
             "long": {
               "tokens_per_second": 113.862497226396,
-              "first_answer_seconds": 12.1703680285
+              "first_answer_seconds": 12.071861095
             },
             "hundredK": {
               "tokens_per_second": 107.237877085326,
@@ -5154,7 +5156,7 @@
           "is_reasoning": false,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-3-non-reasoning",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -5181,7 +5183,7 @@
             },
             "long": {
               "tokens_per_second": 109.654826805854,
-              "first_answer_seconds": 0.703407690999938
+              "first_answer_seconds": 0.726462879499991
             },
             "hundredK": {
               "tokens_per_second": 120.629402600577,
@@ -5203,7 +5205,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-3",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -5226,8 +5228,8 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "long": {
-              "tokens_per_second": 122.107353617508,
-              "first_answer_seconds": 21.0479820225
+              "tokens_per_second": 119.350520956999,
+              "first_answer_seconds": 19.1431483180001
             }
           },
           "rank_compatible": true
@@ -5241,7 +5243,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/grok-4-3-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 84.343434,
@@ -5257,12 +5259,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 113.922317269947,
-              "first_answer_seconds": 6.46210200250002
+              "tokens_per_second": 116.205432366038,
+              "first_answer_seconds": 6.86270549650001
             },
             "long": {
               "tokens_per_second": 111.877540386841,
-              "first_answer_seconds": 5.06444324349994
+              "first_answer_seconds": 4.93621368499993
             },
             "hundredK": {
               "tokens_per_second": 81.2448437576633,
@@ -5293,7 +5295,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-5",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 10.606061,
@@ -5320,7 +5322,7 @@
             },
             "long": {
               "tokens_per_second": 54.8359957237893,
-              "first_answer_seconds": 14.576002562
+              "first_answer_seconds": 11.3682294530001
             },
             "hundredK": {
               "tokens_per_second": 66.2528419526402,
@@ -5351,7 +5353,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-6-medium",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 13.131313,
@@ -5372,7 +5374,7 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 62.0711138623695,
-              "first_answer_seconds": 27.0637248645
+              "first_answer_seconds": 27.3819639079999
             },
             "long": {
               "tokens_per_second": 55.0132840120461,
@@ -5398,7 +5400,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-6-low",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 3.030303,
@@ -5418,7 +5420,7 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 56.9023172209838,
+              "tokens_per_second": 58.9727735199413,
               "first_answer_seconds": 4.69238045299999
             },
             "long": {
@@ -5445,7 +5447,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-6",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 21.212121,
@@ -5466,12 +5468,12 @@
           "cost_scope": "AA Intelligence Index 4.3 weighted task cost; not cost of this selected benchmark or user workload",
           "speed_by_prompt": {
             "medium": {
-              "tokens_per_second": 67.8562520351754,
-              "first_answer_seconds": 36.760220913
+              "tokens_per_second": 70.0110892302035,
+              "first_answer_seconds": 37.065063739
             },
             "long": {
               "tokens_per_second": 55.4146250301254,
-              "first_answer_seconds": 38.559616191
+              "first_answer_seconds": 36.94392513
             },
             "hundredK": {
               "tokens_per_second": 57.1606045824851,
@@ -5493,7 +5495,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-6-xhigh",
-          "retrieved_at": "2026-09-11T13:33:31Z",
+          "retrieved_at": "2026-09-11T17:11:30Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 17.171717,
@@ -5514,7 +5516,7 @@
           "speed_by_prompt": {
             "medium": {
               "tokens_per_second": 66.33751710019,
-              "first_answer_seconds": 41.5301617725
+              "first_answer_seconds": 46.6441432595
             },
             "long": {
               "tokens_per_second": 52.5752767119706,
