@@ -1582,6 +1582,14 @@
         }
       },
       "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-09-11T22:30:58Z",
+      "provider": "google",
+      "model_id": "google:gemini-robotics-er-1.6-preview",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing"
     }
   ]
 }
