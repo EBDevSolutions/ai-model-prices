@@ -1561,6 +1561,27 @@
       "event_type": "not_listed",
       "changes": {},
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "timestamp": "2026-09-11T19:59:54Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-rosalind-research",
+      "event_type": "added",
+      "changes": {
+        "input": {
+          "from": null,
+          "to": 5.0
+        },
+        "cached_input": {
+          "from": null,
+          "to": 0.5
+        },
+        "output": {
+          "from": null,
+          "to": 25.0
+        }
+      },
+      "source_url": "https://developers.openai.com/api/docs/pricing"
     }
   ]
 }
