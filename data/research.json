@@ -5,8 +5,8 @@
     "name": "Artificial Analysis",
     "source_url": "https://artificialanalysis.ai/models/gpt-6-astra",
     "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
-    "retrieved_at": "2026-09-12T16:18:04Z",
-    "last_checked_at": "2026-09-12T16:18:04Z",
+    "retrieved_at": "2026-09-12T18:43:33Z",
+    "last_checked_at": "2026-09-12T18:43:33Z",
     "status": "ok",
     "error": null,
     "sha256": "3ccf350ce88dcc5c14463f22f91ac5c1f3c259c2e73b342b6dcbc0178817b0a8",
@@ -212,7 +212,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/qwen3-7-max",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.515152,
@@ -258,7 +258,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/qwen3-8-max",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 18.686869,
@@ -315,7 +315,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 42.424242,
@@ -373,7 +373,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5-1-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 40.40404,
@@ -420,7 +420,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5-1-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 44.949495,
@@ -467,7 +467,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5-1",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 52.020202,
@@ -511,7 +511,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5-1-xhigh",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 55.050505,
@@ -558,7 +558,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-fable-5-1-high",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 52.020202,
@@ -614,7 +614,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-4-5-haiku-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -664,7 +664,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-4-5-haiku",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 64.646465,
@@ -732,7 +732,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-5-thinking",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 86.565657,
@@ -763,7 +763,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-5",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 81.010101,
@@ -803,7 +803,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-6",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 84.040404,
@@ -834,7 +834,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-6-adaptive",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 89.59596,
@@ -874,7 +874,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-7-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 88.484848,
@@ -905,7 +905,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-7",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 83.146067,
@@ -948,7 +948,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-4-8",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 21.717172,
@@ -994,7 +994,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-5-xhigh",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 46.464646,
@@ -1042,7 +1042,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-5-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 26.262626,
@@ -1090,7 +1090,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-5-high",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 45.959596,
@@ -1138,7 +1138,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-5",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 48.989899,
@@ -1187,7 +1187,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-opus-5-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 34.343434,
@@ -1244,7 +1244,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-4-5-sonnet-thinking",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -1281,7 +1281,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-4-5-sonnet",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 72.727273,
@@ -1321,7 +1321,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-4-6",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 79.89899,
@@ -1352,7 +1352,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-4-6-adaptive",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 3.030303,
@@ -1390,7 +1390,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-4-6-non-reasoning-low-effort",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 79.69697,
@@ -1442,7 +1442,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 2.525253,
@@ -1487,7 +1487,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 14.141414,
@@ -1536,7 +1536,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-xhigh",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 7.070707,
@@ -1581,7 +1581,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-high",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 5.050505,
@@ -1626,7 +1626,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 75.280899,
@@ -1670,7 +1670,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 2.020202,
@@ -1772,7 +1772,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/deepseek-v4-flash",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 12.121212,
@@ -1836,7 +1836,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/deepseek-v4-pro",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 14.141414,
@@ -1896,7 +1896,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 78.989899,
@@ -1927,7 +1927,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 68.282828,
@@ -1983,7 +1983,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 47.373737,
@@ -2014,7 +2014,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 62.525253,
@@ -2054,7 +2054,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-pro",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -2108,7 +2108,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-flash",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 81.212121,
@@ -2139,7 +2139,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-flash-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 89.79798,
@@ -2195,7 +2195,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-1-flash-lite-preview",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0.505051,
@@ -2242,7 +2242,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 4.040404,
@@ -2301,7 +2301,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-5-flash",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 6.565657,
@@ -2339,7 +2339,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-5-flash-minimal",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 82.828283,
@@ -2382,7 +2382,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-5-flash-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 92.121212,
@@ -2434,7 +2434,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-5-flash-lite",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.010101,
@@ -2515,7 +2515,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-6-flash",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 7.070707,
@@ -2572,7 +2572,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-7-flash",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 13.636364,
@@ -2621,7 +2621,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-7-flash-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 79.775281,
@@ -2666,7 +2666,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-7-flash-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 78.277154,
@@ -2720,7 +2720,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-8-flash-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 19.69697,
@@ -2756,7 +2756,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 19.69697,
@@ -2804,7 +2804,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gemini-3-8-flash-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 10.10101,
@@ -2881,7 +2881,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-0-flash",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 62.323232,
@@ -2923,7 +2923,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-preview-09-2025",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 65.050505,
@@ -2949,7 +2949,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-preview-09-2025-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 70.909091,
@@ -2992,7 +2992,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/kimi-k2-6",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 65.917603,
@@ -3028,7 +3028,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/kimi-k2-6-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 78.787879,
@@ -3067,7 +3067,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/kimi-k2-7-code",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.010101,
@@ -3132,7 +3132,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/kimi-k3-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 12.626263,
@@ -3180,7 +3180,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/kimi-k3",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 12.626263,
@@ -3246,7 +3246,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-3-codex",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 91.515152,
@@ -3298,7 +3298,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -3346,7 +3346,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 11.616162,
@@ -3394,7 +3394,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0.505051,
@@ -3442,7 +3442,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-xhigh",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 3.535354,
@@ -3490,7 +3490,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-high",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 2.525253,
@@ -3538,7 +3538,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-luna-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 38.951311,
@@ -3591,7 +3591,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.010101,
@@ -3640,7 +3640,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 14.646465,
@@ -3689,7 +3689,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 74.157303,
@@ -3733,7 +3733,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-high",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 20.707071,
@@ -3782,7 +3782,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 39.89899,
@@ -3832,7 +3832,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-sol-xhigh",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 24.747475,
@@ -3890,7 +3890,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.010101,
@@ -3939,7 +3939,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-high",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.515152,
@@ -3988,7 +3988,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 56.179775,
@@ -4032,7 +4032,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-xhigh",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 10.10101,
@@ -4081,7 +4081,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 35.353535,
@@ -4130,7 +4130,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-6-terra-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 1.515152,
@@ -4190,7 +4190,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 59.090909,
@@ -4239,7 +4239,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra-xhigh",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 59.59596,
@@ -4287,7 +4287,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 41.919192,
@@ -4335,7 +4335,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra-high",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 54.040404,
@@ -4383,7 +4383,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-6-astra-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 49.494949,
@@ -4448,7 +4448,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 74.848485,
@@ -4479,7 +4479,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 87.070707,
@@ -4510,7 +4510,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 78.277154,
@@ -4552,7 +4552,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-mini-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 82.323232,
@@ -4583,7 +4583,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-mini-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 60.606061,
@@ -4615,7 +4615,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-mini",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 2.020202,
@@ -4662,7 +4662,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-nano-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 76.060606,
@@ -4693,7 +4693,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-nano-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 55.757576,
@@ -4725,7 +4725,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-nano",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0.505051,
@@ -4771,7 +4771,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-4-pro",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "critpt": 30.0
@@ -4799,7 +4799,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 14.646465,
@@ -4837,7 +4837,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 5.050505,
@@ -4874,7 +4874,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 61.048689,
@@ -4908,7 +4908,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5-high",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 9.090909,
@@ -4945,7 +4945,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v21": 65.543071,
@@ -4987,7 +4987,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/gpt-5-5-pro",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "critpt": 30.571429
@@ -5015,7 +5015,7 @@
           "is_reasoning": false,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/grok-4-20-0309-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 78.484848,
@@ -5050,7 +5050,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/grok-4-20-0309",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 88.484848,
@@ -5093,7 +5093,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/grok-4-3-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 88.989899,
@@ -5136,7 +5136,7 @@
           "is_reasoning": false,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-3-non-reasoning",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -5185,7 +5185,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-3",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 0,
@@ -5223,7 +5223,7 @@
           "is_reasoning": true,
           "index_estimated": true,
           "source_url": "https://artificialanalysis.ai/models/grok-4-3-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "gpqa": 84.343434,
@@ -5275,7 +5275,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-5",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 10.606061,
@@ -5333,7 +5333,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-6-medium",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 13.131313,
@@ -5380,7 +5380,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-6-low",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 3.030303,
@@ -5427,7 +5427,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-6",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 21.212121,
@@ -5475,7 +5475,7 @@
           "is_reasoning": true,
           "index_estimated": false,
           "source_url": "https://artificialanalysis.ai/models/grok-4-6-xhigh",
-          "retrieved_at": "2026-09-12T16:18:04Z",
+          "retrieved_at": "2026-09-12T18:43:33Z",
           "evaluated_at": null,
           "scores": {
             "terminalbench_v4": 17.171717,
