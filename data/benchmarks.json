@@ -2696,8 +2696,8 @@
     "source_url": "https://benchlm.ai/data/models.json",
     "dataset_url": "https://benchlm.ai/data",
     "license": "MIT",
-    "generated_at": "2026-09-17T15:01:44.564Z",
-    "source_last_updated": "September 15, 2026",
+    "generated_at": "2026-09-17T17:11:30.448Z",
+    "source_last_updated": "September 17, 2026",
     "policy": "Exact provider/model matches; model-level verified coverage and no generated rows. Raw cells are reported by the aggregator, not individually verified by this importer. Categories are exploratory, not controlled comparisons. Vendor evidence has priority.",
     "matched_models": 37
   }
