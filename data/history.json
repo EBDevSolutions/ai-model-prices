@@ -1627,6 +1627,31 @@
       "event_type": "reactivated",
       "changes": {},
       "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "timestamp": "2026-09-19T14:45:21Z",
+      "provider": "deepseek",
+      "model_id": "deepseek:deepseek-v4-pro-2",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "timestamp": "2026-09-19T14:45:21Z",
+      "provider": "moonshot",
+      "model_id": "moonshot:kimi-k3",
+      "event_type": "price_changed",
+      "changes": {
+        "input": {
+          "from": 3.0,
+          "to": 6.0
+        },
+        "cached_input": {
+          "from": 0.3,
+          "to": 3.0
+        }
+      },
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3"
     }
   ]
 }
