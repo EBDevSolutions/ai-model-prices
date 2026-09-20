@@ -6,7 +6,7 @@
     "source_url": "https://artificialanalysis.ai/models/gpt-6-astra",
     "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
     "retrieved_at": "2026-09-15T18:55:52Z",
-    "last_checked_at": "2026-09-20T05:22:11Z",
+    "last_checked_at": "2026-09-20T10:04:40Z",
     "status": "error",
     "error": "ValueError: Incomplete public AA dataset: 0 variants",
     "sha256": "b59464c4fcbd58c5bce6fda2c9be36367d976e315f05f550cdf9e8de84abf60a",
