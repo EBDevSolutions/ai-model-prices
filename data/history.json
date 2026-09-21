@@ -1652,6 +1652,27 @@
         }
       },
       "source_url": "https://platform.kimi.ai/docs/pricing/chat-k3"
+    },
+    {
+      "timestamp": "2026-09-21T19:43:07Z",
+      "provider": "xai",
+      "model_id": "xai:grok-4.7",
+      "event_type": "added",
+      "changes": {
+        "input": {
+          "from": null,
+          "to": 2.0
+        },
+        "cached_input": {
+          "from": null,
+          "to": 0.5
+        },
+        "output": {
+          "from": null,
+          "to": 6.0
+        }
+      },
+      "source_url": "https://docs.x.ai/developers/pricing"
     }
   ]
 }
