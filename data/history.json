@@ -1673,6 +1673,27 @@
         }
       },
       "source_url": "https://docs.x.ai/developers/pricing"
+    },
+    {
+      "timestamp": "2026-09-22T17:44:39Z",
+      "provider": "anthropic",
+      "model_id": "anthropic:claude-opus-5.5",
+      "event_type": "added",
+      "changes": {
+        "input": {
+          "from": null,
+          "to": 4.0
+        },
+        "cached_input": {
+          "from": null,
+          "to": 0.2
+        },
+        "output": {
+          "from": null,
+          "to": 20.0
+        }
+      },
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing"
     }
   ]
 }
