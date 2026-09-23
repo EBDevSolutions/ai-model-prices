@@ -2719,7 +2719,7 @@
           "reasoning": 78.5
         },
         "evidence_status": "estimated",
-        "score_confidence": 2,
+        "score_confidence": 3,
         "verified_benchmark_count": 14,
         "interval_90": null,
         "interval_90_metric": null,
@@ -2778,7 +2778,7 @@
     "source_url": "https://benchlm.ai/data/models.json",
     "dataset_url": "https://benchlm.ai/data",
     "license": "MIT",
-    "generated_at": "2026-09-23T06:28:21.106Z",
+    "generated_at": "2026-09-23T10:34:00.048Z",
     "source_last_updated": "September 22, 2026",
     "policy": "Exact provider/model matches; model-level verified coverage and no generated rows. Raw cells are reported by the aggregator, not individually verified by this importer. Categories are exploratory, not controlled comparisons. Vendor evidence has priority.",
     "matched_models": 40
