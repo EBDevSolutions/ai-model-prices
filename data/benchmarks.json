@@ -2035,10 +2035,10 @@
         "verified_benchmark_count": 14,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 50.43,
+        "source_display_score": 50.45,
         "source_display_interval_90": {
-          "lower": 42.23,
-          "upper": 58.62
+          "lower": 42.26,
+          "upper": 58.65
         },
         "source_url": "https://benchlm.ai/models/kimi-k2-7-code",
         "model_key": "kimi-k2-7-code"
@@ -2778,7 +2778,7 @@
     "source_url": "https://benchlm.ai/data/models.json",
     "dataset_url": "https://benchlm.ai/data",
     "license": "MIT",
-    "generated_at": "2026-09-28T21:56:59.675Z",
+    "generated_at": "2026-09-29T02:03:20.922Z",
     "source_last_updated": "September 28, 2026",
     "policy": "Exact provider/model matches; model-level verified coverage and no generated rows. Raw cells are reported by the aggregator, not individually verified by this importer. Categories are exploratory, not controlled comparisons. Vendor evidence has priority.",
     "matched_models": 40
