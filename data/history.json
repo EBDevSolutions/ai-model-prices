@@ -1823,6 +1823,14 @@
         }
       },
       "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-09-30T05:55:59Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-6-sol",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://developers.openai.com/api/docs/pricing"
     }
   ]
 }
