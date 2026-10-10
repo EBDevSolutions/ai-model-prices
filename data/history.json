@@ -1886,6 +1886,14 @@
         }
       },
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    {
+      "timestamp": "2026-10-10T05:43:31Z",
+      "provider": "openai",
+      "model_id": "openai:gpt-rosalind-research",
+      "event_type": "not_listed",
+      "changes": {},
+      "source_url": "https://developers.openai.com/api/docs/pricing"
     }
   ]
 }
