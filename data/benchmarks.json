@@ -143,7 +143,7 @@
         "categories": {
           "coding": 45.1,
           "agentic": 77.8,
-          "knowledge": 75.3,
+          "knowledge": 74.8,
           "reasoning": 64.2
         },
         "evidence_status": "supported",
@@ -151,10 +151,10 @@
         "verified_benchmark_count": 43,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 66.81,
+        "source_display_score": 66.41,
         "source_display_interval_90": {
-          "lower": 62.35,
-          "upper": 71.26
+          "lower": 61.33,
+          "upper": 71.49
         },
         "source_url": "https://benchlm.ai/models/gpt-5-4",
         "model_key": "gpt-5-4"
@@ -199,7 +199,7 @@
         "categories": {
           "coding": 59.4,
           "agentic": 57.2,
-          "knowledge": 58.6,
+          "knowledge": 58,
           "reasoning": 43.7
         },
         "evidence_status": "supported",
@@ -207,9 +207,9 @@
         "verified_benchmark_count": 29,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 53.65,
+        "source_display_score": 53.03,
         "source_display_interval_90": {
-          "lower": 42.85,
+          "lower": 41.6,
           "upper": 64.45
         },
         "source_url": "https://benchlm.ai/models/gpt-5-4-mini",
@@ -255,7 +255,7 @@
         "categories": {
           "coding": 66,
           "agentic": 18.3,
-          "knowledge": 46.4,
+          "knowledge": 45.5,
           "reasoning": 40.6
         },
         "evidence_status": "supported",
@@ -263,10 +263,10 @@
         "verified_benchmark_count": 28,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 47.08,
+        "source_display_score": 46.19,
         "source_display_interval_90": {
-          "lower": 36.41,
-          "upper": 57.76
+          "lower": 34.78,
+          "upper": 57.61
         },
         "source_url": "https://benchlm.ai/models/gpt-5-4-nano",
         "model_key": "gpt-5-4-nano"
@@ -433,7 +433,7 @@
         "categories": {
           "coding": 55.6,
           "agentic": null,
-          "knowledge": 64.8,
+          "knowledge": 64.6,
           "reasoning": null
         },
         "evidence_status": "estimated",
@@ -441,10 +441,10 @@
         "verified_benchmark_count": 10,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 47.12,
+        "source_display_score": 46.5,
         "source_display_interval_90": {
-          "lower": 37.4,
-          "upper": 56.84
+          "lower": 36.78,
+          "upper": 56.22
         },
         "source_url": "https://benchlm.ai/models/gemini-3-1-flash-lite",
         "model_key": "gemini-3-1-flash-lite"
@@ -486,11 +486,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 62,
+        "overall": 61,
         "categories": {
           "coding": 42.2,
           "agentic": 63.1,
-          "knowledge": 59.3,
+          "knowledge": 55.5,
           "reasoning": 70.9
         },
         "evidence_status": "supported",
@@ -498,10 +498,10 @@
         "verified_benchmark_count": 21,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 49.82,
+        "source_display_score": 46.75,
         "source_display_interval_90": {
-          "lower": 37.13,
-          "upper": 62.52
+          "lower": 28.43,
+          "upper": 65.07
         },
         "source_url": "https://benchlm.ai/models/gemini-3-5-flash-lite",
         "model_key": "gemini-3-5-flash-lite"
@@ -539,7 +539,7 @@
         "categories": {
           "coding": 65.8,
           "agentic": 69.8,
-          "knowledge": 81.1,
+          "knowledge": 80.6,
           "reasoning": 68.8
         },
         "evidence_status": "supported",
@@ -547,10 +547,10 @@
         "verified_benchmark_count": 53,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 70.21,
+        "source_display_score": 69.38,
         "source_display_interval_90": {
-          "lower": 66.13,
-          "upper": 74.3
+          "lower": 64.94,
+          "upper": 73.83
         },
         "source_url": "https://benchlm.ai/models/kimi-k3",
         "model_key": "kimi-3"
@@ -619,11 +619,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 76,
+        "overall": 75,
         "categories": {
           "coding": 65.4,
           "agentic": 71.5,
-          "knowledge": 72.4,
+          "knowledge": 71.7,
           "reasoning": 81.4
         },
         "evidence_status": "supported",
@@ -631,10 +631,10 @@
         "verified_benchmark_count": 49,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 62.72,
+        "source_display_score": 62.34,
         "source_display_interval_90": {
-          "lower": 53,
-          "upper": 72.44
+          "lower": 51.89,
+          "upper": 72.8
         },
         "source_url": "https://benchlm.ai/models/qwen3-7-max",
         "model_key": "qwen3-7-max"
@@ -701,10 +701,10 @@
         "verified_benchmark_count": 34,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 81.27,
+        "source_display_score": 80.82,
         "source_display_interval_90": {
-          "lower": 78.35,
-          "upper": 84.2
+          "lower": 77.78,
+          "upper": 83.86
         },
         "source_url": "https://benchlm.ai/models/claude-fable",
         "model_key": "claude-fable-5"
@@ -797,7 +797,7 @@
         "categories": {
           "coding": 53.6,
           "agentic": 51,
-          "knowledge": 63.2,
+          "knowledge": 62.7,
           "reasoning": 77.5
         },
         "evidence_status": "supported",
@@ -805,10 +805,10 @@
         "verified_benchmark_count": 65,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 54.28,
+        "source_display_score": 53.41,
         "source_display_interval_90": {
-          "lower": 41.62,
-          "upper": 66.94
+          "lower": 39.98,
+          "upper": 66.83
         },
         "source_url": "https://benchlm.ai/models/claude-opus-4-5",
         "model_key": "claude-opus-4-5"
@@ -909,7 +909,7 @@
         "categories": {
           "coding": 54.9,
           "agentic": 67.7,
-          "knowledge": 80.4,
+          "knowledge": 80,
           "reasoning": 51.2
         },
         "evidence_status": "supported",
@@ -917,10 +917,10 @@
         "verified_benchmark_count": 40,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 62.51,
+        "source_display_score": 61.88,
         "source_display_interval_90": {
-          "lower": 50.33,
-          "upper": 74.69
+          "lower": 48.95,
+          "upper": 74.8
         },
         "source_url": "https://benchlm.ai/models/claude-opus-4-6",
         "model_key": "claude-opus-4-6"
@@ -1000,7 +1000,7 @@
         "categories": {
           "coding": 75.1,
           "agentic": 71.7,
-          "knowledge": 85.6,
+          "knowledge": 85.2,
           "reasoning": 62.8
         },
         "evidence_status": "supported",
@@ -1008,10 +1008,10 @@
         "verified_benchmark_count": 47,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 69.95,
+        "source_display_score": 69.64,
         "source_display_interval_90": {
-          "lower": 66.13,
-          "upper": 73.78
+          "lower": 65.22,
+          "upper": 74.07
         },
         "source_url": "https://benchlm.ai/models/claude-opus-4-8",
         "model_key": "claude-opus-4-8"
@@ -1078,10 +1078,10 @@
         "verified_benchmark_count": 84,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 80.06,
+        "source_display_score": 79.69,
         "source_display_interval_90": {
-          "lower": 77.2,
-          "upper": 82.93
+          "lower": 77.07,
+          "upper": 82.31
         },
         "source_url": "https://benchlm.ai/models/claude-opus-5",
         "model_key": "claude-opus-5"
@@ -1147,7 +1147,7 @@
         "categories": {
           "coding": 65.5,
           "agentic": 51.6,
-          "knowledge": 76.5,
+          "knowledge": 76,
           "reasoning": 62.8
         },
         "evidence_status": "supported",
@@ -1155,10 +1155,10 @@
         "verified_benchmark_count": 31,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 56.2,
+        "source_display_score": 55.34,
         "source_display_interval_90": {
-          "lower": 43.88,
-          "upper": 68.51
+          "lower": 42.24,
+          "upper": 68.45
         },
         "source_url": "https://benchlm.ai/models/claude-sonnet-4-6",
         "model_key": "claude-sonnet-4-6"
@@ -1219,11 +1219,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 58,
+        "overall": 57,
         "categories": {
           "coding": 47.2,
           "agentic": null,
-          "knowledge": 37.1,
+          "knowledge": 36.3,
           "reasoning": 72.4
         },
         "evidence_status": "supported",
@@ -1231,10 +1231,10 @@
         "verified_benchmark_count": 16,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 49.37,
+        "source_display_score": 48.75,
         "source_display_interval_90": {
-          "lower": 34.75,
-          "upper": 63.99
+          "lower": 33.49,
+          "upper": 64
         },
         "source_url": "https://benchlm.ai/models/gemini-2-5-pro",
         "model_key": "gemini-2-5-pro"
@@ -1262,56 +1262,56 @@
         "swe_bench_verified": {
           "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Verified; raw BenchLM row for GPT-5.3 Codex. Model-level evidence: supported; verified rows for model: 17.",
+          "conditions": "SWE-Bench Verified; raw BenchLM row for GPT-5.3 Codex. Model-level evidence: estimated; verified rows for model: 16.",
           "verification_scope": "model_only",
           "comparison_group": null
         },
         "swe_bench_pro": {
           "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
           "source_type": "independent_aggregator",
-          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.3 Codex. Model-level evidence: supported; verified rows for model: 17.",
+          "conditions": "SWE-Bench Pro; raw BenchLM row for GPT-5.3 Codex. Model-level evidence: estimated; verified rows for model: 16.",
           "verification_scope": "model_only",
           "comparison_group": null
         },
         "terminal_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
           "source_type": "independent_aggregator",
-          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.3 Codex. Model-level evidence: supported; verified rows for model: 17.",
+          "conditions": "Terminal-Bench; raw BenchLM row for GPT-5.3 Codex. Model-level evidence: estimated; verified rows for model: 16.",
           "verification_scope": "model_only",
           "comparison_group": null
         },
         "osworld_verified": {
           "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
           "source_type": "independent_aggregator",
-          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.3 Codex. Model-level evidence: supported; verified rows for model: 17.",
+          "conditions": "OSWorld Verified; raw BenchLM row for GPT-5.3 Codex. Model-level evidence: estimated; verified rows for model: 16.",
           "verification_scope": "model_only",
           "comparison_group": null
         },
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for GPT-5.3 Codex. Model-level evidence: supported; verified rows for model: 17.",
+          "conditions": "τ²-bench; raw BenchLM row for GPT-5.3 Codex. Model-level evidence: estimated; verified rows for model: 16.",
           "verification_scope": "model_only",
           "comparison_group": null
         }
       },
       "benchlm_summary": {
-        "overall": 75,
+        "overall": 73,
         "categories": {
           "coding": 61.5,
           "agentic": 70.2,
-          "knowledge": 78,
+          "knowledge": null,
           "reasoning": 82.2
         },
-        "evidence_status": "supported",
+        "evidence_status": "estimated",
         "score_confidence": 3,
-        "verified_benchmark_count": 17,
+        "verified_benchmark_count": 16,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 60.76,
+        "source_display_score": 62.78,
         "source_display_interval_90": {
-          "lower": 53.45,
-          "upper": 68.08
+          "lower": 53.06,
+          "upper": 72.51
         },
         "source_url": "https://benchlm.ai/models/gpt-5-3-codex",
         "model_key": "gpt-5-3-codex"
@@ -1378,10 +1378,10 @@
         "verified_benchmark_count": 45,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 75.34,
+        "source_display_score": 74.84,
         "source_display_interval_90": {
-          "lower": 72.67,
-          "upper": 78.01
+          "lower": 71.74,
+          "upper": 77.95
         },
         "source_url": "https://benchlm.ai/models/gpt-5-6-sol",
         "model_key": "gpt-5-6-sol"
@@ -1419,7 +1419,7 @@
         "categories": {
           "coding": 62.2,
           "agentic": null,
-          "knowledge": 58.8,
+          "knowledge": 58,
           "reasoning": 69.2
         },
         "evidence_status": "supported",
@@ -1427,10 +1427,10 @@
         "verified_benchmark_count": 22,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 53.32,
+        "source_display_score": 52.7,
         "source_display_interval_90": {
-          "lower": 43.19,
-          "upper": 63.45
+          "lower": 41.96,
+          "upper": 63.44
         },
         "source_url": "https://benchlm.ai/models/grok-4-3",
         "model_key": "grok-4-3"
@@ -1468,7 +1468,7 @@
         "categories": {
           "coding": 67.7,
           "agentic": null,
-          "knowledge": 76.8,
+          "knowledge": 75.7,
           "reasoning": 54.1
         },
         "evidence_status": "supported",
@@ -1476,10 +1476,10 @@
         "verified_benchmark_count": 29,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 63.59,
+        "source_display_score": 62.97,
         "source_display_interval_90": {
-          "lower": 58.23,
-          "upper": 68.96
+          "lower": 57.34,
+          "upper": 68.6
         },
         "source_url": "https://benchlm.ai/models/grok-4-5",
         "model_key": "grok-4-5"
@@ -1545,7 +1545,7 @@
         "categories": {
           "coding": 70.6,
           "agentic": 61.2,
-          "knowledge": 69.8,
+          "knowledge": 69.6,
           "reasoning": 87
         },
         "evidence_status": "supported",
@@ -1553,10 +1553,10 @@
         "verified_benchmark_count": 57,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 69.99,
+        "source_display_score": 64.88,
         "source_display_interval_90": {
-          "lower": 65.88,
-          "upper": 74.09
+          "lower": 56.01,
+          "upper": 73.75
         },
         "source_url": "https://benchlm.ai/models/qwen3-8-max",
         "model_key": "qwen3-8-max"
@@ -1594,7 +1594,7 @@
         "categories": {
           "coding": 34.6,
           "agentic": null,
-          "knowledge": 39.5,
+          "knowledge": 39.3,
           "reasoning": null
         },
         "evidence_status": "estimated",
@@ -1602,10 +1602,10 @@
         "verified_benchmark_count": 8,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 41.38,
+        "source_display_score": 39.99,
         "source_display_interval_90": {
-          "lower": 31.65,
-          "upper": 51.1
+          "lower": 30.27,
+          "upper": 49.72
         },
         "source_url": "https://benchlm.ai/models/claude-haiku-4-5",
         "model_key": "claude-haiku-4-5"
@@ -1643,7 +1643,7 @@
         "categories": {
           "coding": 68.9,
           "agentic": 33.9,
-          "knowledge": 77.3,
+          "knowledge": 77.1,
           "reasoning": 31.4
         },
         "evidence_status": "estimated",
@@ -1651,10 +1651,10 @@
         "verified_benchmark_count": 12,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 65.44,
+        "source_display_score": 65.2,
         "source_display_interval_90": {
-          "lower": 55.71,
-          "upper": 75.16
+          "lower": 55.47,
+          "upper": 74.92
         },
         "source_url": "https://benchlm.ai/models/claude-opus-4-7",
         "model_key": "claude-opus-4-7"
@@ -1706,7 +1706,7 @@
         "categories": {
           "coding": 65.4,
           "agentic": 35.8,
-          "knowledge": 73.3,
+          "knowledge": 73.2,
           "reasoning": 22.9
         },
         "evidence_status": "estimated",
@@ -1714,10 +1714,10 @@
         "verified_benchmark_count": 10,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 48.15,
+        "source_display_score": 47.23,
         "source_display_interval_90": {
-          "lower": 38.43,
-          "upper": 57.87
+          "lower": 37.51,
+          "upper": 56.95
         },
         "source_url": "https://benchlm.ai/models/claude-sonnet-4-5",
         "model_key": "claude-sonnet-4-5"
@@ -1783,7 +1783,7 @@
         "categories": {
           "coding": 62.5,
           "agentic": 75.3,
-          "knowledge": 79.2,
+          "knowledge": 78.5,
           "reasoning": 81.3
         },
         "evidence_status": "supported",
@@ -1791,10 +1791,10 @@
         "verified_benchmark_count": 37,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 65.15,
+        "source_display_score": 64.3,
         "source_display_interval_90": {
-          "lower": 60.19,
-          "upper": 70.11
+          "lower": 58.63,
+          "upper": 69.96
         },
         "source_url": "https://benchlm.ai/models/claude-sonnet-5",
         "model_key": "claude-sonnet-5"
@@ -1848,11 +1848,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 57,
+        "overall": 56,
         "categories": {
           "coding": null,
           "agentic": null,
-          "knowledge": 48.7,
+          "knowledge": 42.6,
           "reasoning": 59.3
         },
         "evidence_status": "supported",
@@ -1860,10 +1860,10 @@
         "verified_benchmark_count": 7,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 42.3,
+        "source_display_score": 41.59,
         "source_display_interval_90": {
-          "lower": 26.29,
-          "upper": 58.31
+          "lower": 24.92,
+          "upper": 58.26
         },
         "source_url": "https://benchlm.ai/models/gemini-2-5-flash",
         "model_key": "gemini-2-5-flash"
@@ -1918,11 +1918,11 @@
         }
       },
       "benchlm_summary": {
-        "overall": 70,
+        "overall": 69,
         "categories": {
           "coding": 49.7,
           "agentic": 70.4,
-          "knowledge": 69.7,
+          "knowledge": 69.3,
           "reasoning": 70.9
         },
         "evidence_status": "supported",
@@ -1930,10 +1930,10 @@
         "verified_benchmark_count": 39,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 62.18,
+        "source_display_score": 61.45,
         "source_display_interval_90": {
-          "lower": 53.98,
-          "upper": 70.38
+          "lower": 52.54,
+          "upper": 70.35
         },
         "source_url": "https://benchlm.ai/models/gemini-3-5-flash",
         "model_key": "gemini-3-5-flash"
@@ -1971,7 +1971,7 @@
         "categories": {
           "coding": 60,
           "agentic": 78,
-          "knowledge": 76.3,
+          "knowledge": 75.1,
           "reasoning": 67.6
         },
         "evidence_status": "supported",
@@ -1979,10 +1979,10 @@
         "verified_benchmark_count": 20,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 63.06,
+        "source_display_score": 62.46,
         "source_display_interval_90": {
-          "lower": 55.31,
-          "upper": 70.81
+          "lower": 54.14,
+          "upper": 70.78
         },
         "source_url": "https://benchlm.ai/models/gemini-3-6-flash",
         "model_key": "gemini-3-6-flash"
@@ -2010,7 +2010,7 @@
         "tau2_bench": {
           "source_url": "https://benchlm.ai/models/kimi-k2-7-code",
           "source_type": "independent_aggregator",
-          "conditions": "τ²-bench; raw BenchLM row for Kimi K2.7 Code. Model-level evidence: supported; verified rows for model: 16.",
+          "conditions": "τ²-bench; raw BenchLM row for Kimi K2.7 Code. Model-level evidence: estimated; verified rows for model: 15.",
           "verification_scope": "model_only",
           "comparison_group": null
         }
@@ -2020,18 +2020,18 @@
         "categories": {
           "coding": 45.7,
           "agentic": null,
-          "knowledge": 63.5,
+          "knowledge": null,
           "reasoning": 79.5
         },
-        "evidence_status": "supported",
+        "evidence_status": "estimated",
         "score_confidence": 3,
-        "verified_benchmark_count": 16,
+        "verified_benchmark_count": 15,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 49.5,
+        "source_display_score": 53.63,
         "source_display_interval_90": {
-          "lower": 42.34,
-          "upper": 56.66
+          "lower": 39.28,
+          "upper": 67.98
         },
         "source_url": "https://benchlm.ai/models/kimi-k2-7-code",
         "model_key": "kimi-k2-7-code"
@@ -2076,7 +2076,7 @@
         "categories": {
           "coding": null,
           "agentic": 77,
-          "knowledge": 80.9,
+          "knowledge": 80.8,
           "reasoning": 78.1
         },
         "evidence_status": "estimated",
@@ -2084,10 +2084,10 @@
         "verified_benchmark_count": 12,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 68.89,
+        "source_display_score": 68.24,
         "source_display_interval_90": {
-          "lower": 54.54,
-          "upper": 83.24
+          "lower": 53.89,
+          "upper": 82.59
         },
         "source_url": "https://benchlm.ai/models/gpt-5-4-pro",
         "model_key": "gpt-5-4-pro"
@@ -2167,7 +2167,7 @@
         "categories": {
           "coding": 53.5,
           "agentic": 78.8,
-          "knowledge": 79.2,
+          "knowledge": 78.9,
           "reasoning": 69.7
         },
         "evidence_status": "supported",
@@ -2175,10 +2175,10 @@
         "verified_benchmark_count": 47,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 69.26,
+        "source_display_score": 68.83,
         "source_display_interval_90": {
-          "lower": 62.99,
-          "upper": 75.52
+          "lower": 61.74,
+          "upper": 75.93
         },
         "source_url": "https://benchlm.ai/models/gpt-5-5",
         "model_key": "gpt-5-5"
@@ -2223,7 +2223,7 @@
         "categories": {
           "coding": null,
           "agentic": 78,
-          "knowledge": 79.5,
+          "knowledge": 79.3,
           "reasoning": 78.8
         },
         "evidence_status": "estimated",
@@ -2231,10 +2231,10 @@
         "verified_benchmark_count": 9,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 73.54,
+        "source_display_score": 72.78,
         "source_display_interval_90": {
-          "lower": 59.19,
-          "upper": 87.89
+          "lower": 58.43,
+          "upper": 87.13
         },
         "source_url": "https://benchlm.ai/models/gpt-5-5-pro",
         "model_key": "gpt-5-5-pro"
@@ -2286,7 +2286,7 @@
         "categories": {
           "coding": 54.4,
           "agentic": 67.1,
-          "knowledge": 70.7,
+          "knowledge": 69.5,
           "reasoning": 58.2
         },
         "evidence_status": "supported",
@@ -2294,10 +2294,10 @@
         "verified_benchmark_count": 38,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 64.67,
+        "source_display_score": 63.81,
         "source_display_interval_90": {
-          "lower": 59.63,
-          "upper": 69.72
+          "lower": 58.01,
+          "upper": 69.61
         },
         "source_url": "https://benchlm.ai/models/gpt-5-6-luna",
         "model_key": "gpt-5-6-luna"
@@ -2356,7 +2356,7 @@
         "categories": {
           "coding": 63.4,
           "agentic": 72.5,
-          "knowledge": 73.3,
+          "knowledge": 72.3,
           "reasoning": 69.1
         },
         "evidence_status": "supported",
@@ -2364,10 +2364,10 @@
         "verified_benchmark_count": 42,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 70.27,
+        "source_display_score": 69.83,
         "source_display_interval_90": {
-          "lower": 66.59,
-          "upper": 73.95
+          "lower": 65.43,
+          "upper": 74.22
         },
         "source_url": "https://benchlm.ai/models/gpt-5-6-terra",
         "model_key": "gpt-5-6-terra"
@@ -2397,7 +2397,7 @@
         "categories": {
           "coding": 77.7,
           "agentic": null,
-          "knowledge": 75.7,
+          "knowledge": 74.5,
           "reasoning": 61.4
         },
         "evidence_status": "supported",
@@ -2405,10 +2405,10 @@
         "verified_benchmark_count": 27,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 67.43,
+        "source_display_score": 66.66,
         "source_display_interval_90": {
-          "lower": 64.02,
-          "upper": 70.84
+          "lower": 63.41,
+          "upper": 69.91
         },
         "source_url": "https://benchlm.ai/models/grok-4-6",
         "model_key": "grok-4-6"
@@ -2438,7 +2438,7 @@
         "categories": {
           "coding": 78.5,
           "agentic": 50.4,
-          "knowledge": 80.5,
+          "knowledge": 79.6,
           "reasoning": 81.6
         },
         "evidence_status": "supported",
@@ -2446,10 +2446,10 @@
         "verified_benchmark_count": 35,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 67.12,
+        "source_display_score": 66.55,
         "source_display_interval_90": {
-          "lower": 61.37,
-          "upper": 72.87
+          "lower": 60.18,
+          "upper": 72.92
         },
         "source_url": "https://benchlm.ai/models/gemini-3-7-flash",
         "model_key": "gemini-3-7-flash"
@@ -2475,11 +2475,11 @@
       "source_type": "independent_aggregator",
       "score_sources": {},
       "benchlm_summary": {
-        "overall": 76,
+        "overall": 75,
         "categories": {
           "coding": 77.5,
           "agentic": 66.2,
-          "knowledge": 80.4,
+          "knowledge": 77.4,
           "reasoning": 74.3
         },
         "evidence_status": "supported",
@@ -2487,10 +2487,10 @@
         "verified_benchmark_count": 35,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 69.07,
+        "source_display_score": 66.27,
         "source_display_interval_90": {
-          "lower": 63.53,
-          "upper": 74.62
+          "lower": 54.06,
+          "upper": 78.48
         },
         "source_url": "https://benchlm.ai/models/gemini-3-8-flash",
         "model_key": "gemini-3-8-flash"
@@ -2543,10 +2543,10 @@
         "verified_benchmark_count": 40,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 84.43,
+        "source_display_score": 86.09,
         "source_display_interval_90": {
-          "lower": 80,
-          "upper": 88.86
+          "lower": 80.56,
+          "upper": 91.62
         },
         "source_url": "https://benchlm.ai/models/gpt-6-astra",
         "model_key": "gpt-6-astra"
@@ -2599,10 +2599,10 @@
         "verified_benchmark_count": 35,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 83.23,
+        "source_display_score": 81.12,
         "source_display_interval_90": {
-          "lower": 79.96,
-          "upper": 86.5
+          "lower": 77.47,
+          "upper": 84.78
         },
         "source_url": "https://benchlm.ai/models/claude-fable-5-1",
         "model_key": "claude-fable-5-1"
@@ -2675,10 +2675,10 @@
         "verified_benchmark_count": 58,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 86.67,
+        "source_display_score": 86.31,
         "source_display_interval_90": {
-          "lower": 81.84,
-          "upper": 91.49
+          "lower": 81.73,
+          "upper": 90.89
         },
         "source_url": "https://benchlm.ai/models/claude-opus-5-5",
         "model_key": "claude-opus-5-5"
@@ -2704,11 +2704,11 @@
       "source_type": "independent_aggregator",
       "score_sources": {},
       "benchlm_summary": {
-        "overall": 68,
+        "overall": 66,
         "categories": {
           "coding": null,
           "agentic": null,
-          "knowledge": 68,
+          "knowledge": 59.2,
           "reasoning": 58
         },
         "evidence_status": "supported",
@@ -2716,10 +2716,10 @@
         "verified_benchmark_count": 21,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 66.61,
+        "source_display_score": 62.19,
         "source_display_interval_90": {
-          "lower": 62.51,
-          "upper": 70.71
+          "lower": 51,
+          "upper": 73.37
         },
         "source_url": "https://benchlm.ai/models/gpt-6-luna",
         "model_key": "gpt-6-luna"
@@ -2749,7 +2749,7 @@
         "categories": {
           "coding": null,
           "agentic": 60.8,
-          "knowledge": 79.7,
+          "knowledge": 77.5,
           "reasoning": 73.1
         },
         "evidence_status": "supported",
@@ -2757,10 +2757,10 @@
         "verified_benchmark_count": 23,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 79.01,
+        "source_display_score": 78,
         "source_display_interval_90": {
-          "lower": 75.91,
-          "upper": 82.11
+          "lower": 74.73,
+          "upper": 81.28
         },
         "source_url": "https://benchlm.ai/models/gpt-6-sol",
         "model_key": "gpt-6-sol"
@@ -2798,10 +2798,10 @@
         "verified_benchmark_count": 23,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 84.38,
+        "source_display_score": 85.3,
         "source_display_interval_90": {
-          "lower": 80.26,
-          "upper": 88.5
+          "lower": 80.93,
+          "upper": 89.68
         },
         "source_url": "https://benchlm.ai/models/gpt-6-1-sol",
         "model_key": "gpt-6-1-sol"
@@ -2839,10 +2839,10 @@
         "verified_benchmark_count": 1,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 47.2,
+        "source_display_score": 47.34,
         "source_display_interval_90": {
-          "lower": 32.85,
-          "upper": 61.55
+          "lower": 32.99,
+          "upper": 61.69
         },
         "source_url": "https://benchlm.ai/models/qwen3-7-flash",
         "model_key": "qwen3-7-flash"
@@ -2868,11 +2868,11 @@
       "source_type": "independent_aggregator",
       "score_sources": {},
       "benchlm_summary": {
-        "overall": 79,
+        "overall": 78,
         "categories": {
           "coding": null,
           "agentic": 80.2,
-          "knowledge": 74.7,
+          "knowledge": 69.9,
           "reasoning": 86.9
         },
         "evidence_status": "supported",
@@ -2880,10 +2880,10 @@
         "verified_benchmark_count": 26,
         "interval_90": null,
         "interval_90_metric": null,
-        "source_display_score": 82.94,
+        "source_display_score": 82.3,
         "source_display_interval_90": {
-          "lower": 80.05,
-          "upper": 85.82
+          "lower": 78.91,
+          "upper": 85.69
         },
         "source_url": "https://benchlm.ai/models/gemini-4-argon",
         "model_key": "gemini-4-argon"
@@ -2894,7 +2894,7 @@
     "source_url": "https://benchlm.ai/data/models.json",
     "dataset_url": "https://benchlm.ai/data",
     "license": "MIT",
-    "generated_at": "2026-10-28T18:28:51.878Z",
+    "generated_at": "2026-10-28T22:54:07.990Z",
     "source_last_updated": "October 28, 2026",
     "policy": "Exact provider/model matches; model-level verified coverage and no generated rows. Raw cells are reported by the aggregator, not individually verified by this importer. Categories are exploratory, not controlled comparisons. Vendor evidence has priority.",
     "matched_models": 43
