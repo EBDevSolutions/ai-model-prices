@@ -6,7 +6,7 @@
     "source_url": "https://artificialanalysis.ai/models/gpt-6-astra",
     "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
     "retrieved_at": "2026-09-15T18:55:52Z",
-    "last_checked_at": "2026-10-31T11:11:27Z",
+    "last_checked_at": "2026-10-31T16:17:35Z",
     "status": "error",
     "error": "ValueError: Unknown Intelligence Index version; review methodology before importing",
     "sha256": "b59464c4fcbd58c5bce6fda2c9be36367d976e315f05f550cdf9e8de84abf60a",
